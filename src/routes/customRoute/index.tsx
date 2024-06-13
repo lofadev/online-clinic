@@ -4,11 +4,7 @@ import { Route } from 'react-router-dom';
 
 import HomeLayout from 'layouts/HomeLayout/home';
 
-function CustomRoute({
-  component: Component,
-  layout: Layout = HomeLayout,
-  ...rest
-}: any) {
+function CustomRoute({ component: Component, layout: Layout = HomeLayout, ...rest }: any) {
   return (
     <Route
       {...rest}

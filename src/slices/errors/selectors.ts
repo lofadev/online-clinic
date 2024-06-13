@@ -8,9 +8,6 @@ const selectDomain = (state: RootState) => {
   return state;
 };
 
-export const selectError = createSelector(
-  selectDomain,
-  ({ errors = initialState }) => {
-    return errors.error;
-  },
-);
+export const selectError = createSelector(selectDomain, ({ errors = initialState }) => {
+  return errors.error;
+});

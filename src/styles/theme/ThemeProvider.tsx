@@ -9,9 +9,5 @@ interface IProps {
 export const ThemeProvider: React.FC<IProps> = ({ children }) => {
   const { theme } = useThemeSlice();
 
-  return (
-    <OriginalThemeProvider theme={theme}>
-      {React.Children.only(children)}
-    </OriginalThemeProvider>
-  );
+  return <OriginalThemeProvider theme={theme}>{React.Children.only(children)}</OriginalThemeProvider>;
 };

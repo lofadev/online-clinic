@@ -33,11 +33,7 @@ export const CreateEdit: React.FC<IProps> = ({ onSubmit, children }) => {
   return (
     <Wrapper>
       <Form>{children}</Form>
-      <Button
-        style={{ marginTop: 16, width: 120 }}
-        type="primary"
-        onClick={onSubmit}
-      >
+      <Button style={{ marginTop: 16, width: 120 }} type="primary" onClick={onSubmit}>
         Save
       </Button>
     </Wrapper>

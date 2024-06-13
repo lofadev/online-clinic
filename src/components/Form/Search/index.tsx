@@ -89,8 +89,7 @@ export const Search: React.FC<FormInputProps & InputProps> = ({
     setValue('search', defaulValue);
   }, [defaulValue]);
 
-  const onSubmit: SubmitHandler<IFormInput> = (data) =>
-    onSearch(data.search.trim());
+  const onSubmit: SubmitHandler<IFormInput> = (data) => onSearch(data.search.trim());
   const onKeyPress = () => onSearch(search.trim());
 
   return (

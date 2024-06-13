@@ -38,20 +38,10 @@ export const SignIn: React.FC = () => {
       <FormProvider {...form}>
         <Wrapper>
           <Left>
-            <img
-              src={LOGO}
-              alt="logo"
-              style={{ width: 240, height: 240, borderRadius: 12 }}
-            />
+            <img src={LOGO} alt="logo" style={{ width: 240, height: 240, borderRadius: 12 }} />
             <Form>
               <Login>Login</Login>
-              <TextInput
-                wrapperStyle={{ width: '75%' }}
-                name="email"
-                label="Email"
-                placeholder="Email"
-                required
-              />
+              <TextInput wrapperStyle={{ width: '75%' }} name="email" label="Email" placeholder="Email" required />
               <Password
                 wrapperStyle={{ width: '75%' }}
                 placeholder="Password"
@@ -59,26 +49,15 @@ export const SignIn: React.FC = () => {
                 label="Password"
                 required
               />
-              <Button
-                style={{ marginTop: 16 }}
-                type="default"
-                onClick={form.handleSubmit(onSubmit)}
-              >
+              <Button style={{ marginTop: 16 }} type="default" onClick={form.handleSubmit(onSubmit)}>
                 Login
               </Button>
             </Form>
           </Left>
           <Right>
             <Title>We are NextCargo Team</Title>
-            <Title>
-              Mã Tracking là dãy số của đơn vị vận chuyển cung cấp lúc gửi hàng
-              đến công ty.
-            </Title>
-            <TextInput
-              wrapperStyle={{ width: '60%' }}
-              name="email"
-              label="Tim kiem Tracing"
-            />
+            <Title>Mã Tracking là dãy số của đơn vị vận chuyển cung cấp lúc gửi hàng đến công ty.</Title>
+            <TextInput wrapperStyle={{ width: '60%' }} name="email" label="Tim kiem Tracing" />
             <Button
               style={{ marginTop: 16 }}
               // type="outline"
