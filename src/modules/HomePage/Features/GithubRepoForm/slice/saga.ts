@@ -2,7 +2,7 @@ import { call, put, select, takeLatest, delay } from 'redux-saga/effects';
 import { LOCATION_CHANGE } from 'connected-react-router';
 import { request } from 'utils/request';
 import { Repo } from 'types/Repo';
-import { UserModel } from 'models';
+// import { UserModel } from 'models';
 import { selectUsername } from './selectors';
 import { githubRepoFormActions as actions } from '.';
 import { RepoErrorType } from './types';
@@ -41,20 +41,19 @@ export function* getRepos() {
 export function* getUsers() {
   const requestURL = `http://localhost:3001/users`;
 
-  try {
-    const users: UserModel[] = yield call(request, requestURL);
-    console.log('====>users ', users);
-  } catch (err: any) {
-    console.log('=====> errors: ', err);
-  }
+  // try {
+  // const users: UserModel[] =
+  yield call(request, requestURL);
+  // }
+  // catch (err: any) {}
 }
 
 export function* locationChangeSaga() {
-  try {
-    yield console.log('object');
-  } catch (err: any) {
-    console.log('=====> errors: ', err);
-  }
+  // try {
+  //   yield console.log('object');
+  // } catch (err: any) {
+  //   console.log('=====> errors: ', err);
+  // }
 }
 
 /**

@@ -8,9 +8,6 @@ const selectDomain = (state: RootState) => {
   return state;
 };
 
-export const selectLoading = createSelector(
-  selectDomain,
-  ({ loading = initialState }) => {
-    return loading;
-  },
-);
+export const selectLoading = createSelector(selectDomain, ({ loading = initialState }) => {
+  return loading;
+});

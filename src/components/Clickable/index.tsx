@@ -6,8 +6,7 @@ export const Clickable = styled.div<{
 }>`
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   transition: opacity 0.2s;
-  background: ${({ theme, background }) =>
-    background ? theme[background] : 'transparent'};
+  background: ${({ theme, background }) => (background ? theme[background] : 'transparent')};
   display: flex;
 
   &:hover {

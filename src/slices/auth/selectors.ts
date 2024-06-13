@@ -8,7 +8,4 @@ const selectDomain = (state: RootState) => {
   return state;
 };
 
-export const selectAuth = createSelector(
-  selectDomain,
-  ({ auth = initialState }) => auth,
-);
+export const selectAuth = createSelector(selectDomain, ({ auth = initialState }) => auth);

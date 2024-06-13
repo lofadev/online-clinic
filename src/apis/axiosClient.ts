@@ -1,19 +1,14 @@
-import axios, {
-  AxiosError,
-  AxiosInstance,
-  InternalAxiosRequestConfig,
-  AxiosResponse,
-} from 'axios';
+import axios, { AxiosError, AxiosInstance, InternalAxiosRequestConfig, AxiosResponse } from 'axios';
 import { STORAGE, getLocalStorage, removeLocalStorage } from 'utils/storage';
 
 const BASE_URL = 'http://localhost:8080/api/v1';
 
 // For Make Log on Develop Mode
-const logOnDev = (message: string) => {
-  if (process.env.NODE_ENV !== 'production') {
-    console.log(message);
-  }
-};
+// const logOnDev = () => {
+// if (process.env.NODE_ENV !== 'production') {
+// console.log(message);
+// }
+// };
 const showErrorApi = (data) => {
   if (data && typeof data.message === 'string') {
     // show toast msg
@@ -37,9 +32,7 @@ const requestConfig = {
 const request: AxiosInstance = axios.create(requestConfig);
 
 // Request Interceptor
-const onRequest = (
-  config: InternalAxiosRequestConfig,
-): InternalAxiosRequestConfig => {
+const onRequest = (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
   // Set Headers Here
   // Check Authentication Here
   // Set Loading Start Here
@@ -49,25 +42,24 @@ const onRequest = (
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
-  console.log('🚀 [API] CONFIG: ', config);
 
   return config;
 };
 
 const onResponse = (response: AxiosResponse): AxiosResponse => {
-  const { method, url } = response.config;
-  const { status } = response;
+  // const { method, url } = response.config;
+  // const { status } = response;
   // Set Loading End Here
   // Handle Response Data Here
   // Error Handling When Return Success with Error Code Here
-  logOnDev(`🚀 [API] ${method?.toUpperCase()} ${url} | Response ${status}`);
+  // logOnDev(`🚀 [API] ${method?.toUpperCase()} ${url} | Response ${status}`);
 
   return response.data;
 };
 
 const onErrorResponse = (error: AxiosError | Error): Promise<AxiosError> => {
   if (axios.isAxiosError(error)) {
-    console.log('🚀 [API] ERROR: ', { error });
+    // console.log('🚀 [API] ERROR: ', { error });
     const { response } = error;
     // const { method, url } = error.config as AxiosRequestConfig;
     const {
@@ -83,7 +75,7 @@ const onErrorResponse = (error: AxiosError | Error): Promise<AxiosError> => {
       showErrorApi(data);
     }
   } else {
-    logOnDev(`🚨 [API] | Error ${error.message}`);
+    // logOnDev(`🚨 [API] | Error ${error.message}`);
     // show toast msg
   }
 

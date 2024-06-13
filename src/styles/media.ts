@@ -44,10 +44,7 @@ export const media = (Object.keys(sizes) as Array<keyof typeof sizes>).reduce(
  * Be carefull and keep an eye on the issue and the possible improvements
  */
 type MediaFunction = <P extends object>(
-  first:
-    | TemplateStringsArray
-    | CSSObject
-    | InterpolationFunction<ThemedStyledProps<P, DefaultTheme>>,
+  first: TemplateStringsArray | CSSObject | InterpolationFunction<ThemedStyledProps<P, DefaultTheme>>,
   ...interpolations: Array<Interpolation<ThemedStyledProps<P, DefaultTheme>>>
 ) => FlattenInterpolation<ThemedStyledProps<P, DefaultTheme>>;
 
