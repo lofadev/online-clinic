@@ -26,7 +26,6 @@ export function ThemeSwitch() {
 
   const handleThemeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value as ThemeKeyType;
-    console.log('=======> value: ', value);
 
     saveTheme(value);
     changeTheme(value);

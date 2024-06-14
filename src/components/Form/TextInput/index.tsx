@@ -1,10 +1,6 @@
 import { Input, InputProps } from 'antd';
 import React, { CSSProperties, useMemo } from 'react';
-import {
-  UseControllerProps,
-  useController,
-  useFormContext,
-} from 'react-hook-form';
+import { UseControllerProps, useController, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { Lable, Wrapper } from './styled';
 
@@ -48,8 +44,7 @@ export const TextInput: React.FC<FormInputProps & InputProps> = ({
     if (!!error && error.message && error.type?.includes('required'))
       return t(error.message, { field: t(name as any) });
 
-    if (!!error && error.message && !error.type?.includes('required'))
-      return t(error.message);
+    if (!!error && error.message && !error.type?.includes('required')) return t(error.message);
 
     return null;
   }, [error, i18n.language]);

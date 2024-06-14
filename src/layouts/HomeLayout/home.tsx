@@ -29,12 +29,7 @@ const HomeLayout: React.FC<IProps> = ({ children }) => {
         <Clickable>
           <img src={LOGO} alt="logo" style={{ height: 48, borderRadius: 12 }} />
         </Clickable>
-        <Menu
-          mode="horizontal"
-          defaultSelectedKeys={['1']}
-          items={items}
-          style={{ flex: 1, minWidth: 0 }}
-        />
+        <Menu mode="horizontal" defaultSelectedKeys={['1']} items={items} style={{ flex: 1, minWidth: 0 }} />
       </Header>
       <Content>
         <div

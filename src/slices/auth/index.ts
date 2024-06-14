@@ -1,8 +1,8 @@
-import { PayloadAction, createAction } from '@reduxjs/toolkit';
+import { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from 'utils/@reduxjs/toolkit';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { useSelector, useDispatch } from 'react-redux';
-import { LOCATION_CHANGE } from 'connected-react-router';
+// import { LOCATION_CHANGE } from 'connected-react-router';
 
 import { UserModel } from 'models';
 import { saga } from './saga';
@@ -15,15 +15,12 @@ export const initialState: AuthState = {
   user_profile: null,
 };
 
-const locationChange = createAction(LOCATION_CHANGE);
+// const locationChange = createAction(LOCATION_CHANGE);
 const slice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    login: (
-      state,
-      action: PayloadAction<{ email: string; password: string }>,
-    ) => {
+    login: (state) => {
       state.loading = true;
     },
     loginSuccess: (state) => {
@@ -42,12 +39,7 @@ const slice = createSlice({
       state.user_profile = null;
     },
   },
-  extraReducers: (builder) => {
-    builder.addCase(locationChange, (state, action: PayloadAction<any>) => {
-      console.log('====> action', action.payload.location.pathname);
-      console.log('====> state', state);
-    });
-  },
+  // extraReducers: (builder) => {},
 });
 
 export const { actions, reducer } = slice;
@@ -59,8 +51,7 @@ export const useAuth = () => {
   useInjectSaga({ key: slice.name, saga });
   const dispatch = useDispatch();
 
-  const login = (payload: { email: string; password: string }) =>
-    dispatch(actions.login(payload));
+  const login = (payload) => dispatch(actions.login(payload));
   const getMe = () => dispatch(actions.getMe());
   const state = useSelector(selectAuth);
 

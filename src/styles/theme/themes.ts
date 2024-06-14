@@ -36,8 +36,7 @@ const darkTheme: Theme = {
   background: 'rgba(0,0,0,1)',
   backgroundVariant: 'rgba(28,26,26,1)',
 
-  btnPrimary:
-    'linear-gradient(to left top, #845EC2, #9a9ae1, #46eefa, #DD83E0)',
+  btnPrimary: 'linear-gradient(to left top, #845EC2, #9a9ae1, #46eefa, #DD83E0)',
 
   border: 'rgba(241,233,231,0.15)',
   borderLight: 'rgba(241,233,231,0.05)',

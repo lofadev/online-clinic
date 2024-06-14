@@ -16,17 +16,11 @@ export const selectLoading = createSelector(
   ({ githubRepoForm = initialState }) => githubRepoForm.loading,
 );
 
-export const selectError = createSelector(
-  selectDomain,
-  ({ githubRepoForm = initialState }) => githubRepoForm.error,
-);
+export const selectError = createSelector(selectDomain, ({ githubRepoForm = initialState }) => githubRepoForm.error);
 
 export const selectRepos = createSelector(
   selectDomain,
   ({ githubRepoForm = initialState }) => githubRepoForm.repositories,
 );
 
-export const selectUsers = createSelector(
-  selectDomain,
-  ({ githubRepoForm = initialState }) => githubRepoForm.users,
-);
+export const selectUsers = createSelector(selectDomain, ({ githubRepoForm = initialState }) => githubRepoForm.users);

@@ -14,10 +14,7 @@ const slice = createSlice({
   name: 'broadcast',
   initialState,
   reducers: {
-    setBroadcastChannel: (
-      state,
-      action: PayloadAction<{ broadcast: BroadcastChannel }>,
-    ) => {
+    setBroadcastChannel: (state, action: PayloadAction<{ broadcast: BroadcastChannel }>) => {
       state.boardcastChannel = action.payload.broadcast;
     },
   },

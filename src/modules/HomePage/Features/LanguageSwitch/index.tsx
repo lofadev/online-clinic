@@ -22,7 +22,6 @@ const Languages = styled.div`
 
 export function LanguageSwitch() {
   const { t, i18n } = useTranslation();
-  console.log('=======> i18n: ', i18n.language);
 
   const handleLanguageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const language = event.target.value;

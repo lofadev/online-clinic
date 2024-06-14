@@ -8,9 +8,7 @@ import { sagaCustomize } from '../sagaCustomize';
 
 import { actions } from '.';
 
-export function* loginSaga({
-  payload,
-}: PayloadAction<{ email: string; password: string }>) {
+export function* loginSaga({ payload }: PayloadAction<{ email: string; password: string }>) {
   yield sagaCustomize(function* () {
     const response = yield call(login, payload);
     localStorage.setItem(STORAGE.USER_TOKEN, response.access_token);

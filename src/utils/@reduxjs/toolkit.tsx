@@ -16,13 +16,7 @@ export const createSlice = <
   ReducerPath extends string = Name,
   Selectors extends SliceSelectors<State> = SliceSelectors<State>,
 >(
-  options: CreateSliceOptions<
-    State,
-    CaseReducers,
-    Name,
-    ReducerPath,
-    Selectors
-  >,
+  options: CreateSliceOptions<State, CaseReducers, Name, ReducerPath, Selectors>,
 ) => {
   return createSliceOriginal(options);
 };

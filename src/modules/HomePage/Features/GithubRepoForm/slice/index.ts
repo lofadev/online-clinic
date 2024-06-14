@@ -3,18 +3,12 @@ import { Repo } from 'types/Repo';
 import { createSlice } from 'utils/@reduxjs/toolkit';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { useSelector, useDispatch } from 'react-redux';
-import { LocationChangePayload, locationChange } from 'utils/location';
+// import { LocationChangePayload, locationChange } from 'utils/location';
 
 import { UserModel } from 'models';
 import { githubRepoFormSaga } from './saga';
 import { GithubRepoFormState, RepoErrorType } from './types';
-import {
-  selectUsername,
-  selectRepos,
-  selectLoading,
-  selectError,
-  selectUsers,
-} from './selectors';
+import { selectUsername, selectRepos, selectLoading, selectError, selectUsers } from './selectors';
 
 export const initialState: GithubRepoFormState = {
   username: 'react-boilerplate',
@@ -58,16 +52,12 @@ const slice = createSlice({
     },
   },
   // handle data when location change router
-  extraReducers: (builder) => {
-    builder.addCase(
-      locationChange,
-      (state, { payload }: { payload: LocationChangePayload }) => {
-        console.log('=====>state ', state);
-        console.log('====> action', payload.location);
-      },
-    );
+  extraReducers: () => {
+    // builder.addCase(locationChange, (state, { payload }: { payload: LocationChangePayload }) => {
+    //   console.log('=====>state ', state);
+    //   console.log('====> action', payload.location);
+    // });
   },
- 
 });
 
 export const { actions: githubRepoFormActions, reducer } = slice;
@@ -79,8 +69,7 @@ export const useGithubRepoFormSlice = () => {
   const dispatch = useDispatch();
   const loadRepos = () => dispatch(actions.loadRepos());
 
-  const changeUsername = (payload: string) =>
-    dispatch(actions.changeUsername(payload));
+  const changeUsername = (payload: string) => dispatch(actions.changeUsername(payload));
   const loadUsers = () => dispatch(actions.loadUsers());
 
   const username = useSelector(selectUsername);
