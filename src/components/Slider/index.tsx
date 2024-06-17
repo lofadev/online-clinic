@@ -10,7 +10,7 @@ import { Avatar, CardItem, Description, InfoBlock, Position, Wrapper } from './s
 import { IMedicationCard } from './type';
 
 type SliderType = {
-  data?: IMedicationCard[];
+  data: IMedicationCard[];
 };
 
 export const CardSlider: React.FC<SliderType> = ({ data }) => {
@@ -29,7 +29,7 @@ export const CardSlider: React.FC<SliderType> = ({ data }) => {
         }}
         loop
       >
-        {data?.map((item) => (
+        {data.map((item) => (
           <SwiperSlide key={item.id}>
             <CardItem>
               <InfoBlock>

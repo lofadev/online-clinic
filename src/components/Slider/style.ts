@@ -12,9 +12,6 @@ const Wrapper = styled.div`
     margin: 0;
     padding: 0;
   }
-  /* test */
-  background-color: #61b3ef;
-  padding: 40px 0;
 
   height: auto;
   font-size: 14px;
