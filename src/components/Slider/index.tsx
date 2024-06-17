@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Avatar, CardItem, Description, InfoBlock, Position, Wrapper } from './style';
+import { Avatar, CardItem, Description, InfoBlock, Position, Wrapper } from './styled';
 import { IMedicationCard } from './type';
 
 type SliderType = {
