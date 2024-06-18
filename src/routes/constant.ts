@@ -1,5 +1,4 @@
-import HomeLayout from 'layouts/HomeLayout/home';
-import { SignIn } from 'modules/Auth/SignIn/Loadable';
+import HomeLayout from 'layouts/HomeLayout/HomeLayout';
 import { HomePage } from 'modules/HomePage/Loadable';
 
 export const RoutesName = {
@@ -8,12 +7,6 @@ export const RoutesName = {
 };
 
 export const PUBLIC_ROUTES = [
-  {
-    path: RoutesName.LOGIN,
-    component: SignIn,
-    layout: HomeLayout,
-    exact: true,
-  },
   {
     path: RoutesName.HOME,
     component: HomePage,

@@ -1,6 +1,6 @@
-import { Route, Redirect, RouteProps } from 'react-router-dom';
+import { Redirect, Route, RouteProps } from 'react-router-dom';
 
-import HomeLayout from 'layouts/HomeLayout/home';
+import HomeLayout from 'layouts/HomeLayout/HomeLayout';
 import React from 'react';
 import { useAuth } from 'slices/auth';
 

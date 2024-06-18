@@ -1,8 +1,6 @@
-/* eslint-disable react/jsx-props-no-spreading */
-import React from 'react';
 import { Route } from 'react-router-dom';
 
-import HomeLayout from 'layouts/HomeLayout/home';
+import HomeLayout from 'layouts/HomeLayout/HomeLayout';
 
 function CustomRoute({ component: Component, layout: Layout = HomeLayout, ...rest }: any) {
   return (

@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 // import { LOCATION_CHANGE } from 'connected-react-router';
 
 import { UserModel } from 'models';
+// import { LocationChangePayload, locationChange } from 'utils/location';
+
 import { saga } from './saga';
 import { AuthState } from './types';
 import { selectAuth } from './selectors';
@@ -39,7 +41,12 @@ const slice = createSlice({
       state.user_profile = null;
     },
   },
-  // extraReducers: (builder) => {},
+  // extraReducers: (builder) => {
+  //   builder.addCase(locationChange, (state, { payload }: { payload: LocationChangePayload }) => {
+  //     console.log('=====>state ', state);
+  //     console.log('====> action', payload.location);
+  //   });
+  // },
 });
 
 export const { actions, reducer } = slice;
