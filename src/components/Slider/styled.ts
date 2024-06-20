@@ -1,21 +1,12 @@
 import styled from 'styled-components';
-import ArrowLeftUrl from './assets/ico_arrow_white_left.svg';
-import ArrowRightUrl from './assets/ico_arrow_white_right.svg';
+import ArrowWhiteLeftIcon from '../../assets/svgs/ico_arrow_white_left.svg';
+import ArrowWhiteRightIcon from '../../assets/svgs/ico_arrow_white_right.svg';
+import { JobStyleProps } from './type';
 
-const Wrapper = styled.div`
-  font-family:
-    Noto Sans JP,
-    sans-serif;
-
-  p,
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-
+const WrapperStyled = styled.div`
   height: auto;
   font-size: 14px;
-  margin-top: 32px !important;
+  margin-top: 32px;
 
   .swiper-slide {
     max-width: 314px;
@@ -42,7 +33,7 @@ const Wrapper = styled.div`
       content: '';
       width: 10px;
       height: 18px;
-      background-image: url(${ArrowLeftUrl});
+      background-image: url(${ArrowWhiteLeftIcon});
     }
   }
 
@@ -61,7 +52,7 @@ const Wrapper = styled.div`
       content: '';
       width: 10px;
       height: 18px;
-      background-image: url(${ArrowRightUrl});
+      background-image: url(${ArrowWhiteRightIcon});
     }
   }
 
@@ -75,7 +66,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const CardItem = styled.div`
+const CardItemStyled = styled.div`
   padding: 20px;
   border-radius: 8px;
   height: 243px;
@@ -86,23 +77,19 @@ const CardItem = styled.div`
   }
 `;
 
-const InfoBlock = styled.div`
+const InfoBlockStyled = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const Avatar = styled.img`
+const AvatarStyled = styled.img`
   width: 61px;
   height: 62px;
 `;
 
-const Position = styled.div`
+const PositionStyled = styled.div`
   margin-left: 20px;
 
-  > span {
-    font-size: 12px;
-    font-weight: 700;
-  }
   > p {
     font-size: 20px;
     line-height: 1.5;
@@ -110,10 +97,16 @@ const Position = styled.div`
   }
 `;
 
-const Description = styled.p`
-  margin: 16px 0 20px 0 !important;
-  font-weight: 500;
-  flex: 1;
+const JobStyled = styled.span<JobStyleProps>`
+  font-size: 12px;
+  font-weight: 700;
+  color: ${(props) => (props.gender ? '#09519f' : '#f35f71')};
 `;
 
-export { Wrapper, CardItem, InfoBlock, Avatar, Position, Description };
+const DescriptionStyled = styled.p`
+  margin: 16px 0 20px 0;
+  font-weight: 500;
+  line-height: 21px;
+`;
+
+export { WrapperStyled, CardItemStyled, InfoBlockStyled, AvatarStyled, PositionStyled, DescriptionStyled, JobStyled };

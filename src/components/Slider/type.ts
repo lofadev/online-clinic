@@ -6,3 +6,7 @@ export interface IMedicationCard {
   description: string;
   gender: boolean;
 }
+
+export type JobStyleProps = {
+  gender: boolean;
+};

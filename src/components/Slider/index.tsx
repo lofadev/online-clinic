@@ -6,7 +6,15 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Avatar, CardItem, Description, InfoBlock, Position, Wrapper } from './styled';
+import {
+  WrapperStyled,
+  CardItemStyled,
+  InfoBlockStyled,
+  AvatarStyled,
+  PositionStyled,
+  DescriptionStyled,
+  JobStyled,
+} from './styled';
 import { IMedicationCard } from './type';
 
 type SliderType = {
@@ -15,7 +23,7 @@ type SliderType = {
 
 export const CardSlider: React.FC<SliderType> = ({ data }) => {
   return (
-    <Wrapper>
+    <WrapperStyled>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
@@ -31,29 +39,19 @@ export const CardSlider: React.FC<SliderType> = ({ data }) => {
       >
         {data.map((item) => (
           <SwiperSlide key={item.id}>
-            <CardItem>
-              <InfoBlock>
-                <Avatar src={item.avatar} alt="avatar" />
-                <Position>
-                  <span
-                    style={
-                      item.gender
-                        ? {
-                            color: '#09519f',
-                          }
-                        : { color: '#f35f71' }
-                    }
-                  >
-                    {item.job}
-                  </span>
+            <CardItemStyled>
+              <InfoBlockStyled>
+                <AvatarStyled src={item.avatar} alt="avatar" />
+                <PositionStyled>
+                  <JobStyled gender={item.gender}>{item.job}</JobStyled>
                   <p>{item.name}</p>
-                </Position>
-              </InfoBlock>
-              <Description>{item.description}</Description>
-            </CardItem>
+                </PositionStyled>
+              </InfoBlockStyled>
+              <DescriptionStyled>{item.description}</DescriptionStyled>
+            </CardItemStyled>
           </SwiperSlide>
         ))}
       </Swiper>
-    </Wrapper>
+    </WrapperStyled>
   );
 };
