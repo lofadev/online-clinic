@@ -1,4 +1,4 @@
-import { RouterState } from 'connected-react-router';
+import { RouterState } from 'redux-first-history';
 import { GithubRepoFormState } from 'modules/HomePage/Features/GithubRepoForm/slice/types';
 import { UsersState } from 'slices/users/types';
 import { ThemeState } from 'slices/theme/types';

@@ -1,12 +1,11 @@
 import { configureStore, StoreEnhancer } from '@reduxjs/toolkit';
-import { routerMiddleware } from 'connected-react-router';
 import { createInjectorsEnhancer } from 'redux-injectors';
 import createSagaMiddleware from 'redux-saga';
 import loggerMiddleware from 'redux-logger';
 
-import { createReducer } from './reducers';
+import { createReducer, routerMiddleware, createReduxHistory } from './reducers';
 
-export function configureAppStore(history) {
+export function configureAppStore() {
   const reduxSagaMonitorOptions = {};
   const sagaMiddleware = createSagaMiddleware(reduxSagaMonitorOptions);
   const { run: runSaga } = sagaMiddleware;
@@ -22,10 +21,12 @@ export function configureAppStore(history) {
       getDefaultMiddleware({
         thunk: false,
         serializableCheck: false,
-      }).concat(routerMiddleware(history), sagaMiddleware, loggerMiddleware),
+      }).concat(sagaMiddleware, routerMiddleware, loggerMiddleware),
     devTools: process.env.NODE_ENV !== 'production',
     enhancers: (getDefaultEnhancers) => getDefaultEnhancers().concat(enhancers),
   });
 
   return store;
 }
+
+export const history = createReduxHistory(configureAppStore());

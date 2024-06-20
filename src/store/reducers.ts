@@ -4,20 +4,23 @@
 
 import { combineReducers } from '@reduxjs/toolkit';
 import { createBrowserHistory } from 'history';
-import { connectRouter } from 'connected-react-router';
-
+import { createReduxHistoryContext } from 'redux-first-history';
 import { InjectedReducersType } from 'utils/types/injector-typings';
 import themeSlice from '../slices/theme';
 
-export const history = createBrowserHistory();
+const { createReduxHistory, routerMiddleware, routerReducer } = createReduxHistoryContext({
+  history: createBrowserHistory(),
+});
 
 /**
  * Merges the main reducer with the router state and dynamically injected reducers
  */
-export function createReducer(injectedReducers: InjectedReducersType = {}) {
+function createReducer(injectedReducers: InjectedReducersType = {}) {
   return combineReducers({
-    router: connectRouter(history),
+    router: routerReducer,
     theme: themeSlice.reducer,
     ...injectedReducers,
   });
 }
+
+export { createReducer, routerMiddleware, createReduxHistory };

@@ -5,9 +5,9 @@ import { Switch } from 'react-router-dom';
 import { NotFoundPage } from 'modules/NotFoundPage';
 // import PrivateRoute from './privateRoute';
 
-import PublicRoute from './publicRoute';
 import { PUBLIC_ROUTES } from './constant';
 import CustomRoute from './customRoute';
+import PublicRoute from './publicRoute';
 
 const AppRoutes: React.FC = () => {
   return (
