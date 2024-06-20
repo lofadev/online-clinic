@@ -14,7 +14,7 @@ const AppRoutes: React.FC = () => {
     <Switch>
       {/* {PRIVATE_ROUTES.map((routeConfig) => (
         <PrivateRoute key={routeConfig.path} {...routeConfig} />
-      ))} */}
+        ))} */}
       {PUBLIC_ROUTES.map((routeConfig) => (
         <PublicRoute key={routeConfig.path} {...routeConfig} />
       ))}

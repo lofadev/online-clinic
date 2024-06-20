@@ -34,6 +34,12 @@ module.exports = {
         patterns: ['@/features/*/*'],
       },
     ],
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
     'import/no-unresolved': 0,
     'react/jsx-filename-extension': 0,
     'no-use-before-define': 'off',
