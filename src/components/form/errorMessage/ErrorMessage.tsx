@@ -4,7 +4,6 @@ const ErrorStyled = styled.span`
   display: inline-block;
   margin-top: 5px;
   color: ${({ theme }) => theme.textDanger};
-  font-family: 'Noto Sans', sans-serif;
 `;
 
 interface IProps {
