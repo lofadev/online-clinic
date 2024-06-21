@@ -30,7 +30,7 @@ export const MedicalQueries: FC<IMedicalQuery> = ({ data, gender }) => {
     <WrapperStyled>
       <HealthQueriesStyled>
         {data?.map((item) => (
-          <QueryEntryStyled>
+          <QueryEntryStyled key={item.id}>
             <QueryEntryTextStyled>
               <TextStyled gender={gender}>{item.text}</TextStyled>
             </QueryEntryTextStyled>
