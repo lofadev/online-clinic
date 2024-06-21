@@ -2,7 +2,7 @@ import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 import * as vi from './vi';
-// import * as en from './en';
+import * as en from './en';
 
 import { convertLanguageJsonToObject } from './translations';
 
@@ -10,9 +10,9 @@ export const translationsJson = {
   vi: {
     translation: vi,
   },
-  // en: {
-  //   translation: en,
-  // },
+  en: {
+    translation: en,
+  },
 };
 
 // Create the 'translations' object to provide full intellisense support for the static json files.
@@ -26,6 +26,7 @@ export const i18n = i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
     resources: translationsJson,
+    lng: 'vi',
     fallbackLng: 'vi',
     debug: process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test',
 
