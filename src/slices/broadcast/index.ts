@@ -1,10 +1,10 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { PayloadAction } from '@reduxjs/toolkit';
+
 import { createSlice } from 'utils/@reduxjs/toolkit';
 import { useInjectReducer } from 'utils/redux-injectors';
-import { useSelector, useDispatch } from 'react-redux';
-
-import { BroadcastState } from './types';
 import { selectBroadcast } from './selectors';
+import { BroadcastState } from './types';
 
 export const initialState: BroadcastState = {
   boardcastChannel: null,

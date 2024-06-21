@@ -1,9 +1,9 @@
 import { configureStore, StoreEnhancer } from '@reduxjs/toolkit';
 import { createInjectorsEnhancer } from 'redux-injectors';
-import createSagaMiddleware from 'redux-saga';
 import loggerMiddleware from 'redux-logger';
+import createSagaMiddleware from 'redux-saga';
 
-import { createReducer, routerMiddleware, createReduxHistory } from './reducers';
+import { createReducer, createReduxHistory, routerMiddleware } from './reducers';
 
 export function configureAppStore() {
   const reduxSagaMonitorOptions = {};
