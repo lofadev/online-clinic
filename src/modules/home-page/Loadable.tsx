@@ -2,7 +2,7 @@
  * Asynchronously loads the component for HomePage
  */
 
-import LoadingIndicator from 'components/loadingIndicator/LoadingIndicator';
+import LoadingIndicator from 'components/loading-indicator/LoadingIndicator';
 import React from 'react';
 import { lazyLoad } from 'utils/loadable';
 

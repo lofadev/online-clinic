@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { Controller, useController, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
-import ErrorMessage from '../errorMessage/ErrorMessage';
+import ErrorMessage from '../error-message/ErrorMessage';
 import { InputStyled, LabelStyled } from './styled';
 
 interface IProps extends InputProps {

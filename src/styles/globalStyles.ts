@@ -1,8 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
-import NotoSansJPBoldWoff2 from 'assets/fonts/NotoSans/NotoSansJP-Bold.woff2';
-import NotoSansJPBoldWoff from 'assets/fonts/NotoSans/NotoSansJP-Bold.woff';
-import NotoSansJPRegularWoff2 from 'assets/fonts/NotoSans/NotoSansJP-Regular.woff2';
-import NotoSansJPRegularWoff from 'assets/fonts/NotoSans/NotoSansJP-Regular.woff';
+import NotoSansJPBoldWoff2 from 'assets/fonts/noto-sans/NotoSansJP-Bold.woff2';
+import NotoSansJPBoldWoff from 'assets/fonts/noto-sans/NotoSansJP-Bold.woff';
+import NotoSansJPRegularWoff2 from 'assets/fonts/noto-sans/NotoSansJP-Regular.woff2';
+import NotoSansJPRegularWoff from 'assets/fonts/noto-sans/NotoSansJP-Regular.woff';
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {

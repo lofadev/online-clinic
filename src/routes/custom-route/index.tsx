@@ -1,6 +1,6 @@
 import { Route } from 'react-router-dom';
 
-import HomeLayout from 'layouts/HomeLayout/HomeLayout';
+import HomeLayout from 'layouts/home-layout/HomeLayout';
 
 function CustomRoute({ component: Component, layout: Layout = HomeLayout, ...rest }: any) {
   return (
