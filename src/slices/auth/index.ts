@@ -40,7 +40,6 @@ const slice = createSlice({
       state.loading = false;
       state.user_profile = null;
     },
-    reset: (state) => {},
   },
   // extraReducers: (builder) => {
   //   builder.addCase(locationChange, (state, { payload }: { payload: LocationChangePayload }) => {
