@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import ArrowWhiteLeftIcon from 'assets/svgs/ico_arrow_white_left.svg';
 import ArrowWhiteRightIcon from 'assets/svgs/ico_arrow_white_right.svg';
 import { JobStyleProps } from './type';
