@@ -1,29 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
-import NotoSansJPBoldWoff2 from 'assets/fonts/noto-sans/NotoSansJP-Bold.woff2';
-import NotoSansJPBoldWoff from 'assets/fonts/noto-sans/NotoSansJP-Bold.woff';
-import NotoSansJPRegularWoff2 from 'assets/fonts/noto-sans/NotoSansJP-Regular.woff2';
-import NotoSansJPRegularWoff from 'assets/fonts/noto-sans/NotoSansJP-Regular.woff';
+// import NotoSansJPBoldWoff2 from 'assets/fonts/NotoSansJP-Bold.woff2';
+// import NotoSansJPBoldWoff from 'assets/fonts/NotoSansJP-Bold.woff';
+// import NotoSansJPRegularWoff2 from 'assets/fonts/NotoSansJP-Regular.woff2';
+// import NotoSansJPRegularWoff from 'assets/fonts/NotoSansJP-Regular.woff';
 
 export const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'Noto Sans JP';
-    src:
-      url(${NotoSansJPBoldWoff2}) format('woff2'),
-      url(${NotoSansJPBoldWoff}) format('woff');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
 
-  @font-face {
-    font-family: 'Noto Sans JP';
-    src:
-      url(${NotoSansJPRegularWoff2}) format('woff2'),
-      url(${NotoSansJPRegularWoff}) format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
 
   *,
   *:before,

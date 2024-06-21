@@ -1,0 +1,22 @@
+{
+  "title": "DMMアカウントにログイン",
+  "email": "メールアドレス",
+  "email_placeholder": "メールアドレス",
+  "email_save": "メールアドレスを保存する",
+  "password": "パスワード",
+  "password_save": "パスワードを保存する",
+  "login": "ログイン",
+  "login_auto": "次回から自動でログインする",
+  "forgot_password": "パスワードを忘れた方",
+  "not_email": "登録したメールアドレスが利用できない方",
+  "not_login": "ログインできない方",
+  "help": "ヘルプ",
+  "account": "他のアカウントでログイン",
+  "google": "Googleでログイン",
+  "line": "LINEでログイン",
+  "x": "Xでログイン",
+  "facebook": "Facebookでログイン",
+  "your_viewing": "閲覧履歴・購入履歴等はタイムラインに反映されませんので、ご安心ください。",
+  "register": "DMMを初めてご利用になる方は、会員登録が必要です。",
+  "btn_register": "無料会員登録はこちら"
+}
