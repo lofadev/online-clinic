@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+
 import ArrowWhiteLeftIcon from 'assets/svgs/ico_arrow_white_left.svg';
 import ArrowWhiteRightIcon from 'assets/svgs/ico_arrow_white_right.svg';
 import { JobStyleProps } from './type';
 
-const WrapperStyled = styled.div`
+export const WrapperStyled = styled.div`
   height: auto;
   font-size: 14px;
   margin-top: 32px;
@@ -66,7 +67,7 @@ const WrapperStyled = styled.div`
   }
 `;
 
-const CardItemStyled = styled.div`
+export const CardItemStyled = styled.div`
   padding: 20px;
   border-radius: 8px;
   height: 243px;
@@ -77,17 +78,17 @@ const CardItemStyled = styled.div`
   }
 `;
 
-const InfoBlockStyled = styled.div`
+export const InfoBlockStyled = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const AvatarStyled = styled.img`
+export const AvatarStyled = styled.img`
   width: 61px;
   height: 62px;
 `;
 
-const PositionStyled = styled.div`
+export const PositionStyled = styled.div`
   margin-left: 20px;
 
   > p {
@@ -97,16 +98,14 @@ const PositionStyled = styled.div`
   }
 `;
 
-const JobStyled = styled.span<JobStyleProps>`
+export const JobStyled = styled.span<JobStyleProps>`
   font-size: 12px;
   font-weight: 700;
-  color: ${(props) => (props.gender ? '#09519f' : '#f35f71')};
+  color: ${({ theme, gender }) => (gender ? theme.secondary : theme.tertiary)};
 `;
 
-const DescriptionStyled = styled.p`
+export const DescriptionStyled = styled.p`
   margin: 16px 0 20px 0;
   font-weight: 500;
   line-height: 21px;
 `;
-
-export { WrapperStyled, CardItemStyled, InfoBlockStyled, AvatarStyled, PositionStyled, DescriptionStyled, JobStyled };
