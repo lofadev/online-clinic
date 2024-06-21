@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter, Switch } from 'react-router-dom';
 
-import { NotFoundPage } from 'modules/not-found-page';
+import { NotFoundPage } from 'modules/notfound-page';
 // import PrivateRoute from './privateRoute';
 
 import { PUBLIC_ROUTES } from './constant';
