@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { IMedicalQuery } from './type';
 
 import {
   HealthQueriesStyled,
@@ -10,6 +9,21 @@ import {
   TextStyled,
   WrapperStyled,
 } from './styled';
+
+type MedicalQuery = {
+  id: string;
+  text: string;
+  url: string;
+};
+
+interface IMedicalQuery {
+  data: MedicalQuery[];
+  gender: boolean;
+}
+
+export type TextProps = {
+  gender: boolean;
+};
 
 export const MedicalQueries: FC<IMedicalQuery> = ({ data, gender }) => {
   return (

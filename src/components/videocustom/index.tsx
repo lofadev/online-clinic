@@ -1,6 +1,15 @@
 import { FC } from 'react';
 import { VideoStyled } from './styled';
-import { VideoProps } from './type';
+
+export type VideoType = {
+  src: string;
+  width: number;
+  height: number;
+};
+
+interface VideoProps {
+  data: VideoType;
+}
 
 export const Video: FC<VideoProps> = ({ data }) => {
   return (

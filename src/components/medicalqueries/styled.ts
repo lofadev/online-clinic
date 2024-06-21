@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { IcoDotVertical } from 'assets';
-import { TextProps } from './type';
+import { TextProps } from '.';
 
 export const WrapperStyled = styled.div`
   display: flex;

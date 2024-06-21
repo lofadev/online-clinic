@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { VideoType } from './type';
+import { VideoType } from '.';
 
 export const VideoStyled = styled.iframe<VideoType>`
   display: block;
