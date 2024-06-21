@@ -1,6 +1,6 @@
 import { CheckboxProps } from 'antd';
 import { Controller, useController, useFormContext } from 'react-hook-form';
-import ErrorMessage from '../errorMessage/ErrorMessage';
+import ErrorMessage from '../error-message/ErrorMessage';
 import { CheckboxStyled } from './styled';
 
 interface IProps extends CheckboxProps {

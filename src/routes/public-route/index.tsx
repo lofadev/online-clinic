@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Route, RouteProps } from 'react-router-dom';
 
-import AuthLayout from 'layouts/HomeLayout/HomeLayout';
+import AuthLayout from 'layouts/home-layout/HomeLayout';
 import { useAuth } from 'slices/auth';
 
 const PublicRoute: React.FC<RouteProps & { component: any; layout: any }> = ({

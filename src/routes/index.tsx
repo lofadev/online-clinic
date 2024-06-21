@@ -2,12 +2,12 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
 
-import { NotFoundPage } from 'modules/NotFoundPage';
+import { NotFoundPage } from 'modules/notfound-page';
 // import PrivateRoute from './privateRoute';
 
 import { PUBLIC_ROUTES } from './constant';
-import CustomRoute from './customRoute';
-import PublicRoute from './publicRoute';
+import CustomRoute from './custom-route';
+import PublicRoute from './public-route';
 
 const AppRoutes: React.FC = () => {
   return (

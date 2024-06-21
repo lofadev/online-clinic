@@ -1,5 +1,5 @@
-import HomeLayout from 'layouts/HomeLayout/HomeLayout';
-import { HomePage } from 'modules/HomePage/Loadable';
+import HomeLayout from 'layouts/home-layout/HomeLayout';
+import { HomePage } from 'modules/home-page/Loadable';
 
 export const RoutesName = {
   LOGIN: '/login',

@@ -3,7 +3,7 @@ import { Controller, useController, useFormContext } from 'react-hook-form';
 
 import { BaseOptionType, DefaultOptionType } from 'antd/es/select';
 import { ReactComponent as ArrowdownIcon } from 'assets/svgs/arrowDown.svg';
-import ErrorMessage from '../errorMessage/ErrorMessage';
+import ErrorMessage from '../error-message/ErrorMessage';
 import { SelectStyled } from './styled';
 
 interface IProps extends SelectProps<any, DefaultOptionType | BaseOptionType> {
