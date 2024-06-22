@@ -30,13 +30,7 @@ export function* getMeSaga() {
   });
 }
 
-export function* locationChangeSaga() {
-  try {
-    yield console.log('locationChangeSaga');
-  } catch (err: any) {
-    console.log('=====> errors: ', err);
-  }
-}
+export function* locationChangeSaga() {}
 
 /**
  * Root saga manages watcher lifecycle

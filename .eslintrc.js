@@ -76,6 +76,7 @@ module.exports = {
     'jsx-a11y/control-has-associated-label': 0,
     'react/react-in-jsx-scope': 0,
     '@typescript-eslint/no-empty-interface': 0,
+    // 'react/destructuring-assignment': 0,
     // 'react/jsx-pascal-case': 0,
   },
 };
