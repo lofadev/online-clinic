@@ -1,39 +1,48 @@
 import { PropsWithChildren } from 'react';
 
-import { DescStyled, SubTitleStyled, TitleHeadStyled, WrapperStyled, WrapperTitleStyled } from './styled';
+import Text from 'components/text';
+import { ITextProps, THEME_TYPE } from 'models';
+import { TitleStyled, WrapperStyled, WrapperTitleStyled } from './styled';
+
+export interface ITitleStyleProps {
+  background?: THEME_TYPE;
+  color?: THEME_TYPE;
+}
 
 interface IProps extends PropsWithChildren {
   title: string;
   subTitle?: string;
   desc: string;
-  gender?: GenderType;
-  isItalicDesc: boolean;
-  isBackgroundTitle: boolean;
+  backgroundWrapper?: THEME_TYPE;
+  titleStyles?: ITitleStyleProps;
+  descStyles?: ITextProps;
 }
 
 const ArticleBlock: React.FC<IProps> = ({
   title,
   subTitle,
-  isItalicDesc = false,
   desc,
-  gender,
-  isBackgroundTitle = false,
+  backgroundWrapper = 'transparent',
+  titleStyles,
+  descStyles = { color: 'primary', fontSize: 'SIZE_16', fontWeight: 'FW_700' },
   children,
-}) => (
-  <WrapperStyled>
-    <WrapperTitleStyled>
-      <TitleHeadStyled isBackgroundTitle={isBackgroundTitle} gender={gender}>
-        {title}
-      </TitleHeadStyled>
-      <SubTitleStyled isBackgroundTitle={isBackgroundTitle} gender={gender}>
-        {subTitle}
-      </SubTitleStyled>
-      <DescStyled isBackgroundTitle={isBackgroundTitle} isItalicDesc={isItalicDesc} gender={gender}>
-        {desc}
-      </DescStyled>
-    </WrapperTitleStyled>
-    {children}
-  </WrapperStyled>
-);
+}) => {
+  return (
+    <WrapperStyled background={backgroundWrapper}>
+      <WrapperTitleStyled>
+        <TitleStyled className="article-title" level={2} {...titleStyles}>
+          {title}
+        </TitleStyled>
+        {!!subTitle && (
+          <TitleStyled className="article-subtitle" level={3} {...titleStyles}>
+            {subTitle}
+          </TitleStyled>
+        )}
+        <Text.Primary {...descStyles}>{desc}</Text.Primary>
+      </WrapperTitleStyled>
+      {children}
+    </WrapperStyled>
+  );
+};
 
 export default ArticleBlock;
