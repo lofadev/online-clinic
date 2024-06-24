@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import TopHeader from './top-header/top-header/TopHeader';
+import PreHeader from './pre-header/preHeader';
 import { HeaderStyle } from './style';
-import PreHeader from './pre-header/PreHeader';
+import TopHeader from './top-header/top-header/TopHeader';
 
 const Header: FC = () => {
   return (
