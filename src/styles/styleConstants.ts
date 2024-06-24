@@ -12,6 +12,7 @@ export enum SIZE {
 
 export enum FONT_WEIGHT {
   FW_400 = '400',
+  FW_600 = '600',
   FW_700 = '700',
 }
 
