@@ -25,7 +25,7 @@ const OptionStyle = styled.div`
     padding: 10px 53px 10px 20px;
     font-size: 16px;
     font-weight: 700;
-    color: #3f4f5f;
+    color: ${({ theme }) => theme.textPrimary};
     margin: 0;
   }
   svg {

@@ -118,7 +118,7 @@ export const ButtonLogin = styled.button`
   width: 100%;
   height: 38px;
   margin-top: 10px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.white};
   border: 1px solid #e66f6f;
   border-radius: 4px;
   border-color: #ec9797 #e47e7e #de6767;

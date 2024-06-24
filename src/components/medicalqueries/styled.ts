@@ -61,7 +61,7 @@ export const TextStyled = styled.p<TextProps>`
   text-align: center;
   color: #094591;
   max-width: 145px;
-  color: ${(prop) => (prop.gender ? ' #094591' : '#F35F71')};
+  color: ${(prop) => (prop.gender ? ' #094591' : `${({ theme }) => theme.tertiary}`)};
 `;
 
 export const ImageStyled = styled.img`

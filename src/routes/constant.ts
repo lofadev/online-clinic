@@ -1,9 +1,7 @@
-import HomeLayout from 'layouts/home-layout/HomeLayout';
-import DefaultLayout from 'layouts/layout-default/DefaultLayout';
+import DefaultLayout from 'layouts/layout-default';
 import { SignIn } from 'modules/authen/sign-in/Loadable';
 import { SignUp } from 'modules/authen/sign-up';
-import { TopPage } from 'modules/Case/top-page';
-import { HomePage } from 'modules/home-page/Loadable';
+import { TopPage } from 'modules/top-page';
 
 export const RoutesName = {
   LOGIN: '/login',
@@ -14,12 +12,6 @@ export const RoutesName = {
 
 export const PUBLIC_ROUTES = [
   {
-    path: RoutesName.HOME,
-    component: HomePage,
-    layout: HomeLayout,
-    exact: true,
-  },
-  {
     path: RoutesName.TOP,
     component: TopPage,
     layout: DefaultLayout,
@@ -29,14 +21,14 @@ export const PUBLIC_ROUTES = [
   {
     path: RoutesName.LOGIN,
     component: SignIn,
-    layout: HomeLayout,
+    layout: DefaultLayout,
     exact: true,
   },
 
   {
     path: RoutesName.SIGNUP,
     component: SignUp,
-    layout: HomeLayout,
+    layout: DefaultLayout,
     exact: true,
   },
 ];
