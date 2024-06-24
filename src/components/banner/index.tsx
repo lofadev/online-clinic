@@ -18,23 +18,23 @@ import { Video, VideoType } from '../videocustom';
 
 import {
   CardItemStyled,
-  HeroContent,
-  HeroIcon,
-  HeroImage,
-  HeroInfo,
-  HeroInfoBox,
-  HeroSection,
-  HeroSubtitle,
-  HeroTitle,
+  HeroContentStyled,
+  HeroIconStyled,
+  HeroImageStyled,
+  HeroInfoBoxStyled,
+  HeroInfoStyled,
+  HeroSectionStyled,
+  HeroSubtitleStyled,
+  HeroTitleStyled,
   ImageStyleStyled,
-  MainText,
+  MainTextStyled,
   OverlayStyled,
   SlidersStyled,
-  SubText,
-  TextContainer,
+  SubTextStyled,
+  TextContainerStyled,
   TitleStyled,
   VideoWrapperStyled,
-  Wrapper,
+  WrapperStyled,
 } from './styled';
 
 type ImageType = {
@@ -73,34 +73,34 @@ const imageList: ImageType[] = [
 
 export const Banner: FC = () => {
   return (
-    <Wrapper>
-      <HeroSection>
-        <HeroContent>
-          <HeroImage src={HeadingTopPageSgv} alt="image" />
-          <HeroTitle>PCやタブレット、スマホで、スキマ時間に医師の診察！</HeroTitle>
-          <HeroSubtitle>
-            <HeroIcon src={IllustMvIcon} alt="image" />
+    <WrapperStyled>
+      <HeroSectionStyled>
+        <HeroContentStyled>
+          <HeroImageStyled src={HeadingTopPageSgv} alt="image" />
+          <HeroTitleStyled>PCやタブレット、スマホで、スキマ時間に医師の診察！</HeroTitleStyled>
+          <HeroSubtitleStyled>
+            <HeroIconStyled src={IllustMvIcon} alt="image" />
             <div>
-              <HeroInfo>
+              <HeroInfoStyled>
                 <p>オンライン診療</p>
                 <p>受付時間</p>
-              </HeroInfo>
+              </HeroInfoStyled>
 
-              <HeroInfoBox>
+              <HeroInfoBoxStyled>
                 <img src={Clock} alt="icon" />
-                <TextContainer>
-                  <MainText>24時間対応</MainText>
-                  <SubText>※年末年始を除く</SubText>
-                </TextContainer>
-              </HeroInfoBox>
+                <TextContainerStyled>
+                  <MainTextStyled>24時間対応</MainTextStyled>
+                  <SubTextStyled>※年末年始を除く</SubTextStyled>
+                </TextContainerStyled>
+              </HeroInfoBoxStyled>
             </div>
-          </HeroSubtitle>
-        </HeroContent>
+          </HeroSubtitleStyled>
+        </HeroContentStyled>
         <VideoWrapperStyled>
           <TitleStyled>テレビCMをCheck！</TitleStyled>
           <Video data={videoData} />
         </VideoWrapperStyled>
-      </HeroSection>
+      </HeroSectionStyled>
 
       <SlidersStyled>
         <Swiper
@@ -133,6 +133,6 @@ export const Banner: FC = () => {
           ))}
         </Swiper>
       </SlidersStyled>
-    </Wrapper>
+    </WrapperStyled>
   );
 };

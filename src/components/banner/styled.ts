@@ -1,32 +1,32 @@
 import { ArrowWhiteLeftIcon, ArrowWhiteRightIcon } from 'assets';
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const WrapperStyled = styled.div`
   background-color: #13c4ce;
   padding-top: 48px;
 `;
 
-export const HeroSection = styled.section`
+export const HeroSectionStyled = styled.section`
   display: flex;
   justify-content: center;
   max-width: 1020px;
   margin: 0 auto;
 `;
 
-export const HeroContent = styled.div``;
+export const HeroContentStyled = styled.div``;
 
-export const HeroImage = styled.img`
+export const HeroImageStyled = styled.img`
   width: 342px;
 `;
 
-export const HeroTitle = styled.h1`
+export const HeroTitleStyled = styled.h1`
   font-size: 40px;
   font-weight: 700;
   color: #fff;
   margin: 20px 0 18px 0;
 `;
 
-export const HeroSubtitle = styled.div`
+export const HeroSubtitleStyled = styled.div`
   position: relative;
   display: inline-block;
   > div {
@@ -39,24 +39,23 @@ export const HeroSubtitle = styled.div`
   }
 `;
 
-export const HeroIcon = styled.img`
+export const HeroIconStyled = styled.img`
   position: absolute;
   width: fit-content;
   bottom: 0;
   left: 12px;
 `;
 
-export const HeroInfo = styled.div`
+export const HeroInfoStyled = styled.div`
   padding-right: 20px;
   p {
-    /* font-size: 40px; */
     color: #3f4f5f;
     font-weight: 700;
     text-align: center;
   }
 `;
 
-export const HeroInfoBox = styled.div`
+export const HeroInfoBoxStyled = styled.div`
   display: flex;
   position: relative;
   padding: 0 0 8px 20px;
@@ -80,13 +79,13 @@ export const HeroInfoBox = styled.div`
   }
 `;
 
-export const TextContainer = styled.div``;
-export const MainText = styled.div`
+export const TextContainerStyled = styled.div``;
+export const MainTextStyled = styled.div`
   font-size: 22px;
   color: #03afb9;
   font-weight: 700;
 `;
-export const SubText = styled.p`
+export const SubTextStyled = styled.p`
   margin: 0;
   font-size: 10px;
   color: #8e909e;
