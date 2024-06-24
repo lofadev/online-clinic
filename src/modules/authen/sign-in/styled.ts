@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
   width: 100vw;
   height: auto;
 `;
+
 export const ContentStyled = styled.div`
   margin: 50px auto;
   padding: 0 30px;
@@ -20,6 +21,7 @@ export const ContentStyled = styled.div`
   border-radius: 4px;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.06);
 `;
+
 export const TitleStyled = styled.p`
   margin-bottom: 20px;
   font-size: 26px;
@@ -27,6 +29,7 @@ export const TitleStyled = styled.p`
   text-align: center;
   color: #333;
 `;
+
 export const MainStyled = styled.div`
   display: flex;
   /* justify-content: space-around; */
@@ -36,20 +39,24 @@ export const MainStyled = styled.div`
   align-items: stretch;
   position: relative;
 `;
+
 export const Left = styled.div`
   border-right: 1px solid #e1e3e5;
   flex: 1;
   padding: 20px 40px;
 `;
+
 export const FormInput = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 export const Input = styled.input`
   width: 100%;
   border: 1px solid #bebebe;
   height: 30px;
 `;
+
 export const FormCheck = styled.div`
   display: flex;
   align-items: center;
@@ -82,13 +89,16 @@ export const LabelCheck = styled.p`
   word-break: break-all;
   cursor: pointer;
 `;
+
 export const LabelStyled = styled.label`
   margin-bottom: 15px;
   font-family: 'Noto Sans JP';
   font-size: 14px;
   font-weight: 700;
 `;
+
 export const FormLink = styled.ul``;
+
 export const LinkStyle = styled.li`
   display: flex;
   align-items: center;

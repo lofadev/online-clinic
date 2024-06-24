@@ -40,7 +40,7 @@ interface FormValues {
 export const SignIn: React.FC = () => {
   const { login } = useAuth();
   const { t, i18n } = useTranslation();
-  const { top } = translations;
+  const { signIn } = translations;
 
   const dispatch = useDispatch();
 
@@ -81,68 +81,73 @@ export const SignIn: React.FC = () => {
               </Button>
             </Language>
 
-            <TitleStyled>{t(top.title)}</TitleStyled>
+            <TitleStyled>{t(signIn.title)}</TitleStyled>
 
             <MainStyled>
               <Left>
                 <FormInput>
-                  <FieldInput name="email" type="text" placeholder={t(top.email_placeholder)} label={t(top.email)} />
+                  <FieldInput
+                    name="email"
+                    type="text"
+                    placeholder={t(signIn.email_placeholder)}
+                    label={t(signIn.email)}
+                  />
 
                   <FormCheck>
                     <FieldCheckbox name="saveEmail" />
-                    <LabelCheck> {t(top.email_save)}</LabelCheck>
+                    <LabelCheck> {t(signIn.email_save)}</LabelCheck>
                   </FormCheck>
                 </FormInput>
 
                 <FormInput>
-                  <FieldInput name="password" type="password" placeholder={t(top.password)} />
+                  <FieldInput name="password" type="password" placeholder={t(signIn.password)} />
 
                   <FormCheck>
                     <FieldCheckbox name="savePass" />
-                    <LabelCheck> {t(top.password_save)}</LabelCheck>
+                    <LabelCheck> {t(signIn.password_save)}</LabelCheck>
                   </FormCheck>
                 </FormInput>
 
-                <ButtonLogin onClick={form.handleSubmit(onSubmit)}>{t(top.login)}</ButtonLogin>
+                <ButtonLogin onClick={form.handleSubmit(onSubmit)}>{t(signIn.login)}</ButtonLogin>
 
                 <FormCheck>
                   <FieldCheckbox name="AutoLogin" />
-                  <LabelCheck>{t(top.login_auto)}</LabelCheck>
+                  <LabelCheck>{t(signIn.login_auto)}</LabelCheck>
                 </FormCheck>
 
                 <FormLink>
                   <LinkStyle>
                     <ArrowImg src={login_arrow} alt="" />
-                    {t(top.forgot_password)}
+                    {t(signIn.forgot_password)}
                   </LinkStyle>
 
                   <LinkStyle>
                     <ArrowImg src={login_arrow} alt="" />
-                    {t(top.not_email)}
+                    {t(signIn.not_email)}
                   </LinkStyle>
 
                   <LinkStyle>
                     <ArrowImg src={login_arrow} alt="" />
-                    {t(top.not_login)}
+                    {t(signIn.not_login)}
                   </LinkStyle>
 
                   <LinkStyle>
                     <ArrowImg src={login_arrow} alt="" />
-                    {t(top.help)}
+                    {t(signIn.help)}
                   </LinkStyle>
                 </FormLink>
               </Left>
 
               <Right>
-                <LabelStyled>{t(top.account)}</LabelStyled>
+                <LabelStyled>{t(signIn.account)}</LabelStyled>
                 <Account isRegister={false} />
               </Right>
             </MainStyled>
 
             <RegisterStyled>
-              <FirstStyled>{t(top.register)}</FirstStyled>
+              <FirstStyled>{t(signIn.register)}</FirstStyled>
               <ButtonLogin className="btn_res" onClick={() => dispatch(push('/register'))}>
-                {t(top.btn_register)}
+                {t(signIn.btn_register)}
               </ButtonLogin>
             </RegisterStyled>
           </ContentStyled>
