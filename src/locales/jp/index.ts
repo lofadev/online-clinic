@@ -1,5 +1,5 @@
-import top from './top.json';
+import signIn from './signIn.json';
 import common from './common.json';
 import validation from './validation.json';
 
-export { top, common, validation };
+export { signIn, common, validation };

@@ -10,6 +10,9 @@ import login_facebook from './images/auth-signin/icon-login-facebook.png';
 import login_line from './images/auth-signin/icon-login-line.svg';
 import login_x from './images/auth-signin/icon-login-x.png';
 import login_arrow from './images/arrow/arrow-common.gif';
+import icon_email from './images/auth-signup/icon_mail.png';
 
 export { ArrowWhiteLeftIcon, ArrowWhiteRightIcon, IcoDotVertical, HeadingTopPageSgv, IllustMvIcon, Clock };
+
 export { login_arrow, login_facebook, login_google, login_line, login_x };
+export { icon_email };

@@ -27,7 +27,7 @@ export const ButtonStyled = styled.div<{ isRegister: boolean }>`
   }
 
   &.login-line {
-    background-color: #fff;
+    background-color: #ffffff;
 
     &:hover {
       background-color: #06c755;
@@ -36,11 +36,11 @@ export const ButtonStyled = styled.div<{ isRegister: boolean }>`
 
   &.login-x {
     &:hover {
-      background-color: #000;
+      background-color: #000000;
     }
   }
 
-  &.login-fb {
+  &.login-facebook {
     &:hover {
       background-color: #1877f2;
     }
