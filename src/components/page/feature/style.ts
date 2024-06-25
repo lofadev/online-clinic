@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const IconFeatureStyle = styled.div`
-  margin: 50px;
   width: 270px;
   height: 158px;
   background-color: ${({ theme }) => theme.white};

@@ -4,8 +4,11 @@ const lightTheme = {
   tertiary: '#F35F71',
   quaternary: '#00C17C',
   lightGray: '#E1E2EB',
+  lightBlue: '#ECFAFF',
   extraBlue: '#F7F9FC',
+  brightTeal: '#03AFB9',
   white: '#fff',
+  transparent: 'transparent',
 
   textPrimary: '#3F4F5F',
   textDanger: '#F2596B',
@@ -19,8 +22,11 @@ const darkTheme: Theme = {
   tertiary: '#F35F71',
   quaternary: '#00C17C',
   lightGray: '#E1E2EB',
+  lightBlue: '#ECFAFF',
   extraBlue: '#F7F9FC',
+  brightTeal: '#03AFB9',
   white: '#fff',
+  transparent: 'transparent',
 
   textPrimary: '#3F4F5F',
   textDanger: '#F2596B',

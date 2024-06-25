@@ -1,21 +1,50 @@
 import styled, { css } from 'styled-components';
-// import FQABackground from '../../assets/pic_question.bg.svg';
-import { DeliveryInfoType } from '.';
+import FQABackground from 'assets/svgs/toppage/pic_question_bg.svg';
 
 export const Wrapper = styled.div``;
 
-export const ArticleBlockWrapper = styled.div<{ code: string }>`
-  .gKWUBa {
-    background-color: ${(p) => p.code};
-
-    .gBZLOd {
-      font-size: 16px;
-    }
-    .fmBils,
-    .iHVJPm {
-      margin-bottom: 0;
+export const ArticleBlockWrapper = styled.div`
+  > div {
+    > div {
+      h2 {
+        margin-bottom: 0;
+      }
     }
   }
+`;
+
+export const SiekteWrapper = styled.div`
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 768px;
+  justify-content: center;
+  margin: 8px auto 0 auto;
+`;
+
+export const MediaImageWrapper = styled.div`
+  margin: 32px auto;
+  width: 540px;
+`;
+
+export const MediaImageStyled = styled.img`
+  width: 100%;
+  height: 120px;
+`;
+
+export const MediaTextStyled = styled.p`
+  font-size: 12px;
+  color: #686975;
+  text-align: center;
+`;
+
+export const AboutTopBlock = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-content: center;
+  width: 860px;
+  gap: 30px;
+  margin: 60px auto 0 auto;
 `;
 
 export const CurrentIssuesBlock = styled.div`
@@ -33,6 +62,7 @@ export const LeftBlockStyled = styled.div`
 export const CurrentIssues = styled.ul`
   border-radius: 8px;
 `;
+
 export const CurrentIssueItem = styled.li`
   display: flex;
   align-items: center;
@@ -78,6 +108,60 @@ export const IssueNoteStyled = styled.p`
   }
 `;
 
+export const FollowBlockStyled = styled.div`
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 1020px;
+  justify-content: center;
+  margin: 46px auto 0 auto;
+`;
+
+export const FollowButtonSWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 54px;
+
+  .ant-btn-sm {
+    border-radius: 8px;
+  }
+`;
+
+export const FollowButtonMWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+
+  .ant-btn-sm {
+    height: auto;
+    padding: 6px 90px;
+    background-color: ${(p) => p.theme.secondary};
+    border-radius: 8px;
+    position: relative;
+
+    span {
+      &:nth-child(1) {
+        display: none;
+      }
+      font-size: 24px;
+      color: #fff;
+    }
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
+export const ArrowWhiteIconStyled = styled.img`
+  position: absolute;
+  right: 18px;
+`;
+
+export const FollowImageStyled = styled.img`
+  margin-right: 12px;
+`;
+
 export const UserImageStyled = styled.img`
   width: 340px;
   height: 368px;
@@ -90,7 +174,7 @@ export const FAQWrapper = styled.div`
   background-color: #fff;
   padding: 32px 0;
   margin: 48px auto 0 auto;
-  background-image: url('https://clinic.dmm.com/img/pc/top/pic_question.svg');
+  background-image: url(${FQABackground});
   background-size: cover;
   background-repeat: no-repeat;
 `;
@@ -99,7 +183,8 @@ export const FQAFlexBlockStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 64px;
+  gap: 36px;
+  margin-bottom: 24px;
 `;
 
 export const FQALeftBlockStyled = styled.div`
@@ -145,17 +230,32 @@ export const FAQGroupStyled = styled.ul`
 `;
 export const FQARightBlockStyled = styled.div`
   position: relative;
-
   > svg {
     position: absolute;
     top: -26px;
     left: 76px;
   }
 `;
+
 export const FQALightIconStyled = styled.img`
   position: absolute;
   top: -28px;
   left: 72px;
+`;
+
+export const DeliveryBlockWrapper = styled.div`
+  background-color: #f7f9fc;
+`;
+
+export const DeliveryImageWrapper = styled.div`
+  width: 540px;
+  padding: 40px 0;
+  margin: 0 auto;
+`;
+
+export const DeliveryImageStyled = styled.img`
+  width: 100%;
+  height: 120px;
 `;
 
 export const DeliveryWrapper = styled.div`
@@ -186,6 +286,8 @@ export const DeliveryTopStyled = styled.div`
   margin-bottom: 20px;
 `;
 
+export const DeliveryTopImageStyled = styled.img``;
+
 export const DeliveryContentStyled = styled.div`
   padding: 32px 90px;
   background-color: #fff;
@@ -208,7 +310,7 @@ export const DeliveryInfoBlockStyled = styled.div`
   display: flex;
 `;
 
-export const DeliveryLeftStyled = styled.div<DeliveryInfoType>`
+export const DeliveryLeftStyled = styled.div<{ type?: boolean }>`
   width: 50%;
   text-align: start;
   padding-right: 20px;
@@ -225,7 +327,7 @@ export const DeliveryLeftStyled = styled.div<DeliveryInfoType>`
   }
 
   ${(p) =>
-    p.type === 2 &&
+    p.type &&
     css`
       > div {
         > span {
@@ -257,7 +359,7 @@ export const DeliveryInfoItemStyled = styled.div`
 export const DeliveryButtonStyled = styled.div`
   display: flex;
   justify-content: center;
-  .fvWrem.ant-btn-sm {
+  .ant-btn-sm {
     border-radius: 40px;
     padding: 2px 10px;
     border-width: 1px;
@@ -334,7 +436,7 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
 
-  .fvWrem.ant-btn-sm {
+  .ant-btn-sm {
     border-radius: 8px;
   }
 `;

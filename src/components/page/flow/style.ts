@@ -7,7 +7,6 @@ export const FlowItemStyle = styled.div`
   background-color: ${({ theme }) => theme.white};
   border-radius: 8px;
   min-height: 253px;
-  margin: 20px;
 
   &.male {
     & > .imageShow > .id-flow {

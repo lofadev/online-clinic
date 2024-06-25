@@ -31,6 +31,13 @@ export const PUBLIC_ROUTES = [
     layout: DefaultLayout,
     exact: true,
   },
+
+  {
+    path: RoutesName.HOME,
+    component: TopPage,
+    layout: DefaultLayout,
+    exact: true,
+  },
 ];
 
 export const CUSTOME_ROUTE = [];

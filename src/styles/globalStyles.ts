@@ -1,7 +1,24 @@
 import { createGlobalStyle } from 'styled-components';
-import { NotoSansJPBoldWoff, NotoSansJPBoldWoff2, NotoSansJPRegularWoff, NotoSansJPRegularWoff2 } from 'assets/fonts';
+import {
+  NotoSansJPBoldWoff,
+  NotoSansJPBoldWoff2,
+  NotoSansJPRegularWoff,
+  NotoSansJPRegularWoff2,
+  DamionWoff,
+  DamionWoff2,
+} from 'assets/fonts';
 
 export const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Damion';
+    src:
+      url(${DamionWoff2}) format('woff2'),
+      url(${DamionWoff}) format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
   @font-face {
     font-family: 'Noto Sans JP';
     src:
