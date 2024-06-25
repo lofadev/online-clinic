@@ -6,6 +6,7 @@ const lightTheme = {
   lightGray: '#E1E2EB',
   extraBlue: '#F7F9FC',
   white: '#fff',
+  transparent: 'transparent',
 
   textPrimary: '#3F4F5F',
   textDanger: '#F2596B',
@@ -21,6 +22,7 @@ const darkTheme: Theme = {
   lightGray: '#E1E2EB',
   extraBlue: '#F7F9FC',
   white: '#fff',
+  transparent: 'transparent',
 
   textPrimary: '#3F4F5F',
   textDanger: '#F2596B',
