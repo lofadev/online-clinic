@@ -58,7 +58,8 @@ const PreHeader: FC = () => {
     <PreHeaderStyle>
       <ContainerPage>
         <NavigateGroup>
-          {listDataNavigateButton.length && listDataNavigateButton.map((data) => <NavigateButton {...data} />)}
+          {listDataNavigateButton.length &&
+            listDataNavigateButton.map((data) => <NavigateButton key={data.id} {...data} />)}
         </NavigateGroup>
 
         <ButtonGroup>
