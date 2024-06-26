@@ -18,8 +18,12 @@ import IconFeature from 'components/page/feature';
 import FlowItem from 'components/page/flow';
 import IconSiekte from 'components/page/siekte';
 import { Link } from 'react-router-dom';
-import { listCurrentIssue, listDataFeature, listDataFlow, listDataSiekte, listDelivery } from './fakeData';
 
+import { useDispatch } from 'react-redux';
+import RoutesName from 'routes/constant';
+import { push } from 'redux-first-history';
+
+import { listCurrentIssue, listDataFeature, listDataFlow, listDataSiekte, listDelivery } from './fakeData';
 import {
   AboutTopBlock,
   ArrowWhiteIconStyled,
@@ -40,14 +44,14 @@ import {
   DeliveryTitletStyled,
   DeliveryTopStyled,
   DeliveryWrapper,
+  FAQFlexBlockStyled,
   FAQGroupStyled,
+  FAQLeftBlockStyled,
+  FAQLightIconStyled,
+  FAQRightBlockStyled,
   FAQSubTitleStyled,
+  FAQTopStyled,
   FAQWrapper,
-  FQAFlexBlockStyled,
-  FQALeftBlockStyled,
-  FQALightIconStyled,
-  FQARightBlockStyled,
-  FQATopStyled,
   FollowBlockStyled,
   FollowButtonMWrapper,
   FollowButtonSWrapper,
@@ -73,6 +77,8 @@ import {
 } from './styled';
 
 export const TopPage: React.FC = () => {
+  const dispatch = useDispatch();
+
   return (
     <Wrapper>
       <Banner />
@@ -140,16 +146,18 @@ export const TopPage: React.FC = () => {
             <UserImageStyled src={UserImage} alt="image" />
           </CurrentIssuesBlock>
           <ButtonWrapper>
-            <ArrowButton size="small">当院について</ArrowButton>
+            <ArrowButton size="small" onClick={() => dispatch(push(`${RoutesName.ABOUT}`))}>
+              当院について
+            </ArrowButton>
           </ButtonWrapper>
 
           <FAQWrapper>
-            <FQAFlexBlockStyled>
-              <FQALeftBlockStyled>
-                <FQATopStyled>
+            <FAQFlexBlockStyled>
+              <FAQLeftBlockStyled>
+                <FAQTopStyled>
                   <img src={SpeechIcon} alt="icon" />
                   <span>よくある質問</span>
-                </FQATopStyled>
+                </FAQTopStyled>
                 <FAQSubTitleStyled>サービスについてのあれこれが知りたい！</FAQSubTitleStyled>
                 <FAQGroupStyled>
                   <li>決済方法</li>
@@ -157,15 +165,17 @@ export const TopPage: React.FC = () => {
                   <li>お薬</li>
                   <li>など</li>
                 </FAQGroupStyled>
-              </FQALeftBlockStyled>
+              </FAQLeftBlockStyled>
 
-              <FQARightBlockStyled>
+              <FAQRightBlockStyled>
                 <img src={InfoIcon} alt="icon" />
-                <FQALightIconStyled src={LightIcon} alt="icon" />
-              </FQARightBlockStyled>
-            </FQAFlexBlockStyled>
+                <FAQLightIconStyled src={LightIcon} alt="icon" />
+              </FAQRightBlockStyled>
+            </FAQFlexBlockStyled>
             <ButtonWrapper>
-              <ArrowButton size="small">よくある質問はこちら</ArrowButton>
+              <ArrowButton size="small" onClick={() => dispatch(push(`${RoutesName.FAQ}`))}>
+                よくある質問はこちら
+              </ArrowButton>
             </ButtonWrapper>
           </FAQWrapper>
         </ArticleBlock>
@@ -186,11 +196,13 @@ export const TopPage: React.FC = () => {
             {listDataFlow.length && listDataFlow.map((data) => <FlowItem {...data} />)}
           </FollowBlockStyled>
           <FollowButtonSWrapper>
-            <ArrowButton size="small">詳しい使い方はこちら</ArrowButton>
+            <ArrowButton size="small" onClick={() => dispatch(push(`${RoutesName.USAGE}`))}>
+              詳しい使い方はこちら
+            </ArrowButton>
           </FollowButtonSWrapper>
 
           <FollowButtonMWrapper>
-            <ArrowButton size="small" color="secondary">
+            <ArrowButton size="small" color="secondary" onClick={() => dispatch(push(`${RoutesName.APPOINTMENT}`))}>
               診療予約をする
               <FollowImageStyled src={ReserveIcon} alt="icon" />
               <ArrowWhiteIconStyled src={ArrowWhiteIcon} alt="icon" />
@@ -293,7 +305,9 @@ export const TopPage: React.FC = () => {
         </NewBlockWrapper>
 
         <ButtonWrapper>
-          <ArrowButton size="small">お知らせ一覧はこちら</ArrowButton>
+          <ArrowButton size="small" onClick={() => dispatch(push(`${RoutesName.NEW}`))}>
+            お知らせ一覧はこちら
+          </ArrowButton>
         </ButtonWrapper>
       </ArticleBlock>
 

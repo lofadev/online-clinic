@@ -52,18 +52,23 @@ export const HeroInfoStyled = styled.div`
     color: #3f4f5f;
     font-weight: 700;
     text-align: center;
+    font-size: 20px;
+    &:first-child {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
   }
 `;
 
 export const HeroInfoBoxStyled = styled.div`
   display: flex;
   position: relative;
-  padding: 0 0 8px 20px;
+  padding-left: 20px;
 
   > img {
     width: 26px;
     height: 26px;
-    margin: 4px 0 4px 0;
+    margin: 0 8px 6px 0;
   }
 
   &::before {
@@ -85,11 +90,12 @@ export const MainTextStyled = styled.div`
   color: #03afb9;
   font-weight: 700;
 `;
+
 export const SubTextStyled = styled.p`
-  margin: 0;
+  margin-top: 10px;
+  text-align: end;
   font-size: 10px;
   color: #8e909e;
-  text-align: end;
 `;
 
 export const VideoWrapperStyled = styled.div`

@@ -8,6 +8,11 @@ export const RoutesName = {
   HOME: '/',
   SIGNUP: '/register',
   TOP: '/top',
+  ABOUT: '/about',
+  FAQ: '/hc/ja',
+  USAGE: '/usage',
+  APPOINTMENT: '/appointment',
+  NEW: '/new',
 };
 
 export const PUBLIC_ROUTES = [

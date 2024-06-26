@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import FQABackground from 'assets/svgs/toppage/pic_question_bg.svg';
+import FAQBackground from 'assets/svgs/toppage/pic_question_bg.svg';
 
 export const Wrapper = styled.div``;
 
@@ -174,12 +174,12 @@ export const FAQWrapper = styled.div`
   background-color: #fff;
   padding: 32px 0;
   margin: 48px auto 0 auto;
-  background-image: url(${FQABackground});
+  background-image: url(${FAQBackground});
   background-size: cover;
   background-repeat: no-repeat;
 `;
 
-export const FQAFlexBlockStyled = styled.div`
+export const FAQFlexBlockStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -187,14 +187,14 @@ export const FQAFlexBlockStyled = styled.div`
   margin-bottom: 24px;
 `;
 
-export const FQALeftBlockStyled = styled.div`
+export const FAQLeftBlockStyled = styled.div`
   width: 330px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 `;
-export const FQATopStyled = styled.div`
+export const FAQTopStyled = styled.div`
   display: flex;
   align-items: center;
   margin-left: -15px;
@@ -228,7 +228,7 @@ export const FAQGroupStyled = styled.ul`
     }
   }
 `;
-export const FQARightBlockStyled = styled.div`
+export const FAQRightBlockStyled = styled.div`
   position: relative;
   > svg {
     position: absolute;
@@ -237,7 +237,7 @@ export const FQARightBlockStyled = styled.div`
   }
 `;
 
-export const FQALightIconStyled = styled.img`
+export const FAQLightIconStyled = styled.img`
   position: absolute;
   top: -28px;
   left: 72px;
@@ -303,6 +303,7 @@ export const DeliveryTitletStyled = styled.h2`
 
 export const DeliveryDescriptiontStyled = styled.div`
   color: #3f4f5f;
+  line-height: 20px;
 `;
 
 export const DeliveryInfoBlockStyled = styled.div`
@@ -349,6 +350,9 @@ export const DeliveryInfoItemStyled = styled.div`
 
   > p {
     font-size: 12px;
+    span {
+      line-height: 16px;
+    }
     span:nth-child(1) {
       font-weight: 700;
       display: block;
@@ -366,6 +370,12 @@ export const DeliveryButtonStyled = styled.div`
     height: auto;
     > span {
       font-size: 12px;
+      color: #13c4ce !important;
+    }
+
+    &:hover {
+      cursor: text;
+      background-color: transparent !important;
     }
   }
 `;
@@ -378,6 +388,7 @@ export const NoticeWrapper = styled.div`
     text-align: start;
     font-size: 12px;
     color: #3f4f5f;
+    line-height: 16px;
   }
 `;
 
@@ -395,6 +406,7 @@ export const NewInfoStyled = styled.div`
   display: flex;
   align-items: center;
   font-size: 12px;
+  line-height: 20px;
   span {
     color: #03afb9;
     margin-right: 8px;
