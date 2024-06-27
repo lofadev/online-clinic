@@ -1,0 +1,64 @@
+{
+  "button": {
+    "about": "About Us",
+    "faq": "FAQ",
+    "service_info": "Detailed Usage",
+    "appoinment": "Make Appointment",
+    "additional_options": "Additional Options",
+    "see_list": "See Notices"
+  },
+  "doctor_consult_anywhere": "Consult with a Doctor on Your PC, Tablet, or Smartphone During Your Free Time!",
+  "article_medical": {
+    "title": "Looking for Online Medical Consultation List?",
+    "description": "Medical Subjects",
+    "note": "※ Insurance consultations will redirect to a separate site."
+  },
+  "article_about": {
+    "title": "What is DMM Online Clinic?",
+    "description": "About",
+    "features": {
+      "price": "Affordable and secure pricing",
+      "delivery": "Fastest same-day delivery",
+      "smartphone": "Immediate consultation even for first-time patients"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "description": "Want to know about various aspects of the service!",
+      "list_faq": {
+        "payment": "Payment methods",
+        "consulation": "Consultation details",
+        "medication": "Medication",
+        "etc": "etc."
+      }
+    }
+  },
+  "article_flow": {
+    "title": "Flow of Online Consultation",
+    "description": "Flow"
+  },
+  "article_delivery": {
+    "title": "About Delivery Fees",
+    "description": "Delivery",
+    "fees": {
+      "ship_fees": "Nationwide delivery available, flat shipping fee",
+      "tax": "(Including tax)"
+    },
+    "about_service": {
+      "title": "Immediate delivery with bike!",
+      "description": "Service allows medication pickup.",
+      "delivery_time": "Approximately 3 hours",
+      "medication_pickup": "Service allows medication pickup.",
+      "service_area": "to receive your medication. Serving Tokyo's 23 wards and Osaka's 24 wards."
+    },
+    "notice": {
+      "note1": "※ On weekends and holidays, there is an additional ¥1,000 fee for medication cost, delivery fee, and separate charges.",
+      "note2": "※ Available hours are from 8:00 to 20:30.",
+      "note3": "※ Delivery may be delayed depending on traffic conditions."
+    }
+  },
+  "article_news": {
+    "title": "Announcements",
+    "description": "News"
+  },
+  "project_participation": "DMM.com LLP is participating in the 'Revitalizing Japan from Small and Medium Enterprises Project'"
+}

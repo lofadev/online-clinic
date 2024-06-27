@@ -1,0 +1,63 @@
+{
+  "button": {
+    "about": "当院について",
+    "faq": "よくある質問はこちら",
+    "service_info": "詳しい使い方はこちら",
+    "appoinment": "診療予約をする",
+    "additional_options": "追加オプション",
+    "see_list": "お知らせ一覧はこちら"
+  },
+  "article_medical": {
+    "title": "オンライン診療一覧から探す?",
+    "description": "Medical Subjects",
+    "note": "※ 保険診療は別サイトに遷移します"
+  },
+  "article_about": {
+    "title": "DMMオンラインクリニックとは?",
+    "description": "About",
+    "features": {
+      "price": "続けやすい安心の価格",
+      "delivery": "最短当日到着",
+      "smartphone": "初診でもすぐに 受診可能"
+    },
+    "faq": {
+      "title": "よくある質問",
+      "description": "サービスについてのあれこれが知りたい！",
+      "list_faq": {
+        "payment": "決済方法",
+        "consulation": "診察内容",
+        "medication": "お薬",
+        "etc": "など"
+      }
+    }
+  },
+  "article_flow": {
+    "title": "オンライン診療の流れ",
+    "description": "Flow"
+  },
+  "article_delivery": {
+    "title": "配送料について",
+    "description": "Delivery",
+    "fees": {
+      "ship_fees": "全国配送対応　配送料一律",
+      "tax": "(税込)"
+    },
+    "about_service": {
+      "title": "バイク便ならすぐ届く！",
+      "description": "診察、追加配送申請後の決済完了時から.",
+      "delivery_time": "3時間程度で",
+      "medication_pickup": "お薬の受け取りが可能なサービスです。",
+      "service_area": "東京都23区、大阪市24区エリアで対応しています。"
+    },
+    "notice": {
+      "note1": "※ 土日祝はお薬代+配送料+別途1,000円がかかります。",
+      "note2": "※ 対応可能時間は8:00～20:30です。",
+      "note3": "※ 交通量の状況で多少配達が遅れる場合がございます。"
+    }
+  },
+  "article_news": {
+    "title": "お知らせ",
+    "description": "News"
+  },
+  "project_participation": "合同会社DMM.comは「中小企業からニッポンを元気にプロジェクト」に参画しています"
+}
