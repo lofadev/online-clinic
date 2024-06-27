@@ -1,0 +1,11 @@
+{
+  "title": "Frequently Asked Questions",
+  "description": "Want to know about various aspects of the service!",
+  "list_faq": {
+    "payment": "Payment methods",
+    "consulation": "Consultation details",
+    "medication": "Medication",
+    "etc": "etc."
+  },
+  "button": "FAQ"
+}

@@ -3,17 +3,16 @@ import {
   CarIcon,
   CheckMarkIcon,
   CurestationImage,
-  InfoIcon,
-  LightIcon,
   PraticipalImage,
   ReorderImage,
   ReserveIcon,
-  SpeechIcon,
   UserImage,
 } from 'assets';
+import { Delivery, Price, SmartPhone } from 'assets/icons/icon-feature';
 import { ArrowButton, Button } from 'components';
 import ArticleBlock from 'components/article-block/ArticleBlock';
 import { Banner } from 'components/banner';
+import { FAQSection } from 'components/faq-block';
 import IconFeature from 'components/page/feature';
 import FlowItem from 'components/page/flow';
 import IconSiekte from 'components/page/siekte';
@@ -23,7 +22,6 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { push } from 'redux-first-history';
 import RoutesName from 'routes/constant';
-import { Delivery, Price, SmartPhone } from 'assets/icons/icon-feature';
 import { listCurrentIssue, listDataFlow, listDataSiekte, listDelivery } from './constant';
 
 import {
@@ -46,14 +44,6 @@ import {
   DeliveryTitletStyled,
   DeliveryTopStyled,
   DeliveryWrapper,
-  FAQFlexBlockStyled,
-  FAQGroupStyled,
-  FAQLeftBlockStyled,
-  FAQLightIconStyled,
-  FAQRightBlockStyled,
-  FAQSubTitleStyled,
-  FAQTopStyled,
-  FAQWrapper,
   FollowBlockStyled,
   FollowButtonMWrapper,
   FollowButtonSWrapper,
@@ -161,33 +151,7 @@ export const TopPage: React.FC = () => {
             </ArrowButton>
           </ButtonWrapper>
 
-          <FAQWrapper>
-            <FAQFlexBlockStyled>
-              <FAQLeftBlockStyled>
-                <FAQTopStyled>
-                  <img src={SpeechIcon} alt="icon" />
-                  <span>{t(topPage.article_about.faq.title)}</span>
-                </FAQTopStyled>
-                <FAQSubTitleStyled>{t(topPage.article_about.faq.description)}</FAQSubTitleStyled>
-                <FAQGroupStyled>
-                  <li>{t(topPage.article_about.faq.list_faq.payment)}</li>
-                  <li>{t(topPage.article_about.faq.list_faq.consulation)}</li>
-                  <li>{t(topPage.article_about.faq.list_faq.medication)}</li>
-                  <li>{t(topPage.article_about.faq.list_faq.etc)}</li>
-                </FAQGroupStyled>
-              </FAQLeftBlockStyled>
-
-              <FAQRightBlockStyled>
-                <img src={InfoIcon} alt="icon" />
-                <FAQLightIconStyled src={LightIcon} alt="icon" />
-              </FAQRightBlockStyled>
-            </FAQFlexBlockStyled>
-            <ButtonWrapper>
-              <ArrowButton size="small" onClick={() => dispatch(push(`${RoutesName.FAQ}`))}>
-                {t(topPage.button.faq)}
-              </ArrowButton>
-            </ButtonWrapper>
-          </FAQWrapper>
+          <FAQSection />
         </ArticleBlock>
       </ArticleBlockWrapper>
 

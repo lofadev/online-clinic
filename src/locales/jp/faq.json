@@ -1,0 +1,11 @@
+{
+  "title": "よくある質問",
+  "description": "サービスについてのあれこれが知りたい！",
+  "list_faq": {
+    "payment": "決済方法",
+    "consulation": "診察内容",
+    "medication": "お薬",
+    "etc": "など"
+  },
+  "button": "よくある質問はこちら"
+}

@@ -1,0 +1,40 @@
+{
+  "title_left": "新規登録",
+  "title_right": "DMMアカウントを登録します",
+  "register_by_email": "メールアドレスで登録",
+  "resgiter": "1.登録",
+  "authentication": "2.認証コード入力",
+  "complete": "3.完了",
+  "required": "必須",
+  "required_schema": "半角英数字",
+  "placeholder_email": "メールアドレス",
+  "placeholder_password": "パスワード",
+  "check_comprehensive": "DMM.com総合版メールマガジンを受信する",
+  "btn_register": " 認証コードを送信する",
+  "link_terms": "DMM会員規約",
+  "terms": "をお読みになり、すべての内容に同意のう え、ご登録ください。",
+  "login_here": "ログインはこちら",
+
+  "title_authentication": "認証コードを送信しました",
+  "registration": "まだ登録は完了していません",
+
+  "notification": {
+    "text1": "lop95huydhp@gmail.com宛に認証コードを送信しました。",
+    "text2": "info@mail.dmm.comから届いたメールに記載されている認証コードを入力して登録完了してください。",
+    "text3": "*URLの有効期限は1時間です"
+  },
+
+  "authentication_code": "認証コード入力",
+  "btn_authentication": "DMM会員登録する",
+
+  "failEmail": {
+    "title": "メールが届かない場合",
+    "mistaken": "1.メールアドレスの入力間違い",
+    "content1": "lop95huydhp@gmail.com宛てに、メールを送信しています。アドレスを間違えた場合は、会員登録ページより登録し直してください。",
+    "reception": "2.メールの受信設定",
+    "content2": "info@mail.dmm.comが受信拒否設定に含まれていないか、迷惑メールのフォルダに入っていないか、ご確認ください。",
+    "change_setting": "ドメインの設定方法はこちら"
+  },
+
+  "back_to_top": "会員登録画面に戻る"
+}

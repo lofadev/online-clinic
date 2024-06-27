@@ -1,0 +1,40 @@
+{
+  "title_left": "Register",
+  "title_right": "by email address",
+  "register_by_email": "Register by email address",
+  "resgiter": "1.Register",
+  "authentication": "2.Authentication",
+  "complete": "3..Complete",
+  "required": "Required",
+  "required_schema": "Half-width alphanumeric symbol characters",
+  "placeholder_email": "e_mail address",
+  "placeholder_password": "password",
+  "check_comprehensive": "Receive the DMM.com comprehensive email magazine.",
+  "btn_register": "Send Authentication code",
+  "link_terms": "DMM Terms",
+  "terms": "Please read and confirm the of Use before registering",
+  "login_here": "Log in here",
+
+  "title_authentication": "Sent authentication code",
+  "registration": "Registration is incomplete.",
+
+  "notification": {
+    "text1": "Authentication code sent to lop95huydhp@gmail.com.",
+    "text2": "Please input the Authentication code in the e_mail and complete registration.",
+    "text3": "*URL is valid for one hour"
+  },
+
+  "authentication_code": "Authentication code",
+  "btn_authentication": "Register for membership",
+
+  "failEmail": {
+    "title": "If you fail to receive an email",
+    "mistaken": "1. Mistaken email input",
+    "content1": "The email was sent to lop95huydhp@gmail.com. If this is incorrect, please register again with the correct address.",
+    "reception": "2.Mail reception settings",
+    "content2": "info@mail.dmm.comが受信拒否設定に含まれていないか、迷惑メールのフォルダに入っていないか、ご確認ください。",
+    "change_setting": "Confirm that emails from info@mail.dmm.com are permitted, and that the email has not been sent to your spam folder."
+  },
+
+  "back_to_top": "Back to Top page"
+}
