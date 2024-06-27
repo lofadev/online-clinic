@@ -9,8 +9,10 @@ export const TitleStyled = styled.div`
   justify-content: space-around;
 `;
 
-export const TitleSlider = styled.span`
+export const TitleSlider = styled.span<{ active?: boolean }>`
   font-size: 15px;
+  font-weight: 500;
+  color: ${(props) => (props.active ? '#0052d4' : '#000000')};
 `;
 
 export const SliderStyled = styled.div`

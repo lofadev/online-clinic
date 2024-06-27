@@ -2,5 +2,8 @@
   "sign_in": {
     "email_format": "You have not inputted an e-mail address.",
     "password_format": "Please use alphanumeric characters."
+  },
+  "sign_up": {
+    "password_format": "Invalid password. The characters that can be used as symbols are !#%*,-./;<=>?@^_| ."
   }
 }
