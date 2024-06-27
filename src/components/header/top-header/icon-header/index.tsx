@@ -2,6 +2,8 @@ import { Badge } from 'antd';
 import { FC } from 'react';
 
 import { useHistory } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { translations } from 'locales/translations';
 
 import IconDetailHeader, { PropsIconDetail } from '../icon-detail-header';
 import { IconStyle, ImageStyle, ImgLogout, LogoutButton, TextLogout, SecondIcon } from './style';
@@ -17,6 +19,8 @@ export type PropsIconHeader = {
 const IconHeader: FC<PropsIconHeader> = (props) => {
   const { id, icon, notice, path, children } = props;
   const history = useHistory();
+  const { t } = useTranslation();
+  const { header } = translations;
 
   const handleNavigate = () => {
     if (path && path !== 'user') {
@@ -38,7 +42,7 @@ const IconHeader: FC<PropsIconHeader> = (props) => {
             <LogoutButton>
               <ImgLogout src="https://navismithapis-cdn.com/img/logout.svg" alt="icon" />
 
-              <TextLogout>ログアウト</TextLogout>
+              <TextLogout>{t(header.account.logout)}</TextLogout>
             </LogoutButton>
           ) : (
             ''

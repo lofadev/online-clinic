@@ -1,0 +1,27 @@
+{
+  "top_footer": " DMMオンラインクリニックはオンライン診療のプラットフォームサービスです。 診療は提携先医療機関が行っています。",
+  "main_footer": {
+    "contact_clinic": "DMMオンラインクリニック　お問い合わせ",
+    "contact": "お問い合わせ",
+    "terms_clinic": "DMMオンラインクリニック　規約",
+    "legal_notice": "特定商法取引法に基づく表記",
+    "terms_support": "受診支援サービス 利用規約",
+    "privacy_support": "受診支援サービス プライバシーポリシー",
+    "terms_welfare": "福利厚生サービス 利用規約",
+    "partners": "提携医療法人",
+    "offers": "お得な情報",
+    "newsletter": "メールマガジン",
+    "offers_info": "お得な情報を無料でお届けします。",
+    "affiliate": "DMMアフィリエイト",
+    "affiliate_desc": "DMMの商品を紹介して広告収入をゲット！"
+  },
+  "bottom_footer": {
+    "company_overview": "会社概要",
+    "press_release": "プレスリリース",
+    "membership_terms": "会員規約",
+    "privacy_policy": "個人情報保護に関して",
+    "legal_notice": "特定商取引法に基づく表示",
+    "business_partnership_manda": "事業提携・事業譲渡(M&A)",
+    "recruitment_information": "採用情報"
+  }
+}
