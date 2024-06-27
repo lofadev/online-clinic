@@ -7,6 +7,7 @@ import { useAuth } from 'slices/auth';
 const PublicRoute: React.FC<RouteProps & { component: any; layout: any }> = ({
   component: Component,
   layout: Layout = AuthLayout,
+  gender,
   ...rest
 }: any) => {
   const { authenticated } = useAuth();
@@ -18,7 +19,7 @@ const PublicRoute: React.FC<RouteProps & { component: any; layout: any }> = ({
       render={(props: any) =>
         !authenticated ? (
           <Layout>
-            <Component {...props} />
+            <Component gender={gender} {...props} />
           </Layout>
         ) : (
           <Redirect to={{ pathname: '/', state: {} }} />

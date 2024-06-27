@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const IconSiekteStyle = styled.div`
-  margin: 10px;
   width: 176px;
   height: 178px;
   background-color: ${({ theme }) => theme.white};

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const MedicalSubjectStyle = styled.div`
-  margin: 20px;
+  margin: 10px;
   width: 241px;
   background-color: ${({ theme }) => theme.white};
   display: flex;

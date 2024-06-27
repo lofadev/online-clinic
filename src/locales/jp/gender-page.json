@@ -1,0 +1,43 @@
+{
+  "bannerGender": {
+    "TextTitle": {
+      "male": "男性のための",
+      "female": "女性のための"
+    },
+    "TextIconFeature": {
+      "delivery": "最短 当日到着",
+      "cost": "続けやすい 安心の価格",
+      "phone": "オンラインで 受診可能"
+    },
+    "TextDetail": {
+      "Medication": "お薬とどく。",
+      "Formulated": "きちんと処方、",
+      "Examination": "おウチで診察"
+    }
+  },
+  "medicalSubject": {
+    "title": "オンライン診療一覧",
+    "desc": "Medical subjects",
+    "subTitle": "DMMオンラインクリニックで受診できる診療内容"
+  },
+  "ContentSiekteBox": "共通診療科目",
+  "MedicalQueryBox": {
+    "title": {
+      "male": "男性のための",
+      "female": "女性のための"
+    },
+    "desc": {
+      "male": "For men",
+      "female": "For women"
+    },
+    "subTitle": "DMMオンラインクリニック"
+  },
+  "MedicalQueries": {
+    "MessageBlockTop": "そんなときは、DMMオンラインクリニック！",
+    "MessageBlockMiddle": "男性特有のお悩みが少しでも気になったら、お気軽にご相談ください。",
+    "MessageBlockBottom": "できる限り早いうちに治療することが改善の近道です！"
+  },
+  "Feature": {
+    "title": "当院の特徴"
+  }
+}

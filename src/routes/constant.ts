@@ -1,6 +1,7 @@
 import DefaultLayout from 'layouts/layout-default';
 import { SignIn } from 'modules/authen/sign-in/Loadable';
 import { SignUp } from 'modules/authen/sign-up';
+import { GenderPage } from 'modules/gender-page';
 import { TopPage } from 'modules/top-page';
 
 export const RoutesName = {
@@ -13,6 +14,8 @@ export const RoutesName = {
   USAGE: '/usage',
   APPOINTMENT: '/appointment',
   NEW: '/new',
+  MALE: '/male',
+  FEMALE: '/female',
 };
 
 export const PUBLIC_ROUTES = [
@@ -42,6 +45,20 @@ export const PUBLIC_ROUTES = [
     component: TopPage,
     layout: DefaultLayout,
     exact: true,
+  },
+  {
+    path: RoutesName.MALE,
+    component: GenderPage,
+    layout: DefaultLayout,
+    exact: true,
+    gender: 'male',
+  },
+  {
+    path: RoutesName.FEMALE,
+    component: GenderPage,
+    layout: DefaultLayout,
+    exact: true,
+    gender: 'female',
   },
 ];
 

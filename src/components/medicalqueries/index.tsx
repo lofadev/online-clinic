@@ -10,7 +10,7 @@ import {
   WrapperStyled,
 } from './styled';
 
-type MedicalQuery = {
+export type MedicalQuery = {
   id: string;
   text: string;
   url: string;

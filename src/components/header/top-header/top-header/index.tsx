@@ -1,9 +1,10 @@
 import { FC } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+
 import { translations } from 'locales/translations';
-import { ImageIcon, ImageLogo, LeftTopHeader, RightTopHeader, TopHeaderStyle } from './style';
+import { useTranslation } from 'react-i18next';
 import IconHeader, { PropsIconHeader } from '../icon-header';
+import { ImageIcon, ImageLogo, LeftTopHeader, RightTopHeader, TopHeaderStyle } from './styled';
 
 const TopHeader: FC = () => {
   const history = useHistory();

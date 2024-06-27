@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { translations } from 'locales/translations';
 
 import IconDetailHeader, { PropsIconDetail } from '../icon-detail-header';
-import { IconStyle, ImageStyle, ImgLogout, LogoutButton, TextLogout, SecondIcon } from './style';
+import { IconStyle, ImageStyle, ImgLogout, LogoutButton, TextLogout, SecondIcon } from './styled';
 
 export type PropsIconHeader = {
   id: number;
