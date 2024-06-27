@@ -75,7 +75,6 @@ import {
   ProjectParticipationText,
   SiekteWrapper,
   UserImageStyled,
-  Wrapper,
 } from './styled';
 
 export const TopPage: React.FC = () => {
@@ -85,7 +84,7 @@ export const TopPage: React.FC = () => {
   const { topPage } = translations;
 
   return (
-    <Wrapper>
+    <div>
       <Banner />
       <ArticleBlock
         title={t(topPage.article_medical.title)}
@@ -330,6 +329,6 @@ export const TopPage: React.FC = () => {
           <ProjectParticipationImage src={PraticipalImage} alt="image" />
         </ProjectParticipation>
       </ProjectParticipalWrapper>
-    </Wrapper>
+    </div>
   );
 };

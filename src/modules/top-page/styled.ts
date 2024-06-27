@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components';
 import FAQBackground from 'assets/svgs/toppage/pic_question_bg.svg';
 
-export const Wrapper = styled.div``;
-
 export const ArticleBlockWrapper = styled.div`
   > div {
     > div {
@@ -51,7 +49,7 @@ export const CurrentIssuesBlock = styled.div`
   margin: 48px auto 32px auto;
   width: 860px;
   display: flex;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.white};
   border-radius: 8px;
 `;
 
@@ -144,7 +142,7 @@ export const FollowButtonMWrapper = styled.div`
         display: none;
       }
       font-size: 24px;
-      color: #fff;
+      color: ${({ theme }) => theme.white};
     }
   }
 
@@ -171,7 +169,7 @@ export const UserImageStyled = styled.img`
 export const FAQWrapper = styled.div`
   width: 740px;
   border-radius: 16px;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.white};
   padding: 32px 0;
   margin: 48px auto 0 auto;
   background-image: url(${FAQBackground});
@@ -228,6 +226,7 @@ export const FAQGroupStyled = styled.ul`
     }
   }
 `;
+
 export const FAQRightBlockStyled = styled.div`
   position: relative;
   > svg {
@@ -267,7 +266,7 @@ export const DeliveryTopStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.white};
   border-radius: 8px;
   padding: 24px 0;
   > img {
@@ -286,11 +285,9 @@ export const DeliveryTopStyled = styled.div`
   margin-bottom: 20px;
 `;
 
-export const DeliveryTopImageStyled = styled.img``;
-
 export const DeliveryContentStyled = styled.div`
   padding: 32px 90px;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.white};
   border-radius: 8px;
   text-align: center;
 `;
@@ -393,7 +390,7 @@ export const NoticeWrapper = styled.div`
 `;
 
 export const TestArtical = styled.div`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.white};
 `;
 
 export const NewBlockWrapper = styled.div`
@@ -420,7 +417,7 @@ export const NewInfoStyled = styled.div`
 
 export const ProjectParticipalWrapper = styled.div`
   padding-bottom: 40px;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.white};
 `;
 
 export const ProjectParticipation = styled.div`
@@ -430,6 +427,7 @@ export const ProjectParticipation = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+
 export const ProjectParticipationText = styled.div`
   width: 768px;
   font-size: 14px;
@@ -438,6 +436,7 @@ export const ProjectParticipationText = styled.div`
   margin-bottom: 24px;
   text-align: center;
 `;
+
 export const ProjectParticipationImage = styled.img`
   width: 480px;
   object-fit: cover;
