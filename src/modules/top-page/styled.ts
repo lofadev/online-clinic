@@ -398,7 +398,7 @@ export const NewBlockWrapper = styled.div`
   width: 768px;
 `;
 
-export const NewInfoStyled = styled.div`
+export const NewInfoStyled = styled.div<{ isLink?: boolean }>`
   width: 100%;
   display: flex;
   align-items: center;
@@ -411,6 +411,8 @@ export const NewInfoStyled = styled.div`
   }
 
   a {
+    pointer-events: ${({ isLink }) => !isLink && 'none'};
+    text-decoration: ${({ isLink }) => isLink && 'underline'};
     color: #3f4f5f;
   }
 `;

@@ -9,6 +9,10 @@ const lightTheme = {
   brightTeal: '#03AFB9',
   white: '#fff',
   transparent: 'transparent',
+  darkPurple: '#6C77B4',
+  blue: '#42B2E9',
+  orange: '#FF9255',
+  purple: '#9483DA',
 
   textPrimary: '#3F4F5F',
   textDanger: '#F2596B',
@@ -27,6 +31,10 @@ const darkTheme: Theme = {
   brightTeal: '#03AFB9',
   white: '#fff',
   transparent: 'transparent',
+  darkPurple: '#6C77B4',
+  blue: '#42B2E9',
+  orange: '#FF9255',
+  purple: '#9483DA',
 
   textPrimary: '#3F4F5F',
   textDanger: '#F2596B',

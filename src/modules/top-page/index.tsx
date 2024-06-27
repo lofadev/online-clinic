@@ -24,7 +24,7 @@ import { Link } from 'react-router-dom';
 import { push } from 'redux-first-history';
 import RoutesName from 'routes/constant';
 import { Delivery, Price, SmartPhone } from 'assets/icons/icon-feature';
-import { listCurrentIssue, listDataFlow, listDataSiekte, listDelivery } from './fakeData';
+import { listCurrentIssue, listDataFlow, listDataSiekte, listDelivery } from './constant';
 
 import {
   AboutTopBlock,
@@ -269,7 +269,7 @@ export const TopPage: React.FC = () => {
                 </DeliveryLeftStyled>
                 <DeliveryLeftStyled type>
                   <p>大阪市24区エリア</p>
-                  {listDelivery.slice(2, 5).map((item) => (
+                  {listDelivery.slice(2, 6).map((item) => (
                     <DeliveryInfoItemStyled key={item.id}>
                       <span />
                       <p>
@@ -302,17 +302,17 @@ export const TopPage: React.FC = () => {
         backgroundWrapper="white"
       >
         <NewBlockWrapper>
-          <NewInfoStyled>
+          <NewInfoStyled isLink>
             <span>2024.04.14</span>
             <Link to="#">マイページTOPに、お薬の補充ボタンを設置いたしました。この機会に是非にご利用ください。</Link>
           </NewInfoStyled>
           <NewInfoStyled>
             <span>2024.04.14</span>
-            <Link to="#">男性AGAの海外製デュタステリド0.6mgが一時的に欠品しております。</Link>
+            <Link to="#">対応可能時間は8:00～20:30です。</Link>
           </NewInfoStyled>
           <NewInfoStyled>
             <span>2024.04.10</span>
-            <Link to="#">マイページTOPに、お薬の補充ボタンを設置いたしました。この機会に是非にご利用ください。</Link>
+            <Link to="#">男性AGA・女性AGA・メディカルダイエットなど、一部診療科目が新しいプラン価格となりました。</Link>
           </NewInfoStyled>
         </NewBlockWrapper>
 

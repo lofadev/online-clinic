@@ -24,6 +24,11 @@ import login_x from './images/auth-signin/icon-login-x.png';
 import login_arrow from './images/arrow/arrow-common.gif';
 import icon_email from './images/auth-signup/icon_mail.png';
 
+import { ReactComponent as CloseIcon } from './svgs/ico_appointment_close.svg';
+import { ReactComponent as EndIcon } from './svgs/ico_appointment_end.svg';
+import { ReactComponent as FewIcon } from './svgs/ico_appointment_few.svg';
+import { ReactComponent as OpenIcon } from './svgs/ico_appointment_open.svg';
+
 export { CurestationImage, ReorderImage, PraticipalImage, UserImage };
 
 export {
@@ -42,5 +47,5 @@ export {
   LightIcon,
 };
 
-export { login_arrow, login_facebook, login_google, login_line, login_x };
-export { icon_email };
+export { login_arrow, login_facebook, login_google, login_line, login_x, icon_email };
+export { CloseIcon, EndIcon, FewIcon, OpenIcon };
