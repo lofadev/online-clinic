@@ -88,6 +88,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     line-height: 1;
     font-size: 14px;
+    position: relative;
     color: ${({ theme }) => theme.textPrimary};;
   }
 

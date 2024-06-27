@@ -1,35 +1,29 @@
+import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useForm, FormProvider, SubmitHandler } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { push } from 'redux-first-history';
-import { useDispatch } from 'react-redux';
+import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
+import { push } from 'redux-first-history';
 
+import { LoginArrow } from 'assets';
+import { FieldInput } from 'components';
 import { translations } from 'locales/translations';
-import { login_arrow } from 'assets';
+// import { useHistory } from 'react-router-dom';
 import { useAuth } from 'slices';
-import { Button, FieldCheckbox, FieldInput } from 'components';
-import Account from '../components/account';
 import scheme from './schema';
 import {
   ArrowImg,
   ButtonLogin,
   ContentStyled,
   FirstStyled,
-  FormCheck,
   FormInput,
   FormLink,
-  LabelCheck,
-  LabelStyled,
-  Language,
   Left,
   LinkStyle,
   MainStyled,
   RegisterStyled,
-  Right,
   TitleStyled,
-  Wrapper,
 } from './styled';
 
 interface FormValues {
@@ -39,8 +33,9 @@ interface FormValues {
 
 export const SignIn: React.FC = () => {
   const { login } = useAuth();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { signIn } = translations;
+  // const history = useHistory();
 
   const dispatch = useDispatch();
 
@@ -58,10 +53,6 @@ export const SignIn: React.FC = () => {
     login(data);
   };
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
-
   return (
     <>
       <Helmet>
@@ -70,88 +61,40 @@ export const SignIn: React.FC = () => {
       </Helmet>
 
       <FormProvider {...form}>
-        <Wrapper>
-          <ContentStyled>
-            <Language>
-              <Button name="lng" onClick={() => changeLanguage('en')}>
-                ENG
-              </Button>
-              <Button name="lng" onClick={() => changeLanguage('jp')}>
-                JP
-              </Button>
-            </Language>
+        <ContentStyled>
+          <TitleStyled>{t(signIn.title)}</TitleStyled>
 
-            <TitleStyled>{t(signIn.title)}</TitleStyled>
+          <MainStyled>
+            <Left>
+              <FormInput>
+                <FieldInput
+                  name="email"
+                  type="text"
+                  placeholder={t(signIn.email_placeholder)}
+                  label={t(signIn.email)}
+                />
+              </FormInput>
 
-            <MainStyled>
-              <Left>
-                <FormInput>
-                  <FieldInput
-                    name="email"
-                    type="text"
-                    placeholder={t(signIn.email_placeholder)}
-                    label={t(signIn.email)}
-                  />
+              <FieldInput name="password" type="password" placeholder={t(signIn.password)} />
 
-                  <FormCheck>
-                    <FieldCheckbox name="saveEmail" />
-                    <LabelCheck> {t(signIn.email_save)}</LabelCheck>
-                  </FormCheck>
-                </FormInput>
+              <ButtonLogin onClick={form.handleSubmit(onSubmit)}>{t(signIn.login)}</ButtonLogin>
 
-                <FormInput>
-                  <FieldInput name="password" type="password" placeholder={t(signIn.password)} />
+              <FormLink>
+                <LinkStyle>
+                  <ArrowImg src={LoginArrow} alt="" />
+                  {t(signIn.forgot_password)}
+                </LinkStyle>
+              </FormLink>
+            </Left>
+          </MainStyled>
 
-                  <FormCheck>
-                    <FieldCheckbox name="savePass" />
-                    <LabelCheck> {t(signIn.password_save)}</LabelCheck>
-                  </FormCheck>
-                </FormInput>
-
-                <ButtonLogin onClick={form.handleSubmit(onSubmit)}>{t(signIn.login)}</ButtonLogin>
-
-                <FormCheck>
-                  <FieldCheckbox name="AutoLogin" />
-                  <LabelCheck>{t(signIn.login_auto)}</LabelCheck>
-                </FormCheck>
-
-                <FormLink>
-                  <LinkStyle>
-                    <ArrowImg src={login_arrow} alt="" />
-                    {t(signIn.forgot_password)}
-                  </LinkStyle>
-
-                  <LinkStyle>
-                    <ArrowImg src={login_arrow} alt="" />
-                    {t(signIn.not_email)}
-                  </LinkStyle>
-
-                  <LinkStyle>
-                    <ArrowImg src={login_arrow} alt="" />
-                    {t(signIn.not_login)}
-                  </LinkStyle>
-
-                  <LinkStyle>
-                    <ArrowImg src={login_arrow} alt="" />
-                    {t(signIn.help)}
-                  </LinkStyle>
-                </FormLink>
-              </Left>
-
-              <Right>
-                <LabelStyled>{t(signIn.account)}</LabelStyled>
-                <Account isRegister={false} />
-              </Right>
-            </MainStyled>
-
-            <RegisterStyled>
-              <FirstStyled>{t(signIn.register)}</FirstStyled>
-              <ButtonLogin className="btn_res" onClick={() => dispatch(push('/register'))}>
-                {t(signIn.btn_register)}
-              </ButtonLogin>
-            </RegisterStyled>
-          </ContentStyled>
-        </Wrapper>
+          <RegisterStyled>
+            <FirstStyled>{t(signIn.register)}</FirstStyled>
+            <ButtonLogin className="btn_res" onClick={() => dispatch(push('/register'))}>
+              {t(signIn.btn_register)}
+            </ButtonLogin>
+          </RegisterStyled>
+        </ContentStyled>
       </FormProvider>
     </>
   );

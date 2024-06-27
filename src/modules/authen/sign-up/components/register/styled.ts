@@ -11,8 +11,10 @@ export const ContentStyled = styled.div`
 `;
 
 export const TitleRegister = styled.label`
-  display: flex;
   margin: 48px 0 23px 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 `;
 
 export const TitleLeft = styled.h2`
@@ -29,6 +31,10 @@ export const TitleRight = styled.p`
 export const MainStyled = styled.div`
   display: flex;
   gap: 10px;
+  background: #f2f4f7;
+  border: 1px solid #e1e3e6;
+  border-radius: 4px;
+  align-items: stretch;
 `;
 
 export const WapperStyled = styled.div`
@@ -36,9 +42,8 @@ export const WapperStyled = styled.div`
 `;
 
 export const Left = styled.div`
-  background-color: #f7f7f7;
   width: 80%;
-
+  margin: 0 auto;
   .ant-btn {
     background-color: #fdc864;
     color: #333333;
@@ -51,7 +56,7 @@ export const Left = styled.div`
     &:hover:not(:disabled) {
       background-color: #fdc864;
       border-color: #fdc864;
-      color: #333333;
+      color: #333333 !important;
       opacity: 0.5;
     }
   }
@@ -108,17 +113,17 @@ export const Required = styled.div`
   background-color: #fa5a6e;
   width: 34px;
   height: auto;
-  font-size: 10px;
+  font-size: 12px;
   text-align: center;
   padding: 5px;
 `;
 
 export const SchemaStyled = styled.span`
   padding: 5px;
-  font-size: 10px;
+  font-size: 12px;
 `;
 
-export const IconEmail = styled.img`
+export const IconEmailStyled = styled.img`
   width: 15px;
   margin-right: 5px;
 `;
@@ -134,11 +139,6 @@ export const LinkTerms = styled.a`
 `;
 
 export const Terms = styled.span``;
-
-export const Right = styled.div`
-  background-color: #f7f7f7;
-  height: 350px;
-`;
 
 export const FormLink = styled.ul`
   margin-top: 15px;
@@ -160,6 +160,7 @@ export const LinkStyle = styled.li`
     text-decoration: underline;
   }
 `;
+
 export const ArrowImg = styled.img`
   padding-right: 5px;
 `;

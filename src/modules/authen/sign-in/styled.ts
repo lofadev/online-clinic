@@ -1,29 +1,17 @@
 import styled from 'styled-components';
 
-export const Language = styled.div`
-  display: flex;
-  max-width: 120px;
-  justify-content: space-between;
-  margin-top: 10px;
-`;
-
-export const Wrapper = styled.div`
-  width: 100vw;
-  height: auto;
-`;
-
 export const ContentStyled = styled.div`
   margin: 50px auto;
   padding: 0 30px;
-  background-color: #fff;
-  width: 770px;
-  border: 1px solid #e2e3e4;
+  background-color: ${({ theme }) => theme.white};
+  width: 550px;
   border-radius: 4px;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.06);
 `;
 
 export const TitleStyled = styled.p`
-  margin-bottom: 20px;
+  margin: 20px 0;
+  padding-top: 20px;
   font-size: 26px;
   font-weight: 700;
   text-align: center;
@@ -31,30 +19,20 @@ export const TitleStyled = styled.p`
 `;
 
 export const MainStyled = styled.div`
-  display: flex;
-  /* justify-content: space-around; */
   background: #f2f4f7;
   border: 1px solid #e1e3e6;
   border-radius: 4px;
   align-items: stretch;
-  position: relative;
 `;
 
 export const Left = styled.div`
-  border-right: 1px solid #e1e3e5;
-  flex: 1;
+  margin: 0 auto;
   padding: 20px 40px;
+  align-items: center;
 `;
 
 export const FormInput = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const Input = styled.input`
-  width: 100%;
-  border: 1px solid #bebebe;
-  height: 30px;
+  margin-bottom: 10px;
 `;
 
 export const FormCheck = styled.div`
@@ -97,20 +75,21 @@ export const LabelStyled = styled.label`
   font-weight: 700;
 `;
 
-export const FormLink = styled.ul``;
+export const FormLink = styled.ul`
+  margin-top: 15px;
+`;
 
 export const LinkStyle = styled.li`
   display: flex;
   align-items: center;
-  text-decoration: none;
   color: #005fc0;
-  margin-bottom: 5px;
+  margin: 0 10px;
   font-size: 11px;
   font-weight: 400;
   cursor: pointer;
 
   &:hover {
-    color: red;
+    color: ${({ theme }) => theme.textDanger};
     text-decoration: underline;
   }
 `;
@@ -142,10 +121,10 @@ export const ButtonLogin = styled.button`
   }
   &.btn_res {
     color: #000;
-    width: 40%;
+    width: 60%;
     background-color: #ffc01e;
     border-color: #fcdc80;
-    margin-bottom: 65px;
+    margin-bottom: 25px;
 
     &:hover {
       opacity: 0.6;
