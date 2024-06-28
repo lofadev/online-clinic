@@ -1,0 +1,28 @@
+{
+  "top_footer": "DMM Online Clinic is an online healthcare platform service. Medical consultations are provided by affiliated medical institutions.",
+  "main_footer": {
+    "contact_clinic": "DMM Online Clinic Contact",
+    "contact": "Contact",
+    "terms_clinic": "DMM Online Clinic Terms",
+    "legal_notice": "Legal Notice Based on the Act on Specified Commercial Transactions",
+    "terms_support": "Medical Support Service Terms of Use",
+    "privacy_support": "Medical Support Service Privacy Policy",
+    "terms_welfare": "Welfare Service Terms of Use",
+    "partners": "Affiliated Medical Corporations",
+    "offers": "Special Offers",
+    "newsletter": "Newsletter",
+    "offers_info": "Receive special offers for free.",
+    "affiliate": "DMM Affiliate",
+    "affiliate_desc": "Introduce DMM products and earn advertising revenue!"
+  },
+  "bottom_footer": {
+    "company_overview": "Company Overview",
+    "press_release": "Press Release",
+    "membership_terms": "Membership Terms",
+    "privacy_policy": "Privacy Policy",
+    "legal_notice": "Legal Notice Based on the Act on Specified Commercial Transactions",
+    "business_partnership_manda": "Business Partnership & M&A",
+    "recruitment_information": "Recruitment Information"
+  },
+  "go_to_top": "Back to top"
+}

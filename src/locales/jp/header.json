@@ -1,0 +1,52 @@
+{
+  "services": {
+    "ebook": "電子書籍",
+    "dmm_tv": "DMM TV",
+    "home_delivery_rental": "宅配レンタル",
+    "online_crane_game": "オンラインクレーンゲーム",
+    "pc_games_software": "PCゲーム・ソフトウェア",
+    "online_shopping": "通販"
+  },
+  "account": {
+    "dmm_account_info": "DMMアカウント情報",
+    "dmm_premium_mypage": "DMMプレミアムマイページ",
+    "credit_card_info": "クレジットカード情報",
+    "dmm_points": "DMMポイント",
+    "point_exchange": "ポイント交換",
+    "notification_settings": "通知設定",
+    "service_usage_info": "サービス利用情報",
+    "help_center": "ヘルプセンター",
+    "logout": "ログアウト"
+  },
+  "navigation": {
+    "top": "TOP",
+    "consultation": "診療内容",
+    "about_dmm": "DMMクリニックとは",
+    "how_to_use": "サービスの使い方",
+    "faq": "よくある質問",
+    "dr_column": "Dr.コラム",
+    "shop": "ショップ",
+    "appointment": "診療予約",
+    "my_page": "マイページ"
+  },
+  "subtile": {
+    "male_text": "男性向け",
+    "female_text": "女性向け",
+    "title": "診察内容一覧",
+    "male_aga": "男性AGA",
+    "female_aga": "女性AGA",
+    "ed_premature": "ED・早漏予防",
+    "diet_obesity": "メディカルダイエット・肥満",
+    "oral_sunscreen": "飲む日焼け止め",
+    "eyelash": "メディカルまつ毛",
+    "insomnia_sleep": "不眠・睡眠障害",
+    "influenza_prevention": "インフルエンザ予防",
+    "std": "性感染症",
+    "hay_fever": "花粉症",
+    "skincare": "メディカルスキンケア",
+    "doctors_cosmetics": "ドクターズコスメ",
+    "pill": "ピル",
+    "morning_after_pill": "アフターピル",
+    "lifestyle_diseases": "生活習慣病"
+  }
+}

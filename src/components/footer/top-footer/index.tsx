@@ -1,8 +1,12 @@
 import { FC } from 'react';
 
+import { useTranslation } from 'react-i18next';
+import { translations } from 'locales/translations';
 import { ContentTopFooter, ImageStyle, TopFooterStyle } from './style';
 
 const TopFooter: FC = () => {
+  const { t } = useTranslation();
+  const { footer } = translations;
   return (
     <TopFooterStyle>
       <ImageStyle
@@ -10,9 +14,7 @@ const TopFooter: FC = () => {
         alt="picture"
       />
 
-      <ContentTopFooter>
-        DMMオンラインクリニックはオンライン診療のプラットフォームサービスです。 診療は提携先医療機関が行っています。
-      </ContentTopFooter>
+      <ContentTopFooter>{t(footer.top_footer)}</ContentTopFooter>
     </TopFooterStyle>
   );
 };

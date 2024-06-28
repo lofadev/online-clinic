@@ -14,6 +14,8 @@ import image4 from 'assets/images/banner/slide_image4.png';
 import image5 from 'assets/images/banner/slide_image5.png';
 import { Clock, HeadingTopPageSgv, IllustMvIcon } from 'assets';
 
+import { useTranslation } from 'react-i18next';
+import { translations } from 'locales/translations';
 import { Video, VideoType } from '../videocustom';
 
 import {
@@ -72,36 +74,38 @@ const imageList: ImageType[] = [
 ];
 
 export const Banner: FC = () => {
+  const { t } = useTranslation();
+  const { banner } = translations;
+
   return (
     <WrapperStyled>
       <HeroSectionStyled>
         <HeroContentStyled>
           <HeroImageStyled src={HeadingTopPageSgv} alt="image" />
-          <HeroTitleStyled>PCやタブレット、スマホで、スキマ時間に医師の診察！</HeroTitleStyled>
+          <HeroTitleStyled>{t(banner.title)}</HeroTitleStyled>
           <HeroSubtitleStyled>
             <HeroIconStyled src={IllustMvIcon} alt="image" />
             <div>
               <HeroInfoStyled>
-                <p>オンライン診療</p>
-                <p>受付時間</p>
+                <p>{t(banner.sub_title.form)}</p>
+                <p>{t(banner.sub_title.reception_hours)}</p>
               </HeroInfoStyled>
 
               <HeroInfoBoxStyled>
                 <img src={Clock} alt="icon" />
                 <TextContainerStyled>
-                  <MainTextStyled>24時間対応</MainTextStyled>
-                  <SubTextStyled>※年末年始を除く</SubTextStyled>
+                  <MainTextStyled>{t(banner.sub_title.time)}</MainTextStyled>
+                  <SubTextStyled>{t(banner.sub_title.note)}</SubTextStyled>
                 </TextContainerStyled>
               </HeroInfoBoxStyled>
             </div>
           </HeroSubtitleStyled>
         </HeroContentStyled>
         <VideoWrapperStyled>
-          <TitleStyled>テレビCMをCheck！</TitleStyled>
+          <TitleStyled>{t(banner.video_title)}</TitleStyled>
           <Video data={videoData} />
         </VideoWrapperStyled>
       </HeroSectionStyled>
-
       <SlidersStyled>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
