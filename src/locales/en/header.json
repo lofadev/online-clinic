@@ -1,0 +1,52 @@
+{
+  "services": {
+    "ebook": "E-Books",
+    "dmm_tv": "DMM TV",
+    "home_delivery_rental": "Home Delivery Rental",
+    "online_crane_game": "Online Crane Game",
+    "pc_games_software": "PC Games/Software",
+    "online_shopping": "Online Shopping"
+  },
+  "account": {
+    "dmm_account_info": "DMM Account Information",
+    "dmm_premium_mypage": "DMM Premium My Page",
+    "credit_card_info": "Credit Card Information",
+    "dmm_points": "DMM Points",
+    "point_exchange": "Point Exchange",
+    "notification_settings": "Notification Settings",
+    "service_usage_info": "Service Usage Information",
+    "help_center": "Help Center",
+    "logout": "Logout"
+  },
+  "navigation": {
+    "top": "TOP",
+    "consultation": "Consultation Details",
+    "about_dmm": "About DMM Clinic",
+    "how_to_use": "How to Use the Service",
+    "faq": "Frequently Asked Questions",
+    "dr_column": "Dr. Column",
+    "shop": "Shop",
+    "appointment": "Medical Appointment",
+    "my_page": "My Page"
+  },
+  "subtile": {
+    "male_text": "For Men",
+    "female_text": "For Women",
+    "title": "Consultation Details List",
+    "male_aga": "Male AGA",
+    "female_aga": "Female AGA",
+    "ed_premature": "ED & Premature Ejaculation Prevention",
+    "diet_obesity": "Medical Diet & Obesity",
+    "oral_sunscreen": "Oral Sunscreen",
+    "eyelash": "Medical Eyelash",
+    "insomnia_sleep": "Insomnia & Sleep Disorder",
+    "influenza_prevention": "Influenza Prevention",
+    "std": "Sexually Transmitted Diseases",
+    "hay_fever": "Hay Fever",
+    "skincare": "Medical Skincare",
+    "doctors_cosmetics": "Doctor's Cosmetics",
+    "pill": "Pill",
+    "morning_after_pill": "Morning-After Pill",
+    "lifestyle_diseases": "Lifestyle Diseases"
+  }
+}
