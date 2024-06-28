@@ -9,4 +9,8 @@ import topPage from './top-page.json';
 import faq from './fqa.json';
 import genderPage from './gender-page.json';
 
+<<<<<<< HEAD
 export { common, signIn, signUp, validation, header, banner, footer, topPage, faq, genderPage };
+=======
+export { common, signIn, signUp, validation, header, banner, footer, topPage, faq };
+>>>>>>> af3ddc0 (fix validate)
