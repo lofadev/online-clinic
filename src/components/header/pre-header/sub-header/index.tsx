@@ -12,7 +12,7 @@ import {
   ArrowImage,
   DetailNavigateBox,
   TitleDetailNav,
-} from './style';
+} from './styled';
 import DetailNavigate, { PropsDetailNavigate } from '../detail-navigate';
 
 const SubHeader: FC = () => {
@@ -108,7 +108,7 @@ const SubHeader: FC = () => {
         <ButtonStyleGender
           className="male"
           onClick={() => {
-            handleSelect('/malepage');
+            handleSelect('/male');
           }}
         >
           <ContentButton>{t(header.subtile.male_text)}</ContentButton>
@@ -121,7 +121,7 @@ const SubHeader: FC = () => {
         <ButtonStyleGender
           className="female"
           onClick={() => {
-            handleSelect('/femalepage');
+            handleSelect('/female');
           }}
         >
           <ContentButton>{t(header.subtile.female_text)}</ContentButton>

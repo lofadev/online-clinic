@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import Header from './header';
 import Footer from './footer';
-import { Wrapper } from './style';
+import { Wrapper } from './styled';
 
 type Props = {
   children: ReactNode;

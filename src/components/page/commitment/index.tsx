@@ -8,7 +8,7 @@ import {
   MainCommitmemt,
   Point,
   TitleCommitment,
-} from './style';
+} from './styled';
 
 export type PropsCommitment = {
   id: number;

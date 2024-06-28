@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Content, ContentFlow, FlowItemStyle, Count, ImageShow, ImageStyle, TitleFlow } from './style';
+import { Content, ContentFlow, FlowItemStyle, Count, ImageShow, ImageStyle, TitleFlow } from './styled';
 
 export type PropsFlow = {
   id: number;

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { PropsSiekte } from '../siekte';
-import { ContentFeature, IconFeatureStyle, IconFilled, ImageStyle } from './style';
+import { ContentFeature, IconFeatureStyle, IconFilled, ImageStyle } from './styled';
 
 const IconFeature: FC<PropsSiekte> = (props) => {
   const { id, icon, content, gender } = props;

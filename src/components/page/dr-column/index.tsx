@@ -13,7 +13,7 @@ import {
   Siekte,
   SubContent,
   TitleDrColumn,
-} from './style';
+} from './styled';
 
 export type PropsDrColumn = {
   id: number;

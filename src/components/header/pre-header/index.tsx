@@ -15,7 +15,7 @@ import {
   ContentButtonBooking,
   ButtonAccount,
   ContentButtonAccount,
-} from './style';
+} from './styled';
 import NavigateButton, { PropsNavigateButton } from './navigate-button';
 import SubHeader from './sub-header';
 

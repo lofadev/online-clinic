@@ -7,7 +7,7 @@ import {
   CoppyRight,
   ItemContentBottomFooter,
   ItemContentBottomFooterNoneBorder,
-} from './style';
+} from './styled';
 
 const BottomFooter: FC = () => {
   const { t } = useTranslation();

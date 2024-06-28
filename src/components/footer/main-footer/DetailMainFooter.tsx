@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { ContentMainFooter, DetailMainFooterStyle, SubContent, TextContent, TitleMainFooter } from './style';
+import { ContentMainFooter, DetailMainFooterStyle, SubContent, TextContent, TitleMainFooter } from './styled';
 
 export type PropsDetailMainFooter = {
   id: number;

@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 
-import { AppointmentStyle, ImageStyle, MainContentApp, PictureApp, Step, StepTitle, TitleAppointment } from './style';
+import { AppointmentStyle, ImageStyle, MainContentApp, PictureApp, Step, StepTitle, TitleAppointment } from './styled';
 
 export type PropsAppointment = {
   id: number;

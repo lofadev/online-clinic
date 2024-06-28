@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { ReactComponent as ArrowSubject } from 'assets/images/medical-subject/ArrowSubject.svg';
-import { ContentSubject, ImageStyle, MedicalSubjectStyle, TilteText, TitleIcon, TitleSubject } from './style';
+import { ContentSubject, ImageStyle, MedicalSubjectStyle, TilteText, TitleIcon, TitleSubject } from './styled';
 
 export type PropsSubject = {
   id: number;

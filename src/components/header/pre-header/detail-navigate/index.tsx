@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useHistory } from 'react-router-dom';
-import { ContentDetailNav, DetailNavigateStyles, ImageStyle } from './style';
+import { ContentDetailNav, DetailNavigateStyles, ImageStyle } from './styled';
 
 export type PropsDetailNavigate = {
   id: number;
