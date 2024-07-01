@@ -13,6 +13,8 @@ const lightTheme = {
   blue: '#42B2E9',
   orange: '#FF9255',
   purple: '#9483DA',
+  maleColor: '#1651b0',
+  femaleColor: '#f35f71',
 
   textPrimary: '#3F4F5F',
   textDanger: '#F2596B',
@@ -35,6 +37,8 @@ const darkTheme: Theme = {
   blue: '#42B2E9',
   orange: '#FF9255',
   purple: '#9483DA',
+  maleColor: '#1651b0',
+  femaleColor: '#f35f71',
 
   textPrimary: '#3F4F5F',
   textDanger: '#F2596B',

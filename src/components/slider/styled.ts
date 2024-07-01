@@ -3,7 +3,7 @@ import ArrowWhiteLeftIcon from 'assets/svgs/ico_arrow_white_left.svg';
 import ArrowWhiteRightIcon from 'assets/svgs/ico_arrow_white_right.svg';
 import { JobStyleProps } from './type';
 
-export const WrapperStyled = styled.div`
+export const WrapperStyled = styled.div<{ gender: GenderType }>`
   height: auto;
   font-size: 14px;
   margin-top: 32px;
@@ -62,7 +62,7 @@ export const WrapperStyled = styled.div`
   }
 
   .swiper-pagination-bullet-active {
-    background-color: #094591;
+    background-color: ${(props) => (props.gender === 'male' ? '#094591' : '#f35f71')};
   }
 `;
 

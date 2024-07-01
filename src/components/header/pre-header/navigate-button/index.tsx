@@ -1,7 +1,7 @@
 import { FC, ReactNode } from 'react';
 
 import { useHistory } from 'react-router-dom';
-import { NavigateButtonStyle, ContentButtonNavigate } from './style';
+import { NavigateButtonStyle, ContentButtonNavigate } from './styled';
 
 export type PropsNavigateButton = {
   id: number;

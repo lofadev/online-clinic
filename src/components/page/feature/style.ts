@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const IconFeatureStyle = styled.div`
-  width: 270px;
+  width: 245px;
   height: 158px;
   background-color: ${({ theme }) => theme.white};
   border-radius: 8px;
@@ -43,7 +43,8 @@ export const ContentFeature = styled.div`
   font-weight: 700;
   color: ${({ theme }) => theme.textPrimary};
   text-align: center;
-  max-width: 70%;
+  width: 245px;
+  padding-inline: 30px;
   margin-inline: auto;
   margin-top: 20px;
 `;

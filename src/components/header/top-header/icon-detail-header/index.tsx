@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { useHistory } from 'react-router-dom';
-import { ContentIcon, IconDetailStyle, ImageStyle, ImgArrow, TextContent } from './style';
+import { ContentIcon, IconDetailStyle, ImageStyle, ImgArrow, TextContent } from './styled';
 
 export type PropsIconDetail = {
   id: number;

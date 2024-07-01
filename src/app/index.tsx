@@ -7,7 +7,7 @@ import { useBroadcast } from 'slices/broadcast';
 import { STORAGE, getLocalStorage } from 'utils/storage';
 
 export const App: React.FC = () => {
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
 
   const { getMe } = useAuth();
   const { setBroadcastChannel, boardcastChannel } = useBroadcast();

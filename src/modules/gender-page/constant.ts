@@ -1,12 +1,7 @@
-import {
-  FlowStep1General,
-  FlowStep2General,
-  FlowStep3General,
-  FlowStep1Male,
-  FlowStep2Male,
-  FlowStep3Male,
-} from 'assets/icons/flow';
-import { Delivery, Price, SmartPhone } from 'assets/icons/icon-feature';
+import { PropsFlow } from 'components/page/flow';
+import { PropsSubject } from 'components/page/medical-subject';
+import { PropsSiekte } from 'components/page/siekte';
+
 import {
   Body,
   Cosmetic,
@@ -22,22 +17,27 @@ import {
   Sleep,
   UV,
   Virut,
-} from 'assets/icons/icon-siekte';
-import { PropsFlow } from 'components/page/flow';
-import { PropsSiekte } from 'components/page/siekte';
+} from 'assets/icons/icon-siekte/index';
+import {
+  Delivery,
+  DeliveryGeneral,
+  Price,
+  PriceGeneral,
+  SmartPhone,
+  SmartPhoneGeneral,
+} from 'assets/icons/icon-feature';
+import {
+  FlowStep1General,
+  FlowStep1Male,
+  FlowStep2General,
+  FlowStep2Male,
+  FlowStep3General,
+  FlowStep3Male,
+} from 'assets/icons/flow';
+import { AgaFemaleSubject, AgaMaleSubject, EdMaleSubject } from 'assets/images/medical-subject';
 import { MedicalQuery } from 'components/medicalqueries';
 import { IMedicationCard } from 'components/slider/type';
 
-type CurrentIssueType = {
-  id: number;
-  text: string;
-};
-
-type DeliveryInfoType = {
-  id: number;
-  title: string;
-  subTitle: string;
-};
 export const listDataSiekte: PropsSiekte[] = [
   {
     id: 1,
@@ -138,7 +138,6 @@ export const listDataSiekte: PropsSiekte[] = [
     path: '/menu/sleep',
   },
 ];
-
 export const listDataFeature: PropsSiekte[] = [
   {
     id: 1,
@@ -158,8 +157,43 @@ export const listDataFeature: PropsSiekte[] = [
     content: '初診でもすぐに受診可能',
     gender: 'general',
   },
+  {
+    id: 4,
+    icon: PriceGeneral,
+    content: '続けやすい安心の価格',
+    gender: 'male',
+  },
+  {
+    id: 5,
+    icon: DeliveryGeneral,
+    content: '最短当日到着',
+    gender: 'male',
+  },
+  {
+    id: 6,
+    icon: SmartPhoneGeneral,
+    content: '初診でもすぐに受診可能',
+    gender: 'male',
+  },
+  {
+    id: 7,
+    icon: PriceGeneral,
+    content: '続けやすい安心の価格',
+    gender: 'female',
+  },
+  {
+    id: 8,
+    icon: DeliveryGeneral,
+    content: '最短当日到着',
+    gender: 'female',
+  },
+  {
+    id: 9,
+    icon: SmartPhoneGeneral,
+    content: '初診でもすぐに受診可能',
+    gender: 'female',
+  },
 ];
-
 export const listDataFlow: PropsFlow[] = [
   {
     id: 1,
@@ -210,61 +244,30 @@ export const listDataFlow: PropsFlow[] = [
     gender: 'male',
   },
 ];
-
-export const listCurrentIssue: CurrentIssueType[] = [
+export const listDataSubject: PropsSubject[] = [
   {
     id: 1,
-    text: '時間が無くて、病院に行くのは面倒くさい・・・」',
+    gender: 'female',
+    picture: AgaFemaleSubject,
+    title: '女性AGA',
+    content: 'AGAは、誰もが対策する時代。',
+    path: '/menu/agafemale',
   },
   {
     id: 2,
-    text: '「クリニックや薬局での待ち時間が嫌・・・」',
+    gender: 'male',
+    picture: AgaMaleSubject,
+    title: '男性AGA',
+    content: 'AGAは、誰もが対策する時代。',
+    path: '/menu/agamale',
   },
   {
     id: 3,
-    text: '「病院に入るところを人に見られたくない・・・」',
-  },
-  {
-    id: 4,
-    text: '「個人輸入薬は危険だと厚労省も注意喚起している し・・・」*1',
-  },
-];
-
-export const listDelivery: DeliveryInfoType[] = [
-  {
-    id: 1,
-    title: 'お薬代＋配送料2,550円',
-    subTitle: '港区、千代田区、中央区、新宿区、渋谷区',
-  },
-  {
-    id: 2,
-    title: 'お薬代＋配送料3,550円',
-    subTitle: '品川区、目黒区、中野区、豊島区、文京区、台東区、江東区',
-  },
-  {
-    id: 3,
-    title: 'お薬代＋配送料5,550円 ',
-    subTitle: '上記以外の23区内住所',
-  },
-  {
-    id: 4,
-    title: 'お薬代＋配送料3,000円',
-    subTitle: '北区、中央区、福島区、都島区',
-  },
-  {
-    id: 5,
-    title: 'お薬代＋配送料3,500円',
-    subTitle: '西区、淀川区、此花区、城東区、浪速区',
-  },
-  {
-    id: 6,
-    title: 'お薬代＋配送料4,000円',
-    subTitle: '西淀川区、港区、旭区、鶴見区、天王寺区、東成区、 東淀川区',
-  },
-  {
-    id: 7,
-    title: 'お薬代＋配送料4,500円',
-    subTitle: ' 大正区、西成区、阿倍野区、生野区、東住吉区、住之 江区、平野区、住吉区',
+    gender: 'male',
+    picture: EdMaleSubject,
+    title: 'ED・早漏防止',
+    content: '成人男性の多くが抱える悩み',
+    path: '/menu/edmale',
   },
 ];
 export const dataMedicalQueryMale: MedicalQuery[] = [

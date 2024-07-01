@@ -19,11 +19,12 @@ import { IMedicationCard } from './type';
 
 type SliderType = {
   data: IMedicationCard[];
+  gender: GenderType;
 };
 
-export const CardSlider: React.FC<SliderType> = ({ data }) => {
+export const CardSlider: React.FC<SliderType> = ({ data, gender }) => {
   return (
-    <WrapperStyled>
+    <WrapperStyled gender={gender}>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation

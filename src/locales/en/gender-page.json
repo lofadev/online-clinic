@@ -1,0 +1,41 @@
+{
+  "bannerGender": {
+    "TextTitle": {
+      "male": "For Men",
+      "female": "For Women"
+    },
+    "TextIconFeature": {
+      "delivery": "Fast delivery",
+      "cost": "Reasonable price",
+      "phone": "Online Support"
+    },
+    "TextDetail": {
+      "Medication": "Take your medication",
+      "Formulated": "Neatly formulated",
+      "Examination": "Home Examination"
+    }
+  },
+  "medicalSubject": {
+    "title": "Online medical consultations",
+    "desc": "Medical subjects",
+    "subTitle": "Medical treatment that can be received at DMM Online Clinic"
+  },
+  "ContentSiekteBox": "Common Medical Subjects",
+  "MedicalQueryBox": {
+    "title": {
+      "male": "For Men",
+      "female": "For women"
+    },
+    "desc": {
+      "male": "For men",
+      "female": "For women"
+    },
+    "subTitle": "DMM Online Clinic"
+  },
+  "MedicalQueries": {
+    "MessageBlockTop": "In such a case, DMM Online Clinic!",
+    "MessageBlockMiddle": "If you are concerned about any problems specific to men, please feel free to contact us.",
+    "MessageBlockBottom": "Treating as soon as possible is the fastest way to improve!"
+  },
+  "FeaturewBox": {}
+}

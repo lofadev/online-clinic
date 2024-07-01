@@ -7,5 +7,6 @@ import header from './header.json';
 import footer from './footer.json';
 import signUp from './sing-up.json';
 import faq from './faq.json';
+import genderPage from './gender-page.json';
 
-export { signIn, common, validation, signUp, banner, header, footer, topPage, faq };
+export { signIn, common, validation, signUp, banner, header, footer, topPage, faq, genderPage };
