@@ -1,14 +1,14 @@
 import DefaultLayout from 'layouts/layout-default';
+import Appointment from 'modules/appointment';
 import { SignIn } from 'modules/authen/sign-in/Loadable';
 import { SignUp } from 'modules/authen/sign-up';
 import { GenderPage } from 'modules/gender-page';
 import { TopPage } from 'modules/top-page';
 
 export const RoutesName = {
+  TOP: '/',
   LOGIN: '/login',
-  HOME: '/',
   SIGNUP: '/register',
-  TOP: '/top',
   ABOUT: '/about',
   FAQ: '/hc/ja',
   USAGE: '/usage',
@@ -25,24 +25,21 @@ export const PUBLIC_ROUTES = [
     layout: DefaultLayout,
     exact: true,
   },
-
   {
     path: RoutesName.LOGIN,
     component: SignIn,
     layout: DefaultLayout,
     exact: true,
   },
-
   {
     path: RoutesName.SIGNUP,
     component: SignUp,
     layout: DefaultLayout,
     exact: true,
   },
-
   {
-    path: RoutesName.HOME,
-    component: TopPage,
+    path: RoutesName.APPOINTMENT,
+    component: Appointment,
     layout: DefaultLayout,
     exact: true,
   },
