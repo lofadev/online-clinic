@@ -1,11 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 import { ExportOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import { translations } from 'locales/translations';
 import { FieldInput, Text, Title } from 'components';
-import { FormProvider, useForm } from 'react-hook-form';
+import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
+import { useAuth } from 'slices';
 import {
   ButtonStyled,
   ButtonWrapper,
@@ -30,20 +31,30 @@ interface AuthenticationProps {
   nextStep: () => void;
 }
 
+interface FormValues {
+  token: string;
+}
 const Authentication: React.FC<AuthenticationProps> = ({ nextStep }) => {
+  const { verifyEmail, temp_token, step_register } = useAuth();
   const { t } = useTranslation();
   const { signUp } = translations;
 
   const form = useForm({
     defaultValues: {
-      code: '',
+      token: '',
     },
     mode: 'onSubmit',
   });
 
-  const handleSubmit = () => {
-    nextStep();
+  const handleSubmit: SubmitHandler<FormValues> = ({ token }) => {
+    verifyEmail({ data: token || temp_token });
   };
+
+  useEffect(() => {
+    if (step_register === 3) {
+      nextStep();
+    }
+  }, [step_register]);
 
   const failEmail: IFailEmail[] = useMemo(() => {
     return [
@@ -58,7 +69,7 @@ const Authentication: React.FC<AuthenticationProps> = ({ nextStep }) => {
         content: t(signUp.failEmail.content2),
       },
     ];
-  }, []);
+  }, [t, signUp]);
 
   return (
     <>
@@ -92,7 +103,7 @@ const Authentication: React.FC<AuthenticationProps> = ({ nextStep }) => {
 
           <CodeStyled>
             <FormInput>
-              <FieldInput name="code" label={t(signUp['authentication-code'])} />
+              <FieldInput name="token" label={t(signUp['authentication-code'])} />
             </FormInput>
 
             <ButtonWrapper>

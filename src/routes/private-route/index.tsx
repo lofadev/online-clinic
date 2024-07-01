@@ -1,15 +1,17 @@
 import { Redirect, Route, RouteProps } from 'react-router-dom';
 
-import HomeLayout from 'layouts/layout-default';
+import AuthLayout from 'layouts/layout-default';
 import React from 'react';
 import { useAuth } from 'slices/auth';
 
 const PrivateRoute: React.FC<RouteProps & { component: any; layout: any }> = ({
   component: Component,
-  layout: Layout = HomeLayout,
+  layout: Layout = AuthLayout,
+  gender,
   ...rest
-}) => {
+}: any) => {
   const { authenticated } = useAuth();
+
   return (
     <Route
       {...rest}
@@ -17,7 +19,7 @@ const PrivateRoute: React.FC<RouteProps & { component: any; layout: any }> = ({
       render={(props: any) =>
         authenticated ? (
           <Layout>
-            <Component {...props} />
+            <Component gender={gender} {...props} />
           </Layout>
         ) : (
           <Redirect

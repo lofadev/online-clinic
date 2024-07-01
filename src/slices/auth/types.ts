@@ -6,6 +6,10 @@ export interface AuthState {
   error?: RepoErrorType | null;
   authenticated: boolean;
   user_profile: UserModel | null;
+  step_register: number;
+  temp_token: string;
+  isVerifyEmail: boolean;
+  registerEmail: string;
 }
 
 export enum RepoErrorType {

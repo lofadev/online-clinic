@@ -45,7 +45,6 @@ export const SignIn: React.FC = () => {
   });
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    push('/');
     login(data);
   };
 
