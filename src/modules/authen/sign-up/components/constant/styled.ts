@@ -66,10 +66,7 @@ export const FormAgree = styled.div`
 
 export const FormCheckStyled = styled.div`
   width: 70%;
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-  gap: 8px;
+  margin-bottom: 5px;
 `;
 
 export const FormLink = styled.div`
@@ -83,8 +80,6 @@ export const LinkStyled = styled.a`
   font-size: 14px;
   font-weight: 600;
 `;
-
-export const LabelCheck = styled.label``;
 
 export const ButtonStyled = styled.div`
   display: flex;

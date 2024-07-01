@@ -5,7 +5,7 @@ import topPage from './top-page.json';
 import banner from './banner.json';
 import header from './header.json';
 import footer from './footer.json';
-import signUp from './sing-up.json';
+import signUp from './sign-up.json';
 import faq from './faq.json';
 import genderPage from './gender-page.json';
 

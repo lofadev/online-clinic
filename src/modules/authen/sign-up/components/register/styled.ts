@@ -80,8 +80,6 @@ export const RequiredTop = styled.div`
 `;
 
 export const FormCheck = styled.div`
-  display: flex;
-  align-items: center;
   margin: 10px 0;
 
   .ant-checkbox-inner {
@@ -100,12 +98,11 @@ export const FormCheck = styled.div`
   .ant-checkbox-checked .ant-checkbox-inner {
     border-color: #000;
     background-color: #000 !important;
-  }
-`;
 
-export const LabelCheck = styled.span`
-  font-weight: 400;
-  font-size: 12px;
+    &::after {
+      inset-inline-start: 20%;
+    }
+  }
 `;
 
 export const Required = styled.div`
