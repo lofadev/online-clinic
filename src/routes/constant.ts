@@ -22,21 +22,18 @@ export const PUBLIC_ROUTES = [
     layout: DefaultLayout,
     exact: true,
   },
-
   {
     path: RoutesName.LOGIN,
     component: SignIn,
     layout: DefaultLayout,
     exact: true,
   },
-
   {
     path: RoutesName.SIGNUP,
     component: SignUp,
     layout: DefaultLayout,
     exact: true,
   },
-
   {
     path: RoutesName.HOME,
     component: TopPage,
