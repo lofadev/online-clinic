@@ -1,31 +1,5 @@
 import { PropsFlow } from 'components/page/flow';
-import { PropsSubject } from 'components/page/medical-subject';
-import { PropsSiekte } from 'components/page/siekte';
 
-import {
-  Body,
-  Cosmetic,
-  Eye,
-  Fat,
-  FemaleAGA,
-  Gender,
-  Glass,
-  Medicine,
-  MenAGA,
-  Other,
-  Skin,
-  Sleep,
-  UV,
-  Virut,
-} from 'assets/icons/icon-siekte/index';
-import {
-  Delivery,
-  DeliveryGeneral,
-  Price,
-  PriceGeneral,
-  SmartPhone,
-  SmartPhoneGeneral,
-} from 'assets/icons/icon-feature';
 import {
   FlowStep1General,
   FlowStep1Male,
@@ -34,111 +8,19 @@ import {
   FlowStep3General,
   FlowStep3Male,
 } from 'assets/icons/flow';
-import { AgaFemaleSubject, AgaMaleSubject, EdMaleSubject } from 'assets/images/medical-subject';
 import { MedicalQuery } from 'components/medicalqueries';
 import { IMedicationCard } from 'components/slider/type';
+import {
+  Price,
+  Delivery,
+  SmartPhone,
+  PriceGeneral,
+  DeliveryGeneral,
+  SmartPhoneGeneral,
+} from 'assets/icons/icon-feature';
+import { PropsFeature } from 'components/page/feature';
 
-export const listDataSiekte: PropsSiekte[] = [
-  {
-    id: 1,
-    icon: Sleep,
-    content: '不眠症睡眠障害',
-    gender: 'general',
-    path: '/menu/sleep',
-  },
-  {
-    id: 2,
-    icon: MenAGA,
-    content: '男性AGA',
-    gender: 'male',
-    path: '/menu/menaga',
-  },
-  {
-    id: 3,
-    icon: FemaleAGA,
-    content: '女性AGA',
-    gender: 'female',
-    path: '/menu/femalega',
-  },
-  {
-    id: 4,
-    icon: Body,
-    content: 'ED早漏防止',
-    gender: 'male',
-    path: '/menu/body',
-  },
-  {
-    id: 5,
-    icon: Cosmetic,
-    content: 'ピル',
-    gender: 'general',
-    path: '/menu/sleep',
-  },
-  {
-    id: 6,
-    icon: Eye,
-    content: 'メディカルアイラッシュ',
-    gender: 'female',
-    path: '/menu/sleep',
-  },
-  {
-    id: 7,
-    icon: Fat,
-    content: 'メディカルダイエット・肥満症',
-    gender: 'general',
-    path: '/menu/sleep',
-  },
-  {
-    id: 8,
-    icon: Gender,
-    content: '性感染症',
-    gender: 'general',
-    path: '/menu/sleep',
-  },
-  {
-    id: 9,
-    icon: Glass,
-    content: '花粉症',
-    gender: 'general',
-    path: '/menu/sleep',
-  },
-  {
-    id: 10,
-    icon: Medicine,
-    content: 'ドクターズコスメ',
-    gender: 'female',
-    path: '/menu/sleep',
-  },
-  {
-    id: 11,
-    icon: Other,
-    content: 'アフターピル',
-    gender: 'female',
-    path: '/menu/sleep',
-  },
-  {
-    id: 12,
-    icon: Skin,
-    content: 'メディカルスキンケア',
-    gender: 'general',
-    path: '/menu/sleep',
-  },
-  {
-    id: 13,
-    icon: UV,
-    content: '飲む日焼け止め',
-    gender: 'female',
-    path: '/menu/sleep',
-  },
-  {
-    id: 14,
-    icon: Virut,
-    content: 'インフルエンザ予防',
-    gender: 'general',
-    path: '/menu/sleep',
-  },
-];
-export const listDataFeature: PropsSiekte[] = [
+export const listDataFeature: PropsFeature[] = [
   {
     id: 1,
     icon: Price,
@@ -242,32 +124,6 @@ export const listDataFlow: PropsFlow[] = [
     title: 'お薬の受け取り',
     content: 'ご自宅や、コンビニへの配送も可能です！',
     gender: 'male',
-  },
-];
-export const listDataSubject: PropsSubject[] = [
-  {
-    id: 1,
-    gender: 'female',
-    picture: AgaFemaleSubject,
-    title: '女性AGA',
-    content: 'AGAは、誰もが対策する時代。',
-    path: '/menu/agafemale',
-  },
-  {
-    id: 2,
-    gender: 'male',
-    picture: AgaMaleSubject,
-    title: '男性AGA',
-    content: 'AGAは、誰もが対策する時代。',
-    path: '/menu/agamale',
-  },
-  {
-    id: 3,
-    gender: 'male',
-    picture: EdMaleSubject,
-    title: 'ED・早漏防止',
-    content: '成人男性の多くが抱える悩み',
-    path: '/menu/edmale',
   },
 ];
 export const dataMedicalQueryMale: MedicalQuery[] = [

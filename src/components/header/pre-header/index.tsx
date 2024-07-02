@@ -28,7 +28,7 @@ const PreHeader: FC = () => {
     {
       id: 1,
       content: t(header.navigation.top),
-      path: '/path1',
+      path: '/',
     },
     {
       id: 2,
@@ -38,22 +38,22 @@ const PreHeader: FC = () => {
     {
       id: 3,
       content: t(header.navigation.about_dmm),
-      path: '/path3',
+      path: '/about',
     },
     {
       id: 4,
       content: t(header.navigation.how_to_use),
-      path: '/path4',
+      path: '/how-to-use',
     },
     {
       id: 5,
       content: t(header.navigation.faq),
-      path: '/path5',
+      path: '/faq',
     },
     {
       id: 6,
       content: t(header.navigation.dr_column),
-      path: '/path6',
+      path: '/dr-column',
     },
   ];
 

@@ -1,6 +1,7 @@
 import DefaultLayout from 'layouts/layout-default';
 import Appointment from 'modules/appointment';
 import LayoutSeccond from 'layouts/layout-seccond';
+import { ChangePassword } from 'modules/authen/change-password';
 import { SignIn } from 'modules/authen/sign-in/Loadable';
 import { SignUp } from 'modules/authen/sign-up';
 import { GenderPage } from 'modules/gender-page';
@@ -17,6 +18,7 @@ export const RoutesName = {
   NEW: '/new',
   MALE: '/male',
   FEMALE: '/female',
+  CHANGE: '/change-password',
 };
 
 export const PUBLIC_ROUTES = [
@@ -57,6 +59,12 @@ export const PUBLIC_ROUTES = [
     layout: DefaultLayout,
     exact: true,
     gender: 'female',
+  },
+  {
+    path: RoutesName.CHANGE,
+    component: ChangePassword,
+    layout: DefaultLayout,
+    exact: true,
   },
 ];
 

@@ -6,7 +6,6 @@ import { ContentSubject, ImageStyle, MedicalSubjectStyle, TilteText, TitleIcon, 
 
 export type PropsSubject = {
   id: number;
-  gender: 'male' | 'female';
   picture: string;
   title: string;
   content: string;
@@ -14,7 +13,7 @@ export type PropsSubject = {
 };
 
 const MedicalSubject: FC<PropsSubject> = (props) => {
-  const { id, picture, title, content, path, gender } = props;
+  const { id, picture, title, content, path } = props;
   const history = useHistory();
 
   const handleClick = () => {
@@ -22,7 +21,7 @@ const MedicalSubject: FC<PropsSubject> = (props) => {
   };
 
   return (
-    <MedicalSubjectStyle key={id} onClick={handleClick} className={`medical-subject-${gender}`}>
+    <MedicalSubjectStyle key={id} onClick={handleClick}>
       <ImageStyle src={picture} alt="picture" />
 
       <TitleSubject>

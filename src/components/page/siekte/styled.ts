@@ -26,7 +26,7 @@ export const IconSiekteStyle = styled.div`
     transition: 0.2s;
   }
 
-  &.male {
+  &.FOR_MALE {
     & > .border-icon {
       border: 1px solid #1651b0;
 
@@ -36,7 +36,7 @@ export const IconSiekteStyle = styled.div`
     }
   }
 
-  &.female {
+  &.FOR_FEMALE {
     & > .border-icon {
       border: 1px solid ${({ theme }) => theme.tertiary};
 
@@ -46,7 +46,7 @@ export const IconSiekteStyle = styled.div`
     }
   }
 
-  &.general {
+  &.GENERAL {
     & > .border-icon {
       border: 1px solid ${({ theme }) => theme.primary};
 

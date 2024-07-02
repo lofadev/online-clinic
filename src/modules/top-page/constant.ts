@@ -7,22 +7,6 @@ import {
   FlowStep3Male,
 } from 'assets/icons/flow';
 import { Delivery, Price, SmartPhone } from 'assets/icons/icon-feature';
-import {
-  Body,
-  Cosmetic,
-  Eye,
-  Fat,
-  FemaleAGA,
-  Gender,
-  Glass,
-  Medicine,
-  MenAGA,
-  Other,
-  Skin,
-  Sleep,
-  UV,
-  Virut,
-} from 'assets/icons/icon-siekte';
 import { PropsFlow } from 'components/page/flow';
 import { PropsSiekte } from 'components/page/siekte';
 import { MedicalQuery } from 'components/medicalqueries';
@@ -38,125 +22,25 @@ type DeliveryInfoType = {
   title: string;
   subTitle: string;
 };
-export const listDataSiekte: PropsSiekte[] = [
-  {
-    id: 1,
-    icon: Sleep,
-    content: '不眠症睡眠障害',
-    gender: 'general',
-    path: '/menu/sleep',
-  },
-  {
-    id: 2,
-    icon: MenAGA,
-    content: '男性AGA',
-    gender: 'male',
-    path: '/menu/menaga',
-  },
-  {
-    id: 3,
-    icon: FemaleAGA,
-    content: '女性AGA',
-    gender: 'female',
-    path: '/menu/femalega',
-  },
-  {
-    id: 4,
-    icon: Body,
-    content: 'ED早漏防止',
-    gender: 'male',
-    path: '/menu/body',
-  },
-  {
-    id: 5,
-    icon: Cosmetic,
-    content: 'ピル',
-    gender: 'general',
-    path: '/menu/sleep',
-  },
-  {
-    id: 6,
-    icon: Eye,
-    content: 'メディカルアイラッシュ',
-    gender: 'female',
-    path: '/menu/sleep',
-  },
-  {
-    id: 7,
-    icon: Fat,
-    content: 'メディカルダイエット・肥満症',
-    gender: 'general',
-    path: '/menu/sleep',
-  },
-  {
-    id: 8,
-    icon: Gender,
-    content: '性感染症',
-    gender: 'general',
-    path: '/menu/sleep',
-  },
-  {
-    id: 9,
-    icon: Glass,
-    content: '花粉症',
-    gender: 'general',
-    path: '/menu/sleep',
-  },
-  {
-    id: 10,
-    icon: Medicine,
-    content: 'ドクターズコスメ',
-    gender: 'female',
-    path: '/menu/sleep',
-  },
-  {
-    id: 11,
-    icon: Other,
-    content: 'アフターピル',
-    gender: 'female',
-    path: '/menu/sleep',
-  },
-  {
-    id: 12,
-    icon: Skin,
-    content: 'メディカルスキンケア',
-    gender: 'general',
-    path: '/menu/sleep',
-  },
-  {
-    id: 13,
-    icon: UV,
-    content: '飲む日焼け止め',
-    gender: 'female',
-    path: '/menu/sleep',
-  },
-  {
-    id: 14,
-    icon: Virut,
-    content: 'インフルエンザ予防',
-    gender: 'general',
-    path: '/menu/sleep',
-  },
-];
 
 export const listDataFeature: PropsSiekte[] = [
   {
     id: 1,
     icon: Price,
     content: '続けやすい安心の価格',
-    gender: 'general',
+    gender: 'GENERAL',
   },
   {
     id: 2,
     icon: Delivery,
     content: '最短当日到着',
-    gender: 'general',
+    gender: 'GENERAL',
   },
   {
     id: 3,
     icon: SmartPhone,
     content: '初診でもすぐに受診可能',
-    gender: 'general',
+    gender: 'GENERAL',
   },
 ];
 
