@@ -1,13 +1,16 @@
 import Loading from 'components/loading/Loading';
+import { notification } from 'antd';
 import { BROADCAST_CHANNEL } from 'constant';
-import { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import AppRoutes from 'routes';
 import { useAuth } from 'slices/auth';
 import { useBroadcast } from 'slices/broadcast';
+import { useNotification } from 'slices/notification';
 import { STORAGE, getLocalStorage } from 'utils/storage';
 
 export const App: React.FC = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = React.useState(true);
+  const { notif } = useNotification();
 
   const { getMe } = useAuth();
   const { setBroadcastChannel, boardcastChannel } = useBroadcast();
@@ -34,6 +37,16 @@ export const App: React.FC = () => {
       broadcast.close();
     };
   }, []);
+
+  useEffect(() => {
+    if (notif) {
+      notification[notif.type]({
+        description: notif.description,
+        message: notif.message,
+        duration: 2,
+      });
+    }
+  }, [notif]);
 
   useEffect(() => {
     if (boardcastChannel) {

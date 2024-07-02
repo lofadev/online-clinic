@@ -3,8 +3,9 @@ import { useHistory } from 'react-router-dom';
 
 import { translations } from 'locales/translations';
 import { useTranslation } from 'react-i18next';
-import IconHeader, { PropsIconHeader } from '../icon-header';
+import RoutesName from 'routes/constant';
 import { ImageIcon, ImageLogo, LeftTopHeader, RightTopHeader, TopHeaderStyle } from './styled';
+import IconHeader, { PropsIconHeader } from '../icon-header';
 
 const TopHeader: FC = () => {
   const history = useHistory();
@@ -82,7 +83,7 @@ const TopHeader: FC = () => {
           id: 1,
           icon: 'https://navismithapis-cdn.com/img/login.svg',
           content: t(header.account.dmm_account_info),
-          path: '/path1',
+          path: `${RoutesName.PROFILE}`,
         },
         {
           id: 2,

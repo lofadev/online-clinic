@@ -4,6 +4,13 @@ const END_POINT = {
     REGISTER: '/register',
     TOKEN: '/email-verification',
     GET_ME: '/user',
+    PROFILE: '/user',
+    ADDRESSES: 'user/addresses',
+    UPDATE_ADDRESSES: 'user/addresses',
+  },
+
+  ADDRESS: {
+    PREFECTURE: '/prefectures',
   },
   SERVICE: {
     FETCH: '/user/services',

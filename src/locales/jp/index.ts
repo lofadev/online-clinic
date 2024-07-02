@@ -8,5 +8,6 @@ import footer from './footer.json';
 import signUp from './sign-up.json';
 import faq from './faq.json';
 import genderPage from './gender-page.json';
+import userInfomation from './user-infomation.json';
 
-export { signIn, common, validation, signUp, banner, header, footer, topPage, faq, genderPage };
+export { signIn, common, validation, signUp, banner, header, footer, topPage, faq, genderPage, userInfomation };

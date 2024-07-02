@@ -1,16 +1,17 @@
 import DefaultLayout from 'layouts/layout-default';
+import LayoutSecond from 'layouts/layout-seccond';
 import Appointment from 'modules/appointment';
-import LayoutSeccond from 'layouts/layout-seccond';
 import { ChangePassword } from 'modules/authen/change-password';
 import { SignIn } from 'modules/authen/sign-in/Loadable';
 import { SignUp } from 'modules/authen/sign-up';
+import { UserProfile } from 'modules/user-profile/Loadable';
 import { GenderPage } from 'modules/gender-page';
 import { TopPage } from 'modules/top-page';
 
 export const RoutesName = {
-  TOP: '/',
   LOGIN: '/login',
   SIGNUP: '/register',
+  TOP: '/',
   ABOUT: '/about',
   FAQ: '/hc/ja',
   USAGE: '/usage',
@@ -19,19 +20,20 @@ export const RoutesName = {
   MALE: '/male',
   FEMALE: '/female',
   CHANGE: '/change-password',
+  PROFILE: '/profile',
 };
 
 export const PUBLIC_ROUTES = [
   {
     path: RoutesName.LOGIN,
     component: SignIn,
-    layout: LayoutSeccond,
+    layout: LayoutSecond,
     exact: true,
   },
   {
     path: RoutesName.SIGNUP,
     component: SignUp,
-    layout: LayoutSeccond,
+    layout: LayoutSecond,
     exact: true,
   },
   {
@@ -82,6 +84,12 @@ export const PRIVATE_ROUTES = [
     layout: DefaultLayout,
     exact: true,
     gender: 'female',
+  },
+  {
+    path: RoutesName.PROFILE,
+    component: UserProfile,
+    layout: LayoutSecond,
+    exact: true,
   },
 ];
 export const CUSTOME_ROUTE = [
