@@ -1,14 +1,10 @@
 import { RouterState } from 'redux-first-history';
-import { GithubRepoFormState } from 'modules/HomePage/Features/GithubRepoForm/slice/types';
-import { UsersState } from 'slices/users/types';
-import { ThemeState } from 'slices/theme/types';
+import { AppointmentState } from 'slices/appointment/types';
 import { AuthState } from 'slices/auth/types';
+import { BroadcastState } from 'slices/broadcast/types';
 import { ErrorState } from 'slices/errors/types';
 import { LoadingState } from 'slices/loading/types';
-import { InvoiceState } from 'slices/invoice/types';
-import { BroadcastState } from 'slices/broadcast/types';
-import { JancodeState } from 'slices/jancode/types';
-import { ServicesState } from 'slices/services/types';
+import { ThemeState } from 'slices/theme/types';
 
 /*
   Because the redux-injectors injects your reducers asynchronously somewhere in your code
@@ -21,11 +17,8 @@ export interface RootState {
   errors: ErrorState;
   loading: LoadingState;
   auth: AuthState;
-  githubRepoForm: GithubRepoFormState;
-  users: UsersState;
-  invoice: InvoiceState;
   broadcast: BroadcastState;
-  jancode: JancodeState;
   router: RouterState;
   services: ServicesState;
+  appointment: AppointmentState;
 }

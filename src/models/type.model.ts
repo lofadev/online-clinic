@@ -6,3 +6,7 @@ export type FONT_WEIGHT_TYPE = keyof typeof FONT_WEIGHT;
 export type FONT_FAMILY_TYPE = keyof typeof FONT_FAMILY;
 export type FONT_STYLE_TYPE = keyof typeof FONT_STYLE;
 export type THEME_TYPE = keyof typeof themes.light;
+export type TOptions = {
+  label: string | number;
+  value: string | number;
+};

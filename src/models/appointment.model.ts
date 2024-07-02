@@ -1,1 +1,1 @@
-export type TBookingStatus = 'none' | 'alert' | 'open' | 'close';
+export type TBookingStatus = 'NONE' | 'ALERT' | 'AVAILABLE' | 'CLOSE';

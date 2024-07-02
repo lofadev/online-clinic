@@ -4,7 +4,10 @@ const END_POINT = {
     GET_ME: '/user/me',
   },
   SERVICE: {
-    GET_SIEKTE: '/user/services',
+    FETCH: '/user/services',
+  },
+  APPOINTMENT: {
+    RESERVATION_TIMETABLES: '/reservation-timetables',
   },
 };
 

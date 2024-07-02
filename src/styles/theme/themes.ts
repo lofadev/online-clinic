@@ -15,6 +15,7 @@ const lightTheme = {
   purple: '#9483DA',
   maleColor: '#1651b0',
   femaleColor: '#f35f71',
+  extraGray: '#f7f9fc',
 
   textPrimary: '#3F4F5F',
   textDanger: '#F2596B',
@@ -39,6 +40,7 @@ const darkTheme: Theme = {
   purple: '#9483DA',
   maleColor: '#1651b0',
   femaleColor: '#f35f71',
+  extraGray: '#f7f9fc',
 
   textPrimary: '#3F4F5F',
   textDanger: '#F2596B',
