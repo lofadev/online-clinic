@@ -1,5 +1,6 @@
 import DefaultLayout from 'layouts/layout-default';
 import Appointment from 'modules/appointment';
+import LayoutSeccond from 'layouts/layout-seccond';
 import { SignIn } from 'modules/authen/sign-in/Loadable';
 import { SignUp } from 'modules/authen/sign-up';
 import { GenderPage } from 'modules/gender-page';
@@ -28,13 +29,13 @@ export const PUBLIC_ROUTES = [
   {
     path: RoutesName.LOGIN,
     component: SignIn,
-    layout: DefaultLayout,
+    layout: LayoutSeccond,
     exact: true,
   },
   {
     path: RoutesName.SIGNUP,
     component: SignUp,
-    layout: DefaultLayout,
+    layout: LayoutSeccond,
     exact: true,
   },
   {

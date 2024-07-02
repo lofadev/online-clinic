@@ -3,13 +3,11 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
-import { push } from 'redux-first-history';
 
 import { LoginArrow } from 'assets';
 import { FieldInput } from 'components';
 import { translations } from 'locales/translations';
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useAuth } from 'slices';
 import scheme from './schema';
 import {
@@ -35,9 +33,7 @@ export const SignIn: React.FC = () => {
   const { login } = useAuth();
   const { t } = useTranslation();
   const { signIn } = translations;
-  // const history = useHistory();
-
-  const dispatch = useDispatch();
+  const { push } = useHistory();
 
   const form = useForm({
     defaultValues: {
@@ -49,7 +45,7 @@ export const SignIn: React.FC = () => {
   });
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    dispatch(push('/'));
+    push('/');
     login(data);
   };
 
@@ -90,7 +86,7 @@ export const SignIn: React.FC = () => {
 
           <RegisterStyled>
             <FirstStyled>{t(signIn.register)}</FirstStyled>
-            <ButtonLogin className="btn_res" onClick={() => dispatch(push('/register'))}>
+            <ButtonLogin className="btn_res" onClick={() => push('/register')}>
               {t(signIn.btn_register)}
             </ButtonLogin>
           </RegisterStyled>

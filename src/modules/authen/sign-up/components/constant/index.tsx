@@ -12,7 +12,6 @@ import {
   FormInputStyled,
   FormLink,
   FormTexts,
-  LabelCheck,
   LabelStyled,
   LinkStyled,
   MainStyled,
@@ -50,10 +49,6 @@ const FormInput: IFormInput[] = [
 
 const Complete: React.FC = () => {
   const form = useForm({
-    defaultValues: {
-      email: '',
-      password: '',
-    },
     mode: 'onSubmit',
   });
 
@@ -121,19 +116,17 @@ const Complete: React.FC = () => {
               <FormLink>
                 <LinkStyled>DMMオンラインクリニック受診支援サービスプライバシーポリシー</LinkStyled>
               </FormLink>
-
               <FormCheckStyled>
-                <FieldCheckbox name="agree" />
-                <LabelCheck>利用規約および、プライバシーポリシーに同意します</LabelCheck>
+                <FieldCheckbox name="agree" question="利用規約および、プライバシーポリシーに同意します" />
               </FormCheckStyled>
 
               <FormCheckStyled>
-                <FieldCheckbox name="agree-provide" />
-                <LabelCheck>
-                  ユーザーが指定した登録医療機関等のオンラインクリニックを受診するために、
-                  当社がユーザーにより本サービスにおいて登録された個人情報を当該医療機関等に
-                  所定のシステムを通じて提供することについて同意します
-                </LabelCheck>
+                <FieldCheckbox
+                  name="agree-provide"
+                  question="ユーザーが指定した登録医療機関等のオンラインクリニックを受診するために、
+                    当社がユーザーにより本サービスにおいて登録された個人情報を当該医療機関等に
+                    所定のシステムを通じて提供することについて同意します"
+                />
               </FormCheckStyled>
             </FormAgree>
 
