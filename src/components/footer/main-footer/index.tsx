@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { translations } from 'locales/translations';
 import { useTranslation } from 'react-i18next';
 import DetailMainFooter, { PropsDetailMainFooter } from './DetailMainFooter';
-import { MainFooterStyle } from './style';
+import { MainFooterStyle } from './styled';
 
 const MainFooter: FC = () => {
   const { t } = useTranslation();

@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 
-import { Content, IconReasonStyle, IconSVG } from './style';
+import { Content, IconReasonStyle, IconSVG } from './styled';
 
 export type PropsReason = {
   id: number;

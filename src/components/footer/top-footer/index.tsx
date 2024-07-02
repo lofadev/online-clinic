@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import { useTranslation } from 'react-i18next';
 import { translations } from 'locales/translations';
-import { ContentTopFooter, ImageStyle, TopFooterStyle } from './style';
+import { useTranslation } from 'react-i18next';
+import { ContentTopFooter, ImageStyle, TopFooterStyle } from './styled';
 
 const TopFooter: FC = () => {
   const { t } = useTranslation();

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { BorderIcon, ContentIcon, IconFill, IconSiekteStyle, ImageStyle } from './style';
+import { BorderIcon, ContentIcon, IconFill, IconSiekteStyle, ImageStyle } from './styled';
 
 export type PropsSiekte = {
   id: number;
