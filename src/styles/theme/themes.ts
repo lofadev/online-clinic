@@ -16,6 +16,7 @@ const lightTheme = {
   maleColor: '#1651b0',
   femaleColor: '#f35f71',
   extraGray: '#f7f9fc',
+  primaryLight: '#63d4db',
 
   textPrimary: '#3F4F5F',
   textDanger: '#F2596B',
@@ -41,6 +42,7 @@ const darkTheme: Theme = {
   maleColor: '#1651b0',
   femaleColor: '#f35f71',
   extraGray: '#f7f9fc',
+  primaryLight: '#63d4db',
 
   textPrimary: '#3F4F5F',
   textDanger: '#F2596B',
