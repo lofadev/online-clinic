@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { BorderIcon, ContentIcon, IconFill, IconSiekteStyle, ImageStyle } from './styled';
+import { BorderIcon, ContentIcon, IconFill, IconSiekteStyle } from './styled';
 
 export type PropsSiekte = {
   id: number;
   icon: string;
   content: string;
-  gender: 'male' | 'female' | 'general';
+  gender: 'FOR_MALE' | 'FOR_FEMALE' | 'GENERAL';
   disable?: boolean;
   path?: string;
 };
@@ -25,10 +25,7 @@ const IconSiekte: FC<PropsSiekte> = (props) => {
   return (
     <IconSiekteStyle className={`${gender} ${props?.disable ? 'disable' : ''}`} onClick={handleClick} key={id}>
       <BorderIcon className="border-icon">
-        <IconFill className="icon-fill">
-          <ImageStyle src={icon} alt="icon" />
-        </IconFill>
-
+        <IconFill className="icon-fill" dangerouslySetInnerHTML={{ __html: icon }} />
         <ContentIcon>{content}</ContentIcon>
       </BorderIcon>
     </IconSiekteStyle>

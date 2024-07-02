@@ -1,9 +1,13 @@
 import { FC } from 'react';
-
-import { PropsSiekte } from '../siekte';
 import { ContentFeature, IconFeatureStyle, IconFilled, ImageStyle } from './styled';
 
-const IconFeature: FC<PropsSiekte> = (props) => {
+export type PropsFeature = {
+  id: number;
+  icon: string;
+  content: string;
+  gender: 'male' | 'female' | 'general';
+};
+const IconFeature: FC<PropsFeature> = (props) => {
   const { id, icon, content, gender } = props;
   return (
     <IconFeatureStyle key={id}>

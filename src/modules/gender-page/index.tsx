@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 import BannerGender from 'components/page/banner-gender';
@@ -13,6 +13,8 @@ import { CardSlider } from 'components/slider';
 import FlowItem from 'components/page/flow';
 import { Video } from 'components/videocustom';
 
+import { IService } from 'types/Service';
+import { useServicesSlice } from 'slices/services';
 import {
   BottomFeature,
   ButtonAppointBox,
@@ -48,8 +50,6 @@ import {
   dataSlideStaffRecommend,
   listDataFeature,
   listDataFlow,
-  listDataSiekte,
-  listDataSubject,
 } from './constant';
 
 import FeatureContent from './FeatuteContent';
@@ -60,8 +60,9 @@ export type PropsGenderPage = {
 
 export const GenderPage: React.FC<PropsGenderPage> = (props) => {
   const { gender } = props;
-  const listDataSubjectForGender = listDataSubject.filter((item) => item.gender === gender);
-  const listDataSiekteGeneral = listDataSiekte.filter((item) => item.gender === 'general');
+  const [dataServices, setDataServices] = useState<IService[]>([]);
+  const { fetchServices, serviceList, medicalSubjectList } = useServicesSlice();
+  const [medicalSubjectData, setMedicalSubjectData] = useState<IService[]>([]);
   const listDataFeatureGender = listDataFeature.filter((item) => item.gender === gender);
   const listDataFlowGender = listDataFlow.filter((item) => item.gender === gender);
 
@@ -73,6 +74,24 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
   const handleClickUsage = () => {
     history.push('/usage');
   };
+
+  useEffect(() => {
+    const fetchDataServices = () => {
+      if (gender === 'male') {
+        fetchServices('FOR_MALE');
+      } else {
+        fetchServices('FOR_FEMALE');
+      }
+    };
+    fetchDataServices();
+  }, [gender]);
+
+  useEffect(() => {
+    if (serviceList) {
+      setDataServices(serviceList);
+      setMedicalSubjectData(medicalSubjectList);
+    }
+  }, [serviceList, medicalSubjectList]);
 
   return (
     <>
@@ -98,8 +117,16 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
               <TitleChildren>DMMオンラインクリニックで受診できる診療内容</TitleChildren>
 
               <ListSiekteGender>
-                {listDataSubjectForGender.length &&
-                  listDataSubjectForGender.map((data) => <MedicalSubject {...data} />)}
+                {medicalSubjectData.length &&
+                  medicalSubjectData.map((data) => (
+                    <MedicalSubject
+                      id={data.id}
+                      picture={data.image}
+                      title={data.name}
+                      content="成人男性の多くが抱える悩み"
+                      path={`/menu/${data.id}`}
+                    />
+                  ))}
               </ListSiekteGender>
             </MainContentSubject>
           </ArticleBlock>
@@ -107,9 +134,17 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
 
         <SiekteGeneralBox {...props}>
           <ContentSiekteBox {...props}>共通診療科目</ContentSiekteBox>
-
           <ListGeneralSiekte>
-            {listDataSiekteGeneral.length && listDataSiekteGeneral.map((data) => <IconSiekte {...data} />)}
+            {dataServices.length &&
+              dataServices.map((data) => (
+                <IconSiekte
+                  icon={data.icon}
+                  content={data.name}
+                  gender={data.type}
+                  id={data.id}
+                  path={`/menu/${data.id}`}
+                />
+              ))}
           </ListGeneralSiekte>
         </SiekteGeneralBox>
 
@@ -150,7 +185,10 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
             }}
           >
             <FeatureIconBox>
-              {listDataFeatureGender.length && listDataFeatureGender.map((data) => <IconFeature {...data} />)}
+              {listDataFeatureGender.length &&
+                listDataFeatureGender.map((data) => (
+                  <IconFeature id={data.id} icon={data.icon} content={data.content} gender={data.gender} />
+                ))}
             </FeatureIconBox>
 
             <BottomFeature>

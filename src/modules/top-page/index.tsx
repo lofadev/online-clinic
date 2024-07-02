@@ -15,14 +15,16 @@ import { Banner } from 'components/banner';
 import { FAQSection } from 'components/faq-block';
 import IconFeature from 'components/page/feature';
 import FlowItem from 'components/page/flow';
-import IconSiekte from 'components/page/siekte';
+// import IconSiekte from 'components/page/siekte';
 import { translations } from 'locales/translations';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { push } from 'redux-first-history';
+import { Link, useHistory } from 'react-router-dom';
 import RoutesName from 'routes/constant';
-import { listCurrentIssue, listDataFlow, listDataSiekte, listDelivery } from './constant';
+import { useEffect, useState } from 'react';
+import { IService } from 'types/Service';
+import { useServicesSlice } from 'slices/services';
+import IconSiekte from 'components/page/siekte';
+import { listCurrentIssue, listDataFlow, listDelivery } from './constant';
 
 import {
   AboutTopBlock,
@@ -68,10 +70,24 @@ import {
 } from './styled';
 
 export const TopPage: React.FC = () => {
-  const dispatch = useDispatch();
-
+  const history = useHistory();
   const { t } = useTranslation();
   const { topPage } = translations;
+  const [dataServices, setDataServices] = useState<IService[]>([]);
+  const { fetchServices, serviceList } = useServicesSlice();
+
+  useEffect(() => {
+    const fetchDataServices = () => {
+      fetchServices('ALL');
+    };
+    fetchDataServices();
+  }, []);
+
+  useEffect(() => {
+    if (serviceList.length) {
+      setDataServices(serviceList);
+    }
+  }, [serviceList]);
 
   return (
     <div>
@@ -86,7 +102,18 @@ export const TopPage: React.FC = () => {
         }}
         backgroundWrapper="lightBlue"
       >
-        <SiekteWrapper>{listDataSiekte.length && listDataSiekte.map((item) => <IconSiekte {...item} />)}</SiekteWrapper>
+        <SiekteWrapper>
+          {dataServices.length &&
+            dataServices.map((item) => (
+              <IconSiekte
+                id={item.id}
+                icon={item.icon}
+                content={item.name}
+                gender={item.type}
+                path={`/menu/${item.id}`}
+              />
+            ))}
+        </SiekteWrapper>
 
         <MediaImageWrapper>
           <MediaImageStyled src={CurestationImage} alt="image" />
@@ -146,7 +173,7 @@ export const TopPage: React.FC = () => {
             <UserImageStyled src={UserImage} alt="image" />
           </CurrentIssuesBlock>
           <ButtonWrapper>
-            <ArrowButton size="small" onClick={() => dispatch(push(`${RoutesName.ABOUT}`))}>
+            <ArrowButton size="small" onClick={() => history.push(`${RoutesName.ABOUT}`)}>
               {t(topPage.button.about)}
             </ArrowButton>
           </ButtonWrapper>
@@ -170,13 +197,13 @@ export const TopPage: React.FC = () => {
             {listDataFlow.length && listDataFlow.map((data) => <FlowItem {...data} />)}
           </FollowBlockStyled>
           <FollowButtonSWrapper>
-            <ArrowButton size="small" onClick={() => dispatch(push(`${RoutesName.USAGE}`))}>
+            <ArrowButton size="small" onClick={() => history.push(`${RoutesName.USAGE}`)}>
               {t(topPage.button.service_info)}
             </ArrowButton>
           </FollowButtonSWrapper>
 
           <FollowButtonMWrapper>
-            <ArrowButton size="small" color="secondary" onClick={() => dispatch(push(`${RoutesName.APPOINTMENT}`))}>
+            <ArrowButton size="small" color="secondary" onClick={() => history.push(`${RoutesName.APPOINTMENT}`)}>
               {t(topPage.button.appoinment)}
               <FollowImageStyled src={ReserveIcon} alt="icon" />
               <ArrowWhiteIconStyled src={ArrowWhiteIcon} alt="icon" />
@@ -281,7 +308,7 @@ export const TopPage: React.FC = () => {
         </NewBlockWrapper>
 
         <ButtonWrapper>
-          <ArrowButton size="small" onClick={() => dispatch(push(`${RoutesName.NEW}`))}>
+          <ArrowButton size="small" onClick={() => history.push(`${RoutesName.NEW}`)}>
             {t(topPage.button.see_list)}
           </ArrowButton>
         </ButtonWrapper>

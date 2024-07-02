@@ -15,14 +15,14 @@ import { Banner } from 'components/banner';
 import { FAQSection } from 'components/faq-block';
 import IconFeature from 'components/page/feature';
 import FlowItem from 'components/page/flow';
-import IconSiekte from 'components/page/siekte';
+// import IconSiekte from 'components/page/siekte';
 import { translations } from 'locales/translations';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { push } from 'redux-first-history';
 import RoutesName from 'routes/constant';
-import { listCurrentIssue, listDataFlow, listDataSiekte, listDelivery } from './constant';
+import { listCurrentIssue, listDataFlow, listDelivery } from './constant';
 
 import {
   AboutTopBlock,
@@ -63,7 +63,7 @@ import {
   ProjectParticipation,
   ProjectParticipationImage,
   ProjectParticipationText,
-  SiekteWrapper,
+  // SiekteWrapper,
   UserImageStyled,
 } from './styled';
 
@@ -86,7 +86,7 @@ export const TopPage: React.FC = () => {
         }}
         backgroundWrapper="lightBlue"
       >
-        <SiekteWrapper>{listDataSiekte.length && listDataSiekte.map((item) => <IconSiekte {...item} />)}</SiekteWrapper>
+        {/* <SiekteWrapper>{listDataSiekte.length && listDataSiekte.map((item) => <IconSiekte {...item} />)}</SiekteWrapper> */}
 
         <MediaImageWrapper>
           <MediaImageStyled src={CurestationImage} alt="image" />
