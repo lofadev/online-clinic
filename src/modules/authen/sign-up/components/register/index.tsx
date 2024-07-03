@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { FormProvider, useForm } from 'react-hook-form';
+import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import { translations } from 'locales/translations';
 import { Button, FieldCheckbox, FieldInput } from 'components';
 import { IconEmail, LoginArrow } from 'assets';
+import { useAuth } from 'slices';
+import FieldPassword from 'components/form/field-password/Password';
 import SliderRegister from '../slider';
+import schema from './schema';
 import {
   ContentStyled,
   TitleLeft,
@@ -31,29 +34,40 @@ import {
   ArrowImg,
   IconEmailStyled,
 } from './styled';
-import scheme from './schema';
 
 interface RegisterProps {
   nextStep: () => void;
 }
+interface FormValues {
+  email: string;
+  password: string;
+  checkbox: NonNullable<boolean | undefined>;
+}
 
 const Register: React.FC<RegisterProps> = ({ nextStep }) => {
+  const { register, step_register } = useAuth();
   const { t } = useTranslation();
   const { signUp } = translations;
 
-  const form = useForm({
+  const form = useForm<FormValues>({
     defaultValues: {
       email: '',
       password: '',
+      checkbox: false,
     },
     mode: 'onSubmit',
-    resolver: yupResolver(scheme()),
+    resolver: yupResolver(schema()),
   });
 
-  const handleSubmit = () => {
-    nextStep();
+  const handleSubmit: SubmitHandler<FormValues> = (data) => {
+    const { email, password } = data;
+    register({ email, password });
   };
-
+  useEffect(() => {
+    if (step_register === 2) {
+      nextStep();
+    }
+  }, [step_register]);
   return (
     <>
       <Helmet>
@@ -89,7 +103,7 @@ const Register: React.FC<RegisterProps> = ({ nextStep }) => {
                     <Required>{t(signUp.required)}</Required>
                     <SchemaStyled>{t(signUp.required_schema)}</SchemaStyled>
                   </RequiredTop>
-                  <FieldInput name="password" placeholder={t(signUp.placeholder_password)} />
+                  <FieldPassword name="password" placeholder={t(signUp.placeholder_password)} />
                 </RequiredStyled>
 
                 <FormCheck>

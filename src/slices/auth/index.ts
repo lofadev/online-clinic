@@ -2,11 +2,8 @@ import { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from 'utils/@reduxjs/toolkit';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { useSelector, useDispatch } from 'react-redux';
-// import { LOCATION_CHANGE } from 'connected-react-router';
 
 import { UserModel } from 'models';
-// import { LocationChangePayload, locationChange } from 'utils/location';
-
 import { saga } from './saga';
 import { AuthState } from './types';
 import { selectAuth } from './selectors';
@@ -15,6 +12,10 @@ export const initialState: AuthState = {
   loading: false,
   authenticated: false,
   user_profile: null,
+  step_register: 1,
+  temp_token: '',
+  isVerifyEmail: false,
+  registerEmail: '',
 };
 
 // const locationChange = createAction(LOCATION_CHANGE);
@@ -36,17 +37,35 @@ const slice = createSlice({
       state.authenticated = true;
       state.user_profile = action.payload;
     },
+
+    register: (state) => {
+      state.loading = true;
+    },
+    registerSuccess: (state, action: PayloadAction<{ data: string; email: string }>) => {
+      state.loading = false;
+      state.registerEmail = action.payload.email;
+    },
+
+    updateStep: (state) => {
+      state.step_register += 1;
+    },
+    setVerifyEmail: (state, action: PayloadAction<string>) => {
+      state.loading = true;
+      state.temp_token = action.payload;
+    },
+    sendVerifyEmail: (state) => {
+      state.loading = true;
+    },
+    sendVerifyEmailSuccess: (state) => {
+      state.loading = false;
+      state.isVerifyEmail = true;
+      state.step_register += 1;
+    },
     logout: (state) => {
       state.loading = false;
       state.user_profile = null;
     },
   },
-  // extraReducers: (builder) => {
-  //   builder.addCase(locationChange, (state, { payload }: { payload: LocationChangePayload }) => {
-  //     console.log('=====>state ', state);
-  //     console.log('====> action', payload.location);
-  //   });
-  // },
 });
 
 export const { actions, reducer } = slice;
@@ -59,12 +78,16 @@ export const useAuth = () => {
   const dispatch = useDispatch();
 
   const login = (payload) => dispatch(actions.login(payload));
+  const register = (payload) => dispatch(actions.register(payload));
+  const verifyEmail = (payload) => dispatch(actions.sendVerifyEmail(payload));
   const getMe = () => dispatch(actions.getMe());
   const state = useSelector(selectAuth);
 
   return {
     login,
     getMe,
+    register,
+    verifyEmail,
     ...state,
   };
 };

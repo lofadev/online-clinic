@@ -1,8 +1,8 @@
 import { translations } from 'locales/translations';
 import * as yup from 'yup';
 
-const scheme = () => {
-  return yup.object().shape({
+const schema = () =>
+  yup.object().shape({
     email: yup
       .string()
       .trim()
@@ -11,8 +11,12 @@ const scheme = () => {
     password: yup
       .string()
       .trim()
+      .required(translations.validation.required)
       .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/, translations.validation.sign_up.password_format),
+    checkbox: yup
+      .boolean()
+      .oneOf([true], '空白のままにすることはできません')
+      .required('空白のままにすることはできません'),
   });
-};
 
-export default scheme;
+export default schema;

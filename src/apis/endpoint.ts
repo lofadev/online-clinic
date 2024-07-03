@@ -1,7 +1,9 @@
 const END_POINT = {
   AUTH: {
-    LOGIN: '/auth/login',
-    GET_ME: '/user/me',
+    LOGIN: '/login',
+    REGISTER: '/register',
+    TOKEN: '/email-verification',
+    GET_ME: '/user',
   },
   SERVICE: {
     FETCH: '/user/services',

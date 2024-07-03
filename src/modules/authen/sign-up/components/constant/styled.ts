@@ -43,44 +43,6 @@ export const FormGroup = styled.div`
 
 export const LabelStyled = styled.label``;
 
-export const ScrollStyled = styled.div`
-  height: 200px;
-  overflow-y: scroll;
-  padding: 25px;
-  margin: 25px;
-  border: 1px solid #333333;
-`;
-
-export const FormTexts = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const TextStyled = styled.div`
-  margin-bottom: 10px;
-`;
-
-export const FormAgree = styled.div`
-  margin: 24px;
-`;
-
-export const FormCheckStyled = styled.div`
-  width: 70%;
-  margin-bottom: 5px;
-`;
-
-export const FormLink = styled.div`
-  margin-top: 30px;
-  margin-bottom: 15px;
-`;
-
-export const LinkStyled = styled.a`
-  color: ${({ theme }) => theme.primary};
-  text-decoration: underline;
-  font-size: 14px;
-  font-weight: 600;
-`;
-
 export const ButtonStyled = styled.div`
   display: flex;
   justify-content: center;

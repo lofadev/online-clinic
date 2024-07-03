@@ -23,12 +23,6 @@ export const RoutesName = {
 
 export const PUBLIC_ROUTES = [
   {
-    path: RoutesName.TOP,
-    component: TopPage,
-    layout: DefaultLayout,
-    exact: true,
-  },
-  {
     path: RoutesName.LOGIN,
     component: SignIn,
     layout: LayoutSeccond,
@@ -68,6 +62,35 @@ export const PUBLIC_ROUTES = [
   },
 ];
 
-export const CUSTOME_ROUTE = [];
+export const PRIVATE_ROUTES = [
+  {
+    path: RoutesName.TOP,
+    component: TopPage,
+    layout: DefaultLayout,
+    exact: true,
+  },
+  {
+    path: RoutesName.MALE,
+    component: GenderPage,
+    layout: DefaultLayout,
+    exact: true,
+    gender: 'male',
+  },
+  {
+    path: RoutesName.FEMALE,
+    component: GenderPage,
+    layout: DefaultLayout,
+    exact: true,
+    gender: 'female',
+  },
+];
+export const CUSTOME_ROUTE = [
+  {
+    path: RoutesName.TOP,
+    component: TopPage,
+    layout: DefaultLayout,
+    exact: true,
+  },
+];
 
 export default RoutesName;
