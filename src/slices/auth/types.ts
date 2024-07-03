@@ -1,15 +1,15 @@
-import { UserModel } from 'models';
+import { IUserModel } from 'models';
 
 /* --- STATE --- */
 export interface AuthState {
   loading: boolean;
   error?: RepoErrorType | null;
   authenticated: boolean;
-  user_profile: UserModel | null;
   step_register: number;
   temp_token: string;
   isVerifyEmail: boolean;
   registerEmail: string;
+  user_profile: IUserModel | null;
 }
 
 export enum RepoErrorType {

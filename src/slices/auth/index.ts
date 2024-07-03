@@ -3,7 +3,9 @@ import { createSlice } from 'utils/@reduxjs/toolkit';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { UserModel } from 'models';
+import { IUserModel } from 'models';
+// import { LocationChangePayload, locationChange } from 'utils/location';
+
 import { saga } from './saga';
 import { AuthState } from './types';
 import { selectAuth } from './selectors';
@@ -32,7 +34,7 @@ const slice = createSlice({
     getMe: (state) => {
       state.loading = true;
     },
-    getMeSuccess: (state, action: PayloadAction<UserModel>) => {
+    getMeSuccess: (state, action: PayloadAction<IUserModel>) => {
       state.loading = false;
       state.authenticated = true;
       state.user_profile = action.payload;

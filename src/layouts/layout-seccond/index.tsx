@@ -7,7 +7,7 @@ type Props = {
   children: ReactNode;
 };
 
-const LayoutSeccond: React.FC<Props> = (props) => {
+const LayoutSecond: React.FC<Props> = (props) => {
   const { children } = props;
   return (
     <>
@@ -18,4 +18,4 @@ const LayoutSeccond: React.FC<Props> = (props) => {
   );
 };
 
-export default LayoutSeccond;
+export default LayoutSecond;

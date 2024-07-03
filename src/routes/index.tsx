@@ -3,11 +3,11 @@ import React from 'react';
 import { BrowserRouter, Switch } from 'react-router-dom';
 
 import { NotFoundPage } from 'modules/notfound-page';
-import PrivateRoute from './private-route';
 
-import { PUBLIC_ROUTES, PRIVATE_ROUTES } from './constant';
+import { PRIVATE_ROUTES, PUBLIC_ROUTES } from './constant';
 import CustomRoute from './custom-route';
 import PublicRoute from './public-route';
+import PrivateRoute from './private-route';
 
 const AppRoutes: React.FC = () => {
   return (
