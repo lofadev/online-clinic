@@ -29,6 +29,7 @@ export function* loginSaga({ payload }: PayloadAction<{ email: string; password:
         description: response.meta.message,
       }),
     );
+    yield put(actions.getMe());
   });
 }
 

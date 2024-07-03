@@ -19,11 +19,8 @@ const slice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    getProfile: (state) => {
-      state.loading = true;
-    },
+    getProfile: (state) => {},
     getProfileSuccess: (state, action: PayloadAction<Partial<IUserModel>>) => {
-      state.loading = false;
       state.userProfile = action.payload;
     },
     getPrefecture: () => {},
@@ -32,18 +29,13 @@ const slice = createSlice({
     },
     getAddresses: () => {},
     getAddressesSuccess: (state, action: PayloadAction<IAddress[]>) => {
+      // getAddressesSuccess: (state, action: PayloadAction<Partial<IAddress>[]>) => {
       state.addresses = action.payload;
     },
-    updateProfile: (state, action: PayloadAction<IUserWithAddress>) => {
-      state.loading = true;
-    },
-    updateProfileSuccess: (state) => {
-      state.loading = false;
-    },
+    updateProfile: (state, action: PayloadAction<IUserWithAddress>) => {},
+    updateProfileSuccess: (state) => {},
 
-    updateAddressSuccess: (state) => {
-      state.loading = false;
-    },
+    updateAddressSuccess: (state) => {},
   },
 });
 

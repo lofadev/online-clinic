@@ -5,7 +5,7 @@ export interface IAddress {
   address: string;
   phone: string;
   default_flg: number;
-  prefecture: {
+  prefecture?: {
     id: number;
     name?: string;
     name_jp?: string;
@@ -31,6 +31,7 @@ export interface IUserModel {
   year?: string;
   month?: string;
   day?: string;
+  medical_number?: number;
 }
 
 export interface IUserWithAddress {
