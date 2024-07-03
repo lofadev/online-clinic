@@ -96,4 +96,11 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.white} !important;
     background-color: ${({ theme }) => theme.primary} !important;
   }
+
+  .ant-modal .ant-modal-content {
+    border-radius: 12px;
+    min-width: 500px;
+    padding: 48px;
+    max-height: calc(100dvh - 60px);
+  }
 `;

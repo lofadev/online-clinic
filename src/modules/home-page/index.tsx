@@ -1,18 +1,15 @@
-import FieldPassword from 'components/form/field-password/Password';
-import { FormProvider, useForm } from 'react-hook-form';
+import { formatDateToJapanese } from 'utils/date';
 
 export const HomePage: React.FC = () => {
-  const methods = useForm({
-    defaultValues: {
-      password: '',
-    },
-  });
-
   return (
     <div>
-      <FormProvider {...methods}>
-        <FieldPassword name="password" />
-      </FormProvider>
+      <div>{formatDateToJapanese('2024-07-02')}</div>
+      <div>{formatDateToJapanese('2024-07-03')}</div>
+      <div>{formatDateToJapanese('2024-07-04')}</div>
+      <div>{formatDateToJapanese('2024-07-05')}</div>
+      <div>{formatDateToJapanese('2024-07-06')}</div>
+      <div>{formatDateToJapanese('2024-07-07')}</div>
+      <div>{formatDateToJapanese('2024-07-08')}</div>
     </div>
   );
 };
