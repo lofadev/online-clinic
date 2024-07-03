@@ -12,6 +12,7 @@ export interface AuthState {
   registerEmail: string;
   user_profile: IUserModel | null;
   changePasswordSuccess: boolean;
+  registerSuccess: boolean;
 }
 
 export enum RepoErrorType {

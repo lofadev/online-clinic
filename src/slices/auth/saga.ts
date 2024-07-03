@@ -1,7 +1,7 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { LOCATION_CHANGE } from 'redux-first-history';
 import { call, takeLatest, put, select } from 'redux-saga/effects';
-import { login, getMe, register, token, changePasswordUser, sendMailForgot } from 'apis';
+import { login, getMe, register, token, changePasswordUser, sendMailForgot, logout } from 'apis';
 
 import { STORAGE } from 'utils/storage';
 import { RootState } from 'types';
@@ -102,6 +102,14 @@ export function* getMeSaga() {
   });
 }
 
+export function* logoutSaga() {
+  yield sagaCustomize(function* () {
+    const response = yield call(logout);
+    yield put(actions.logoutSuccess(response.data));
+    localStorage.removeItem(STORAGE.USER_TOKEN);
+  });
+}
+
 export function* locationChangeSaga() {}
 
 export function* saga() {
@@ -109,6 +117,7 @@ export function* saga() {
   yield takeLatest(actions.register.type, registerSaga);
   yield takeLatest(actions.sendVerifyEmail.type, tokenSaga);
   yield takeLatest(actions.getMe.type, getMeSaga);
+  yield takeLatest(actions.logout.type, logoutSaga);
   yield takeLatest(LOCATION_CHANGE, locationChangeSaga);
   yield takeLatest(actions.changePassword.type, changePasswords);
   yield takeLatest(actions.sendMail.type, sendMail);
