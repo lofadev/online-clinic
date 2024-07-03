@@ -13,7 +13,7 @@ import { CardSlider } from 'components/slider';
 import FlowItem from 'components/page/flow';
 import { Video } from 'components/videocustom';
 
-import { IService } from 'types/Service';
+import { IService } from 'types/service';
 import { useServicesSlice } from 'slices/services';
 import {
   BottomFeature,

@@ -21,7 +21,7 @@ import { useTranslation } from 'react-i18next';
 import { Link, useHistory } from 'react-router-dom';
 import RoutesName from 'routes/constant';
 import { useEffect, useState } from 'react';
-import { IService } from 'types/Service';
+import { IService } from 'types/service';
 import { useServicesSlice } from 'slices/services';
 import IconSiekte from 'components/page/siekte';
 import { listCurrentIssue, listDataFlow, listDelivery } from './constant';
