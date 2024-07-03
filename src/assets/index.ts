@@ -18,6 +18,7 @@ import LightIcon from './svgs/toppage/ico_faq_light.svg';
 import SpeechIcon from './svgs/toppage/ico_faq_speech.svg';
 import InfoIcon from './svgs/toppage/pic_faq_info.svg';
 
+export * from './images';
 export * from './svgs';
 export {
   ArrowWhiteIcon,
