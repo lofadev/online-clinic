@@ -15,6 +15,7 @@ import { Video } from 'components/videocustom';
 
 import { IService } from 'types/service';
 import { useServicesSlice } from 'slices/services';
+import RoutesName from 'routes/constant';
 import {
   BottomFeature,
   ButtonAppointBox,
@@ -52,7 +53,7 @@ import {
   listDataFlow,
 } from './constant';
 
-import FeatureContent from './FeatuteContent';
+import FeatureContent from './FeatureContent';
 
 export type PropsGenderPage = {
   gender: GenderType;
@@ -68,7 +69,7 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
 
   const history = useHistory();
   const handleAppointement = () => {
-    history.push('/appointment');
+    history.push(RoutesName.APPOINTMENT);
   };
 
   const handleClickUsage = () => {
@@ -142,6 +143,7 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
                   content={data.name}
                   gender={data.type}
                   id={data.id}
+                  key={data.id}
                   path={`/menu/${data.id}`}
                 />
               ))}
@@ -187,7 +189,13 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
             <FeatureIconBox>
               {listDataFeatureGender.length &&
                 listDataFeatureGender.map((data) => (
-                  <IconFeature id={data.id} icon={data.icon} content={data.content} gender={data.gender} />
+                  <IconFeature
+                    id={data.id}
+                    icon={data.icon}
+                    content={data.content}
+                    gender={data.gender}
+                    key={data.id}
+                  />
                 ))}
             </FeatureIconBox>
 

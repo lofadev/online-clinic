@@ -9,6 +9,7 @@ import { FieldInput } from 'components';
 import { translations } from 'locales/translations';
 import { useHistory } from 'react-router-dom';
 import { useAuth } from 'slices';
+import RoutesName from 'routes/constant';
 import scheme from './schema';
 import {
   ArrowImg,
@@ -34,7 +35,6 @@ export const SignIn: React.FC = () => {
   const { t } = useTranslation();
   const { signIn } = translations;
   const { push } = useHistory();
-
   const form = useForm({
     defaultValues: {
       email: '',
@@ -47,7 +47,9 @@ export const SignIn: React.FC = () => {
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     login(data);
   };
-
+  const handleClickForgot = () => {
+    push(RoutesName.FORGOT);
+  };
   return (
     <>
       <Helmet>
@@ -75,7 +77,7 @@ export const SignIn: React.FC = () => {
               <ButtonLogin onClick={form.handleSubmit(onSubmit)}>{t(signIn.login)}</ButtonLogin>
 
               <FormLink>
-                <LinkStyle>
+                <LinkStyle onClick={handleClickForgot}>
                   <ArrowImg src={LoginArrow} alt="" />
                   {t(signIn.forgot_password)}
                 </LinkStyle>

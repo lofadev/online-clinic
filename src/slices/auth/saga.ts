@@ -1,9 +1,10 @@
 import { PayloadAction } from '@reduxjs/toolkit';
+import { LOCATION_CHANGE } from 'redux-first-history';
 import { call, takeLatest, put, select } from 'redux-saga/effects';
-import { login, getMe, register, token } from 'apis';
+import { login, getMe, register, token, changePasswordUser, sendMailForgot } from 'apis';
+
 import { STORAGE } from 'utils/storage';
 import { RootState } from 'types';
-import { LOCATION_CHANGE } from 'redux-first-history';
 
 import { sagaCustomize } from '../sagaCustomize';
 
@@ -46,6 +47,25 @@ export function* tokenSaga({ payload }: PayloadAction<{ data: string }>) {
   });
 }
 
+export function* changePasswords({
+  payload,
+}: PayloadAction<{ old_password?: string; new_password: string; token?: string }>) {
+  yield sagaCustomize(function* () {
+    const response = yield call(changePasswordUser, payload);
+    if (response.meta.status) {
+      yield put(actions.changePasswordSuccess());
+    }
+  });
+}
+
+export function* sendMail({ payload }: PayloadAction<{ email: string }>) {
+  yield sagaCustomize(function* () {
+    const response = yield call(sendMailForgot, payload);
+    if (response.meta.status) {
+      yield put(actions.sendMailSuccess());
+    }
+  });
+}
 export function* getMeSaga() {
   yield sagaCustomize(function* () {
     const response = yield call(getMe);
@@ -55,17 +75,12 @@ export function* getMeSaga() {
 
 export function* locationChangeSaga() {}
 
-/**
- * Root saga manages watcher lifecycle
- */
 export function* saga() {
-  // Watches for loadRepos actions and calls getRepos when one comes in.
-  // By using `takeLatest` only the result of the latest API call is applied.
-  // It returns task descriptor (just like fork) so we can continue execution
-  // It will be cancelled automatically on component unmount
   yield takeLatest(actions.login.type, loginSaga);
   yield takeLatest(actions.register.type, registerSaga);
   yield takeLatest(actions.sendVerifyEmail.type, tokenSaga);
   yield takeLatest(actions.getMe.type, getMeSaga);
   yield takeLatest(LOCATION_CHANGE, locationChangeSaga);
+  yield takeLatest(actions.changePassword.type, changePasswords);
+  yield takeLatest(actions.sendMail.type, sendMail);
 }

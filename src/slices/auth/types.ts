@@ -4,12 +4,14 @@ import { IUserModel } from 'models';
 export interface AuthState {
   loading: boolean;
   error?: RepoErrorType | null;
+  sendEmailConfirm: boolean;
   authenticated: boolean;
   step_register: number;
   temp_token: string;
   isVerifyEmail: boolean;
   registerEmail: string;
   user_profile: IUserModel | null;
+  changePasswordSuccess: boolean;
 }
 
 export enum RepoErrorType {

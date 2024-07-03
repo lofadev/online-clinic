@@ -9,5 +9,19 @@ import signUp from './sign-up.json';
 import faq from './faq.json';
 import genderPage from './gender-page.json';
 import userInfomation from './user-infomation.json';
+import changePassword from './change-password.json';
 
-export { signIn, common, validation, signUp, banner, header, footer, topPage, faq, genderPage, userInfomation };
+export {
+  signIn,
+  common,
+  validation,
+  signUp,
+  banner,
+  header,
+  footer,
+  topPage,
+  faq,
+  genderPage,
+  userInfomation,
+  changePassword,
+};

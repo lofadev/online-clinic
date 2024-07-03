@@ -14,5 +14,11 @@ const token = (payload: { data: string }) => {
 const getMe = () => {
   return AxiosClient.get(END_POINT.AUTH.GET_ME);
 };
+const changePasswordUser = (body: { old_password?: string; new_password: string; token?: string }) => {
+  return AxiosClient.post(END_POINT.AUTH.CHANGE_PASSWORD, body);
+};
+const sendMailForgot = (body: { email: string }) => {
+  return AxiosClient.post(END_POINT.AUTH.SEND_MAIL_RESTORE, body);
+};
 
-export { login, getMe, register, token };
+export { login, getMe, changePasswordUser, sendMailForgot, register, token };
