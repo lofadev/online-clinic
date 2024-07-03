@@ -1,7 +1,9 @@
+export type TTypeService = 'FOR_MALE' | 'FOR_FEMALE' | 'GENERAL';
+
 export interface IService {
   id: number;
   name: string;
-  type: 'FOR_MALE' | 'FOR_FEMALE' | 'GENERAL';
+  type: TTypeService;
   icon: string;
   image: string;
   insurance_accepted: 0 | 1;

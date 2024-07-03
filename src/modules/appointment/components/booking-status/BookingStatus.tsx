@@ -1,4 +1,8 @@
-import { CloseIcon, EndIcon, FewIcon, OpenIcon } from 'assets';
+// import { CloseIcon, FewIcon, OpenIcon, EndIcon } from 'assets';
+import { ReactComponent as CloseIcon } from 'assets/svgs/appointment/ico_appointment_close.svg';
+import { ReactComponent as EndIcon } from 'assets/svgs/appointment/ico_appointment_end.svg';
+import { ReactComponent as FewIcon } from 'assets/svgs/appointment/ico_appointment_few.svg';
+import { ReactComponent as OpenIcon } from 'assets/svgs/appointment/ico_appointment_open.svg';
 import { TBookingStatus } from 'models/appointment.model';
 import { useMemo } from 'react';
 import { BookingStatusStyled } from './styled';

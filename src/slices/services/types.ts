@@ -1,4 +1,4 @@
-import { IService } from 'types/Service';
+import { IService } from 'types/service';
 
 export type ServicesState = {
   serviceList: IService[];

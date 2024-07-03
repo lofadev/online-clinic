@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { sagaCustomize } from 'slices/sagaCustomize';
-import { IService } from 'types/Service';
+import { IService } from 'types/service';
 import { getService } from 'apis/service';
 import { ServicesState } from './types';
 
