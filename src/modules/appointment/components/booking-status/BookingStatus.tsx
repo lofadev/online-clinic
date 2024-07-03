@@ -9,9 +9,9 @@ export interface IProps {
 
 const BookingStatus: React.FC<IProps> = ({ status }) => {
   const statusIcon = useMemo(() => {
-    if (status === 'none') return <EndIcon />;
-    if (status === 'close') return <CloseIcon />;
-    if (status === 'open') return <OpenIcon />;
+    if (status === 'NONE') return <EndIcon />;
+    if (status === 'CLOSE') return <CloseIcon />;
+    if (status === 'AVAILABLE') return <OpenIcon />;
     return <FewIcon />;
   }, [status]);
 

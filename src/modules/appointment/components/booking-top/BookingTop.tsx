@@ -3,9 +3,11 @@ import MorningIcon from 'assets/svgs/ico_circle_morning.svg';
 import NightIcon from 'assets/svgs/ico_circle_night.svg';
 import { Text } from 'components';
 import Switch from 'components/switch';
-import { formatDateToJapanese } from 'utils/date';
+import { useAppointment } from 'slices/appointment';
+import { formatDateToJapanese, getDate } from 'utils/date';
 import BookingItem from '../booking-item/BookingItem';
 import PeriodItem, { TPeriodProps } from '../period-item/PeriodItem';
+import { daysTransform } from './hook';
 import {
   ActionsTopStyled,
   ButtonStyled,
@@ -32,27 +34,43 @@ const periods: TPeriodProps[] = [
   },
 ];
 
-const days: string[] = [
-  '2024-06-26',
-  '2024-06-27',
-  '2024-06-28',
-  '2024-06-29',
-  '2024-06-30',
-  '2024-07-01',
-  '2024-08-02',
-];
-
 const BookingTop = () => {
+  const { timetables, getReservationTimeables, params, loading } = useAppointment();
+  const days = daysTransform(timetables?.date_list);
+
+  const handleChangeTimeTables = (distanceDay: number) => {
+    getReservationTimeables({
+      ...params,
+      startDate: getDate(distanceDay, timetables?.date_list[0].date),
+      endDate: getDate(distanceDay + 6, timetables?.date_list[0].date),
+      serviceId: 1,
+    });
+  };
+
   return (
     <WrapperStyled>
       <ActionsTopStyled>
-        <ButtonStyled type="primary" size="small" rounded="sm" disabled>
+        <ButtonStyled
+          type="primary"
+          size="small"
+          rounded="sm"
+          disabled={!timetables?.enabled_last_week}
+          onClick={() => handleChangeTimeTables(-7)}
+          loading={loading && timetables?.enabled_last_week}
+        >
           前週
         </ButtonStyled>
         <Text.Primary fontWeight="FW_700" fontSize="SIZE_20">
-          6月26日-7月2日
+          {formatDateToJapanese(params.startDate, 'M月D日')}-{formatDateToJapanese(params.endDate, 'M月D日')}
         </Text.Primary>
-        <ButtonStyled type="primary" size="small" rounded="sm">
+        <ButtonStyled
+          type="primary"
+          size="small"
+          rounded="sm"
+          disabled={!timetables?.enabled_next_week}
+          onClick={() => handleChangeTimeTables(7)}
+          loading={loading && timetables?.enabled_next_week}
+        >
           翌週
         </ButtonStyled>
       </ActionsTopStyled>
@@ -80,9 +98,12 @@ const BookingTop = () => {
 
       <DaylistStyled>
         <BookingItem />
-        {days.map((day) => (
-          <BookingItem key={day}>{formatDateToJapanese(day)}</BookingItem>
-        ))}
+        {!!days &&
+          days.map((day) => (
+            <BookingItem key={day.date} {...day}>
+              {formatDateToJapanese(day.date)}
+            </BookingItem>
+          ))}
       </DaylistStyled>
     </WrapperStyled>
   );

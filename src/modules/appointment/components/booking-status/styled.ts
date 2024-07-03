@@ -7,10 +7,10 @@ export const BookingStatusStyled = styled.div<{ status: TBookingStatus }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${({ status, theme }) => (status === 'close' || status === 'none' ? '#f7f9fc' : theme.white)};
+  background-color: ${({ status, theme }) => (status === 'CLOSE' || status === 'NONE' ? '#f7f9fc' : theme.white)};
 
   &:hover {
-    cursor: ${({ status }) => (status === 'open' || status === 'alert') && 'pointer'};
-    background-color: ${({ status }) => (status === 'open' || status === 'alert') && '#ecfaff'};
+    cursor: ${({ status }) => (status === 'AVAILABLE' || status === 'ALERT') && 'pointer'};
+    background-color: ${({ status }) => (status === 'AVAILABLE' || status === 'ALERT') && '#ecfaff'};
   }
 `;

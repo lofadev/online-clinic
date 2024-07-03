@@ -1,6 +1,8 @@
 import { PropsWithChildren } from 'react';
 import { WrapperStyled } from './styled';
 
-const AppointmentBlock = ({ children }: PropsWithChildren) => <WrapperStyled>{children}</WrapperStyled>;
+interface IProps extends React.HTMLAttributes<HTMLDivElement>, PropsWithChildren {}
+
+const AppointmentBlock = ({ children, ...props }: IProps) => <WrapperStyled {...props}>{children}</WrapperStyled>;
 
 export default AppointmentBlock;
