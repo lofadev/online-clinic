@@ -1,13 +1,13 @@
 import Loading from 'components/loading/Loading';
 import { BROADCAST_CHANNEL } from 'constant';
-import React, { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import AppRoutes from 'routes';
 import { useAuth } from 'slices/auth';
 import { useBroadcast } from 'slices/broadcast';
 import { STORAGE, getLocalStorage } from 'utils/storage';
 
 export const App: React.FC = () => {
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = useState(false);
 
   const { getMe } = useAuth();
   const { setBroadcastChannel, boardcastChannel } = useBroadcast();

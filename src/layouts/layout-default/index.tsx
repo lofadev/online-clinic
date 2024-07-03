@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
-import Header from './header';
 import Footer from './footer';
-import { Wrapper } from './styled';
+import Header from './header';
+import { MainStyled } from './styled';
 
 type Props = {
   children: ReactNode;
@@ -10,12 +10,13 @@ type Props = {
 
 const DefaultLayout: React.FC<Props> = (props) => {
   const { children } = props;
+
   return (
-    <Wrapper>
+    <>
       <Header />
-      {children}
+      <MainStyled>{children}</MainStyled>
       <Footer />
-    </Wrapper>
+    </>
   );
 };
 

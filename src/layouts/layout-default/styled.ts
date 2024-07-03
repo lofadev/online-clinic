@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.div``;
+const MainStyled = styled.div`
+  background-color: ${({ theme }) => theme.lightBlue};
+`;
 
-export { Wrapper };
+export { MainStyled };
