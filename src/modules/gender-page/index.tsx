@@ -69,7 +69,7 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
 
   const history = useHistory();
   const handleAppointement = () => {
-    history.push(RoutesName.APPOINTMENT);
+    history.push(RoutesName.APPOINTMENT.INDEX);
   };
 
   const handleClickUsage = () => {

@@ -1,13 +1,15 @@
 import DefaultLayout from 'layouts/layout-default';
 import LayoutSecond from 'layouts/layout-seccond';
 import Appointment from 'modules/appointment';
+import CompleteAppointment from 'modules/appointment/complete';
+import ConfirmAppointment from 'modules/appointment/confirm';
 import { ChangePassword } from 'modules/authen/change-password';
+import { ForgotPassword } from 'modules/authen/forgot-password';
 import { SignIn } from 'modules/authen/sign-in/Loadable';
 import { SignUp } from 'modules/authen/sign-up';
-import { UserProfile } from 'modules/user-profile/Loadable';
 import { GenderPage } from 'modules/gender-page';
 import { TopPage } from 'modules/top-page';
-import { ForgotPassword } from 'modules/authen/forgot-password';
+import { UserProfile } from 'modules/user-profile/Loadable';
 
 export const RoutesName = {
   LOGIN: '/login',
@@ -16,13 +18,21 @@ export const RoutesName = {
   ABOUT: '/about',
   FAQ: '/hc/ja',
   USAGE: '/usage',
-  APPOINTMENT: '/appointment',
+  APPOINTMENT: {
+    INDEX: '/appointment',
+    CONFIRM: '/appointment/confirm',
+    COMPLETE: '/appointment/complete',
+  },
   NEW: '/new',
   MALE: '/male',
   FEMALE: '/female',
   CHANGE: '/change-password',
   PROFILE: '/profile',
   FORGOT: '/forgot-password',
+  CONSULTATIONS: {
+    INDEX: '/',
+    DONE: '/consultations/done',
+  },
 };
 
 export const PUBLIC_ROUTES = [
@@ -36,12 +46,6 @@ export const PUBLIC_ROUTES = [
     path: RoutesName.SIGNUP,
     component: SignUp,
     layout: LayoutSecond,
-    exact: true,
-  },
-  {
-    path: RoutesName.APPOINTMENT,
-    component: Appointment,
-    layout: DefaultLayout,
     exact: true,
   },
   {
@@ -67,12 +71,6 @@ export const PUBLIC_ROUTES = [
 ];
 
 export const PRIVATE_ROUTES = [
-  {
-    path: RoutesName.TOP,
-    component: TopPage,
-    layout: DefaultLayout,
-    exact: true,
-  },
   {
     path: RoutesName.MALE,
     component: GenderPage,
@@ -103,6 +101,24 @@ export const CUSTOME_ROUTE = [
   {
     path: RoutesName.TOP,
     component: TopPage,
+    layout: DefaultLayout,
+    exact: true,
+  },
+  {
+    path: RoutesName.APPOINTMENT.INDEX,
+    component: Appointment,
+    layout: DefaultLayout,
+    exact: true,
+  },
+  {
+    path: RoutesName.APPOINTMENT.CONFIRM,
+    component: ConfirmAppointment,
+    layout: DefaultLayout,
+    exact: true,
+  },
+  {
+    path: RoutesName.APPOINTMENT.COMPLETE,
+    component: CompleteAppointment,
     layout: DefaultLayout,
     exact: true,
   },

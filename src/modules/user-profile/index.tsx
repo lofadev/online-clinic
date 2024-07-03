@@ -164,8 +164,8 @@ export const UserProfile: FC = () => {
       const newUser = {
         ...userProfile,
         year: dateObject?.getFullYear(),
-        month: (dateObject.getMonth() + 1).toString().padStart(2, '0'),
-        day: dateObject?.getDate().toString().padStart(2, '0'),
+        month: dateObject && (dateObject.getMonth() + 1).toString().padStart(2, '0'),
+        day: dateObject && dateObject?.getDate().toString().padStart(2, '0'),
         phone: defaultAddress?.phone,
         zip_code: defaultAddress?.zip_code,
         municipality: defaultAddress?.municipality,
@@ -204,7 +204,7 @@ export const UserProfile: FC = () => {
           <li>
             <Link to="/path1">{t(userInfomation.medical_treatment)}</Link>
           </li>
-          <AppointmentWrapper onClick={() => history.push(RoutesName.APPOINTMENT)}>
+          <AppointmentWrapper onClick={() => history.push(RoutesName.APPOINTMENT.INDEX)}>
             <Button size="small">
               <AppointmentImageStyled src={ReserveIcon} alt="icon" />
               {t(userInfomation.appointment_button)}
