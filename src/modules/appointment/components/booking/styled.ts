@@ -62,3 +62,16 @@ export const ButtonStyled = styled(Button)`
     width: 100%;
   }
 `;
+
+export const ButtonWithoutAuthStyled = styled.div``;
+
+export const ButtonHasAuthStyled = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  .ant-btn {
+    flex: 1;
+  }
+`;

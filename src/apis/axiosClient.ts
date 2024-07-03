@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosInstance, InternalAxiosRequestConfig, AxiosResponse } from 'axios';
 import { STORAGE, getLocalStorage, removeLocalStorage } from 'utils/storage';
 
-const BASE_URL = 'http://192.168.7.33:8003/api/v1';
+const BASE_URL = 'http://192.168.1.8:8003/api/v1';
 
 // For Make Log on Develop Mode
 // const logOnDev = () => {

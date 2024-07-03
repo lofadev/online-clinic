@@ -61,3 +61,29 @@ export interface IParamsService {
   type?: TTypeService;
   language?: TLang;
 }
+
+type TStatusAppointment = 'NEW' | 'ACCEPTED' | 'CANCEL' | 'COMPLETED';
+type TTypeAppointment = 'FIRST' | 'RETURN';
+type TTypeReservation = 'SCHEDULE' | 'NOW';
+
+export interface IPostAppointment {
+  service_id: number;
+  appointment_type: TTypeAppointment;
+  reservation_type: TTypeReservation;
+  booking_date: string;
+  time_id: number;
+}
+
+export interface IResPostAppointment {
+  service_id: number;
+  appointment_type: TTypeAppointment;
+  reservation_type: TTypeReservation;
+  booking_date: string;
+  time_id: number;
+  payment_method: string;
+  user_id: number;
+  status: TStatusAppointment;
+  updated_at: string;
+  created_at: string;
+  id: number;
+}

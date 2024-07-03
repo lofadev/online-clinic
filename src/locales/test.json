@@ -1,0 +1,13 @@
+{
+  "service_id": 1,
+  "appointment_type": "FIRST",
+  "reservation_type": "SCHEDULE",
+  "booking_date": "2024-07-02",
+  "time_id": 22,
+  "payment_method": "CREDIT_CARD",
+  "user_id": 1,
+  "status": "NEW",
+  "updated_at": "2024-07-01T08:59:23.000000Z",
+  "created_at": "2024-07-01T08:59:23.000000Z",
+  "id": 101
+}

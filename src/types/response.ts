@@ -1,6 +1,7 @@
 export type ResponseCode = 200 | 500 | 401 | 404 | 402 | 403;
 
 interface IMeta {
+  language: 'JP' | 'EN';
   success: 1 | 0;
   status: boolean;
   error?: string | null;
