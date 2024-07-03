@@ -1,11 +1,4 @@
-import {
-  FlowStep1General,
-  FlowStep2General,
-  FlowStep3General,
-  FlowStep1Male,
-  FlowStep2Male,
-  FlowStep3Male,
-} from 'assets/icons/flow';
+import { FlowStep1General, FlowStep2General, FlowStep3General } from 'assets/icons/flow';
 import { Delivery, Price, SmartPhone } from 'assets/icons/icon-feature';
 import { PropsFlow } from 'components/page/flow';
 import { PropsSiekte } from 'components/page/siekte';
@@ -68,30 +61,6 @@ export const listDataFlow: PropsFlow[] = [
     title: 'お薬の受け取り',
     content: 'ご自宅や、コンビニへの配送も可能です！',
     gender: 'female',
-  },
-  {
-    id: 4,
-    picture: FlowStep1Male,
-    count: 1,
-    title: '受診したい日時、診療内容を予約',
-    content: 'スマホ・PCで簡単！予約の管理も行えます！',
-    gender: 'male',
-  },
-  {
-    id: 5,
-    picture: FlowStep2Male,
-    count: 2,
-    title: '診療',
-    content: 'ビデオツールで診察します！複数科目の同時受診も可能です。',
-    gender: 'male',
-  },
-  {
-    id: 6,
-    picture: FlowStep3Male,
-    count: 3,
-    title: 'お薬の受け取り',
-    content: 'ご自宅や、コンビニへの配送も可能です！',
-    gender: 'male',
   },
 ];
 

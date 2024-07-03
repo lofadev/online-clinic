@@ -194,7 +194,7 @@ export const TopPage: React.FC = () => {
           backgroundWrapper="lightBlue"
         >
           <FollowBlockStyled>
-            {listDataFlow.length && listDataFlow.map((data) => <FlowItem {...data} />)}
+            {listDataFlow.length && listDataFlow.map((data) => <FlowItem key={data.id} {...data} />)}
           </FollowBlockStyled>
           <FollowButtonSWrapper>
             <ArrowButton size="small" onClick={() => history.push(`${RoutesName.USAGE}`)}>
@@ -258,7 +258,7 @@ export const TopPage: React.FC = () => {
                     </DeliveryInfoItemStyled>
                   ))}
                 </DeliveryLeftStyled>
-                <DeliveryLeftStyled type>
+                <DeliveryLeftStyled type="2">
                   <p>大阪市24区エリア</p>
                   {listDelivery.slice(2, 6).map((item) => (
                     <DeliveryInfoItemStyled key={item.id}>

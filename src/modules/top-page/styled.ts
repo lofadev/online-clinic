@@ -231,7 +231,7 @@ export const DeliveryInfoBlockStyled = styled.div`
   display: flex;
 `;
 
-export const DeliveryLeftStyled = styled.div<{ type?: boolean }>`
+export const DeliveryLeftStyled = styled.div<{ type?: string }>`
   width: 50%;
   text-align: start;
   padding-right: 20px;
@@ -241,6 +241,7 @@ export const DeliveryLeftStyled = styled.div<{ type?: boolean }>`
     font-weight: 700;
     color: #3f4f5f;
   }
+
   &:last-child {
     padding-right: 0;
     padding-left: 20px;
@@ -248,12 +249,10 @@ export const DeliveryLeftStyled = styled.div<{ type?: boolean }>`
   }
 
   ${(p) =>
-    p.type &&
+    !!p.type &&
     css`
-      > div {
-        > span {
-          background-color: #a5f8ce;
-        }
+      > div > span {
+        background-color: #a5f8ce;
       }
     `}
 `;
