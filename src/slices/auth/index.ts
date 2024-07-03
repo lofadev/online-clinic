@@ -18,9 +18,10 @@ export const initialState: AuthState = {
   temp_token: '',
   isVerifyEmail: false,
   registerEmail: '',
+  sendEmailConfirm: false,
+  changePasswordSuccess: false,
 };
 
-// const locationChange = createAction(LOCATION_CHANGE);
 const slice = createSlice({
   name: 'auth',
   initialState,
@@ -63,6 +64,23 @@ const slice = createSlice({
       state.isVerifyEmail = true;
       state.step_register += 1;
     },
+    changePassword: (state) => {
+      state.loading = true;
+    },
+    changePasswordSuccess: (state) => {
+      state.sendEmailConfirm = false;
+      state.changePasswordSuccess = true;
+    },
+    resetChangePassword: (state) => {
+      state.changePasswordSuccess = false;
+    },
+    sendMail: (state) => {
+      state.loading = true;
+    },
+    sendMailSuccess: (state) => {
+      state.loading = true;
+      state.sendEmailConfirm = true;
+    },
     logout: (state) => {
       state.loading = false;
       state.user_profile = null;
@@ -83,6 +101,9 @@ export const useAuth = () => {
   const register = (payload) => dispatch(actions.register(payload));
   const verifyEmail = (payload) => dispatch(actions.sendVerifyEmail(payload));
   const getMe = () => dispatch(actions.getMe());
+  const changePasswords = (payload) => dispatch(actions.changePassword(payload));
+  const sendMail = (payload) => dispatch(actions.sendMail(payload));
+  const resetChangePassword = () => dispatch(actions.resetChangePassword());
   const state = useSelector(selectAuth);
 
   return {
@@ -90,6 +111,9 @@ export const useAuth = () => {
     getMe,
     register,
     verifyEmail,
+    changePasswords,
+    sendMail,
+    resetChangePassword,
     ...state,
   };
 };

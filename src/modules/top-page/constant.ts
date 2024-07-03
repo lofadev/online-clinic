@@ -44,7 +44,7 @@ export const listDataFlow: PropsFlow[] = [
     count: 1,
     title: '受診したい日時、診療内容を予約',
     content: 'スマホ・PCで簡単！予約の管理も行えます！',
-    gender: 'female',
+    gender: 'general',
   },
   {
     id: 2,
@@ -52,7 +52,7 @@ export const listDataFlow: PropsFlow[] = [
     count: 2,
     title: '診療',
     content: 'ビデオツールで診察します！複数科目の同時受診も可能です。',
-    gender: 'female',
+    gender: 'general',
   },
   {
     id: 3,
@@ -60,7 +60,7 @@ export const listDataFlow: PropsFlow[] = [
     count: 3,
     title: 'お薬の受け取り',
     content: 'ご自宅や、コンビニへの配送も可能です！',
-    gender: 'female',
+    gender: 'general',
   },
 ];
 

@@ -38,7 +38,7 @@ const PreHeader: FC = () => {
     {
       id: 3,
       content: t(header.navigation.about_dmm),
-      path: '/about',
+      path: '/change-password',
     },
     {
       id: 4,

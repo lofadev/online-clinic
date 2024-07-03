@@ -7,6 +7,8 @@ const END_POINT = {
     PROFILE: '/user',
     ADDRESSES: 'user/addresses',
     UPDATE_ADDRESSES: 'user/addresses',
+    CHANGE_PASSWORD: '/change-password/update',
+    SEND_MAIL_RESTORE: '/change-password/email-confirm',
   },
 
   ADDRESS: {

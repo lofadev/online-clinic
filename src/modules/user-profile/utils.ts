@@ -1,5 +1,4 @@
 /* eslint-disable no-plusplus */
-
 import { PrefectureCoverProps, PrefectureProps } from 'models';
 
 type DateProps = {

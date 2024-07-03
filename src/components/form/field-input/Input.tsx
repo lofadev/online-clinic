@@ -28,7 +28,6 @@ const FieldInput: React.FC<IProps> = ({ label, name, ...props }) => {
 
     return translatedError;
   }, [error, i18n.language]);
-
   return (
     <div className="form-group">
       {!!label && <LabelStyled htmlFor={name}>{label}</LabelStyled>}

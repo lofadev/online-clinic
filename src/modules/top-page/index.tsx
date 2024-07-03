@@ -111,6 +111,7 @@ export const TopPage: React.FC = () => {
                 content={item.name}
                 gender={item.type}
                 path={`/menu/${item.id}`}
+                key={item.id}
               />
             ))}
         </SiekteWrapper>

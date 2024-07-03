@@ -1,43 +1,49 @@
 import { Helmet } from 'react-helmet-async';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { FieldInput } from 'components';
-import { LoginArrow } from 'assets';
 import { translations } from 'locales/translations';
+import FieldPassword from 'components/form/field-password/Password';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useAuth } from 'slices';
+import { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import RoutesName from 'routes/constant';
 import {
-  ArrowImg,
   ButtonLogin,
   ContentStyled,
   FirstStyled,
   FormInput,
-  FormLink,
   Left,
-  LinkStyle,
   MainStyled,
   RegisterStyled,
   TitleStyled,
 } from './styled';
+import scheme from './scheme';
 
-interface FormValues {
-  email?: string;
-  password?: string;
+interface FormValuesChangePassword {
+  oldPassword: string;
+  newPassword: string;
 }
 export const ChangePassword: React.FC = () => {
   const { t } = useTranslation();
-  const { signIn } = translations;
+  const { changePassword } = translations;
+  const { changePasswords, resetChangePassword, changePasswordSuccess } = useAuth();
 
   const form = useForm({
-    defaultValues: {
-      password: '',
-      rePassword: '',
-    },
     mode: 'onSubmit',
+    resolver: yupResolver(scheme()),
   });
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<FormValuesChangePassword> = (data) => {
+    changePasswords({ new_password: data.newPassword, old_password: data.oldPassword });
   };
-
+  const history = useHistory();
+  useEffect(() => {
+    if (changePasswordSuccess) {
+      history.push(RoutesName.TOP);
+      resetChangePassword();
+    }
+  }, [changePasswordSuccess]);
   return (
     <>
       <Helmet>
@@ -47,35 +53,38 @@ export const ChangePassword: React.FC = () => {
 
       <FormProvider {...form}>
         <ContentStyled>
-          <TitleStyled>{t(signIn.title)}</TitleStyled>
+          <TitleStyled>{t(changePassword.title)}</TitleStyled>
 
           <MainStyled>
             <Left>
               <FormInput>
-                <FieldInput
-                  name="email"
-                  type="text"
-                  placeholder={t(signIn.email_placeholder)}
-                  label={t(signIn.email)}
+                <FieldPassword
+                  name="oldPassword"
+                  placeholder={t(changePassword.old_password_placeholder)}
+                  label={t(changePassword.lable_old_password)}
                 />
               </FormInput>
-
-              <FieldInput name="password" type="password" placeholder={t(signIn.password)} />
-
-              <ButtonLogin onClick={form.handleSubmit(onSubmit)}>{t(signIn.login)}</ButtonLogin>
-
-              <FormLink>
-                <LinkStyle>
-                  <ArrowImg src={LoginArrow} alt="" />
-                  {t(signIn.forgot_password)}
-                </LinkStyle>
-              </FormLink>
+              <FormInput>
+                <FieldPassword
+                  name="newPassword"
+                  placeholder={t(changePassword.new_password_placeholder)}
+                  label={t(changePassword.lable_new_password)}
+                />
+              </FormInput>
+              <FormInput>
+                <FieldPassword
+                  name="confirmPassword"
+                  placeholder={t(changePassword.comfirm_password_placeholder)}
+                  label={t(changePassword.lable_new_passwordconfirm)}
+                />
+              </FormInput>
+              <ButtonLogin onClick={form.handleSubmit(onSubmit)}>{t(changePassword.btn_confirm)}</ButtonLogin>
             </Left>
           </MainStyled>
 
           <RegisterStyled>
-            <FirstStyled>{t(signIn.register)}</FirstStyled>
-            <ButtonLogin className="btn_res">{t(signIn.btn_register)}</ButtonLogin>
+            <FirstStyled>{t(changePassword.register)}</FirstStyled>
+            <ButtonLogin className="btn_res">{t(changePassword.btn_register)}</ButtonLogin>
           </RegisterStyled>
         </ContentStyled>
       </FormProvider>

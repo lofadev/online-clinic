@@ -32,5 +32,15 @@
     "max_10": "最大10文字",
     "max_15": "最大15文字",
     "max_100": "最大15文字"
+  },
+  "change_password": {
+    "secret_code_format": "正しい形式を入力してください",
+    "secret_code_requied": "暗証番号は必須です",
+    "password_format": "正しい形式を入力してください",
+    "password_requied": "パスワードは必須です",
+    "confirm_password_no_match": "パスワードが一致しない",
+    "email_format": "正しい形式を入力してください",
+    "email_requied": "メールアドレスは必須です",
+    "password_no_match": "新しいパスワードは、古いパスワードと異なる必要があります"
   }
 }

@@ -7,6 +7,7 @@ import { SignUp } from 'modules/authen/sign-up';
 import { UserProfile } from 'modules/user-profile/Loadable';
 import { GenderPage } from 'modules/gender-page';
 import { TopPage } from 'modules/top-page';
+import { ForgotPassword } from 'modules/authen/forgot-password';
 
 export const RoutesName = {
   LOGIN: '/login',
@@ -21,6 +22,7 @@ export const RoutesName = {
   FEMALE: '/female',
   CHANGE: '/change-password',
   PROFILE: '/profile',
+  FORGOT: '/forgot-password',
 };
 
 export const PUBLIC_ROUTES = [
@@ -57,9 +59,9 @@ export const PUBLIC_ROUTES = [
     gender: 'female',
   },
   {
-    path: RoutesName.CHANGE,
-    component: ChangePassword,
-    layout: DefaultLayout,
+    path: RoutesName.FORGOT,
+    component: ForgotPassword,
+    layout: LayoutSecond,
     exact: true,
   },
 ];
@@ -88,6 +90,11 @@ export const PRIVATE_ROUTES = [
   {
     path: RoutesName.PROFILE,
     component: UserProfile,
+    layout: LayoutSecond,
+  },
+  {
+    path: RoutesName.CHANGE,
+    component: ChangePassword,
     layout: LayoutSecond,
     exact: true,
   },

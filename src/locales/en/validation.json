@@ -32,5 +32,15 @@
     "max_10": "Maximum 10 characters",
     "max_15": "Maximum 15 characters",
     "max_100": "Maximum 100 characters"
+  },
+  "change_password": {
+    "secret_code_format": "Please enter the correct format",
+    "secret_code_requied": "Secret code is required",
+    "password_format": "Please enter the correct format",
+    "password_requied": "Password is required",
+    "confirm_password_no_match": "Passwords don't match",
+    "email_format": "Please enter the correct format",
+    "email_requied": "Email is required",
+    "password_no_match": "The new password must be different from the old password"
   }
 }
