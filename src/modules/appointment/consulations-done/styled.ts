@@ -17,3 +17,8 @@ export const ButtonWrapperStyled = styled.div`
   align-items: center;
   flex-direction: column;
 `;
+
+export const WrapperStyled = styled.div`
+  max-height: 800px;
+  overflow-y: auto;
+`;

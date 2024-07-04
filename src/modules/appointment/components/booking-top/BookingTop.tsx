@@ -2,6 +2,7 @@ import EveningIcon from 'assets/svgs/ico_circle_evening.svg';
 import MorningIcon from 'assets/svgs/ico_circle_morning.svg';
 import NightIcon from 'assets/svgs/ico_circle_night.svg';
 import { Text } from 'components';
+import ButtonPrimaryWhite from 'components/button/button-white/ButtonPrimaryWhite';
 import Switch from 'components/switch';
 import { useAppointment } from 'slices/appointment';
 import { formatDateToJapanese, getDate } from 'utils/date';
@@ -10,7 +11,6 @@ import PeriodItem, { TPeriodProps } from '../period-item/PeriodItem';
 import { daysTransform } from './hook';
 import {
   ActionsTopStyled,
-  ButtonStyled,
   DaylistStyled,
   NoteStyled,
   PeriodActionStyled,
@@ -50,29 +50,23 @@ const BookingTop = () => {
   return (
     <WrapperStyled>
       <ActionsTopStyled>
-        <ButtonStyled
-          type="primary"
-          size="small"
-          rounded="sm"
+        <ButtonPrimaryWhite
           disabled={!timetables?.enabled_last_week}
           onClick={() => handleChangeTimeTables(-7)}
           loading={loading && timetables?.enabled_last_week}
         >
           前週
-        </ButtonStyled>
+        </ButtonPrimaryWhite>
         <Text.Primary fontWeight="FW_700" fontSize="SIZE_20">
           {formatDateToJapanese(params.startDate, 'M月D日')}-{formatDateToJapanese(params.endDate, 'M月D日')}
         </Text.Primary>
-        <ButtonStyled
-          type="primary"
-          size="small"
-          rounded="sm"
+        <ButtonPrimaryWhite
           disabled={!timetables?.enabled_next_week}
           onClick={() => handleChangeTimeTables(7)}
           loading={loading && timetables?.enabled_next_week}
         >
           翌週
-        </ButtonStyled>
+        </ButtonPrimaryWhite>
       </ActionsTopStyled>
 
       <NoteStyled>

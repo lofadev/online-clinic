@@ -1,8 +1,9 @@
-import { Modal } from 'antd';
 import { FieldCheckbox } from 'components';
+import ButtonPrimaryWhite from 'components/button/button-white/ButtonPrimaryWhite';
+import Modal from 'components/modal';
+import history from 'configs/history';
 import { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
 import { useAuth } from 'slices';
 import { useAppointment } from 'slices/appointment';
 import { TAppointmentItem } from 'slices/appointment/types';
@@ -31,7 +32,6 @@ const Booking = () => {
   const { timetables, updateItem, item, service } = useAppointment();
   const dataTransform = useTransformData(timetables?.date_list);
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const history = useHistory();
 
   const methodsCheckbox = useForm({
     defaultValues: {
@@ -95,32 +95,26 @@ const Booking = () => {
               </FormProvider>
             </FormWrapperStyled>
 
-            {!authenticated && (
+            {!authenticated ? (
               <ButtonWithoutAuthStyled>
                 <TextStyled>▼ DMM会員登録をしている方 ▼</TextStyled>
                 <ButtonStyled
                   type="primary"
                   size="small"
                   disabled={!confirm}
-                  onClick={() => history.push('/appointment/confirm')}
+                  onClick={() => history.push({ pathname: '/login', state: { pathName: '/appointment' } })}
                 >
                   ログインして日時確定する
                 </ButtonStyled>
                 <TextStyled>▼ DMM会員登録をしていない方 ▼</TextStyled>
-                <ButtonStyled
-                  type="primary"
-                  size="small"
-                  disabled={!confirm}
-                  onClick={() => history.push('/appointment/complete')}
-                >
+                <ButtonStyled type="primary" size="small" disabled={!confirm} onClick={() => history.push('/register')}>
                   会員登録して日時確定する
                 </ButtonStyled>
               </ButtonWithoutAuthStyled>
-            )}
-            {authenticated && (
+            ) : (
               <ButtonHasAuthStyled>
-                <ButtonStyled onClick={handleCancel}>キャンセル</ButtonStyled>
-                <ButtonStyled type="primary" disabled={!confirm} onClick={handleRedirectToConfirm}>
+                <ButtonPrimaryWhite onClick={handleCancel}>キャンセル</ButtonPrimaryWhite>
+                <ButtonStyled size="small" type="primary" disabled={!confirm} onClick={handleRedirectToConfirm}>
                   日時確定
                 </ButtonStyled>
               </ButtonHasAuthStyled>

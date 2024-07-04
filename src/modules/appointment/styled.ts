@@ -38,10 +38,3 @@ export const BannerStyled = styled.div``;
 export const ImgStyled = styled.img`
   margin-top: 16px;
 `;
-
-export const LoadingStyled = styled.div`
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
