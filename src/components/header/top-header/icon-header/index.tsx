@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { translations } from 'locales/translations';
 
+import { useAuth } from 'slices';
 import IconDetailHeader, { PropsIconDetail } from '../icon-detail-header';
 import { IconStyle, ImageStyle, ImgLogout, LogoutButton, TextLogout, SecondIcon } from './styled';
 
@@ -21,11 +22,16 @@ const IconHeader: FC<PropsIconHeader> = (props) => {
   const history = useHistory();
   const { t } = useTranslation();
   const { header } = translations;
+  const { logout } = useAuth();
 
   const handleNavigate = () => {
     if (path && path !== 'user') {
       history.push(props?.path);
     }
+  };
+
+  const handleLogout = () => {
+    logout();
   };
 
   return (
@@ -39,7 +45,7 @@ const IconHeader: FC<PropsIconHeader> = (props) => {
           {children?.map((iconDetail) => <IconDetailHeader {...iconDetail} key={iconDetail.id} />)}
 
           {path === 'user' ? (
-            <LogoutButton>
+            <LogoutButton onClick={handleLogout}>
               <ImgLogout src="https://navismithapis-cdn.com/img/logout.svg" alt="icon" />
 
               <TextLogout>{t(header.account.logout)}</TextLogout>

@@ -11,6 +11,9 @@ const register = (payload: { email: string; password: string }) => {
 const token = (payload: { data: string }) => {
   return AxiosClient.post(`${END_POINT.AUTH.TOKEN}/${payload.data}`, payload);
 };
+const logout = () => {
+  return AxiosClient.post(END_POINT.AUTH.LOGOUT);
+};
 const getMe = () => {
   return AxiosClient.get(END_POINT.AUTH.GET_ME);
 };
@@ -21,4 +24,4 @@ const sendMailForgot = (body: { email: string }) => {
   return AxiosClient.post(END_POINT.AUTH.SEND_MAIL_RESTORE, body);
 };
 
-export { login, getMe, changePasswordUser, sendMailForgot, register, token };
+export { login, getMe, changePasswordUser, sendMailForgot, register, token, logout };

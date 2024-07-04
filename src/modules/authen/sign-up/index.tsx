@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Authentication, Complete, Register } from './components';
+import { Authentication, Register } from './components';
 
 const SignUp = () => {
   const [currentStep, setCurrentStep] = useState<number>(1);
@@ -13,9 +13,7 @@ const SignUp = () => {
       case 1:
         return <Register nextStep={nextStep} />;
       case 2:
-        return <Authentication nextStep={nextStep} />;
-      case 3:
-        return <Complete />;
+        return <Authentication />;
       default:
         return <Register nextStep={nextStep} />;
     }

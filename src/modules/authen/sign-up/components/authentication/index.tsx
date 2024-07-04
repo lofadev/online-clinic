@@ -7,6 +7,7 @@ import { translations } from 'locales/translations';
 import { FieldInput, Text, Title } from 'components';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { useAuth } from 'slices';
+import { useHistory } from 'react-router-dom';
 import {
   ButtonStyled,
   ButtonWrapper,
@@ -26,18 +27,15 @@ interface IFailEmail {
   title: string;
   content: string;
 }
-
-interface AuthenticationProps {
-  nextStep: () => void;
-}
-
 interface FormValues {
   token: string;
 }
-const Authentication: React.FC<AuthenticationProps> = ({ nextStep }) => {
-  const { verifyEmail, temp_token, step_register } = useAuth();
+const Authentication: React.FC = () => {
+  const { verifyEmail, temp_token, registerSuccess } = useAuth();
   const { t } = useTranslation();
   const { signUp } = translations;
+
+  const history = useHistory();
 
   const form = useForm({
     defaultValues: {
@@ -51,10 +49,8 @@ const Authentication: React.FC<AuthenticationProps> = ({ nextStep }) => {
   };
 
   useEffect(() => {
-    if (step_register === 3) {
-      nextStep();
-    }
-  }, [step_register]);
+    if (registerSuccess) history.push('/login');
+  }, [registerSuccess]);
 
   const failEmail: IFailEmail[] = useMemo(() => {
     return [

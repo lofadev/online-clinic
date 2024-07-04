@@ -9,6 +9,7 @@ const END_POINT = {
     UPDATE_ADDRESSES: 'user/addresses',
     CHANGE_PASSWORD: '/change-password/update',
     SEND_MAIL_RESTORE: '/change-password/email-confirm',
+    LOGOUT: '/logout',
   },
 
   ADDRESS: {

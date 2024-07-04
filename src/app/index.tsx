@@ -18,7 +18,7 @@ export const App: React.FC = () => {
 
   const { t } = useTranslation();
   const { errors } = translations;
-  const { getMe } = useAuth();
+  const { getMe, logout } = useAuth();
   const { setBroadcastChannel, boardcastChannel } = useBroadcast();
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export const App: React.FC = () => {
           getMe();
         }
         if (event.data === BROADCAST_CHANNEL.LOGOUT) {
-          // handle Logout
+          logout();
         }
       });
     }
