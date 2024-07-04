@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Button } from 'components';
+import { Switch } from 'antd';
 
 export const PreHeaderStyle = styled.div``;
 
@@ -18,7 +19,6 @@ export const NavigateGroup = styled.div`
 export const ButtonGroup = styled.div`
   display: flex;
   gap: 12px;
-  margin-block: auto;
 `;
 export const ContentButtonShopping = styled.div`
   font-size: 10px;
@@ -29,7 +29,7 @@ export const ButtonShopping = styled(Button)`
   height: 40px;
   width: 64px;
   flex-direction: column;
-
+  margin-block: auto;
   &.svg {
     height: 21px;
   }
@@ -43,6 +43,7 @@ export const ButtonShopping = styled(Button)`
 export const ButtonBooking = styled(Button)`
   height: 40px;
   width: 128px;
+  margin-block: auto;
 `;
 export const ContentButtonBooking = styled.div`
   font-size: 14px;
@@ -51,9 +52,22 @@ export const ContentButtonBooking = styled.div`
 `;
 export const ButtonAccount = styled(Button)`
   width: 128px;
+  margin-block: auto;
 `;
 export const ContentButtonAccount = styled.div`
   font-size: 14px;
   font-weight: 700;
   padding-inline: 5px;
+`;
+export const SwitchChangeLanguage = styled.div`
+  height: 50px;
+  display: flex;
+  vertical-align: middle;
+`;
+export const SwitchStyled = styled(Switch)`
+  margin-block: auto;
+
+  &.ant-switch-checked {
+    background-color: ${({ theme }) => theme.primary};
+  }
 `;

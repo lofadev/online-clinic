@@ -20,13 +20,13 @@
   },
   "navigation": {
     "top": "TOP",
-    "consultation": "Consultation Details",
-    "about_dmm": "About DMM Clinic",
-    "how_to_use": "How to Use the Service",
+    "consultation": "Consultation",
+    "about_dmm": "About Clinic",
+    "how_to_use": "How to Use",
     "faq": "Frequently Asked Questions",
-    "dr_column": "Dr. Column",
+    "dr_column": "Dr.Column",
     "shop": "Shop",
-    "appointment": "Medical Appointment",
+    "appointment": "Appointment",
     "my_page": "My Page"
   },
   "subtile": {
