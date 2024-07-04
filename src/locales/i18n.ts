@@ -26,8 +26,8 @@ export const i18n = i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
     resources: translationsJson,
-    lng: 'jp',
-    fallbackLng: 'jp',
+    lng: 'en',
+    fallbackLng: 'en',
     debug: process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test',
 
     interpolation: {

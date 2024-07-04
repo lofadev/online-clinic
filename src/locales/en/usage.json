@@ -1,1 +1,124 @@
-{}
+{
+  "DataAppointment": {
+    "usage1": {
+      "title": "Click the appointment button",
+      "content": "Please click the ",
+      "link": "appointment",
+      "desc": " button on the service site."
+    },
+    "usage2": {
+      "title": "Select appointment menu and date/time",
+      "content": "Please select the subject and date/time you wish to reserve. If you are a DMM member, select 'Log in and confirm date/time' and proceed to step 3. If you are not a DMM member, select 'Register as a member and confirm date/time' and proceed to step 4."
+    },
+    "usage3": {
+      "title": "DMM account login",
+      "content": "Please log in if you have an account.",
+      "content2": "※ If you are already logged in, this screen will not be displayed."
+    },
+    "usage4": {
+      "title": "Register personal information",
+      "content": "A screen for entering the basic information necessary for the consultation will be displayed, so please enter it according to the screen instructions."
+    },
+    "usage5": {
+      "title": "Enter verification code",
+      "content": "If you selected 'Register as a member and confirm date/time' in step 2, you will need to confirm the verification code after registering your personal information.",
+      "content2": "※ If you are already registered as a DMM member, this screen will not be displayed.",
+      "desc": ""
+    },
+    "usage6": {
+      "title": "Confirm reservation details",
+      "content": "After entering your personal information, the reservation details will be displayed. Please check for any issues and select the 'Reserve' button."
+    },
+    "usage7": {
+      "title": "Complete reservation",
+      "content": "After completing the reservation, the reservation completion page will be displayed.",
+      "content2": "Information that needs to be entered before the start of the consultation will be displayed, so please enter it according to the steps.",
+      "desc": ""
+    }
+  },
+
+  "dataFlowDay": {
+    "flow1": {
+      "title": "Start of consultation",
+      "content": "On the day of the appointment, please log in to My Page before your reservation time.",
+      "content2": "Once the pre-consultation information entry is complete, the 'Start Consultation' button displayed on the My Page TOP or consultation list page will be clickable. A video tool will be displayed on a separate screen, so please turn on the video and audio and wait.",
+      "subContent": "Please make sure to enter the information before starting the consultation."
+    },
+    "flow2": {
+      "title": "Consultation flow",
+      "content": "First, you will have a consultation with the doctor. Based on the questionnaire you filled out, we will check your condition and explain the prescribed medications.",
+      "content2": "After the consultation is over, we will explain the cost of the medication, payment methods, and delivery methods.",
+      "subContent": "The consultation flow has been changed from November 2023."
+    },
+    "flow3": {
+      "title": "After consultation flow",
+      "content": "After the consultation, we will proceed to arrange the delivery of the medication as soon as the payment for the confirmed amount is completed.",
+      "content2": "Please check the payment information on the 'Consultation List' page under 'Consulted' after the payment is completed."
+    }
+  },
+
+  "dataOrder": {
+    "order1": {
+      "title": "Click the additional delivery button",
+      "content": "From the additional delivery page, select the consultation history of the medication you want to purchase again and press the 'Additional Delivery' button."
+    },
+    "order2": {
+      "title": "Enter application details",
+      "content": "On the additional delivery application/order screen, select 'Select from current prescriptions' under 'Medication/Quantity Selection' and choose the medication.",
+      "content2": "After selecting, the billing amount, delivery address, and payment method will be displayed at the bottom of the screen. Please check and press the 'Next' button.",
+      "link": "Learn more about the application method"
+    },
+    "order3": {
+      "title": "Confirm additional delivery order details",
+      "content": "The application confirmation screen will be displayed.",
+      "content2": "Please check the details and select the 'Confirm Order' button."
+    },
+    "order4": {
+      "title": "Complete additional delivery order",
+      "content": "Once this screen is displayed, the order is complete. Please wait for the delivery.",
+      "content2": "We will contact you only if there are any confirmation items."
+    }
+  },
+  "dataCommitment": {
+    "commitment1": {
+      "title": "Affordable and easy to continue",
+      "text1": "It is very dangerous as counterfeit products and impurities may be mixed on personal import mail order sites.",
+      "text2": "At our clinic, we deliver genuine products that are safe and secure at a cost that is easy to continue."
+    },
+    "commitment2": {
+      "title": "Fastest same-day delivery",
+      "text1": "You no longer need to wait long hours for prescriptions at clinics or pharmacies.",
+      "text2": "Medications will be delivered to your preferred place and time, such as your home or convenience store."
+    },
+    "commitment3": {
+      "title": "Immediate consultation even for first-timers",
+      "text1": "You no longer need to go all the way to the hospital.",
+      "text2": "As long as you have an internet connection and a device such as a smartphone or PC, you can consult from your home or office."
+    },
+    "commitment4": {
+      "title": "Reliable security",
+      "text1": "DMM Online Clinic has acquired the 'ISMS certification' that proves it meets international standards for protecting confidential information.",
+      "text2": "Your important information is also protected by a highly secure information management system, so you can rest assured."
+    }
+  },
+  "text1": "Certification standard ISO27001:2013 (JISQ27001:2014)",
+  "text2": "Certification number JQA-IM2014",
+
+  "evobaner": "How to use the service",
+  "articleBlock": {
+    "title1": "Strengths of DMM Online Clinic",
+    "title2": "First Appointment Booking | DMM Online Clinic",
+    "title3": "Flow of the day of the consultation",
+    "title4": "For those who want to repurchase previously purchased medicine"
+  },
+  "appointmentTop": {
+    "text1": "We will explain how to make a reservation, including account registration for the first use of the service.",
+    "text2": "From the next time onwards, you can also make a reservation from the 'Consultation Reservation' button after logging in.",
+    "text3": "We conduct online consultations using video tools.",
+    "text4": "We will also check information on prescription drugs and payment amounts during the consultation.",
+    "text5": "We will also check information on prescription drugs and payment amounts during the consultation.",
+    "text6": "We will also check information on prescription drugs and payment amounts during the consultation.",
+    "text7": "We will also check information on prescription drugs and payment amounts during the consultation.",
+    "text8": "We will also check information on prescription drugs and payment amounts during the consultation."
+  }
+}

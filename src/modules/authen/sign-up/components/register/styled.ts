@@ -108,7 +108,7 @@ export const FormCheck = styled.div`
 export const Required = styled.div`
   color: #ffffff;
   background-color: #fa5a6e;
-  width: 34px;
+  width: auto;
   height: auto;
   font-size: 12px;
   text-align: center;

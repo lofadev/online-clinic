@@ -1,17 +1,22 @@
+import { useTranslation } from 'react-i18next';
+
 import EvoBanner from 'components/evo-banner/EvoBanner';
 import ArticleBlock from 'components/article-block/ArticleBlock';
 import Appointment from 'components/page/appointment';
 import Commitment from 'components/page/commitment';
+import { translations } from 'locales/translations';
 import { AppointmentBox, AppointmentMain, AppointmentTop, ContentAppointmentBox, UsageStyled } from './styled';
 import { listDataApointment, listDataCommitment, listDataFlowDay, listDataOrder } from './constants';
 
 export const Usage: React.FC = () => {
+  const { t } = useTranslation();
+  const { usage } = translations;
   return (
     <UsageStyled>
-      <EvoBanner title="サービスの使い方" />
+      <EvoBanner title={t(usage.evobaner)} />
       <AppointmentBox>
         <ArticleBlock
-          title="DMMオンラインクリニックの強み"
+          title={t(usage.articleBlock.title1)}
           desc="Commitment"
           descStyles={{
             fontSize: 'SIZE_16',
@@ -22,7 +27,7 @@ export const Usage: React.FC = () => {
         >
           <ContentAppointmentBox>
             <AppointmentMain>
-              {listDataCommitment.length && listDataCommitment.map((data) => <Commitment {...data} />)}
+              {listDataCommitment.length && listDataCommitment(t).map((data) => <Commitment key={data.id} {...data} />)}
             </AppointmentMain>
           </ContentAppointmentBox>
         </ArticleBlock>
@@ -30,7 +35,7 @@ export const Usage: React.FC = () => {
 
       <AppointmentBox>
         <ArticleBlock
-          title="初回診療予約 | DMMオンラインクリニック"
+          title={t(usage.articleBlock.title2)}
           desc="Appointment"
           descStyles={{
             fontSize: 'SIZE_16',
@@ -41,12 +46,12 @@ export const Usage: React.FC = () => {
         >
           <ContentAppointmentBox>
             <AppointmentTop>
-              サービス初回利用時のアカウント登録を含めた予約方法を説明いたします。
+              {t(usage.appointmentTop.text1)}
               <br />
-              次回以降も同様にログイン後の「診療予約」ボタンからご予約が可能です。
+              {t(usage.appointmentTop.text2)}
             </AppointmentTop>
             <AppointmentMain>
-              {listDataApointment.length && listDataApointment.map((data) => <Appointment {...data} />)}
+              {listDataApointment.length && listDataApointment(t).map((data) => <Appointment {...data} />)}
             </AppointmentMain>
           </ContentAppointmentBox>
         </ArticleBlock>
@@ -54,7 +59,7 @@ export const Usage: React.FC = () => {
 
       <AppointmentBox>
         <ArticleBlock
-          title="診察当日の流れ"
+          title={t(usage.articleBlock.title3)}
           desc="Flow of the day"
           descStyles={{
             fontSize: 'SIZE_16',
@@ -65,12 +70,12 @@ export const Usage: React.FC = () => {
         >
           <ContentAppointmentBox>
             <AppointmentTop>
-              ビデオツールを使用しオンライン診療を行います。
+              {t(usage.appointmentTop.text3)}
               <br />
-              処方薬の情報や、決済金額についても診療内で確認させていただきます。
+              {t(usage.appointmentTop.text4)}
             </AppointmentTop>
             <AppointmentMain>
-              {listDataFlowDay.length && listDataFlowDay.map((data) => <Appointment {...data} />)}
+              {listDataFlowDay.length && listDataFlowDay(t).map((data) => <Appointment {...data} />)}
             </AppointmentMain>
           </ContentAppointmentBox>
         </ArticleBlock>
@@ -78,7 +83,7 @@ export const Usage: React.FC = () => {
 
       <AppointmentBox>
         <ArticleBlock
-          title="以前購入したお薬を追加購入したい方"
+          title={t(usage.articleBlock.title4)}
           desc="Order"
           descStyles={{
             fontSize: 'SIZE_16',
@@ -89,16 +94,16 @@ export const Usage: React.FC = () => {
         >
           <ContentAppointmentBox>
             <AppointmentTop>
-              お手持ちのお薬がなくなる前にお支払いをいただき、
+              {t(usage.appointmentTop.text5)}
               <br />
-              お支払いいただいた分のお薬を都度お届けさせていただく「分割調剤」の仕組みです。
+              {t(usage.appointmentTop.text6)}
               <br />
-              受診した診療項目内にて、一定期間の処方を受けた場合に申請が可能です！
+              {t(usage.appointmentTop.text7)}
               <br />
-              ご申請いただいた内容に問題がなければ、順次決済と配送の準備を進めてまいります。
+              {t(usage.appointmentTop.text8)}
             </AppointmentTop>
             <AppointmentMain>
-              {listDataOrder.length && listDataOrder.map((data) => <Appointment {...data} />)}
+              {listDataOrder.length && listDataOrder(t).map((data) => <Appointment {...data} />)}
             </AppointmentMain>
           </ContentAppointmentBox>
         </ArticleBlock>
