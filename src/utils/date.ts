@@ -36,3 +36,8 @@ export const isToday = (dateStr: string) => {
   const todayStr = new Date().toISOString().split('T')[0];
   return dateStr === todayStr;
 };
+
+export const timeToHourMinutes = (time: string) => {
+  const timeArr = time.split(':');
+  return `${timeArr[0]}:${timeArr[1]}`;
+};

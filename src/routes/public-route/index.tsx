@@ -1,5 +1,5 @@
-import React from 'react';
-import { Redirect, Route, RouteProps } from 'react-router-dom';
+import React, { useMemo } from 'react';
+import { Redirect, Route, RouteProps, useLocation } from 'react-router-dom';
 
 import AuthLayout from 'layouts/layout-default';
 import { useAuth } from 'slices/auth';
@@ -11,6 +11,10 @@ const PublicRoute: React.FC<RouteProps & { component: any; layout: any }> = ({
   ...rest
 }: any) => {
   const { authenticated } = useAuth();
+  const location: any = useLocation();
+  const pathname = useMemo(() => {
+    return location.state.pathName ?? '/';
+  }, []);
 
   return (
     <Route
@@ -22,7 +26,7 @@ const PublicRoute: React.FC<RouteProps & { component: any; layout: any }> = ({
             <Component gender={gender} {...props} />
           </Layout>
         ) : (
-          <Redirect to={{ pathname: '/', state: {} }} />
+          <Redirect to={{ pathname, state: {} }} />
         )
       }
     />

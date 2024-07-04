@@ -8,12 +8,15 @@ import { saga } from './saga';
 import { selectAppointment } from './selectors';
 import {
   AppointmentState,
+  IAppointmentItem,
   IAppointmentParams,
   IParamsService,
   IPostAppointment,
   IService,
   ITimeableList,
+  TAction,
   TAppointmentItem,
+  TTypeAppointment,
 } from './types';
 
 export const initialState: AppointmentState = {
@@ -24,11 +27,15 @@ export const initialState: AppointmentState = {
     startDate: getDate(),
     endDate: getDate(6),
   },
+  type: 'FIRST',
   loading: false,
-  item: null,
   getSuccess: false,
+  item: null,
   services: null,
   service: null,
+  lists: [],
+  detail: null,
+  action: 'create',
 };
 
 const slice = createSlice({
@@ -70,6 +77,36 @@ const slice = createSlice({
     },
 
     createAppointment: (state, action: PayloadAction<IPostAppointment>) => {},
+
+    fetchAppointment: (state) => {
+      state.loading = true;
+    },
+
+    fetchAppointmentSuccess: (state, action: PayloadAction<IAppointmentItem[]>) => {
+      state.lists = action.payload;
+      state.loading = false;
+    },
+
+    getAppointment: (state, action: PayloadAction<string>) => {
+      state.loading = true;
+    },
+
+    getAppointmentSuccess: (state, action: PayloadAction<IAppointmentItem>) => {
+      state.detail = action.payload;
+      state.loading = false;
+    },
+
+    cancelAppointment: (state, action: PayloadAction<{ id: string; cancel_reason: string }>) => {},
+
+    setType: (state, action: PayloadAction<TTypeAppointment>) => {
+      state.type = action.payload;
+    },
+
+    setAction: (state, action: PayloadAction<TAction>) => {
+      state.action = action.payload;
+    },
+
+    updateAppointment: (state, action: PayloadAction<{ id: number; data: IPostAppointment }>) => {},
   },
 });
 
@@ -88,6 +125,14 @@ export const useAppointment = () => {
   const resetTimetables = () => dispatch(actions.resetTimetables());
   const findService = (serviceId: number) => dispatch(actions.findService(serviceId));
   const createAppointment = (payload: IPostAppointment) => dispatch(actions.createAppointment(payload));
+  const fetchAppointment = () => dispatch(actions.fetchAppointment());
+  const getAppointment = (id: string) => dispatch(actions.getAppointment(id));
+  const cancelAppointment = (id: string, cancel_reason: string) =>
+    dispatch(actions.cancelAppointment({ id, cancel_reason }));
+  const setType = (type: TTypeAppointment) => dispatch(actions.setType(type));
+  const setAction = (action: TAction) => dispatch(actions.setAction(action));
+  const updateAppointment = (id: number, payload: IPostAppointment) =>
+    dispatch(actions.updateAppointment({ id, data: payload }));
 
   const state = useSelector(selectAppointment);
 
@@ -99,5 +144,11 @@ export const useAppointment = () => {
     resetTimetables,
     findService,
     createAppointment,
+    fetchAppointment,
+    getAppointment,
+    cancelAppointment,
+    setType,
+    setAction,
+    updateAppointment,
   };
 };
