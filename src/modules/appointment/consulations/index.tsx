@@ -1,6 +1,8 @@
 import { ReactComponent as PicAppointment } from 'assets/svgs/appointment/pic_appointment_image.svg';
 import { Title } from 'components';
+import { translations } from 'locales/translations';
 import { useEffect, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppointment } from 'slices/appointment';
 import AppointmentArticle from '../components/appointment-article';
 import AppointmentBlock from '../components/appointment-block';
@@ -10,6 +12,8 @@ import { EmptyBookingStyled } from './styled';
 
 const Consulations: React.FC = () => {
   const { lists, fetchAppointment, loading } = useAppointment();
+  const { t } = useTranslation();
+  const { appointment } = translations;
 
   useEffect(() => {
     fetchAppointment();
@@ -21,7 +25,7 @@ const Consulations: React.FC = () => {
   );
 
   return (
-    <AppointmentArticle title="診療待ち">
+    <AppointmentArticle title={t(appointment.consultations.title)}>
       <AppointmentBlock>
         {loading ? (
           <LoadingAppointment />
@@ -29,10 +33,10 @@ const Consulations: React.FC = () => {
           <EmptyBookingStyled>
             <PicAppointment />
             <Title.Primary level={2} fontSize="SIZE_24">
-              ご予約はありません
+              {t(appointment.consultations.no_reservations)}
             </Title.Primary>
             <Title.Primary level={3} fontSize="SIZE_16">
-              「診療予約」ボタンよりご予約をお願いいたします。
+              {t(appointment.consultations.reminder)}
             </Title.Primary>
           </EmptyBookingStyled>
         ) : (

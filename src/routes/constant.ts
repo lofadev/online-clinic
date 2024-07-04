@@ -58,20 +58,6 @@ export const PUBLIC_ROUTES = [
     exact: true,
   },
   {
-    path: RoutesName.MALE,
-    component: GenderPage,
-    layout: DefaultLayout,
-    exact: true,
-    gender: 'male',
-  },
-  {
-    path: RoutesName.FEMALE,
-    component: GenderPage,
-    layout: DefaultLayout,
-    exact: true,
-    gender: 'female',
-  },
-  {
     path: RoutesName.FORGOT,
     component: ForgotPassword,
     layout: LayoutSecond,
@@ -81,48 +67,19 @@ export const PUBLIC_ROUTES = [
 
 export const PRIVATE_ROUTES = [
   {
-    path: RoutesName.MALE,
-    component: GenderPage,
-    layout: DefaultLayout,
-    exact: true,
-    gender: 'male',
-  },
-  {
-    path: RoutesName.FEMALE,
-    component: GenderPage,
-    layout: DefaultLayout,
-    exact: true,
-    gender: 'female',
-  },
-  {
-    path: RoutesName.PROFILE,
-    component: UserProfile,
-    layout: AuthLayout,
-  },
-  {
     path: RoutesName.CHANGE,
     component: ChangePassword,
     layout: LayoutSecond,
     exact: true,
   },
-  {
-    path: RoutesName.COLUMN,
-    component: DrColumnPage,
-    layout: DefaultLayout,
-    exact: true,
-  },
+
   {
     path: RoutesName.CONSULTATIONS.INDEX,
     component: Consulations,
     layout: AuthLayout,
     exact: true,
   },
-  {
-    path: RoutesName.USAGE,
-    component: Usage,
-    layout: DefaultLayout,
-    exact: true,
-  },
+
   {
     path: RoutesName.CONSULTATIONS.DONE,
     component: ConsulationsDone,
@@ -153,6 +110,11 @@ export const PRIVATE_ROUTES = [
     layout: AuthLayout,
     exact: true,
   },
+  {
+    path: RoutesName.PROFILE,
+    component: UserProfile,
+    layout: AuthLayout,
+  },
 ];
 
 export const CUSTOME_ROUTE = [
@@ -166,6 +128,32 @@ export const CUSTOME_ROUTE = [
     path: RoutesName.APPOINTMENT.INDEX,
     component: Appointment,
     layout: AuthLayout,
+    exact: true,
+  },
+  {
+    path: RoutesName.MALE,
+    component: GenderPage,
+    layout: DefaultLayout,
+    exact: true,
+    gender: 'male',
+  },
+  {
+    path: RoutesName.FEMALE,
+    component: GenderPage,
+    layout: DefaultLayout,
+    exact: true,
+    gender: 'female',
+  },
+  {
+    path: RoutesName.COLUMN,
+    component: DrColumnPage,
+    layout: DefaultLayout,
+    exact: true,
+  },
+  {
+    path: RoutesName.USAGE,
+    component: Usage,
+    layout: DefaultLayout,
     exact: true,
   },
 ];

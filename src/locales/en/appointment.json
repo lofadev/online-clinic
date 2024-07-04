@@ -1,0 +1,75 @@
+{
+  "complete": {
+    "title": "Medical Reservation Completed",
+    "text1": "Thank you for your reservation.",
+    "text2": "The detailed information has been sent to your registered email, please check.",
+    "text_noti1": "【Appointment Start Date and Time】",
+    "text_noti2": "Start",
+    "button": "My Page"
+  },
+  "booking_top": {
+    "button": "Previous Week",
+    "next_time_button": "Next Week",
+    "announcement": "We will guide you in order of reservation.",
+    "note": "※ If the appointment does not start on time, it will start within the reserved time (14 minutes).",
+    "period_action": "Show Late Night Slots"
+  },
+  "booking": {
+    "medical_confirmation": "Confirm Medical Item and Date/Time",
+    "start_action": "Start",
+    "caution_notice": "Notes",
+    "question": "Check the notes",
+    "member_prompt1": "▼ For those who have registered as DMM members ▼",
+    "login_confirm1": "Login to confirm date and time",
+    "nonmember_prompt1": "▼ For those who have not registered as DMM members ▼",
+    "nonmember_prompt2": "▼ For those who have not registered as DMM members ▼",
+    "register_confirm": "Register to confirm date and time",
+    "button": "Confirm",
+    "cancel": "Cancel",
+    "question_checkbox": "I have checked the notes"
+  },
+  "confirm": {
+    "title": "Medical reservation confirmation",
+    "medical_item": "Medical Item",
+    "start_time": "Appointment Start Date/Time",
+    "start_action": "Start",
+    "newsletter_subscribe": "Subscribe to Newsletter",
+    "question": "Receive useful information and guidance after prescription",
+    "common_notice": "※ The DMM Online Clinic and Cure Station newsletters are shared.",
+    "sync_notice": "Please note that if you register or unsubscribe from either, it will be linked and you will be registered or unsubscribed from both.",
+    "make_reserve": "Make Reservation",
+    "cancel_reserve": "Cancel Reservation"
+  },
+  "main": {
+    "select_item": "1. Select Medical Item",
+    "multi_note": "※ If you wish to receive medical treatment for multiple items, please select and make a reservation for only one item. During the questionnaire and examination, please inform us of the other items you wish to receive.",
+    "report_note": "During the questionnaire and examination, please inform us of the medical item you wish to receive together.",
+    "menu_note": "Select the menu for the selected medical item",
+    "first_visit": "First Visit",
+    "revisit": "Re-examination",
+    "select_time": "2. Select Appointment Start Date/Time",
+    "select_menu": {
+      "initial_visit": "Initial visit",
+      "initial_visit_detail": "This is your first time visiting the same department at our hospital",
+      "followup_visit": "Revisit",
+      "followup_visit_detail": "Those who have received treatment in the same department at our hospital at least once"
+    }
+  },
+  "exam_menu": {
+    "label1": "First Visit",
+    "label2": "Re-examination",
+    "value1": "If this is your first time visiting the same department at our hospital.",
+    "value2": "Those who have received medical treatment in the same department at our hospital at least once"
+  },
+  "consultations": {
+    "title": "Waiting for medical treatment",
+    "update": "Change date and time",
+    "cancel": "Cancel reservation",
+    "no_reservations": "No reservations",
+    "reminder": "Please make a reservation by clicking the 'Medical Reservation' button.",
+    "completed": "Medical treatment completed",
+    "cancel_reason": "Please enter reason for cancellation",
+    "confirm": "confirmation",
+    "reason_required": "Cancellation reason is required"
+  }
+}

@@ -22,7 +22,7 @@ const IconHeader: FC<PropsIconHeader> = (props) => {
   const history = useHistory();
   const { t } = useTranslation();
   const { header } = translations;
-  const { logout } = useAuth();
+  const { logout, authenticated } = useAuth();
 
   const handleNavigate = () => {
     if (path && path !== 'user') {
@@ -44,15 +44,13 @@ const IconHeader: FC<PropsIconHeader> = (props) => {
         <SecondIcon className="secondIcon">
           {children?.map((iconDetail) => <IconDetailHeader {...iconDetail} key={iconDetail.id} />)}
 
-          {path === 'user' ? (
+          {path === 'user' && authenticated ? (
             <LogoutButton onClick={handleLogout}>
               <ImgLogout src="https://navismithapis-cdn.com/img/logout.svg" alt="icon" />
 
               <TextLogout>{t(header.account.logout)}</TextLogout>
             </LogoutButton>
-          ) : (
-            ''
-          )}
+          ) : null}
         </SecondIcon>
       )}
     </IconStyle>

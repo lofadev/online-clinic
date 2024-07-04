@@ -1,15 +1,13 @@
 import { PayloadAction } from '@reduxjs/toolkit';
+import { changePasswordUser, getMe, login, logout, register, sendMailForgot, token } from 'apis';
+import history from 'configs/history';
 import { LOCATION_CHANGE } from 'redux-first-history';
-import { call, takeLatest, put, select } from 'redux-saga/effects';
-import { login, getMe, register, token, changePasswordUser, sendMailForgot, logout } from 'apis';
-
-import { STORAGE } from 'utils/storage';
-import { RootState } from 'types';
-
+import { call, put, select, takeLatest } from 'redux-saga/effects';
 import { notifActions } from 'slices/notification';
-import { sagaCustomize } from '../sagaCustomize';
-
+import { RootState } from 'types';
+import { STORAGE } from 'utils/storage';
 import { actions } from '.';
+import { sagaCustomize } from '../sagaCustomize';
 
 export function* loginSaga({ payload }: PayloadAction<{ email: string; password: string }>) {
   yield sagaCustomize(function* () {
@@ -25,7 +23,7 @@ export function* loginSaga({ payload }: PayloadAction<{ email: string; password:
     yield put(
       notifActions.setNotif({
         type: 'success',
-        message: 'Login Success',
+        message: 'success',
         description: response.meta.message,
       }),
     );
@@ -56,7 +54,7 @@ export function* tokenSaga({ payload }: PayloadAction<{ data: string }>) {
     yield put(
       notifActions.setNotif({
         type: 'success',
-        message: 'Register Success',
+        message: 'success',
         description: response.meta.message,
       }),
     );
@@ -72,7 +70,7 @@ export function* changePasswords({
       yield put(
         notifActions.setNotif({
           type: 'success',
-          message: 'Change password Success',
+          message: 'success',
           description: response.meta.message,
         }),
       );
@@ -88,7 +86,7 @@ export function* sendMail({ payload }: PayloadAction<{ email: string }>) {
       yield put(
         notifActions.setNotif({
           type: 'success',
-          message: 'Send mail Success',
+          message: 'success',
           description: response.meta.message,
         }),
       );
@@ -107,6 +105,14 @@ export function* logoutSaga() {
     const response = yield call(logout);
     yield put(actions.logoutSuccess(response.data));
     localStorage.removeItem(STORAGE.USER_TOKEN);
+    yield put(
+      notifActions.setNotif({
+        type: 'success',
+        message: 'success',
+        description: response.meta.message,
+      }),
+    );
+    history.push('/login');
   });
 }
 

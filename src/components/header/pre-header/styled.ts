@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Button } from 'components';
-import { Switch } from 'antd';
 
 export const PreHeaderStyle = styled.div``;
 
@@ -58,16 +57,4 @@ export const ContentButtonAccount = styled.div`
   font-size: 14px;
   font-weight: 700;
   padding-inline: 5px;
-`;
-export const SwitchChangeLanguage = styled.div`
-  height: 50px;
-  display: flex;
-  vertical-align: middle;
-`;
-export const SwitchStyled = styled(Switch)`
-  margin-block: auto;
-
-  &.ant-switch-checked {
-    background-color: ${({ theme }) => theme.primary};
-  }
 `;

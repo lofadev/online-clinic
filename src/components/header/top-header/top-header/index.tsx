@@ -1,11 +1,20 @@
 import { FC } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import i18next from 'i18next';
 import { translations } from 'locales/translations';
 import { useTranslation } from 'react-i18next';
 import RoutesName from 'routes/constant';
-import { ImageIcon, ImageLogo, LeftTopHeader, RightTopHeader, TopHeaderStyle } from './styled';
 import IconHeader, { PropsIconHeader } from '../icon-header';
+import {
+  ImageIcon,
+  ImageLogo,
+  LeftTopHeader,
+  RightTopHeader,
+  SwitchChangeLanguage,
+  SwitchStyled,
+  TopHeaderStyle,
+} from './styled';
 
 const TopHeader: FC = () => {
   const history = useHistory();
@@ -126,6 +135,15 @@ const TopHeader: FC = () => {
     },
   ];
 
+  const { i18n } = useTranslation();
+  const changeLanguage = (value: boolean) => {
+    if (value) {
+      i18n.changeLanguage('jp');
+    } else {
+      i18n.changeLanguage('en');
+    }
+  };
+
   return (
     <TopHeaderStyle>
       <LeftTopHeader>
@@ -135,6 +153,16 @@ const TopHeader: FC = () => {
       </LeftTopHeader>
 
       <RightTopHeader>
+        <SwitchChangeLanguage>
+          <SwitchStyled
+            checkedChildren="JP"
+            unCheckedChildren="EN"
+            defaultChecked={i18next.language === 'jp'}
+            onChange={(value) => {
+              changeLanguage(value);
+            }}
+          />
+        </SwitchChangeLanguage>
         {listPropsIcon.length && listPropsIcon.map((icons) => <IconHeader {...icons} key={icons.id} />)}
       </RightTopHeader>
     </TopHeaderStyle>

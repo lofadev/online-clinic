@@ -15,6 +15,9 @@ const slice = createSlice({
     setNotif(state, action: PayloadAction<NotificationParams>) {
       state.notif = action.payload;
     },
+    resetNotif: (state) => {
+      state.notif = undefined;
+    },
   },
 });
 
@@ -27,11 +30,13 @@ export const useNotification = () => {
   const setNotif = (state: NotificationParams) => {
     dispatch(slice.actions.setNotif(state));
   };
+  const resetNotif = () => dispatch(notifActions.resetNotif());
 
   const notif = useSelector(selectNotification);
 
   return {
     notif,
     setNotif,
+    resetNotif,
   };
 };

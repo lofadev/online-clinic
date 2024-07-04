@@ -1,27 +1,23 @@
 import { FC } from 'react';
 
 import { Account, Booking, Shopping } from 'assets/icons/icon-header';
-import { useHistory } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { translations } from 'locales/translations';
+import { useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router-dom';
 import RoutesName from 'routes/constant';
-// import i18next from 'i18next';
-import i18next from 'i18next';
+import NavigateButton, { PropsNavigateButton } from './navigate-button';
 import {
+  ButtonAccount,
+  ButtonBooking,
   ButtonGroup,
   ButtonShopping,
   ContainerPage,
+  ContentButtonAccount,
+  ContentButtonBooking,
   ContentButtonShopping,
   NavigateGroup,
   PreHeaderStyle,
-  ButtonBooking,
-  ContentButtonBooking,
-  ButtonAccount,
-  ContentButtonAccount,
-  SwitchStyled,
-  SwitchChangeLanguage,
 } from './styled';
-import NavigateButton, { PropsNavigateButton } from './navigate-button';
 import SubHeader from './sub-header';
 
 const PreHeader: FC = () => {
@@ -65,14 +61,7 @@ const PreHeader: FC = () => {
   const handleClick = (url: string) => {
     history.push(url);
   };
-  const { i18n } = useTranslation();
-  const changeLanguage = (value: boolean) => {
-    if (value) {
-      i18n.changeLanguage('jp');
-    } else {
-      i18n.changeLanguage('en');
-    }
-  };
+
   return (
     <PreHeaderStyle>
       <ContainerPage>
@@ -94,21 +83,10 @@ const PreHeader: FC = () => {
             <ContentButtonBooking>{t(header.navigation.appointment)}</ContentButtonBooking>
           </ButtonBooking>
 
-          <ButtonAccount type="primary" color="quaternary" size="small" onClick={() => handleClick('/account')}>
+          <ButtonAccount type="primary" color="quaternary" size="small" onClick={() => handleClick('/profile')}>
             <Account />
             <ContentButtonAccount>{t(header.navigation.my_page)}</ContentButtonAccount>
           </ButtonAccount>
-
-          <SwitchChangeLanguage>
-            <SwitchStyled
-              checkedChildren="JP"
-              unCheckedChildren="EN"
-              defaultChecked={i18next.language === 'jp'}
-              onChange={(value) => {
-                changeLanguage(value);
-              }}
-            />
-          </SwitchChangeLanguage>
         </ButtonGroup>
       </ContainerPage>
     </PreHeaderStyle>

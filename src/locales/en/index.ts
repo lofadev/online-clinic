@@ -14,6 +14,8 @@ import errors from './errors.json';
 import success from './success.json';
 import drColumn from './dr-column.json';
 import usage from './usage.json';
+import appointment from './appointment.json';
+import notification from './notification.json';
 
 export {
   common,
@@ -32,4 +34,6 @@ export {
   success,
   drColumn,
   usage,
+  appointment,
+  notification,
 };
