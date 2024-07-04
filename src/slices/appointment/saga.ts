@@ -3,6 +3,7 @@ import * as apiAppointment from 'apis/appointment.api';
 import * as apiService from 'apis/service.api';
 import history from 'configs/history';
 import { call, put, takeLatest } from 'redux-saga/effects';
+import { notifActions } from 'slices/notification';
 import { sagaCustomize } from 'slices/sagaCustomize';
 import { IResponse } from 'types/response';
 import { actions } from '.';
@@ -39,6 +40,13 @@ function* createAppointment({ payload }: PayloadAction<IPostAppointment>) {
     const response: IResponse<IResPostAppointment> = yield call(apiAppointment.create, payload);
     if (response.meta.success) {
       history.push(`/appointment/complete?id=${response.data.id}`);
+      yield put(
+        notifActions.setNotif({
+          type: 'success',
+          message: 'success',
+          description: response.meta.message,
+        }),
+      );
     }
   });
 }
@@ -75,6 +83,13 @@ function* cancelAppointment({ payload }: PayloadAction<{ id: string; cancel_reas
     const response: IResponse<IAppointmentItem> = yield call(apiAppointment.cancel, payload);
     if (response.meta.success) {
       history.push('/consultations');
+      yield put(
+        notifActions.setNotif({
+          type: 'success',
+          message: 'success',
+          description: response.meta.message,
+        }),
+      );
     }
   });
 }

@@ -1,4 +1,4 @@
-import { notification } from 'antd';
+import { notification as noficationAnt } from 'antd';
 import Loading from 'components/loading/Loading';
 import { BROADCAST_CHANNEL } from 'constant';
 import { translations } from 'locales/translations';
@@ -12,14 +12,12 @@ import { useNotification } from 'slices/notification';
 import { STORAGE, getLocalStorage } from 'utils/storage';
 
 export const App: React.FC = () => {
-  const { t } = useTranslation();
-  const { errors } = translations;
+  const { t, i18n } = useTranslation();
+  const { errors, notification, success } = translations;
   const [loading, setLoading] = React.useState(true);
-  const { notif, setNotif } = useNotification();
+  const { notif, setNotif, resetNotif } = useNotification();
   const { error } = useError();
-  const { logout } = useAuth();
-
-  const { getMe } = useAuth();
+  const { logout, getMe } = useAuth();
   const { setBroadcastChannel, boardcastChannel } = useBroadcast();
 
   useEffect(() => {
@@ -47,13 +45,16 @@ export const App: React.FC = () => {
 
   useEffect(() => {
     if (notif) {
-      notification[notif.type]({
-        message: notif.message,
-        description: notif.description,
+      noficationAnt[notif.type]({
+        message: t(notification[notif.message]),
+        description: typeof notif.description === 'string' ? t(success[notif.description]) : notif.description,
         duration: 2,
       });
+      setTimeout(() => {
+        resetNotif();
+      }, 2000);
     }
-  }, [notif]);
+  }, [notif, i18n.language]);
 
   useEffect(() => {
     if (boardcastChannel) {
@@ -84,7 +85,7 @@ export const App: React.FC = () => {
 
       setNotif({
         type: 'error',
-        message: t(errors.title),
+        message: 'failure',
         description: <p>{resultError}</p>,
       });
     }

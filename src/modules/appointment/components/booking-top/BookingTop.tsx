@@ -4,6 +4,8 @@ import NightIcon from 'assets/svgs/ico_circle_night.svg';
 import { Text } from 'components';
 import ButtonPrimaryWhite from 'components/button/button-white/ButtonPrimaryWhite';
 import Switch from 'components/switch';
+import { useTranslation } from 'react-i18next';
+import { translations } from 'locales/translations';
 import { useAppointment } from 'slices/appointment';
 import { formatDateToJapanese, getDate } from 'utils/date';
 import BookingItem from '../booking-item/BookingItem';
@@ -35,6 +37,9 @@ const periods: TPeriodProps[] = [
 ];
 
 const BookingTop = () => {
+  const { t } = useTranslation();
+  const { appointment } = translations;
+
   const { timetables, getReservationTimeables, params, loading } = useAppointment();
   const days = daysTransform(timetables?.date_list);
 
@@ -55,7 +60,7 @@ const BookingTop = () => {
           onClick={() => handleChangeTimeTables(-7)}
           loading={loading && timetables?.enabled_last_week}
         >
-          前週
+          {t(appointment.booking_top.button)}
         </ButtonPrimaryWhite>
         <Text.Primary fontWeight="FW_700" fontSize="SIZE_20">
           {formatDateToJapanese(params.startDate, 'M月D日')}-{formatDateToJapanese(params.endDate, 'M月D日')}
@@ -65,15 +70,16 @@ const BookingTop = () => {
           onClick={() => handleChangeTimeTables(7)}
           loading={loading && timetables?.enabled_next_week}
         >
-          翌週
+          {t(appointment.booking_top.next_time_button)}
         </ButtonPrimaryWhite>
       </ActionsTopStyled>
 
       <NoteStyled>
         <Text.Primary fontWeight="FW_700" fontSize="SIZE_12">
-          ご予約いただいた方の中から順番にご案内いたします。
+          {t(appointment.booking_top.announcement)}
         </Text.Primary>
-        <Text.Primary fontSize="SIZE_12">※予約時間に開始しない場合は枠内（14分）の間で開始いたします。</Text.Primary>
+
+        <Text.Primary fontSize="SIZE_12">{t(appointment.booking_top.note)}</Text.Primary>
       </NoteStyled>
 
       <PeriodWrapperStyled>
@@ -84,7 +90,7 @@ const BookingTop = () => {
         </PeriodMenuStyled>
         <PeriodActionStyled>
           <Text.Primary fontWeight="FW_700" fontSize="SIZE_16">
-            深夜枠を表示
+            {t(appointment.booking_top.period_action)}
           </Text.Primary>
           <Switch />
         </PeriodActionStyled>

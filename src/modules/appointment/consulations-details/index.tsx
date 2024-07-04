@@ -4,8 +4,10 @@ import { Button, Text, Title } from 'components';
 import ButtonPrimaryWhite from 'components/button/button-white/ButtonPrimaryWhite';
 import FieldText from 'components/form/field-text/Text';
 import history from 'configs/history';
+import { translations } from 'locales/translations';
 import { useEffect, useState } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { useAppointment } from 'slices/appointment';
 import { formatDateToJapanese, timeToHourMinutes } from 'utils/date';
@@ -23,6 +25,8 @@ const ConsulationsDetails = () => {
   const { id } = useParams<{ id: string }>();
   const { getAppointment, detail, cancelAppointment, loading } = useAppointment();
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const { t } = useTranslation();
+  const { appointment } = translations;
 
   const methods = useForm<IFormValues>({
     defaultValues: {
@@ -66,23 +70,23 @@ const ConsulationsDetails = () => {
           </>
         ) : null}
         <ButtonWrapperStyled>
-          <Button onClick={handleNavigateEdit}>日時を変更する</Button>
+          <Button onClick={handleNavigateEdit}>{t(appointment.consultations.update)}</Button>
           <Button type="link" onClick={() => setIsOpenModal(true)}>
-            予約をキャンセル
+            {t(appointment.consultations.cancel)}
           </Button>
         </ButtonWrapperStyled>
 
         <Modal open={isOpenModal} onCancel={handleCancel} footer={null}>
           <FormProvider {...methods}>
-            <FieldText label="キャンセル理由を選択" name="cancel_reason" />
+            <FieldText label={t(appointment.consultations.cancel_reason)} name="cancel_reason" />
           </FormProvider>
 
           <ButtonModalStyled>
             <ButtonPrimaryWhite size="middle" onClick={handleCancel}>
-              閉じる
+              {t(appointment.consultations.cancel)}
             </ButtonPrimaryWhite>
             <Button rounded="sm" type="primary" onClick={methods.handleSubmit(handleCancelAppointment)}>
-              確認
+              {t(appointment.consultations.confirm)}
             </Button>
           </ButtonModalStyled>
         </Modal>

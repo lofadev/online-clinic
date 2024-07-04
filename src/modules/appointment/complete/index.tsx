@@ -4,6 +4,8 @@ import { useSearchParams } from 'hooks/useQuery';
 import { useEffect } from 'react';
 import { useAppointment } from 'slices/appointment';
 import { formatDateToJapanese, timeToHourMinutes } from 'utils/date';
+import { useTranslation } from 'react-i18next';
+import { translations } from 'locales/translations';
 import AppointmentArticle from '../components/appointment-article';
 import AppointmentBlock from '../components/appointment-block';
 import { ButtonStyled, TextNotiStyled, TextStyled } from './styled';
@@ -11,6 +13,8 @@ import { ButtonStyled, TextNotiStyled, TextStyled } from './styled';
 const CompleteAppointment = () => {
   const { detail, getAppointment } = useAppointment();
   const params: { id: string } = useSearchParams();
+  const { t } = useTranslation();
+  const { appointment } = translations;
 
   useEffect(() => {
     if (params && params.id) {
@@ -21,21 +25,25 @@ const CompleteAppointment = () => {
   }, [params]);
 
   return (
-    <AppointmentArticle title="診療予約完了">
+    <AppointmentArticle title={t(appointment.complete.title)}>
       {detail && (
         <AppointmentBlock>
-          <Title.Primary fontSize="SIZE_20">診療予約が完了しました</Title.Primary>
+          <Title.Primary fontSize="SIZE_20">{t(appointment.complete.title)}</Title.Primary>
           <TextStyled>
-            ご予約いただきありがとうございます。
+            {t(appointment.complete.text1)}
             <br />
-            詳細内容はご登録のメールに送信しましたのでご確認ください。
+            {t(appointment.complete.text2)}
           </TextStyled>
-          <TextNotiStyled>
-            【診療開始日時】{formatDateToJapanese(detail?.booking_date, 'Y年M月D日 (ddd)')}{' '}
-            {timeToHourMinutes(detail.time.start_time)}～{timeToHourMinutes(detail.time.end_time)} 開始
-          </TextNotiStyled>
+          {detail ? (
+            <TextNotiStyled>
+              {t(appointment.complete.text_noti1)}
+              {formatDateToJapanese(detail.booking_date, 'Y年M月D日 (ddd)')} {timeToHourMinutes(detail.time.start_time)}
+              ～{timeToHourMinutes(detail.time.end_time)}
+              {t(appointment.complete.text_noti2)}
+            </TextNotiStyled>
+          ) : null}
           <ButtonStyled type="primary" onClick={() => history.push('/consultations')}>
-            マイページ
+            {t(appointment.complete.button)}
           </ButtonStyled>
         </AppointmentBlock>
       )}

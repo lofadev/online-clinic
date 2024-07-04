@@ -46,7 +46,7 @@ export function* getPrefectureSaga() {
       yield put(
         notifActions.setNotif({
           type: 'error',
-          message: 'エラー',
+          message: 'error',
           description: 'エラーが',
         }),
       );
@@ -65,7 +65,7 @@ export function* updateProfileSaga(action: PayloadAction<IUserWithAddress>) {
       yield put(
         notifActions.setNotif({
           type: 'success',
-          message: '更新',
+          message: 'success',
           description: '更新に成功',
         }),
       );
@@ -73,7 +73,7 @@ export function* updateProfileSaga(action: PayloadAction<IUserWithAddress>) {
       yield put(
         notifActions.setNotif({
           type: 'error',
-          message: 'エラー',
+          message: 'error',
           description: 'アップデートに失敗しました',
         }),
       );

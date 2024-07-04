@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Switch } from 'antd';
 
 export const TopHeaderStyle = styled.div`
   margin-inline: 5px;
@@ -35,4 +36,21 @@ export const ImageLogo = styled.img`
 export const RightTopHeader = styled.div`
   display: flex;
   text-align: center;
+`;
+
+export const SwitchChangeLanguage = styled.div`
+  height: 50px;
+  display: flex;
+  vertical-align: middle;
+`;
+export const SwitchStyled = styled(Switch)`
+  margin-block: auto;
+
+  &.ant-switch-checked {
+    background-color: ${({ theme }) => theme.primary};
+  }
+
+  &.ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled) {
+    background-color: ${({ theme }) => theme.primary};
+  }
 `;

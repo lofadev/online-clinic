@@ -1,0 +1,75 @@
+{
+  "complete": {
+    "title": "診療予約が完了しました<",
+    "text1": "ご予約いただきありがとうございます。",
+    "text2": "詳細内容はご登録のメールに送信しましたのでご確認ください。",
+    "text_noti1": "【診療開始日時】",
+    "text_noti2": "開始",
+    "button": "マイページ"
+  },
+  "booking_top": {
+    "button": "前週",
+    "next_time_button": "翌週",
+    "announcement": "ご予約いただいた方の中から順番にご案内いたします。",
+    "note": "※予約時間に開始しない場合は枠内（14分）の間で開始いたします",
+    "period_action": "深夜枠を表示"
+  },
+  "booking": {
+    "medical_confirmation": "診療項目・日時確認",
+    "start_action": "開始",
+    "caution_notice": "注意事項",
+    "question": "注意事項を確認し",
+    "member_prompt1": "▼ DMM会員登録をしている方 ▼",
+    "login_confirm1": "ログインして日時確定する",
+    "nonmember_prompt1": "▼ DMM会員登録をしていない方 ▼",
+    "nonmember_prompt2": "▼ DMM会員登録をしていない方 ▼",
+    "register_confirm": "会員登録して日時確定する",
+    "button": "日時確定",
+    "cancel": "キャンセル",
+    "question_checkbox": "注意事項を確認しました"
+  },
+  "confirm": {
+    "title": "診療予約確認",
+    "medical_item": "診療項目",
+    "start_time": "診療開始日時",
+    "start_action": "開始",
+    "newsletter_subscribe": "メルマガ購読",
+    "question": "お得な情報や処方後の案内などを受け取る",
+    "common_notice": "※DMMオンラインクリニックとキュアステーションのメルマガは共通です。",
+    "sync_notice": "どちらかで登録及び解除した場合、連動して登録及び解除されますのでご注意ください。",
+    "make_reserve": "予約する",
+    "cancel_reserve": "キャンセルする"
+  },
+  "main": {
+    "select_item": "1.診療科目を選択",
+    "multi_note": "※複数の科目の診療をご希望される場合は、1科目のみ選択しご予約ください。",
+    "report_note": "問診票および診察時に、一緒に受診したい診療科目名の申告をお願いいたします。",
+    "menu_note": "選択した診療科目にて受診するメニューを選択ください",
+    "first_visit": "初診",
+    "revisit": "再診",
+    "select_time": "2.診療開始日時を選択",
+    "select_menu": {
+      "initial_visit": "初診",
+      "initial_visit_detail": "当院で同診療科目の受診が初めての方",
+      "followup_visit": "再診",
+      "followup_visit_detail": "当院で同診療科目で一度でも受診歴がある方"
+    }
+  },
+  "exam_menu": {
+    "label1": "初診",
+    "label2": "再診",
+    "value1": "当院で同診療科目の受診が初めての方",
+    "value2": "当院で同診療科目で一度でも受診歴がある方"
+  },
+  "consultations": {
+    "title": "診療待ち",
+    "update": "日時を変更する",
+    "cancel": "予約をキャンセル",
+    "no_reservations": "ご予約はありません",
+    "reminder": "「診療予約」ボタンよりご予約をお願いいたします。",
+    "completed": "診療済み",
+    "cancel_reason": "キャンセル理由を入力してください",
+    "confirm": "確認",
+    "reason_required": "キャンセル理由は必須です"
+  }
+}

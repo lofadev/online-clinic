@@ -2,6 +2,8 @@ import BannerReprescription from 'assets/svgs/appointment/bnr_prompt_represcript
 import { FieldRadio, FieldSelect, Text, Title } from 'components';
 import { useSearchParams } from 'hooks/useQuery';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { translations } from 'locales/translations';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { useAppointment } from 'slices/appointment';
@@ -53,6 +55,9 @@ const Appointment: React.FC = () => {
       examMethod: 'FIRST',
     },
   });
+  const { t } = useTranslation();
+  const { appointment } = translations;
+
   const { serviceId } = methodsServices.watch();
   const { examMethod } = methodsServices.watch();
 
@@ -95,30 +100,26 @@ const Appointment: React.FC = () => {
   }, [examMethod]);
 
   return (
-    <AppointmentArticle>
-      <AppoinmentStyled>
+    <AppoinmentStyled>
+      <AppointmentArticle>
         <AppointmentBlock>
-          <TitleHeadStyled fontSize="SIZE_16">1.診療科目を選択</TitleHeadStyled>
+          <TitleHeadStyled fontSize="SIZE_16"> {t(appointment.main.select_item)}</TitleHeadStyled>
           <TextWrapperStyled>
-            <Text.Primary fontSize="SIZE_12">
-              ※複数の科目の診療をご希望される場合は、1科目のみ選択しご予約ください。
-            </Text.Primary>
-            <Text.Primary fontSize="SIZE_12">
-              問診票および診察時に、一緒に受診したい診療科目名の申告をお願いいたします。
-            </Text.Primary>
+            <Text.Primary fontSize="SIZE_12">{t(appointment.main.multi_note)}</Text.Primary>
+            <Text.Primary fontSize="SIZE_12">{t(appointment.main.report_note)}</Text.Primary>
           </TextWrapperStyled>
           <FormProvider {...methodsServices}>
             <FieldSelect name="serviceId" options={options} />
 
             <NoteStyled level={3} fontSize="SIZE_14">
-              選択した診療科目にて受診するメニューを選択ください
+              {t(appointment.main.menu_note)}
             </NoteStyled>
 
             <ExamMenuStyled>
               {examMenu.map((item) => (
                 <ExamItemStyled key={item.label}>
-                  <Text.Primary fontWeight="FW_700">{item.label} :</Text.Primary>
-                  <Text.Primary>{item.detail}</Text.Primary>
+                  <Text.Primary fontWeight="FW_700">{t(appointment.exam_menu[item.label])} : </Text.Primary>
+                  <Text.Primary>{t(appointment.exam_menu[item.detail])}</Text.Primary>
                 </ExamItemStyled>
               ))}
             </ExamMenuStyled>
@@ -126,8 +127,8 @@ const Appointment: React.FC = () => {
             <FieldRadio
               name="examMethod"
               options={[
-                { label: '初診', value: 'FIRST' },
-                { label: '再診', value: 'RETURN' },
+                { label: t(appointment.main.first_visit), value: 'FIRST' },
+                { label: t(appointment.main.revisit), value: 'RETURN' },
               ]}
             />
             {examMethod === 'RETURN' ? (
@@ -138,7 +139,7 @@ const Appointment: React.FC = () => {
           </FormProvider>
         </AppointmentBlock>
         <AppointmentBlock className="block-2">
-          <Title.Primary fontSize="SIZE_16">2.診療開始日時を選択</Title.Primary>
+          <Title.Primary fontSize="SIZE_16">{t(appointment.main.select_time)}</Title.Primary>
           {getSuccess ? (
             <>
               <BookingTop />
@@ -147,8 +148,8 @@ const Appointment: React.FC = () => {
           ) : null}
           {loading ? <LoadingAppointment /> : null}
         </AppointmentBlock>
-      </AppoinmentStyled>
-    </AppointmentArticle>
+      </AppointmentArticle>
+    </AppoinmentStyled>
   );
 };
 

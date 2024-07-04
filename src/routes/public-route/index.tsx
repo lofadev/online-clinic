@@ -13,7 +13,7 @@ const PublicRoute: React.FC<RouteProps & { component: any; layout: any }> = ({
   const { authenticated } = useAuth();
   const location: any = useLocation();
   const pathname = useMemo(() => {
-    return location.state.pathName ?? '/';
+    return location.state?.pathName ?? '/';
   }, []);
 
   return (

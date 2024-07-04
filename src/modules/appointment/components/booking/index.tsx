@@ -5,6 +5,8 @@ import history from 'configs/history';
 import { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useAuth } from 'slices';
+import { useTranslation } from 'react-i18next';
+import { translations } from 'locales/translations';
 import { useAppointment } from 'slices/appointment';
 import { TAppointmentItem } from 'slices/appointment/types';
 import { formatDateToJapanese } from 'utils/date';
@@ -32,6 +34,8 @@ const Booking = () => {
   const { timetables, updateItem, item, service } = useAppointment();
   const dataTransform = useTransformData(timetables?.date_list);
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const { t } = useTranslation();
+  const { appointment } = translations;
 
   const methodsCheckbox = useForm({
     defaultValues: {
@@ -77,15 +81,16 @@ const Booking = () => {
         <Modal open={isOpenModal} footer={null} onCancel={handleCancel}>
           <ModalWrapperStyled>
             <ModalTitleStyled level={2} fontSize="SIZE_20">
-              診療項目・日時確認
+              {t(appointment.booking.medical_confirmation)}
             </ModalTitleStyled>
             <ServiceStyled>{service?.name}</ServiceStyled>
             <DateTimeStyled level={3} fontSize="SIZE_16">
-              {formatDateToJapanese(item?.date, 'M月D日（ddd）')} {item?.timeStart} - {item?.timeEnd} 開始
+              {formatDateToJapanese(item?.date, 'M月D日（ddd）')} {item?.timeStart} - {item?.timeEnd}
+              {t(appointment.booking.start_action)}
             </DateTimeStyled>
             {service?.note && (
               <ModalNoteStyled>
-                <ModalNoteTitleStyled>注意事項</ModalNoteTitleStyled>
+                <ModalNoteTitleStyled> {t(appointment.booking.caution_notice)}</ModalNoteTitleStyled>
                 {service?.note.split('・').map((line) => line && <p key={line}>・{line}</p>)}
               </ModalNoteStyled>
             )}
@@ -97,25 +102,30 @@ const Booking = () => {
 
             {!authenticated ? (
               <ButtonWithoutAuthStyled>
-                <TextStyled>▼ DMM会員登録をしている方 ▼</TextStyled>
+                <TextStyled>{t(appointment.booking.member_prompt1)}</TextStyled>
                 <ButtonStyled
                   type="primary"
                   size="small"
                   disabled={!confirm}
                   onClick={() => history.push({ pathname: '/login', state: { pathName: '/appointment' } })}
                 >
-                  ログインして日時確定する
+                  {t(appointment.booking.login_confirm1)}
                 </ButtonStyled>
-                <TextStyled>▼ DMM会員登録をしていない方 ▼</TextStyled>
-                <ButtonStyled type="primary" size="small" disabled={!confirm} onClick={() => history.push('/register')}>
-                  会員登録して日時確定する
+                <TextStyled>{t(appointment.booking.nonmember_prompt2)}</TextStyled>
+                <ButtonStyled
+                  type="primary"
+                  size="small"
+                  disabled={!confirm}
+                  onClick={() => history.push('/appointment/complete')}
+                >
+                  {t(appointment.booking.register_confirm)}
                 </ButtonStyled>
               </ButtonWithoutAuthStyled>
             ) : (
               <ButtonHasAuthStyled>
-                <ButtonPrimaryWhite onClick={handleCancel}>キャンセル</ButtonPrimaryWhite>
-                <ButtonStyled size="small" type="primary" disabled={!confirm} onClick={handleRedirectToConfirm}>
-                  日時確定
+                <ButtonPrimaryWhite onClick={handleCancel}>{t(appointment.booking.cancel)}</ButtonPrimaryWhite>
+                <ButtonStyled type="primary" size="small" disabled={!confirm} onClick={handleRedirectToConfirm}>
+                  {t(appointment.booking.button)}
                 </ButtonStyled>
               </ButtonHasAuthStyled>
             )}

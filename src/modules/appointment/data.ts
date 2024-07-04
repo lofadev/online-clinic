@@ -4,6 +4,6 @@ interface IExam {
 }
 
 export const examMenu: IExam[] = [
-  { label: '初診', detail: '当院で同診療科目の受診が初めての方' },
-  { label: '再診', detail: '当院で同診療科目で一度でも受診歴がある方' },
+  { label: 'label1', detail: 'value1' },
+  { label: 'label2', detail: 'value2' },
 ];

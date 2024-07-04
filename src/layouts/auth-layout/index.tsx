@@ -3,7 +3,7 @@ import MainFooter from 'components/footer/main-footer';
 import { translations } from 'locales/translations';
 import { FC, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, NavLink, useHistory } from 'react-router-dom';
 import RoutesName from 'routes/constant';
 import { useAuth } from 'slices';
 import { Button } from 'components';
@@ -57,10 +57,10 @@ export const AuthLayout: FC<AuthHeaderProps> = ({ children }) => {
           <NavigatorStyled>
             <ul>
               <li>
-                <Link to="/">{t(userInfomation.top_page)}</Link>
+                <NavLink to="/consultations">{t(userInfomation.top_page)}</NavLink>
               </li>
               <li>
-                <Link to="/path1">{t(userInfomation.medical_treatment)}</Link>
+                <NavLink to="/consultations/done">{t(userInfomation.medical_treatment)}</NavLink>
               </li>
               <AppointmentWrapper onClick={() => history.push(RoutesName.APPOINTMENT.INDEX)}>
                 <Button size="small">
