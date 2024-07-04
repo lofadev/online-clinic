@@ -37,5 +37,94 @@
     "MessageBlockMiddle": "If you are concerned about any problems specific to men, please feel free to contact us.",
     "MessageBlockBottom": "Treating as soon as possible is the fastest way to improve!"
   },
-  "FeaturewBox": {}
+  "Feature": {
+    "title": "Characteristics of our hospital",
+    "contentbox": "Online medical treatment reception hours",
+    "titleMiddle": "24 hours available",
+    "titleBottom": "*Excluding year-end and New Year holidays",
+    "contentbox2": "Diet, male AGA, ED/premature ejaculation prevention",
+    "titleMiddle2": "Diet, Chinese medicine, pills, female AGA,",
+    "titleBottom2": "Morning pill, medical eyelash",
+    "titleBottom3": "Compatible with medical subjects such as",
+    "contentbox3": "From making reservations to filling out medical questionnaires to medical treatment",
+    "titleMiddle3": "All possible online"
+  },
+  "ArticleBlock": {
+    "title": "Characteristics of our hospital",
+    "btnAppoinrement": "Make a medical appointment",
+    "titleStaff": "Recommended points from staff",
+    "titleFlow": "Flow of online medical treatment",
+    "btnManual": "Click here for detailed usage information",
+    "titleVideo": "Learn the flow from TV commercials"
+  },
+  "dataFeature": {
+    "content1": "Affordable and reliable pricing",
+    "content2": "Same-day delivery available",
+    "content3": "Immediate consultation for first-time patients",
+    "content4": "Affordable and reliable pricing",
+    "content5": "Same-day delivery available",
+    "content6": "Immediate consultation for first-time patients",
+    "content7": "Affordable and reliable pricing",
+    "content8": "Same-day delivery available",
+    "content9": "Immediate consultation for first-time patients"
+  },
+
+  "dataFlow": {
+    "flow1": {
+      "title": "Reserve the date and time you would like to visit, and the details of the treatment.",
+      "content": "Easy with your smartphone or PC! You can also manage your reservations!"
+    },
+    "flow2": {
+      "title": "medical treatment",
+      "content": "Examination using video tools! It is also possible to take multiple subjects at the same time."
+    },
+    "flow3": {
+      "title": "Receiving medicine",
+      "content": "Delivery to your home or convenience store is also possible!"
+    },
+    "flow4": {
+      "title": "Reserve the date and time you would like to visit, and the details of the treatment.",
+      "content": "Easy with your smartphone or PC! You can also manage your reservations!"
+    },
+    "flow5": {
+      "title": "medical treatment",
+      "content": "Examination using video tools! It is also possible to take multiple subjects at the same time."
+    },
+    "flow6": {
+      "title": "Receiving medicine",
+      "content": "Delivery to your home or convenience store is also possible!"
+    }
+  },
+  "dataMedicalQueryMale": {
+    "Medical1": {
+      "textMale": "I would like to receive medical treatment during breaks from work or on weekends.",
+      "textFeMale": "I can't go to the hospital because I don't have time.It won't last."
+    },
+    "Medical2": {
+      "textMale": "I'm concerned about privacy",
+      "textFeMale": "I want to face my recurring symptoms properly..."
+    },
+    "Medical3": {
+      "textMale": "I wish the medicine could be delivered to my house...",
+      "textFeMale": "I wish the medicine could be delivered to my house..."
+    }
+  },
+  "dataSlideStaffRecommend": {
+    "staff1": {
+      "job": "doctor",
+      "description": "The consultation is free of charge, so please make an appointment to discuss your symptoms and the medications you are concerned about. Even if you receive a prescription for medicine, the only costs you will incur are shipping costs and the cost of the medicine."
+    },
+    "staff2": {
+      "job": "counselor",
+      "description": "I think one of the appeals of our clinic is that most cases, from counseling to seeing a doctor, can be completed within 10 minutes. It's convenient to be able to see your doctor from home at a time that's convenient for you!"
+    },
+    "staff3": {
+      "job": "doctor",
+      "description": "I would be very happy if you could tell me that your physical condition has improved from before when you come back for a follow-up visit. There is no charge for re-examinations, so it is easy to continue."
+    },
+    "staff4": {
+      "job": "pharmacist",
+      "description": "Because we are a clinic, we have a wide range of highly effective medicines that can be prescribed. Although it is a free medical treatment, you can receive a prescription at a relatively low price, so if you have any symptoms you are concerned about, please give it a try."
+    }
+  }
 }

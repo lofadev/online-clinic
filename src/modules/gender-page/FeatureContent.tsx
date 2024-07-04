@@ -1,6 +1,8 @@
 import { FC } from 'react';
 
 import { FeatureFemale, FeatureMale } from 'assets/images/feature-gender';
+import { useTranslation } from 'react-i18next';
+import { translations } from 'locales/translations';
 import {
   ContentBottomFeature,
   ContentFeature,
@@ -19,6 +21,9 @@ export type PropsGenderFeature = {
 };
 
 const FeatureContent: FC<PropsGenderFeature> = (props) => {
+  const { t } = useTranslation();
+  const { genderPage } = translations;
+
   const { gender } = props;
   return (
     <ContentBottomFeature>
@@ -36,11 +41,11 @@ const FeatureContent: FC<PropsGenderFeature> = (props) => {
           </IconBox>
 
           <ContentBox>
-            <TitleTextFirst>オンライン診療受付時間</TitleTextFirst>
+            <TitleTextFirst>{t(genderPage.Feature.contentbox)}</TitleTextFirst>
 
-            <TitleText>24時間対応</TitleText>
+            <TitleText>{t(genderPage.Feature.titleMiddle)}</TitleText>
 
-            <SubText>※年末年始を除く</SubText>
+            <SubText>{t(genderPage.Feature.titleBottom)}</SubText>
           </ContentBox>
         </DetailContent>
 
@@ -58,15 +63,15 @@ const FeatureContent: FC<PropsGenderFeature> = (props) => {
 
           <ContentBox>
             {gender === 'male' ? (
-              <TitleText>ダイエット、男性AGA、ED・早漏防止</TitleText>
+              <TitleText>{t(genderPage.Feature.contentbox2)}</TitleText>
             ) : (
               <>
-                <TitleText>ダイエット、漢方、ピル、女性AGA、</TitleText>
+                <TitleText>{t(genderPage.Feature.titleMiddle2)}</TitleText>
 
-                <TitleText>アフターピル、メディカルアイラッシュ</TitleText>
+                <TitleText>{t(genderPage.Feature.titleBottom2)}</TitleText>
               </>
             )}
-            <TitleText>などの診療科目に対応</TitleText>
+            <TitleText>{t(genderPage.Feature.titleBottom3)}</TitleText>
           </ContentBox>
         </DetailContent>
 
@@ -83,9 +88,9 @@ const FeatureContent: FC<PropsGenderFeature> = (props) => {
           </IconBox>
 
           <ContentBox>
-            <TitleText>予約・問診票記入・診療まで</TitleText>
+            <TitleText>{t(genderPage.Feature.contentbox3)}</TitleText>
 
-            <TitleText>全てオンラインで可能</TitleText>
+            <TitleText>{t(genderPage.Feature.titleBottom3)}</TitleText>
           </ContentBox>
         </DetailContent>
       </ContentFeature>

@@ -16,6 +16,8 @@ import { Video } from 'components/videocustom';
 import { IService } from 'types/service';
 import { useServicesSlice } from 'slices/services';
 import RoutesName from 'routes/constant';
+import { useTranslation } from 'react-i18next';
+import { translations } from 'locales/translations';
 import {
   BottomFeature,
   ButtonAppointBox,
@@ -66,6 +68,9 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
   const [medicalSubjectData, setMedicalSubjectData] = useState<IService[]>([]);
   const listDataFeatureGender = listDataFeature.filter((item) => item.gender === gender);
   const listDataFlowGender = listDataFlow.filter((item) => item.gender === gender);
+
+  const { t } = useTranslation();
+  const { genderPage } = translations;
 
   const history = useHistory();
   const handleAppointement = () => {
@@ -134,7 +139,7 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
         </MedicalSubjectStyle>
 
         <SiekteGeneralBox {...props}>
-          <ContentSiekteBox {...props}>共通診療科目</ContentSiekteBox>
+          <ContentSiekteBox {...props}>{t(genderPage.ContentSiekteBox)}</ContentSiekteBox>
           <ListGeneralSiekte>
             {dataServices.length &&
               dataServices.map((data) => (
@@ -152,7 +157,9 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
 
         <MedicalQueryBox>
           <ArticleBlock
-            title={gender === 'male' ? '男性のための' : '女性のための'}
+            title={
+              gender === 'male' ? t(genderPage.bannerGender.TextTitle.male) : t(genderPage.bannerGender.TextTitle.male)
+            }
             desc={gender === 'male' ? 'For men' : 'For women'}
             descStyles={{
               fontSize: 'SIZE_24',
@@ -177,7 +184,7 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
 
         <FeatureBoxStyle {...props}>
           <ArticleBlock
-            title="当院の特徴"
+            title={t(genderPage.ArticleBlock.title)}
             desc="Feature"
             descStyles={{
               fontSize: 'SIZE_24',
@@ -192,7 +199,7 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
                   <IconFeature
                     id={data.id}
                     icon={data.icon}
-                    content={data.content}
+                    content={t(data.content)}
                     gender={data.gender}
                     key={data.id}
                   />
@@ -209,7 +216,7 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
                   <IconAppointementStyle>
                     <IconAppointement />
                   </IconAppointementStyle>
-                  診療予約をする
+                  {t(genderPage.ArticleBlock.btnAppoinrement)}
                 </ContentButtonAppoint>
                 <IconArrowStyle />
               </ButtonStyle>
@@ -219,7 +226,7 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
 
         <StaffRecommendBox>
           <ArticleBlock
-            title="スタッフのおすすめポイント"
+            title={t(genderPage.ArticleBlock.titleStaff)}
             desc="Staff recommendations"
             descStyles={{
               fontSize: 'SIZE_24',
@@ -238,7 +245,7 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
 
         <FlowBox {...props}>
           <ArticleBlock
-            title="オンライン診療の流れ"
+            title={t(genderPage.ArticleBlock.titleFlow)}
             desc="Flow"
             descStyles={{
               fontSize: 'SIZE_24',
@@ -248,9 +255,12 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
             }}
           >
             <ContentFlowBox>
-              <FlowTop>{listDataFlowGender.length && listDataFlowGender.map((data) => <FlowItem {...data} />)}</FlowTop>
+              <FlowTop>
+                {listDataFlowGender.length &&
+                  listDataFlowGender.map((data) => <FlowItem {...data} title={t(data.title)} />)}
+              </FlowTop>
 
-              <TitleVideo>テレビCMで流れを知る</TitleVideo>
+              <TitleVideo>{t(genderPage.ArticleBlock.titleVideo)}</TitleVideo>
 
               <VideoContainer>
                 <Video
@@ -273,7 +283,7 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
                   size="small"
                   onClick={handleClickUsage}
                 >
-                  詳しい使い方はこちら
+                  {t(genderPage.ArticleBlock.btnManual)}
                 </ButtonManualStyle>
               </ButtonManualContainer>
               <ButtonAppointBox>
@@ -282,7 +292,7 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
                     <IconAppointementStyle>
                       <IconAppointement />
                     </IconAppointementStyle>
-                    診療予約をする
+                    {t(genderPage.ArticleBlock.btnAppoinrement)}
                   </ContentButtonAppoint>
                   <IconArrowStyle />
                 </ButtonStyle>

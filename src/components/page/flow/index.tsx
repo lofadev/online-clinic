@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import { useTranslation } from 'react-i18next';
 import { Content, ContentFlow, FlowItemStyle, Count, ImageShow, ImageStyle, TitleFlow } from './styled';
 
 export type PropsFlow = {
@@ -13,6 +14,8 @@ export type PropsFlow = {
 
 const FlowItem: FC<PropsFlow> = (props) => {
   const { id, picture, count, title, content, gender } = props;
+
+  const { t } = useTranslation();
   return (
     <FlowItemStyle className={gender} key={id}>
       <ImageShow className="imageShow">
@@ -22,9 +25,9 @@ const FlowItem: FC<PropsFlow> = (props) => {
       </ImageShow>
 
       <ContentFlow className="content-flow">
-        <TitleFlow className="title-flow">{title}</TitleFlow>
+        <TitleFlow className="title-flow">{t(title)}</TitleFlow>
 
-        <Content>{content}</Content>
+        <Content>{t(content)}</Content>
       </ContentFlow>
     </FlowItemStyle>
   );
