@@ -1,14 +1,12 @@
 import axios, { AxiosError, AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import { STORAGE, getLocalStorage, removeLocalStorage } from 'utils/storage';
 
-// const BASE_URL = 'http://192.168.1.8:8003/api/v1';
 const BASE_URL = 'http://117.2.178.246:8003/api/v1';
 
-// For Make Log on Develop Mode
 // const logOnDev = () => {
-// if (process.env.NODE_ENV !== 'production') {
-// console.log(message);
-// }
+//   if (process.env.NODE_ENV !== 'production') {
+//     console.log(message);
+//   }
 // };
 // const showErrorApi = (data) => {
 //   if (data && typeof data.message === 'string') {

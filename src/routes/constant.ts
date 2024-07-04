@@ -72,14 +72,12 @@ export const PRIVATE_ROUTES = [
     layout: LayoutSecond,
     exact: true,
   },
-
   {
     path: RoutesName.CONSULTATIONS.INDEX,
     component: Consulations,
     layout: AuthLayout,
     exact: true,
   },
-
   {
     path: RoutesName.CONSULTATIONS.DONE,
     component: ConsulationsDone,

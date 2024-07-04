@@ -6,13 +6,18 @@ const schema = () =>
     email: yup
       .string()
       .trim()
+      .max(20, translations.validation.sign_in.email_format)
+      .matches(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)
       .email(translations.validation.sign_in.email_format)
       .required(translations.validation.sign_in.email_format),
     password: yup
       .string()
       .trim()
       .required(translations.validation.required)
-      .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/, translations.validation.sign_up.password_format),
+      .matches(
+        /^(?=.*[A-Z])(?=.*[!@#$%^&*()-+=|{}[\]:;<>,.?/~]).{8,16}$/,
+        translations.validation.sign_up.password_format,
+      ),
     checkbox: yup
       .boolean()
       .oneOf([true], '空白のままにすることはできません')
