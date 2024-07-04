@@ -1,17 +1,23 @@
-import Loading from 'components/loading/Loading';
 import { notification } from 'antd';
+import Loading from 'components/loading/Loading';
 import { BROADCAST_CHANNEL } from 'constant';
+import { translations } from 'locales/translations';
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import AppRoutes from 'routes';
 import { useAuth } from 'slices/auth';
 import { useBroadcast } from 'slices/broadcast';
+import { useError } from 'slices/errors';
 import { useNotification } from 'slices/notification';
 import { STORAGE, getLocalStorage } from 'utils/storage';
 
 export const App: React.FC = () => {
   const [loading, setLoading] = React.useState(true);
-  const { notif } = useNotification();
+  const { notif, setNotif } = useNotification();
+  const { error } = useError();
 
+  const { t } = useTranslation();
+  const { errors } = translations;
   const { getMe } = useAuth();
   const { setBroadcastChannel, boardcastChannel } = useBroadcast();
 
@@ -41,8 +47,8 @@ export const App: React.FC = () => {
   useEffect(() => {
     if (notif) {
       notification[notif.type]({
-        description: notif.description,
         message: notif.message,
+        description: notif.description,
         duration: 2,
       });
     }
@@ -61,6 +67,27 @@ export const App: React.FC = () => {
       });
     }
   }, [boardcastChannel]);
+
+  useEffect(() => {
+    if (error) {
+      let resultError: string = '';
+      const responseData = error.response?.data as any;
+
+      if (responseData?.meta.error) {
+        resultError = t(errors[responseData.meta.error]);
+      } else if (responseData?.meta.errors) {
+        resultError = Object.values(responseData.meta.errors)
+          .map((d: any) => t(errors[d]))
+          .join('\n');
+      }
+
+      setNotif({
+        type: 'error',
+        message: t(errors.title),
+        description: <p>{resultError}</p>,
+      });
+    }
+  }, [error]);
 
   if (loading) {
     return <Loading />;

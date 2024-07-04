@@ -9,15 +9,15 @@ const BASE_URL = 'http://192.168.7.33:8003/api/v1';
 // console.log(message);
 // }
 // };
-const showErrorApi = (data) => {
-  if (data && typeof data.message === 'string') {
-    // show toast msg
-  }
+// const showErrorApi = (data) => {
+//   if (data && typeof data.message === 'string') {
+//     // show toast msg
+//   }
 
-  if (data && data.messages.length > 0) {
-    // show toast msg with list
-  }
-};
+//   if (data && data.messages.length > 0) {
+//     // show toast msg with list
+//   }
+// };
 
 const getToken = () => {
   const userToken = getLocalStorage(STORAGE.USER_TOKEN);
@@ -65,14 +65,14 @@ const onErrorResponse = (error: AxiosError | Error): Promise<AxiosError> => {
     const {
       // statusText,
       status,
-      data,
+      // data,
     } = response ?? {};
 
     // console.log('======> error', { message, method, url, statusText, status });
     if (status === 401 || status === 403) {
       removeLocalStorage(STORAGE.USER_TOKEN);
     } else {
-      showErrorApi(data);
+      // showErrorApi(data);
     }
   } else {
     // logOnDev(`🚨 [API] | Error ${error.message}`);

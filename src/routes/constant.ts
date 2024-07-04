@@ -10,6 +10,8 @@ import { SignUp } from 'modules/authen/sign-up';
 import { GenderPage } from 'modules/gender-page';
 import { TopPage } from 'modules/top-page';
 import { UserProfile } from 'modules/user-profile/Loadable';
+import { DrColumnPage } from 'modules/dr-column';
+import Usage from 'modules/usage';
 
 export const RoutesName = {
   LOGIN: '/login',
@@ -33,6 +35,7 @@ export const RoutesName = {
     INDEX: '/',
     DONE: '/consultations/done',
   },
+  COLUMN: '/drcolumn',
 };
 
 export const PUBLIC_ROUTES = [
@@ -94,6 +97,18 @@ export const PRIVATE_ROUTES = [
     path: RoutesName.CHANGE,
     component: ChangePassword,
     layout: LayoutSecond,
+    exact: true,
+  },
+  {
+    path: RoutesName.COLUMN,
+    component: DrColumnPage,
+    layout: DefaultLayout,
+    exact: true,
+  },
+  {
+    path: RoutesName.USAGE,
+    component: Usage,
+    layout: DefaultLayout,
     exact: true,
   },
 ];

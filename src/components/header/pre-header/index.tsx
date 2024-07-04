@@ -4,6 +4,7 @@ import { Account, Booking, Shopping } from 'assets/icons/icon-header';
 import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { translations } from 'locales/translations';
+import RoutesName from 'routes/constant';
 import {
   ButtonGroup,
   ButtonShopping,
@@ -28,7 +29,7 @@ const PreHeader: FC = () => {
     {
       id: 1,
       content: t(header.navigation.top),
-      path: '/',
+      path: RoutesName.TOP,
     },
     {
       id: 2,
@@ -43,17 +44,17 @@ const PreHeader: FC = () => {
     {
       id: 4,
       content: t(header.navigation.how_to_use),
-      path: '/how-to-use',
+      path: RoutesName.USAGE,
     },
     {
       id: 5,
       content: t(header.navigation.faq),
-      path: '/faq',
+      path: RoutesName.FAQ,
     },
     {
       id: 6,
       content: t(header.navigation.dr_column),
-      path: '/dr-column',
+      path: RoutesName.COLUMN,
     },
   ];
 
