@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import { useAppointment } from 'slices/appointment';
+import { IPostAppointment } from 'slices/appointment/types';
 import { formatDateToJapanese } from 'utils/date';
 import AppointmentArticle from '../components/appointment-article';
 import AppointmentBlock from '../components/appointment-block';
@@ -10,19 +11,39 @@ import { BlockContentStyled, ButtonLinkStyled, ButtonStyled, TitleStyled } from 
 
 const ConfirmAppointment = () => {
   const history = useHistory();
-  const { service, item } = useAppointment();
+  const { service, item, createAppointment, type, action, updateAppointment, detail } = useAppointment();
   const methods = useForm({
     defaultValues: {
       confirm: '',
     },
   });
 
-  useEffect(() => {
-    if (!item) history.push('/appointment');
-  }, [item]);
-
   const handleCancel = () => {
     history.push('/appointment');
+  };
+
+  useEffect(() => {
+    if (!item && !service && !detail) handleCancel();
+  }, [item, service, detail]);
+
+  const handleConfirm = () => {
+    if (item) {
+      const payload: IPostAppointment = {
+        service_id: 0,
+        appointment_type: type,
+        booking_date: item?.date,
+        reservation_type: 'SCHEDULE',
+        time_id: item.time_id,
+      };
+
+      if (action === 'update' && detail) {
+        payload.service_id = detail.service.id;
+        updateAppointment(detail.id, payload);
+      } else if (action === 'create' && service) {
+        payload.service_id = service.id;
+        createAppointment(payload);
+      }
+    }
   };
 
   return (
@@ -49,7 +70,9 @@ const ConfirmAppointment = () => {
               どちらかで登録及び解除した場合、連動して登録及び解除されますのでご注意ください。
             </Text.Primary>
           </BlockContentStyled>
-          <ButtonStyled type="primary">予約する</ButtonStyled>
+          <ButtonStyled type="primary" onClick={handleConfirm}>
+            予約する
+          </ButtonStyled>
           <ButtonLinkStyled type="link" onClick={handleCancel}>
             キャンセルする
           </ButtonLinkStyled>

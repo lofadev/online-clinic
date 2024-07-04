@@ -1,15 +1,21 @@
 import { Text, Title } from 'components';
+import { IAppointmentItem } from 'slices/appointment/types';
+import { formatDateToJapanese, timeToHourMinutes } from 'utils/date';
 import { WrapperStyled } from './styled';
 
-const ConsulationItem = () => {
+interface IProps extends IAppointmentItem {}
+
+const ConsulationItem: React.FC<IProps> = ({ booking_date, time, service, status }) => {
   return (
     <WrapperStyled>
-      <Text.Primary>2024年7月7日 (日) 08:00</Text.Primary>
+      <Text.Primary>
+        {formatDateToJapanese(booking_date, 'Y年M月D日 (ddd)')} {timeToHourMinutes(time.start_time)}
+      </Text.Primary>
       <Title.Primary level={4} fontSize="SIZE_16">
-        男性AGA（再診）
+        {service.name}
       </Title.Primary>
       <Title.Primary level={4} fontSize="SIZE_16">
-        キャンセル済み
+        {status}
       </Title.Primary>
     </WrapperStyled>
   );

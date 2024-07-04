@@ -17,6 +17,7 @@ export const App: React.FC = () => {
   const [loading, setLoading] = React.useState(true);
   const { notif, setNotif } = useNotification();
   const { error } = useError();
+  const { logout } = useAuth();
 
   const { getMe } = useAuth();
   const { setBroadcastChannel, boardcastChannel } = useBroadcast();

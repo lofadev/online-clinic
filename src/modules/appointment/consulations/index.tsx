@@ -1,22 +1,43 @@
-import { IconConsulationDetail } from 'assets';
-import { Text, Title } from 'components';
+import { ReactComponent as PicAppointment } from 'assets/svgs/appointment/pic_appointment_image.svg';
+import { Title } from 'components';
+import { useEffect, useMemo } from 'react';
+import { useAppointment } from 'slices/appointment';
 import AppointmentArticle from '../components/appointment-article';
 import AppointmentBlock from '../components/appointment-block';
-import { ButtonStyled, TextBlockStyled, WrapperStyled } from './styled';
+import LoadingAppointment from '../components/loading';
+import ConsulationItemEdit from './components/item';
+import { EmptyBookingStyled } from './styled';
 
 const Consulations: React.FC = () => {
+  const { lists, fetchAppointment, loading } = useAppointment();
+
+  useEffect(() => {
+    fetchAppointment();
+  }, []);
+
+  const listBooking = useMemo(
+    () => lists.filter((list) => list.status === 'ACCEPTED' || list.status === 'NEW'),
+    [lists],
+  );
+
   return (
     <AppointmentArticle title="診療待ち">
       <AppointmentBlock>
-        <WrapperStyled>
-          <TextBlockStyled>
-            <Text.Primary fontSize="SIZE_16">2024年7月4日 (木) 08:45～08:59開始</Text.Primary>
-            <Title.Primary fontSize="SIZE_20">女性AGA（初診）</Title.Primary>
-          </TextBlockStyled>
-          <ButtonStyled type="text">
-            <IconConsulationDetail />
-          </ButtonStyled>
-        </WrapperStyled>
+        {loading ? (
+          <LoadingAppointment />
+        ) : !listBooking.length ? (
+          <EmptyBookingStyled>
+            <PicAppointment />
+            <Title.Primary level={2} fontSize="SIZE_24">
+              ご予約はありません
+            </Title.Primary>
+            <Title.Primary level={3} fontSize="SIZE_16">
+              「診療予約」ボタンよりご予約をお願いいたします。
+            </Title.Primary>
+          </EmptyBookingStyled>
+        ) : (
+          listBooking.map((item) => <ConsulationItemEdit key={item.id} item={item} />)
+        )}
       </AppointmentBlock>
     </AppointmentArticle>
   );

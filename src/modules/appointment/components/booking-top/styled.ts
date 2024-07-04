@@ -1,4 +1,3 @@
-import { Button } from 'components';
 import styled from 'styled-components';
 
 export const WrapperStyled = styled.div`
@@ -12,28 +11,6 @@ export const ActionsTopStyled = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
-
-export const ButtonStyled = styled(Button)`
-  width: 220px;
-
-  &.ant-btn-primary {
-    height: 48px;
-    color: ${({ theme }) => theme.textPrimary};
-    border: 1px solid rgb(166 167 181 / 1);
-    background-color: transparent;
-    box-shadow: unset;
-
-    &:disabled {
-      color: rgb(166 167 181 / 1);
-    }
-
-    &:hover:not(:disabled) {
-      color: ${({ theme }) => theme.textPrimary} !important;
-      background-color: transparent !important;
-      opacity: 0.7 !important;
-    }
-  }
 `;
 
 export const NoteStyled = styled.div`

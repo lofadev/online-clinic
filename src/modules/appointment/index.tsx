@@ -1,12 +1,16 @@
 import BannerReprescription from 'assets/svgs/appointment/bnr_prompt_represcription.svg';
 import { FieldRadio, FieldSelect, Text, Title } from 'components';
+import { useSearchParams } from 'hooks/useQuery';
 import { useEffect } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
+import { useParams } from 'react-router-dom';
 import { useAppointment } from 'slices/appointment';
+import { TAction, TTypeAppointment } from 'slices/appointment/types';
 import AppointmentArticle from './components/appointment-article';
 import AppointmentBlock from './components/appointment-block';
 import Booking from './components/booking';
 import BookingTop from './components/booking-top/BookingTop';
+import LoadingAppointment from './components/loading';
 import { examMenu } from './data';
 import { transformDataSelect } from './hook';
 import {
@@ -15,7 +19,6 @@ import {
   ExamItemStyled,
   ExamMenuStyled,
   ImgStyled,
-  LoadingStyled,
   NoteStyled,
   TextWrapperStyled,
   TitleHeadStyled,
@@ -23,7 +26,7 @@ import {
 
 interface IFormValues {
   serviceId: number;
-  examMethod: number;
+  examMethod: TTypeAppointment;
 }
 
 const Appointment: React.FC = () => {
@@ -34,23 +37,49 @@ const Appointment: React.FC = () => {
     fetchServices,
     services,
     resetTimetables,
-    loading,
-    timetables,
     findService,
+    getAppointment,
+    detail,
+    loading,
+    setType,
+    setAction,
   } = useAppointment();
+  const { id } = useParams<{ id: string }>();
+  const { action }: { action: TAction } = useSearchParams();
   const options = transformDataSelect(services);
   const methodsServices = useForm<IFormValues>({
     defaultValues: {
       serviceId: 0,
-      examMethod: 1,
+      examMethod: 'FIRST',
     },
   });
-
   const { serviceId } = methodsServices.watch();
+  const { examMethod } = methodsServices.watch();
+
+  useEffect(() => {
+    if (detail && id) {
+      methodsServices.setValue('serviceId', detail.service.id);
+      methodsServices.setValue('examMethod', detail.appointment_type);
+    }
+  }, [detail, id]);
 
   useEffect(() => {
     fetchServices();
   }, []);
+
+  useEffect(() => {
+    if (action && action === 'update') {
+      setAction(action);
+    } else {
+      setAction('create');
+    }
+  }, [action]);
+
+  useEffect(() => {
+    if (id) {
+      getAppointment(id);
+    }
+  }, [id]);
 
   useEffect(() => {
     if (serviceId) {
@@ -61,7 +90,9 @@ const Appointment: React.FC = () => {
     }
   }, [serviceId]);
 
-  const { examMethod } = methodsServices.watch();
+  useEffect(() => {
+    setType(examMethod);
+  }, [examMethod]);
 
   return (
     <AppointmentArticle>
@@ -95,26 +126,26 @@ const Appointment: React.FC = () => {
             <FieldRadio
               name="examMethod"
               options={[
-                { label: '初診', value: 1 },
-                { label: '再診', value: 2 },
+                { label: '初診', value: 'FIRST' },
+                { label: '再診', value: 'RETURN' },
               ]}
             />
-            {examMethod === 2 && (
+            {examMethod === 'RETURN' ? (
               <BannerStyled>
                 <ImgStyled src={BannerReprescription} />
               </BannerStyled>
-            )}
+            ) : null}
           </FormProvider>
         </AppointmentBlock>
         <AppointmentBlock className="block-2">
           <Title.Primary fontSize="SIZE_16">2.診療開始日時を選択</Title.Primary>
-          {getSuccess && (
+          {getSuccess ? (
             <>
               <BookingTop />
               <Booking />
             </>
-          )}
-          {loading && !timetables && <LoadingStyled>Loading...</LoadingStyled>}
+          ) : null}
+          {loading ? <LoadingAppointment /> : null}
         </AppointmentBlock>
       </AppoinmentStyled>
     </AppointmentArticle>

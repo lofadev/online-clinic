@@ -1,17 +1,13 @@
-import { Button } from 'components';
 import styled from 'styled-components';
 
-export const TextBlockStyled = styled.div`
+export const EmptyBookingStyled = styled.div`
+  padding: 20px 0;
   display: flex;
-  flex-direction: column;
-`;
-
-export const WrapperStyled = styled.div`
-  display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-`;
+  flex-direction: column;
 
-export const ButtonStyled = styled(Button)`
-  border: 1px solid ${({ theme }) => theme.lightGray};
+  h2.ant-typography {
+    margin-top: 50px;
+  }
 `;

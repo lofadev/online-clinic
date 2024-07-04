@@ -17,3 +17,16 @@ export const ButtonWrapperStyled = styled.div`
   align-items: center;
   flex-direction: column;
 `;
+
+export const ButtonModalStyled = styled.div`
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  .ant-btn {
+    flex: 1;
+    height: 48px;
+  }
+`;
