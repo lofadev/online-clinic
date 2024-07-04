@@ -22,7 +22,7 @@ export const { actions: notifActions, reducer } = slice;
 
 export const useNotification = () => {
   const dispatch = useDispatch();
-  useInjectReducer({ key: slice.name, reducer: slice.reducer });
+  useInjectReducer({ key: slice.name, reducer });
 
   const setNotif = (state: NotificationParams) => {
     dispatch(slice.actions.setNotif(state));

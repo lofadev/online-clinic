@@ -11,7 +11,6 @@ const END_POINT = {
     SEND_MAIL_RESTORE: '/change-password/email-confirm',
     LOGOUT: '/logout',
   },
-
   ADDRESS: {
     PREFECTURE: '/prefectures',
   },
@@ -20,6 +19,8 @@ const END_POINT = {
   },
   APPOINTMENT: {
     RESERVATION_TIMETABLES: '/reservation-timetables',
+    FETCH: '/user/appointments',
+    PARAMS: '/user/appointments/:id',
   },
 };
 

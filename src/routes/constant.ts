@@ -3,6 +3,9 @@ import LayoutSecond from 'layouts/layout-seccond';
 import Appointment from 'modules/appointment';
 import CompleteAppointment from 'modules/appointment/complete';
 import ConfirmAppointment from 'modules/appointment/confirm';
+import Consulations from 'modules/appointment/consulations';
+import ConsulationsDetails from 'modules/appointment/consulations-details';
+import ConsulationsDone from 'modules/appointment/consulations-done';
 import { ChangePassword } from 'modules/authen/change-password';
 import { ForgotPassword } from 'modules/authen/forgot-password';
 import { SignIn } from 'modules/authen/sign-in/Loadable';
@@ -33,8 +36,9 @@ export const RoutesName = {
   PROFILE: '/profile',
   FORGOT: '/forgot-password',
   CONSULTATIONS: {
-    INDEX: '/',
+    INDEX: '/consultations',
     DONE: '/consultations/done',
+    DETAILS: '/consultations/:id',
   },
   COLUMN: '/drcolumn',
 };
@@ -107,8 +111,26 @@ export const PRIVATE_ROUTES = [
     exact: true,
   },
   {
+    path: RoutesName.CONSULTATIONS.INDEX,
+    component: Consulations,
+    layout: DefaultLayout,
+    exact: true,
+  },
+  {
     path: RoutesName.USAGE,
     component: Usage,
+    layout: DefaultLayout,
+    exact: true,
+  },
+  {
+    path: RoutesName.CONSULTATIONS.DONE,
+    component: ConsulationsDone,
+    layout: DefaultLayout,
+    exact: true,
+  },
+  {
+    path: RoutesName.CONSULTATIONS.DETAILS,
+    component: ConsulationsDetails,
     layout: DefaultLayout,
     exact: true,
   },

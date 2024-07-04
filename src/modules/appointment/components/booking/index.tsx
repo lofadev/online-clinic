@@ -3,6 +3,7 @@ import { FieldCheckbox } from 'components';
 import { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
+import { useAuth } from 'slices';
 import { useAppointment } from 'slices/appointment';
 import { TAppointmentItem } from 'slices/appointment/types';
 import { formatDateToJapanese } from 'utils/date';
@@ -12,7 +13,9 @@ import Timeline from '../timeline';
 import { useTransformData } from './hook';
 import {
   BookingRowStyled,
+  ButtonHasAuthStyled,
   ButtonStyled,
+  ButtonWithoutAuthStyled,
   DateTimeStyled,
   FormWrapperStyled,
   ModalNoteStyled,
@@ -24,6 +27,7 @@ import {
 } from './styled';
 
 const Booking = () => {
+  const { authenticated } = useAuth();
   const { timetables, updateItem, item, service } = useAppointment();
   const dataTransform = useTransformData(timetables?.date_list);
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -35,6 +39,8 @@ const Booking = () => {
     },
   });
 
+  const { confirm } = methodsCheckbox.watch();
+
   const handleCancel = () => setIsOpenModal(false);
 
   const handleOpenModal = (item: TAppointmentItem) => {
@@ -42,6 +48,10 @@ const Booking = () => {
       updateItem(item);
       setIsOpenModal(true);
     }
+  };
+
+  const handleRedirectToConfirm = () => {
+    history.push('/appointment/confirm');
   };
 
   return (
@@ -85,24 +95,36 @@ const Booking = () => {
               </FormProvider>
             </FormWrapperStyled>
 
-            <TextStyled>▼ DMM会員登録をしている方 ▼</TextStyled>
-            <ButtonStyled
-              type="primary"
-              size="small"
-              disabled={!methodsCheckbox.watch('confirm')}
-              onClick={() => history.push('/appointment/confirm')}
-            >
-              ログインして日時確定する
-            </ButtonStyled>
-            <TextStyled>▼ DMM会員登録をしていない方 ▼</TextStyled>
-            <ButtonStyled
-              type="primary"
-              size="small"
-              disabled={!methodsCheckbox.watch('confirm')}
-              onClick={() => history.push('/appointment/complete')}
-            >
-              会員登録して日時確定する
-            </ButtonStyled>
+            {!authenticated && (
+              <ButtonWithoutAuthStyled>
+                <TextStyled>▼ DMM会員登録をしている方 ▼</TextStyled>
+                <ButtonStyled
+                  type="primary"
+                  size="small"
+                  disabled={!confirm}
+                  onClick={() => history.push('/appointment/confirm')}
+                >
+                  ログインして日時確定する
+                </ButtonStyled>
+                <TextStyled>▼ DMM会員登録をしていない方 ▼</TextStyled>
+                <ButtonStyled
+                  type="primary"
+                  size="small"
+                  disabled={!confirm}
+                  onClick={() => history.push('/appointment/complete')}
+                >
+                  会員登録して日時確定する
+                </ButtonStyled>
+              </ButtonWithoutAuthStyled>
+            )}
+            {authenticated && (
+              <ButtonHasAuthStyled>
+                <ButtonStyled onClick={handleCancel}>キャンセル</ButtonStyled>
+                <ButtonStyled type="primary" disabled={!confirm} onClick={handleRedirectToConfirm}>
+                  日時確定
+                </ButtonStyled>
+              </ButtonHasAuthStyled>
+            )}
           </ModalWrapperStyled>
         </Modal>
       )}

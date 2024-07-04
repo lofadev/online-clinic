@@ -10,6 +10,7 @@ import {
   AppointmentState,
   IAppointmentParams,
   IParamsService,
+  IPostAppointment,
   IService,
   ITimeableList,
   TAppointmentItem,
@@ -67,6 +68,8 @@ const slice = createSlice({
     updateItem: (state, action: PayloadAction<TAppointmentItem>) => {
       state.item = action.payload;
     },
+
+    createAppointment: (state, action: PayloadAction<IPostAppointment>) => {},
   },
 });
 
@@ -84,6 +87,7 @@ export const useAppointment = () => {
   const fetchServices = (payload?: IParamsService) => dispatch(actions.fetchServices(payload));
   const resetTimetables = () => dispatch(actions.resetTimetables());
   const findService = (serviceId: number) => dispatch(actions.findService(serviceId));
+  const createAppointment = (payload: IPostAppointment) => dispatch(actions.createAppointment(payload));
 
   const state = useSelector(selectAppointment);
 
@@ -94,5 +98,6 @@ export const useAppointment = () => {
     fetchServices,
     resetTimetables,
     findService,
+    createAppointment,
   };
 };

@@ -21,6 +21,10 @@ const ConfirmAppointment = () => {
     if (!item) history.push('/appointment');
   }, [item]);
 
+  const handleCancel = () => {
+    history.push('/appointment');
+  };
+
   return (
     <AppointmentArticle title="診療予約確認">
       {item && (
@@ -46,7 +50,9 @@ const ConfirmAppointment = () => {
             </Text.Primary>
           </BlockContentStyled>
           <ButtonStyled type="primary">予約する</ButtonStyled>
-          <ButtonLinkStyled type="link">キャンセルする</ButtonLinkStyled>
+          <ButtonLinkStyled type="link" onClick={handleCancel}>
+            キャンセルする
+          </ButtonLinkStyled>
         </AppointmentBlock>
       )}
     </AppointmentArticle>
