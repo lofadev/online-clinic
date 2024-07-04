@@ -5,6 +5,8 @@ import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { translations } from 'locales/translations';
 import RoutesName from 'routes/constant';
+// import i18next from 'i18next';
+import i18next from 'i18next';
 import {
   ButtonGroup,
   ButtonShopping,
@@ -16,6 +18,8 @@ import {
   ContentButtonBooking,
   ButtonAccount,
   ContentButtonAccount,
+  SwitchStyled,
+  SwitchChangeLanguage,
 } from './styled';
 import NavigateButton, { PropsNavigateButton } from './navigate-button';
 import SubHeader from './sub-header';
@@ -39,7 +43,7 @@ const PreHeader: FC = () => {
     {
       id: 3,
       content: t(header.navigation.about_dmm),
-      path: '/change-password',
+      path: '/',
     },
     {
       id: 4,
@@ -60,6 +64,14 @@ const PreHeader: FC = () => {
 
   const handleClick = (url: string) => {
     history.push(url);
+  };
+  const { i18n } = useTranslation();
+  const changeLanguage = (value: boolean) => {
+    if (value) {
+      i18n.changeLanguage('jp');
+    } else {
+      i18n.changeLanguage('en');
+    }
   };
   return (
     <PreHeaderStyle>
@@ -86,6 +98,17 @@ const PreHeader: FC = () => {
             <Account />
             <ContentButtonAccount>{t(header.navigation.my_page)}</ContentButtonAccount>
           </ButtonAccount>
+
+          <SwitchChangeLanguage>
+            <SwitchStyled
+              checkedChildren="JP"
+              unCheckedChildren="EN"
+              defaultChecked={i18next.language === 'jp'}
+              onChange={(value) => {
+                changeLanguage(value);
+              }}
+            />
+          </SwitchChangeLanguage>
         </ButtonGroup>
       </ContainerPage>
     </PreHeaderStyle>
