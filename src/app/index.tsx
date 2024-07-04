@@ -12,13 +12,13 @@ import { useNotification } from 'slices/notification';
 import { STORAGE, getLocalStorage } from 'utils/storage';
 
 export const App: React.FC = () => {
+  const { t } = useTranslation();
+  const { errors } = translations;
   const [loading, setLoading] = React.useState(true);
   const { notif, setNotif } = useNotification();
   const { error } = useError();
 
-  const { t } = useTranslation();
-  const { errors } = translations;
-  const { getMe, logout } = useAuth();
+  const { getMe } = useAuth();
   const { setBroadcastChannel, boardcastChannel } = useBroadcast();
 
   useEffect(() => {

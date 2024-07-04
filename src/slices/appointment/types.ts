@@ -2,6 +2,10 @@ import { TBookingStatus } from 'models/appointment.model';
 import { TLang } from 'types/lang';
 import { TTypeService } from 'types/service';
 
+type TStatusAppointment = 'NEW' | 'ACCEPTED' | 'CANCEL' | 'COMPLETED';
+export type TTypeAppointment = 'FIRST' | 'RETURN';
+type TTypeReservation = 'SCHEDULE' | 'NOW';
+
 interface IAppointment {
   time_id: number;
   time: string;
@@ -47,6 +51,38 @@ export interface IService {
   insurance_accepted: 0 | 1;
 }
 
+export interface IAppointmentItem {
+  id: number;
+  user: {
+    id: number;
+    email: string;
+    first_name: string;
+    last_name: string;
+    medical_number: number;
+  };
+  service: {
+    id: number;
+    name: string;
+    type: TTypeService;
+  };
+  appointment_type: TTypeAppointment;
+  reservation_type: TTypeReservation;
+  time: {
+    id: number;
+    start_time: string;
+    end_time: string;
+  };
+  booking_date: string;
+  status: TStatusAppointment;
+  payment_method: string | null;
+  questionnaire_flg: 0 | 1;
+  cancel_reason: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export type TAction = 'update' | 'create' | null;
+
 export interface AppointmentState {
   timetables: ITimeableList | null;
   params: IAppointmentParams;
@@ -55,16 +91,16 @@ export interface AppointmentState {
   getSuccess: boolean;
   services: IService[] | null;
   service: IService | null;
+  lists: IAppointmentItem[];
+  detail: IAppointmentItem | null;
+  type: TTypeAppointment;
+  action: TAction;
 }
 
 export interface IParamsService {
   type?: TTypeService;
   language?: TLang;
 }
-
-type TStatusAppointment = 'NEW' | 'ACCEPTED' | 'CANCEL' | 'COMPLETED';
-type TTypeAppointment = 'FIRST' | 'RETURN';
-type TTypeReservation = 'SCHEDULE' | 'NOW';
 
 export interface IPostAppointment {
   service_id: number;

@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosInstance, InternalAxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosError, AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import { STORAGE, getLocalStorage, removeLocalStorage } from 'utils/storage';
 
 const BASE_URL = 'http://192.168.1.8:8003/api/v1';

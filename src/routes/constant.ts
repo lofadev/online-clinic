@@ -26,6 +26,7 @@ export const RoutesName = {
   USAGE: '/usage',
   APPOINTMENT: {
     INDEX: '/appointment',
+    DETAIL: '/appointment/:id',
     CONFIRM: '/appointment/confirm',
     COMPLETE: '/appointment/complete',
   },
@@ -113,7 +114,7 @@ export const PRIVATE_ROUTES = [
   {
     path: RoutesName.CONSULTATIONS.INDEX,
     component: Consulations,
-    layout: DefaultLayout,
+    layout: AuthLayout,
     exact: true,
   },
   {
@@ -125,13 +126,31 @@ export const PRIVATE_ROUTES = [
   {
     path: RoutesName.CONSULTATIONS.DONE,
     component: ConsulationsDone,
-    layout: DefaultLayout,
+    layout: AuthLayout,
     exact: true,
   },
   {
     path: RoutesName.CONSULTATIONS.DETAILS,
     component: ConsulationsDetails,
-    layout: DefaultLayout,
+    layout: AuthLayout,
+    exact: true,
+  },
+  {
+    path: RoutesName.APPOINTMENT.CONFIRM,
+    component: ConfirmAppointment,
+    layout: AuthLayout,
+    exact: true,
+  },
+  {
+    path: RoutesName.APPOINTMENT.COMPLETE,
+    component: CompleteAppointment,
+    layout: AuthLayout,
+    exact: true,
+  },
+  {
+    path: RoutesName.APPOINTMENT.DETAIL,
+    component: Appointment,
+    layout: AuthLayout,
     exact: true,
   },
 ];
@@ -146,19 +165,7 @@ export const CUSTOME_ROUTE = [
   {
     path: RoutesName.APPOINTMENT.INDEX,
     component: Appointment,
-    layout: DefaultLayout,
-    exact: true,
-  },
-  {
-    path: RoutesName.APPOINTMENT.CONFIRM,
-    component: ConfirmAppointment,
-    layout: DefaultLayout,
-    exact: true,
-  },
-  {
-    path: RoutesName.APPOINTMENT.COMPLETE,
-    component: CompleteAppointment,
-    layout: DefaultLayout,
+    layout: AuthLayout,
     exact: true,
   },
 ];
