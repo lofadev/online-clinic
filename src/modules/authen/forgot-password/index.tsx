@@ -8,12 +8,13 @@ import FormConfirm from './conponent/FormConfirm';
 import FormSendMail from './conponent/FormSendMail';
 
 export const ForgotPassword: React.FC = () => {
-  const { sendEmailConfirm, changePasswordSuccess, resetChangePassword } = useAuth();
+  const { sendEmailConfirm, changePasswordSuccess, resetChangePassword, resetSendMail } = useAuth();
   const history = useHistory();
   useEffect(() => {
     if (changePasswordSuccess) {
       history.push(RoutesName.TOP);
       resetChangePassword();
+      resetSendMail();
     }
   }, [changePasswordSuccess]);
   return (

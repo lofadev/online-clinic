@@ -10,6 +10,8 @@ import faq from './faq.json';
 import genderPage from './gender-page.json';
 import userInfomation from './user-infomation.json';
 import changePassword from './change-password.json';
+import error from './error.json';
+import success from './success.json';
 
 export {
   signIn,
@@ -24,4 +26,6 @@ export {
   genderPage,
   userInfomation,
   changePassword,
+  error,
+  success,
 };
