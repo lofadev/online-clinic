@@ -28,6 +28,7 @@ export function* getProfileSaga() {
         date_of_birth: data.date_of_birth,
         email: data.email,
         deliveryPhone: data.phone,
+        medical_number: data.medical_number,
       };
 
       yield put(actions.getProfileSuccess(infomation));
@@ -42,11 +43,13 @@ export function* getPrefectureSaga() {
     if (response.meta.success === 1) {
       yield put(actions.getPrefectureSuccess(response.data));
     } else {
-      notifActions.setNotif({
-        type: 'error',
-        message: 'エラー',
-        description: 'エラーが',
-      });
+      yield put(
+        notifActions.setNotif({
+          type: 'error',
+          message: 'エラー',
+          description: 'エラーが',
+        }),
+      );
     }
   });
 }

@@ -21,22 +21,22 @@ const schema = yup.object().shape({
   phone: yup
     .string()
     .trim()
-    .required(validation.user_info.phone)
     .min(10, validation.user_info.min_10)
+    .required(validation.user_info.phone)
     .max(10, validation.user_info.max_10)
-    .matches(/^\d+$/, validation.user_info.deliveryPhone),
+    .matches(/^\d{10}$/, validation.user_info.number_format),
   deliveryPhone: yup
     .string()
     .trim()
-    .required(validation.user_info.deliveryPhone)
     .min(10, validation.user_info.min_10)
+    .required(validation.user_info.phone)
     .max(10, validation.user_info.max_10)
-    .matches(/^\d+$/, validation.user_info.deliveryPhone),
+    .matches(/^\d{10}$/, validation.user_info.number_format),
   zip_code: yup
     .string()
     .trim()
-    .required(validation.user_info.zip_code)
     .min(3, validation.user_info.min_3)
+    .required(validation.user_info.zip_code)
     .max(15, validation.user_info.max_15),
   prefecture: yup.number().required('※都道府県を選択してください'),
   municipality: yup.string().trim().required(validation.user_info.address),

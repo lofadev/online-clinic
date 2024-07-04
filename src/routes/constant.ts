@@ -12,6 +12,7 @@ import { TopPage } from 'modules/top-page';
 import { UserProfile } from 'modules/user-profile/Loadable';
 import { DrColumnPage } from 'modules/dr-column';
 import Usage from 'modules/usage';
+import { AuthLayout } from 'layouts/auth-layout';
 
 export const RoutesName = {
   LOGIN: '/login',
@@ -91,7 +92,7 @@ export const PRIVATE_ROUTES = [
   {
     path: RoutesName.PROFILE,
     component: UserProfile,
-    layout: LayoutSecond,
+    layout: AuthLayout,
   },
   {
     path: RoutesName.CHANGE,
@@ -112,6 +113,7 @@ export const PRIVATE_ROUTES = [
     exact: true,
   },
 ];
+
 export const CUSTOME_ROUTE = [
   {
     path: RoutesName.TOP,
