@@ -1,4 +1,6 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { translations } from 'locales/translations';
 import { MainStyled, TitleStyled, TitleSlider, SliderStyled, ActiveSlider, Circle } from './styled';
 
 interface IStep {
@@ -10,14 +12,16 @@ interface IStep {
 interface ISliderRegisterProps {
   currentStep: number;
 }
-
-const steps: IStep[] = [
-  { title: '1.登録', key: 1, widthActive: '17%' },
-  { title: '2.認証コード入力', key: 2, widthActive: '53%' },
-  { title: '3.完了', key: 3, widthActive: '88%' },
-];
-
 const SliderRegister: React.FC<ISliderRegisterProps> = ({ currentStep }) => {
+  const { t } = useTranslation();
+  const { signUp } = translations;
+
+  const steps: IStep[] = [
+    { title: t(signUp.resgiter), key: 1, widthActive: '17%' },
+    { title: t(signUp.authentication), key: 2, widthActive: '53%' },
+    { title: t(signUp.complete), key: 3, widthActive: '88%' },
+  ];
+
   const currentStepData = steps.find((step) => step.key === currentStep);
 
   return (

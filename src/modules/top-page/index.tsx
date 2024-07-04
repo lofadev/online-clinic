@@ -150,25 +150,25 @@ export const TopPage: React.FC = () => {
                 {listCurrentIssue?.map((item) => (
                   <CurrentIssueItem key={item.id}>
                     <img src={CheckMarkIcon} alt="icon" />
-                    <p>{item.text}</p>
+                    <p>{t(item.text)}</p>
                   </CurrentIssueItem>
                 ))}
               </CurrentIssues>
-              <IssueTextStyled>というお悩みを感じている方へ。</IssueTextStyled>
-              <IssueTitleStyled>スキマ時間でパパっとオンライン診療！</IssueTitleStyled>
+              <IssueTextStyled>{t(topPage.currentIssues.text1)}</IssueTextStyled>
+              <IssueTitleStyled>{t(topPage.currentIssues.text2)}</IssueTitleStyled>
               <IssueSubtitletStyled>
-                少しでも気になる方はまずご相談下さい！
+                {t(topPage.currentIssues.text3)}
                 <br />
-                身だしなみを整える感覚で、自信に満ちた毎日を！
+                {t(topPage.currentIssues.text4)}
               </IssueSubtitletStyled>
               <IssueNoteStyled>
-                *1 厚生労働省
+                {t(topPage.currentIssues.note)}
                 <Link to="#">
-                  「医薬品等を海外から購入しようとされる方へ海外医薬品や海外サ
+                  {t(topPage.currentIssues.linkNote)}
                   <br />
-                  プリメントの個人輸入のリスクについて」
+                  {t(topPage.currentIssues.linkNote2)}
                 </Link>
-                参照
+                {t(topPage.currentIssues.text5)}
               </IssueNoteStyled>
             </LeftBlockStyled>
             <UserImageStyled src={UserImage} alt="image" />
@@ -248,19 +248,19 @@ export const TopPage: React.FC = () => {
 
               <DeliveryInfoBlockStyled>
                 <DeliveryLeftStyled>
-                  <p>東京都23区エリア</p>
+                  <p>{t(topPage.deliveryInfoBlock.left.title)}</p>
                   {listDelivery.slice(0, 2).map((item) => (
                     <DeliveryInfoItemStyled key={item.id}>
                       <span />
                       <p>
-                        <span>{item.title}</span>
-                        <span>{item.subTitle}</span>
+                        <span>{t(item.title)}</span>
+                        <span>{t(item.subTitle)}</span>
                       </p>
                     </DeliveryInfoItemStyled>
                   ))}
                 </DeliveryLeftStyled>
                 <DeliveryLeftStyled type="2">
-                  <p>大阪市24区エリア</p>
+                  <p>{t(topPage.deliveryInfoBlock.right.title)}</p>
                   {listDelivery.slice(2, 6).map((item) => (
                     <DeliveryInfoItemStyled key={item.id}>
                       <span />
@@ -295,16 +295,16 @@ export const TopPage: React.FC = () => {
       >
         <NewBlockWrapper>
           <NewInfoStyled isLink>
-            <span>2024.04.14</span>
-            <Link to="#">マイページTOPに、お薬の補充ボタンを設置いたしました。この機会に是非にご利用ください。</Link>
+            <span>{t(topPage.article_news.date1)}</span>
+            <Link to="#">{t(topPage.article_news.content1)}</Link>
           </NewInfoStyled>
           <NewInfoStyled>
-            <span>2024.04.14</span>
-            <Link to="#">対応可能時間は8:00～20:30です。</Link>
+            <span>{t(topPage.article_news.date2)}</span>
+            <Link to="#">{t(topPage.article_news.content2)}</Link>
           </NewInfoStyled>
           <NewInfoStyled>
-            <span>2024.04.10</span>
-            <Link to="#">男性AGA・女性AGA・メディカルダイエットなど、一部診療科目が新しいプラン価格となりました。</Link>
+            <span>{t(topPage.article_news.date3)}</span>
+            <Link to="#">{t(topPage.article_news.content3)}</Link>
           </NewInfoStyled>
         </NewBlockWrapper>
 

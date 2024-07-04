@@ -1,5 +1,7 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
+import { translations } from 'locales/translations';
 import {
   HealthQueriesStyled,
   ImageStyled,
@@ -26,24 +28,27 @@ export type TextProps = {
 };
 
 export const MedicalQueries: FC<IMedicalQuery> = ({ data, gender }) => {
+  const { t } = useTranslation();
+  const { genderPage } = translations;
+
   return (
     <WrapperStyled>
       <HealthQueriesStyled>
         {data?.map((item) => (
           <QueryEntryStyled key={item.id}>
             <QueryEntryTextStyled>
-              <TextStyled gender={gender}>{item.text}</TextStyled>
+              <TextStyled gender={gender}>{t(item.text)}</TextStyled>
             </QueryEntryTextStyled>
             <ImageStyled src={item.url} alt="image" />
           </QueryEntryStyled>
         ))}
       </HealthQueriesStyled>
       <MessageBlockStyled>
-        <p>そんなときは、DMMオンラインクリニック！</p>
+        <p>{t(genderPage.MedicalQueries.MessageBlockBottom)}</p>
         <p>
-          男性特有のお悩みが少しでも気になったら、お気軽にご相談ください。
+          {t(genderPage.MedicalQueries.MessageBlockMiddle)}
           <br />
-          できる限り早いうちに治療することが改善の近道です！
+          {t(genderPage.MedicalQueries.MessageBlockTop)}
         </p>
       </MessageBlockStyled>
     </WrapperStyled>

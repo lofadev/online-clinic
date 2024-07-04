@@ -12,6 +12,8 @@ import userInfomation from './user-infomation.json';
 import changePassword from './change-password.json';
 import errors from './errors.json';
 import success from './success.json';
+import drColumn from './dr-column.json';
+import usage from './usage.json';
 
 export {
   common,
@@ -28,4 +30,6 @@ export {
   changePassword,
   errors,
   success,
+  drColumn,
+  usage,
 };

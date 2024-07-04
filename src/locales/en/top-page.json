@@ -13,6 +13,18 @@
     "description": "Medical Subjects",
     "note": "※ Insurance consultations will redirect to a separate site."
   },
+
+  "currentIssues": {
+    "text1": "For those who are experiencing this problem.",
+    "text2": "Papatto online medical treatment in free time!",
+    "text3": "If you have any concerns, please contact us first!",
+    "text4": "Live every day full of confidence with the feeling of taking care of yourself!",
+    "note": "*1 Ministry of Health, Labour and Welfare",
+    "linkNote": "“For those who are looking to purchase pharmaceuticals etc. from overseas,",
+    "linkNote2": "Regarding the risks of personal import of supplements”",
+    "text5": "reference"
+  },
+
   "article_about": {
     "title": "What is DMM Online Clinic?",
     "description": "About",
@@ -21,6 +33,7 @@
       "delivery": "Fastest same-day delivery",
       "smartphone": "Immediate consultation even for first-time patients"
     },
+
     "faq": {
       "title": "Frequently Asked Questions",
       "description": "Want to know about various aspects of the service!",
@@ -30,6 +43,14 @@
         "medication": "Medication",
         "etc": "etc."
       }
+    }
+  },
+  "deliveryInfoBlock": {
+    "left": {
+      "title": "Tokyo 23 wards area"
+    },
+    "right": {
+      "title": "Osaka city 24 wards area"
     }
   },
   "article_flow": {
@@ -58,7 +79,102 @@
   },
   "article_news": {
     "title": "Announcements",
-    "description": "News"
+    "description": "News",
+    "date1": "2024.04.22",
+    "content1": "A medicine refill button has been installed at the top of my page. Please take advantage of this opportunity.",
+
+    "date2": "2024.04.14",
+    "content2": "Available hours are 8:00-20:30.",
+    "date3": "2024.04.10",
+    "content3": "content3: New plan prices have been added to some medical subjects, including men's AGA, women's AGA, and medical diet."
   },
-  "project_participation": "DMM.com LLP is participating in the 'Revitalizing Japan from Small and Medium Enterprises Project'"
+  "project_participation": "DMM.com LLP is participating in the 'Revitalizing Japan from Small and Medium Enterprises Project'",
+
+  "dataSiekte": {
+    "content1": "Reliable price that is easy to maintain",
+    "content2": "Arrival on the same day at the earliest",
+    "content3": "You can be seen right away even on your first visit."
+  },
+
+  "dataFlow": {
+    "flow1": {
+      "title": "Reserve the date and time you would like to visit, and the details of the treatment.",
+      "content": "Easy with your smartphone or PC! You can also manage your reservations!"
+    },
+
+    "flow2": {
+      "title": "medical treatment",
+      "content": "Examination using video tools! It is also possible to take multiple subjects at the same time."
+    },
+
+    "flow3": {
+      "title": "Receiving medicine",
+      "content": "Delivery to your home or convenience store is also possible!"
+    }
+  },
+
+  "dataCurrentIssue": {
+    "text1": "I don't have time and going to the hospital is a hassle...",
+    "text2": "I hate waiting time at clinics and pharmacies...",
+    "text3": "I don't want anyone to see me entering the hospital...",
+    "text4": "The Ministry of Health, Labor and Welfare has also warned that privately imported drugs are dangerous...''*1"
+  },
+  "dataDelivery": {
+    "delivery1": {
+      "title": "Medicine fee + delivery fee 2,550 yen",
+      "subTitle": "Minato Ward, Chiyoda Ward, Chuo Ward, Shinjuku Ward, Shibuya Ward"
+    },
+    "delivery2": {
+      "title": "Medicine fee + delivery fee 3,550 yen",
+      "subTitle": "Shinagawa Ward, Meguro Ward, Nakano Ward, Toshima Ward, Bunkyo Ward, Taito Ward, Koto Ward"
+    },
+    "delivery3": {
+      "title": "Medicine fee + delivery fee 5,550 yen",
+      "subTitle": "Addresses within 23 wards other than those listed above"
+    },
+    "delivery4": {
+      "title": "Medicine fee + delivery fee 3,000 yen",
+      "subTitle": "Kita Ward, Chuo Ward, Fukushima Ward, Miyakojima Ward"
+    },
+    "delivery5": {
+      "title": "Medicine fee + delivery fee 3,500 yen",
+      "subTitle": "Nishi Ward, Yodogawa Ward, Konohana Ward, Joto Ward, Naniwa Ward"
+    },
+    "delivery6": {
+      "title": "Medicine fee + delivery fee 4,000 yen",
+      "subTitle": "Nishiyodogawa Ward, Minato Ward, Asahi Ward, Tsurumi Ward, Tennoji Ward, Higashinari Ward, Higashiyodogawa Ward"
+    },
+    "delivery7": {
+      "title": "Medicine fee + delivery fee 4,500 yen",
+      "subTitle": "Taisho Ward, Nishinari Ward, Abeno Ward, Ikuno Ward, Higashi Sumiyoshi Ward, Suminoe Ward, Hirano Ward, Sumiyoshi Ward"
+    }
+  },
+  "dataMedicalQueryMale": {
+    "text1": "I would like to receive medical treatment during breaks from work or on weekends.",
+    "text2": "I'm concerned about privacy",
+    "text3": "I wish the medicine could be delivered to my house..."
+  },
+  "dataMedicalQueryFeMale": {
+    "text1": "I can't go to the hospital because I don't have time. It won't last.",
+    "text2": "I want to face my recurring symptoms properly...",
+    "text3": "I wish the medicine could be delivered to my house..."
+  },
+  "dataSlideStaffRecommend": {
+    "staff1": {
+      "job": "doctor",
+      "description": "The consultation is free of charge, so please make an appointment to discuss your symptoms and the medications you are concerned about. Even if you receive a prescription for medicine, the only costs you will incur are shipping costs and the cost of the medicine."
+    },
+    "staff2": {
+      "job": "counselor",
+      "description": "I think one of the appeals of our clinic is that most cases, from counseling to seeing a doctor, can be completed within 10 minutes. It's convenient to be able to see your doctor from home at a time that's convenient for you!"
+    },
+    "staff3": {
+      "job": "doctor",
+      "description": "I would be very happy if you could tell me that your physical condition has improved from before when you come back for a follow-up visit. There is no charge for re-examinations, so it is easy to continue."
+    },
+    "staff4": {
+      "job": "pharmacist",
+      "description": "Because we are a clinic, we have a wide range of highly effective medicines that can be prescribed. Although it is a free medical treatment, you can receive a prescription at a relatively low price, so if you have any symptoms you are concerned about, please give it a try."
+    }
+  }
 }

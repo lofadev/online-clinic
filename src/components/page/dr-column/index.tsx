@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import { useTranslation } from 'react-i18next';
 import {
   ContentConfirm,
   ContentDate,
@@ -29,7 +30,7 @@ export type PropsDrColumn = {
 const DrColumn: FC<PropsDrColumn> = (props) => {
   const { id, picture, title, content, siekte, date, confirm, path } = props;
   const history = useHistory();
-
+  const { t } = useTranslation();
   const handleClick = () => {
     history.push(path);
   };
@@ -41,9 +42,9 @@ const DrColumn: FC<PropsDrColumn> = (props) => {
       </ImageBox>
 
       <ContentDrColumn>
-        <TitleDrColumn>{title}</TitleDrColumn>
+        <TitleDrColumn>{t(title)}</TitleDrColumn>
 
-        <ContentDrColumnDetail>{content}</ContentDrColumnDetail>
+        <ContentDrColumnDetail>{t(content)}</ContentDrColumnDetail>
 
         <SubContent>
           <InforContent>
@@ -52,7 +53,7 @@ const DrColumn: FC<PropsDrColumn> = (props) => {
             <ContentConfirm>{confirm}</ContentConfirm>
           </InforContent>
 
-          <Siekte>{siekte}</Siekte>
+          <Siekte>{t(siekte)}</Siekte>
         </SubContent>
       </ContentDrColumn>
     </DrColumnStyle>

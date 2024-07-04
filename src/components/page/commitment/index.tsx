@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
 
+import { useTranslation } from 'react-i18next';
 import {
   CommitmentStyle,
   ContentCommitment,
@@ -24,6 +25,7 @@ type ContentCommitment = {
 };
 const Commitment: FC<PropsCommitment> = (props) => {
   const { id, picture, point, title, content, children } = props;
+  const { t } = useTranslation();
   return (
     <CommitmentStyle className={point % 2 ? 'left' : 'right'} key={id}>
       <IconPoint>
@@ -33,11 +35,11 @@ const Commitment: FC<PropsCommitment> = (props) => {
       <MainCommitmemt>
         <Point>Point {point}</Point>
 
-        <TitleCommitment>{title}</TitleCommitment>
+        <TitleCommitment>{t(title)}</TitleCommitment>
 
         {content.length &&
           content.map((contentDetail) => (
-            <ContentCommitment key={contentDetail.id}>{contentDetail.text}</ContentCommitment>
+            <ContentCommitment key={contentDetail.id}>{t(contentDetail.text)}</ContentCommitment>
           ))}
 
         {children}

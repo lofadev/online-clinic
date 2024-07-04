@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
 
+import { useTranslation } from 'react-i18next';
 import { AppointmentStyle, ImageStyle, MainContentApp, PictureApp, Step, StepTitle, TitleAppointment } from './styled';
 
 export type PropsAppointment = {
@@ -12,6 +13,8 @@ export type PropsAppointment = {
 
 const Appointment: FC<PropsAppointment> = (props) => {
   const { id, picture, step, title, children } = props;
+  const { t } = useTranslation();
+
   return (
     <AppointmentStyle key={id}>
       <PictureApp>
@@ -22,7 +25,7 @@ const Appointment: FC<PropsAppointment> = (props) => {
         <StepTitle>
           <Step>STEP {step}</Step>
 
-          <TitleAppointment>{title}</TitleAppointment>
+          <TitleAppointment>{t(title)}</TitleAppointment>
         </StepTitle>
 
         {children}

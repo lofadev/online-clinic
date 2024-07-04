@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { useTranslation } from 'react-i18next';
 import {
   WrapperStyled,
   CardItemStyled,
@@ -23,6 +24,7 @@ type SliderType = {
 };
 
 export const CardSlider: React.FC<SliderType> = ({ data, gender }) => {
+  const { t } = useTranslation();
   return (
     <WrapperStyled gender={gender}>
       <Swiper
@@ -44,11 +46,11 @@ export const CardSlider: React.FC<SliderType> = ({ data, gender }) => {
               <InfoBlockStyled>
                 <AvatarStyled src={item.avatar} alt="avatar" />
                 <PositionStyled>
-                  <JobStyled gender={item.gender}>{item.job}</JobStyled>
+                  <JobStyled gender={item.gender}>{t(item.job)}</JobStyled>
                   <p>{item.name}</p>
                 </PositionStyled>
               </InfoBlockStyled>
-              <DescriptionStyled>{item.description}</DescriptionStyled>
+              <DescriptionStyled>{t(item.description)}</DescriptionStyled>
             </CardItemStyled>
           </SwiperSlide>
         ))}
