@@ -2,6 +2,7 @@ import { Modal } from 'antd';
 import { FieldCheckbox } from 'components';
 import { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 import { useAppointment } from 'slices/appointment';
 import { TAppointmentItem } from 'slices/appointment/types';
 import { formatDateToJapanese } from 'utils/date';
@@ -26,6 +27,7 @@ const Booking = () => {
   const { timetables, updateItem, item, service } = useAppointment();
   const dataTransform = useTransformData(timetables?.date_list);
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const history = useHistory();
 
   const methodsCheckbox = useForm({
     defaultValues: {
@@ -84,11 +86,21 @@ const Booking = () => {
             </FormWrapperStyled>
 
             <TextStyled>▼ DMM会員登録をしている方 ▼</TextStyled>
-            <ButtonStyled type="primary" size="small" disabled={!methodsCheckbox.watch('confirm')}>
+            <ButtonStyled
+              type="primary"
+              size="small"
+              disabled={!methodsCheckbox.watch('confirm')}
+              onClick={() => history.push('/appointment/confirm')}
+            >
               ログインして日時確定する
             </ButtonStyled>
             <TextStyled>▼ DMM会員登録をしていない方 ▼</TextStyled>
-            <ButtonStyled type="primary" size="small" disabled={!methodsCheckbox.watch('confirm')}>
+            <ButtonStyled
+              type="primary"
+              size="small"
+              disabled={!methodsCheckbox.watch('confirm')}
+              onClick={() => history.push('/appointment/complete')}
+            >
               会員登録して日時確定する
             </ButtonStyled>
           </ModalWrapperStyled>

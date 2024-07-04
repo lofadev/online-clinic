@@ -51,6 +51,18 @@ const ButtonStyled = styled(Button)<{ rounded?: RadiusType }>`
       border-color: ${(props) => props.theme[props.color || 'primary']};
     }
   }
+
+  &.ant-btn-link {
+    color: ${({ theme }) => theme.primary};
+    font-size: 14px;
+    font-weight: 400;
+    height: auto;
+
+    &:not(:disabled):not(.ant-btn-disabled):hover {
+      color: ${({ theme }) => theme.primary};
+      opacity: 0.8;
+    }
+  }
 `;
 
 export { ButtonStyled };

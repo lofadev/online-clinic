@@ -75,7 +75,7 @@ const PreHeader: FC = () => {
             <ContentButtonShopping>{t(header.navigation.shop)}</ContentButtonShopping>
           </ButtonShopping>
 
-          <ButtonBooking type="primary" color="secondary" size="small" onClick={() => handleClick('/booking')}>
+          <ButtonBooking type="primary" color="secondary" size="small" onClick={() => handleClick('/appointment')}>
             <Booking />
 
             <ContentButtonBooking>{t(header.navigation.appointment)}</ContentButtonBooking>
