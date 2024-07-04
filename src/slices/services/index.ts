@@ -21,7 +21,6 @@ const slice = createSlice({
     fetchServicesSuccess(state, action: PayloadAction<ServicesState>) {
       state.serviceList = action.payload.serviceList;
       state.medicalSubjectList = action.payload.medicalSubjectList;
-      // console.log(state.serviceList);
     },
   },
 });

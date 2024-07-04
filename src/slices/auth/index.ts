@@ -81,6 +81,9 @@ const slice = createSlice({
       state.loading = true;
       state.sendEmailConfirm = true;
     },
+    resetSendMail: (state) => {
+      state.sendEmailConfirm = false;
+    },
     logout: (state) => {
       state.loading = false;
       state.user_profile = null;
@@ -104,6 +107,7 @@ export const useAuth = () => {
   const changePasswords = (payload) => dispatch(actions.changePassword(payload));
   const sendMail = (payload) => dispatch(actions.sendMail(payload));
   const resetChangePassword = () => dispatch(actions.resetChangePassword());
+  const resetSendMail = () => dispatch(actions.resetSendMail());
   const state = useSelector(selectAuth);
 
   return {
@@ -114,6 +118,7 @@ export const useAuth = () => {
     changePasswords,
     sendMail,
     resetChangePassword,
+    resetSendMail,
     ...state,
   };
 };

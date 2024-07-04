@@ -31,11 +31,11 @@ const FormConfirm: FC<FormValuesForgotPasswordConfirm> = () => {
     mode: 'onSubmit',
     resolver: yupResolver(schemeConfirm()),
   });
+
   const onSubmitConfirm: SubmitHandler<FormValuesForgotPasswordConfirm> = (data) => {
     changePasswords({ new_password: data.newPassword, token: data.secretCode });
     formConfirm.reset();
   };
-
   return (
     <FormProvider {...formConfirm}>
       <ContentStyled>

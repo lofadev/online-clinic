@@ -6,6 +6,7 @@ import { login, getMe, register, token, changePasswordUser, sendMailForgot } fro
 import { STORAGE } from 'utils/storage';
 import { RootState } from 'types';
 
+import { notifActions } from 'slices/notification';
 import { sagaCustomize } from '../sagaCustomize';
 
 import { actions } from '.';
@@ -21,6 +22,13 @@ export function* loginSaga({ payload }: PayloadAction<{ email: string; password:
       boardcastChannel.postMessage('LOGIN');
     }
     yield put(actions.loginSuccess());
+    yield put(
+      notifActions.setNotif({
+        type: 'success',
+        message: 'Login Success',
+        description: response.meta.message,
+      }),
+    );
   });
 }
 
@@ -44,9 +52,15 @@ export function* tokenSaga({ payload }: PayloadAction<{ data: string }>) {
   yield sagaCustomize(function* () {
     const response = yield call(token, payload);
     yield put(actions.sendVerifyEmailSuccess(response.data));
+    yield put(
+      notifActions.setNotif({
+        type: 'success',
+        message: 'Register Success',
+        description: response.meta.message,
+      }),
+    );
   });
 }
-
 export function* changePasswords({
   payload,
 }: PayloadAction<{ old_password?: string; new_password: string; token?: string }>) {
@@ -54,6 +68,13 @@ export function* changePasswords({
     const response = yield call(changePasswordUser, payload);
     if (response.meta.status) {
       yield put(actions.changePasswordSuccess());
+      yield put(
+        notifActions.setNotif({
+          type: 'success',
+          message: 'Change password Success',
+          description: response.meta.message,
+        }),
+      );
     }
   });
 }
@@ -63,6 +84,13 @@ export function* sendMail({ payload }: PayloadAction<{ email: string }>) {
     const response = yield call(sendMailForgot, payload);
     if (response.meta.status) {
       yield put(actions.sendMailSuccess());
+      yield put(
+        notifActions.setNotif({
+          type: 'success',
+          message: 'Send mail Success',
+          description: response.meta.message,
+        }),
+      );
     }
   });
 }
