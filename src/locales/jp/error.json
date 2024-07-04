@@ -1,4 +1,5 @@
 {
+  "title": "故障して",
   "REGISTER_FAIL": "登録失敗",
   "REGISTER_INVALID_DATA": "無効な登録データ",
   "REGISTER_NOT_FOUND_USER": "登録中にユーザーが見つかりません",

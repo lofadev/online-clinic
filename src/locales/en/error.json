@@ -1,4 +1,5 @@
 {
+  "title": "Error",
   "REGISTER_FAIL": "Register fail",
   "REGISTER_INVALID_DATA": "Invalid registration data",
   "REGISTER_NOT_FOUND_USER": "User not found during registration",
