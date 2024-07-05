@@ -1,9 +1,9 @@
 import { FC } from 'react';
 
 import { Account, Booking, Shopping } from 'assets/icons/icon-header';
+import history from 'configs/history';
 import { translations } from 'locales/translations';
 import { useTranslation } from 'react-i18next';
-import { useHistory } from 'react-router-dom';
 import RoutesName from 'routes/constant';
 import NavigateButton, { PropsNavigateButton } from './navigate-button';
 import {
@@ -21,7 +21,6 @@ import {
 import SubHeader from './sub-header';
 
 const PreHeader: FC = () => {
-  const history = useHistory();
   const { t } = useTranslation();
   const { header } = translations;
 

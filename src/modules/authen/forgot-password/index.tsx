@@ -1,15 +1,13 @@
-import { Helmet } from 'react-helmet-async';
-import { useAuth } from 'slices';
-
-import { useHistory } from 'react-router-dom';
+import history from 'configs/history';
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import RoutesName from 'routes/constant';
+import { useAuth } from 'slices';
 import FormConfirm from './conponent/FormConfirm';
 import FormSendMail from './conponent/FormSendMail';
 
 export const ForgotPassword: React.FC = () => {
   const { sendEmailConfirm, changePasswordSuccess, resetChangePassword, resetSendMail } = useAuth();
-  const history = useHistory();
   useEffect(() => {
     if (changePasswordSuccess) {
       history.push(RoutesName.TOP);

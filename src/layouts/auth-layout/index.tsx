@@ -1,15 +1,16 @@
+import { ReserveIcon } from 'assets';
+import { Button } from 'components';
 import BottomFooter from 'components/footer/bottom-footer';
 import MainFooter from 'components/footer/main-footer';
+import TopHeader from 'components/header/top-header/top-header';
 import { translations } from 'locales/translations';
 import { FC, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, NavLink, useHistory } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import RoutesName from 'routes/constant';
 import { useAuth } from 'slices';
-import { Button } from 'components';
-import { ReserveIcon } from 'assets';
-import TopHeader from 'components/header/top-header/top-header';
 
+import history from 'configs/history';
 import {
   AppointmentImageStyled,
   AppointmentWrapper,
@@ -23,7 +24,6 @@ type AuthHeaderProps = {
 };
 
 export const AuthLayout: FC<AuthHeaderProps> = ({ children }) => {
-  const history = useHistory();
   const { t } = useTranslation();
   const { userInfomation } = translations;
   const { user_profile } = useAuth();

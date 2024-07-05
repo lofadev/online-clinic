@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { useHistory } from 'react-router-dom';
 
+import history from 'configs/history';
 import { ContentMainFooter, DetailMainFooterStyle, SubContent, TextContent, TitleMainFooter } from './styled';
 
 export type PropsDetailMainFooter = {
@@ -18,7 +18,6 @@ type PropsItemDetailMainFooter = {
 
 const DetailMainFooter: FC<PropsDetailMainFooter> = (props) => {
   const { id, title, children } = props;
-  const history = useHistory();
 
   const handleClick = (url: string) => {
     if (url) {

@@ -6,10 +6,10 @@ import { useTranslation } from 'react-i18next';
 
 import { LoginArrow } from 'assets';
 import { FieldInput } from 'components';
+import history from 'configs/history';
 import { translations } from 'locales/translations';
-import { useHistory } from 'react-router-dom';
-import { useAuth } from 'slices';
 import RoutesName from 'routes/constant';
+import { useAuth } from 'slices';
 import scheme from './schema';
 import {
   ArrowImg,
@@ -34,7 +34,6 @@ export const SignIn: React.FC = () => {
   const { login } = useAuth();
   const { t } = useTranslation();
   const { signIn } = translations;
-  const { push } = useHistory();
   const form = useForm({
     defaultValues: {
       email: '',
@@ -48,7 +47,7 @@ export const SignIn: React.FC = () => {
     login(data);
   };
   const handleClickForgot = () => {
-    push(RoutesName.FORGOT);
+    history.push(RoutesName.FORGOT);
   };
   return (
     <>
@@ -87,7 +86,7 @@ export const SignIn: React.FC = () => {
 
           <RegisterStyled>
             <FirstStyled>{t(signIn.register)}</FirstStyled>
-            <ButtonLogin className="btn_res" onClick={() => push('/register')}>
+            <ButtonLogin className="btn_res" onClick={() => history.push('/register')}>
               {t(signIn.btn_register)}
             </ButtonLogin>
           </RegisterStyled>

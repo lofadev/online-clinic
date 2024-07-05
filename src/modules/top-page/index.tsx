@@ -15,17 +15,16 @@ import { Banner } from 'components/banner';
 import { FAQSection } from 'components/faq-block';
 import IconFeature from 'components/page/feature';
 import FlowItem from 'components/page/flow';
-// import IconSiekte from 'components/page/siekte';
-import { translations } from 'locales/translations';
-import { useTranslation } from 'react-i18next';
-import { Link, useHistory } from 'react-router-dom';
-import RoutesName from 'routes/constant';
-import { useEffect, useState } from 'react';
-import { IService } from 'types/service';
-import { useServicesSlice } from 'slices/services';
 import IconSiekte from 'components/page/siekte';
+import history from 'configs/history';
+import { translations } from 'locales/translations';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import RoutesName from 'routes/constant';
+import { useServicesSlice } from 'slices/services';
+import { IService } from 'types/service';
 import { listCurrentIssue, listDataFlow, listDelivery } from './constant';
-
 import {
   AboutTopBlock,
   ArrowWhiteIconStyled,
@@ -70,7 +69,6 @@ import {
 } from './styled';
 
 export const TopPage: React.FC = () => {
-  const history = useHistory();
   const { t } = useTranslation();
   const { topPage } = translations;
   const [dataServices, setDataServices] = useState<IService[]>([]);

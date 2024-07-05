@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { useHistory } from 'react-router-dom';
 
+import history from 'configs/history';
 import { BorderIcon, ContentIcon, IconFill, IconSiekteStyle } from './styled';
 
 export type PropsSiekte = {
@@ -14,7 +14,6 @@ export type PropsSiekte = {
 
 const IconSiekte: FC<PropsSiekte> = (props) => {
   const { id, icon, content, gender, disable, path } = props;
-  const history = useHistory();
 
   const handleClick = () => {
     if (!disable && path) {

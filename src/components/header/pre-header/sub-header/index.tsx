@@ -1,22 +1,21 @@
-import { FC } from 'react';
-import { useHistory } from 'react-router-dom';
 import { Col, Row } from 'antd';
-import { useTranslation } from 'react-i18next';
+import history from 'configs/history';
 import { translations } from 'locales/translations';
+import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+import DetailNavigate, { PropsDetailNavigate } from '../detail-navigate';
 import {
+  ArrowImage,
   ButtonGender,
-  SubHeaderStyle,
   ButtonStyleGender,
   ContentButton,
-  ImageStyle,
-  ArrowImage,
   DetailNavigateBox,
+  ImageStyle,
+  SubHeaderStyle,
   TitleDetailNav,
 } from './styled';
-import DetailNavigate, { PropsDetailNavigate } from '../detail-navigate';
 
 const SubHeader: FC = () => {
-  const history = useHistory();
   const handleSelect = (url: string) => {
     history.push(url);
   };

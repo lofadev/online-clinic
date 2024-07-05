@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { useHistory } from 'react-router-dom';
 
+import history from 'configs/history';
 import i18next from 'i18next';
 import { translations } from 'locales/translations';
 import { useTranslation } from 'react-i18next';
@@ -17,7 +17,6 @@ import {
 } from './styled';
 
 const TopHeader: FC = () => {
-  const history = useHistory();
   const { t } = useTranslation();
   const { header } = translations;
 

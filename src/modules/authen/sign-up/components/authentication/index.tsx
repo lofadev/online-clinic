@@ -1,13 +1,14 @@
-import { Helmet } from 'react-helmet-async';
 import { ExportOutlined } from '@ant-design/icons';
-import { useTranslation } from 'react-i18next';
 import { useEffect, useMemo } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 
-import { translations } from 'locales/translations';
 import { FieldInput, Text, Title } from 'components';
+import history from 'configs/history';
+import { translations } from 'locales/translations';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { useAuth } from 'slices';
-import { useHistory } from 'react-router-dom';
+import SliderRegister from '../slider';
 import {
   ButtonStyled,
   ButtonWrapper,
@@ -20,7 +21,6 @@ import {
   TitleTextStyled,
   WrapperStyled,
 } from './styled';
-import SliderRegister from '../slider';
 
 interface IFailEmail {
   id: number;
@@ -34,8 +34,6 @@ const Authentication: React.FC = () => {
   const { verifyEmail, temp_token, registerSuccess } = useAuth();
   const { t } = useTranslation();
   const { signUp } = translations;
-
-  const history = useHistory();
 
   const form = useForm({
     defaultValues: {

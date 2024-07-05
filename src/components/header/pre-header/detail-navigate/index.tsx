@@ -1,5 +1,5 @@
+import history from 'configs/history';
 import { FC } from 'react';
-import { useHistory } from 'react-router-dom';
 import { ContentDetailNav, DetailNavigateStyles, ImageStyle } from './styled';
 
 export type PropsDetailNavigate = {
@@ -10,7 +10,6 @@ export type PropsDetailNavigate = {
 };
 const DetailNavigate: FC<PropsDetailNavigate> = (props) => {
   const { id, content, path, disable } = props;
-  const history = useHistory();
   const handleClick = () => {
     if (path && !disable) {
       history.push(path);

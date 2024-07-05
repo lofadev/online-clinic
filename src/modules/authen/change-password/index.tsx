@@ -1,13 +1,14 @@
+import { yupResolver } from '@hookform/resolvers/yup';
+import FieldPassword from 'components/form/field-password/Password';
+import history from 'configs/history';
+import { translations } from 'locales/translations';
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { translations } from 'locales/translations';
-import FieldPassword from 'components/form/field-password/Password';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { useAuth } from 'slices';
-import { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import RoutesName from 'routes/constant';
+import { useAuth } from 'slices';
+import scheme from './scheme';
 import {
   ButtonLogin,
   ContentStyled,
@@ -18,7 +19,6 @@ import {
   RegisterStyled,
   TitleStyled,
 } from './styled';
-import scheme from './scheme';
 
 interface FormValuesChangePassword {
   oldPassword: string;
@@ -37,7 +37,6 @@ export const ChangePassword: React.FC = () => {
   const onSubmit: SubmitHandler<FormValuesChangePassword> = (data) => {
     changePasswords({ new_password: data.newPassword, old_password: data.oldPassword });
   };
-  const history = useHistory();
   useEffect(() => {
     if (changePasswordSuccess) {
       history.push(RoutesName.TOP);

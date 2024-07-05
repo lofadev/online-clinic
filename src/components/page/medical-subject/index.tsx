@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import { ReactComponent as ArrowSubject } from 'assets/images/medical-subject/ArrowSubject.svg';
+import history from 'configs/history';
 import { ContentSubject, ImageStyle, MedicalSubjectStyle, TilteText, TitleIcon, TitleSubject } from './styled';
 
 export type PropsSubject = {
@@ -14,7 +14,6 @@ export type PropsSubject = {
 
 const MedicalSubject: FC<PropsSubject> = (props) => {
   const { id, picture, title, content, path } = props;
-  const history = useHistory();
 
   const handleClick = () => {
     history.push(path);

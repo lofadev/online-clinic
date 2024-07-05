@@ -1,23 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-import BannerGender from 'components/page/banner-gender';
+import { IconAppointement } from 'assets/icons/icon-button';
 import ArticleBlock from 'components/article-block/ArticleBlock';
+import { MedicalQueries } from 'components/medicalqueries';
+import BannerGender from 'components/page/banner-gender';
+import IconFeature from 'components/page/feature';
+import FlowItem from 'components/page/flow';
 import MedicalSubject from 'components/page/medical-subject';
 import IconSiekte from 'components/page/siekte';
-import { MedicalQueries } from 'components/medicalqueries';
-import IconFeature from 'components/page/feature';
-import { IconAppointement } from 'assets/icons/icon-button';
-import { useHistory } from 'react-router-dom';
 import { CardSlider } from 'components/slider';
-import FlowItem from 'components/page/flow';
 import { Video } from 'components/videocustom';
 
-import { IService } from 'types/service';
-import { useServicesSlice } from 'slices/services';
-import RoutesName from 'routes/constant';
-import { useTranslation } from 'react-i18next';
+import history from 'configs/history';
 import { translations } from 'locales/translations';
+import { useTranslation } from 'react-i18next';
+import RoutesName from 'routes/constant';
+import { useServicesSlice } from 'slices/services';
+import { IService } from 'types/service';
+import FeatureContent from './FeatureContent';
+import {
+  dataMedicalQueryFemale,
+  dataMedicalQueryMale,
+  dataSlideStaffRecommend,
+  listDataFeature,
+  listDataFlow,
+} from './constant';
 import {
   BottomFeature,
   ButtonAppointBox,
@@ -47,16 +55,6 @@ import {
   VideoContainer,
 } from './styled';
 
-import {
-  dataMedicalQueryFemale,
-  dataMedicalQueryMale,
-  dataSlideStaffRecommend,
-  listDataFeature,
-  listDataFlow,
-} from './constant';
-
-import FeatureContent from './FeatureContent';
-
 export type PropsGenderPage = {
   gender: GenderType;
 };
@@ -72,7 +70,6 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
   const { t } = useTranslation();
   const { genderPage } = translations;
 
-  const history = useHistory();
   const handleAppointement = () => {
     history.push(RoutesName.APPOINTMENT.INDEX);
   };

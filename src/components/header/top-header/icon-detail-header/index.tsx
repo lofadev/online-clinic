@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { useHistory } from 'react-router-dom';
+import history from 'configs/history';
 import { ContentIcon, IconDetailStyle, ImageStyle, ImgArrow, TextContent } from './styled';
 
 export type PropsIconDetail = {
@@ -12,7 +12,6 @@ export type PropsIconDetail = {
 
 const IconDetailHeader: FC<PropsIconDetail> = (props) => {
   const { id, icon, content, path } = props;
-  const history = useHistory();
 
   const handleClick = () => {
     if (path) {

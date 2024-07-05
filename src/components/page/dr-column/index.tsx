@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { useHistory } from 'react-router-dom';
 
+import history from 'configs/history';
 import { useTranslation } from 'react-i18next';
 import {
   ContentConfirm,
@@ -8,8 +8,8 @@ import {
   ContentDrColumn,
   ContentDrColumnDetail,
   DrColumnStyle,
-  ImageStyle,
   ImageBox,
+  ImageStyle,
   InforContent,
   Siekte,
   SubContent,
@@ -29,7 +29,6 @@ export type PropsDrColumn = {
 
 const DrColumn: FC<PropsDrColumn> = (props) => {
   const { id, picture, title, content, siekte, date, confirm, path } = props;
-  const history = useHistory();
   const { t } = useTranslation();
   const handleClick = () => {
     history.push(path);

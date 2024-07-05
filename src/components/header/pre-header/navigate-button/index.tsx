@@ -1,7 +1,7 @@
 import { FC, ReactNode } from 'react';
 
-import { useHistory } from 'react-router-dom';
-import { NavigateButtonStyle, ContentButtonNavigate } from './styled';
+import history from 'configs/history';
+import { ContentButtonNavigate, NavigateButtonStyle } from './styled';
 
 export type PropsNavigateButton = {
   id: number;
@@ -10,7 +10,6 @@ export type PropsNavigateButton = {
   children?: ReactNode;
 };
 const NavigateButton: FC<PropsNavigateButton> = (props) => {
-  const history = useHistory();
   const { id, content, children, path } = props;
   const handleClick = () => {
     if (path) {

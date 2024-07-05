@@ -1,10 +1,8 @@
-import ArrowButton from 'components/button/arrowButton/ArrowButton';
-import { useDispatch } from 'react-redux';
-import { useTranslation } from 'react-i18next';
-import { translations } from 'locales/translations';
-import { push } from 'redux-first-history';
 import { InfoIcon, LightIcon, SpeechIcon } from 'assets';
-
+import ArrowButton from 'components/button/arrowButton/ArrowButton';
+import history from 'configs/history';
+import { translations } from 'locales/translations';
+import { useTranslation } from 'react-i18next';
 import {
   ButtonWrapper,
   FAQFlexBlockStyled,
@@ -20,8 +18,6 @@ import {
 export const FAQSection: React.FC = () => {
   const { t } = useTranslation();
   const { faq } = translations;
-
-  const dispatch = useDispatch();
 
   return (
     <FAQWrapper>
@@ -46,7 +42,7 @@ export const FAQSection: React.FC = () => {
         </FAQRightBlockStyled>
       </FAQFlexBlockStyled>
       <ButtonWrapper>
-        <ArrowButton size="small" onClick={() => dispatch(push('#'))}>
+        <ArrowButton size="small" onClick={() => history.push('#')}>
           {t(faq.button)}
         </ArrowButton>
       </ButtonWrapper>

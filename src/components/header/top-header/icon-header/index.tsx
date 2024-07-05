@@ -1,13 +1,13 @@
 import { Badge } from 'antd';
 import { FC } from 'react';
 
-import { useHistory } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { translations } from 'locales/translations';
+import { useTranslation } from 'react-i18next';
 
+import history from 'configs/history';
 import { useAuth } from 'slices';
 import IconDetailHeader, { PropsIconDetail } from '../icon-detail-header';
-import { IconStyle, ImageStyle, ImgLogout, LogoutButton, TextLogout, SecondIcon } from './styled';
+import { IconStyle, ImageStyle, ImgLogout, LogoutButton, SecondIcon, TextLogout } from './styled';
 
 export type PropsIconHeader = {
   id: number;
@@ -19,7 +19,6 @@ export type PropsIconHeader = {
 
 const IconHeader: FC<PropsIconHeader> = (props) => {
   const { id, icon, notice, path, children } = props;
-  const history = useHistory();
   const { t } = useTranslation();
   const { header } = translations;
   const { logout, authenticated } = useAuth();

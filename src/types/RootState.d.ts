@@ -1,5 +1,4 @@
 import { GithubRepoFormState } from 'modules/HomePage/Features/GithubRepoForm/slice/types';
-import { RouterState } from 'redux-first-history';
 import { AppointmentState } from 'slices/appointment/types';
 import { AuthState } from 'slices/auth/types';
 import { BroadcastState } from 'slices/broadcast/types';
@@ -25,7 +24,6 @@ export interface RootState {
   githubRepoForm: GithubRepoFormState;
   invoice: InvoiceState;
   broadcast: BroadcastState;
-  router: RouterState;
   services: ServicesState;
   appointment: AppointmentState;
   user: UserState;
