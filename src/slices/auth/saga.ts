@@ -40,7 +40,6 @@ export function* registerSaga({ payload }: PayloadAction<{ email: string; passwo
       boardcastChannel.postMessage('REGISTER');
     }
     yield put(actions.registerSuccess({ data: response.data, email: payload.email }));
-
     yield put(actions.updateStep());
     yield put(actions.setVerifyEmail(response.data));
   });

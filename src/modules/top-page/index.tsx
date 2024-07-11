@@ -108,7 +108,7 @@ export const TopPage: React.FC = () => {
                 icon={item.icon}
                 content={item.name}
                 gender={item.type}
-                path={`/menu/${item.id}`}
+                path={`/appointment/${item.id}`}
                 key={item.id}
               />
             ))}
@@ -263,8 +263,8 @@ export const TopPage: React.FC = () => {
                     <DeliveryInfoItemStyled key={item.id}>
                       <span />
                       <p>
-                        <span>{item.title}</span>
-                        <span>{item.subTitle}</span>
+                        <span>{t(item.title)}</span>
+                        <span>{t(item.subTitle)}</span>
                       </p>
                     </DeliveryInfoItemStyled>
                   ))}

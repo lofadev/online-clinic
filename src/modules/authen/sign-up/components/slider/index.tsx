@@ -17,9 +17,9 @@ const SliderRegister: React.FC<ISliderRegisterProps> = ({ currentStep }) => {
   const { signUp } = translations;
 
   const steps: IStep[] = [
-    { title: t(signUp.resgiter), key: 1, widthActive: '17%' },
-    { title: t(signUp.authentication), key: 2, widthActive: '53%' },
-    { title: t(signUp.complete), key: 3, widthActive: '88%' },
+    { title: t(signUp.resgiter), key: 1, widthActive: '25%' },
+    { title: t(signUp.authentication), key: 2, widthActive: '75%' },
+    // { title: t(signUp.complete), key: 3, widthActive: '88%' },
   ];
 
   const currentStepData = steps.find((step) => step.key === currentStep);

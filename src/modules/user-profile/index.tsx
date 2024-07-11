@@ -7,7 +7,6 @@ import moment from 'moment';
 import { FC, useEffect, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { useNotification } from 'slices/notification';
 import { useUserProfile } from 'slices/user';
 import schema from './schema';
 
@@ -44,7 +43,6 @@ export const UserProfile: FC = () => {
   const { t } = useTranslation();
   const { userInfomation } = translations;
   const { userProfile, prefectureList, addresses, getProfile, getPrefecture, updateProfile } = useUserProfile();
-  const { setNotif } = useNotification();
 
   const genderOptions: IGenderOptions[] = [
     {
@@ -168,12 +166,6 @@ export const UserProfile: FC = () => {
       };
 
       updateProfile(mergedData);
-    } else {
-      setNotif({
-        type: 'warning',
-        message: '警告',
-        description: '生年月日が一致しません',
-      });
     }
   };
 

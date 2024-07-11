@@ -1,12 +1,11 @@
-import { ExportOutlined } from '@ant-design/icons';
-import { useEffect, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useTranslation } from 'react-i18next';
-
+// import { ExportOutlined } from '@ant-design/icons';
 import { FieldInput, Text, Title } from 'components';
 import history from 'configs/history';
 import { translations } from 'locales/translations';
+import { useEffect, useMemo } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from 'slices';
 import SliderRegister from '../slider';
 import {
@@ -126,7 +125,7 @@ const Authentication: React.FC = () => {
 
               <LinkStyled>
                 {t(signUp.failEmail.change_setting)}
-                <ExportOutlined onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
+                {/* <ExportOutlined onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} /> */}
               </LinkStyled>
             </TitleTextStyled>
 

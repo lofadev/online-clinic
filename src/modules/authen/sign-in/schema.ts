@@ -13,7 +13,7 @@ const scheme = yup.object().shape({
   password: yup
     .string()
     .trim()
-    .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/, validation.sign_in.password_format),
+    .matches(/^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,36}$/, validation.sign_in.password_format),
 });
 
 export default scheme;

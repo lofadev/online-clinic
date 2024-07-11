@@ -35,21 +35,21 @@ const PreHeader: FC = () => {
       content: t(header.navigation.consultation),
       children: <SubHeader />,
     },
-    {
-      id: 3,
-      content: t(header.navigation.about_dmm),
-      path: '/',
-    },
+    // {
+    //   id: 3,
+    //   content: t(header.navigation.about_dmm),
+    //   path: '/',
+    // },
     {
       id: 4,
       content: t(header.navigation.how_to_use),
       path: RoutesName.USAGE,
     },
-    {
-      id: 5,
-      content: t(header.navigation.faq),
-      path: RoutesName.FAQ,
-    },
+    // {
+    //   id: 5,
+    //   content: t(header.navigation.faq),
+    //   path: RoutesName.FAQ,
+    // },
     {
       id: 6,
       content: t(header.navigation.dr_column),

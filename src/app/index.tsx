@@ -2,7 +2,7 @@ import { notification as noficationAnt } from 'antd';
 import Loading from 'components/loading/Loading';
 import { BROADCAST_CHANNEL } from 'constant';
 import { translations } from 'locales/translations';
-import React, { useEffect } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import AppRoutes from 'routes';
 import { useAuth } from 'slices/auth';
@@ -72,15 +72,13 @@ export const App: React.FC = () => {
 
   useEffect(() => {
     if (error) {
-      let resultError: string = '';
+      let resultError: string | ReactNode = '';
       const responseData = error.response?.data as any;
 
       if (responseData?.meta.error) {
         resultError = t(errors[responseData.meta.error]);
       } else if (responseData?.meta.errors) {
-        resultError = Object.values(responseData.meta.errors)
-          .map((d: any) => t(errors[d]))
-          .join('\n');
+        resultError = Object.values(responseData.meta.errors).map((d: any) => <p>{t(errors[d])}</p>);
       }
 
       setNotif({

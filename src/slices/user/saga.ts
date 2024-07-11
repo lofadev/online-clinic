@@ -66,7 +66,7 @@ export function* updateProfileSaga(action: PayloadAction<IUserWithAddress>) {
         notifActions.setNotif({
           type: 'success',
           message: 'success',
-          description: '更新に成功',
+          description: response.meta.message,
         }),
       );
     } else {

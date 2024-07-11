@@ -66,6 +66,9 @@ const Appointment: React.FC = () => {
       methodsServices.setValue('serviceId', detail.service.id);
       methodsServices.setValue('examMethod', detail.appointment_type);
     }
+    if (id) {
+      methodsServices.setValue('serviceId', Number(id));
+    }
   }, [detail, id]);
 
   useEffect(() => {

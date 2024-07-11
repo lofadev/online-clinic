@@ -14,10 +14,7 @@ const schema = () =>
       .string()
       .trim()
       .required(translations.validation.required)
-      .matches(
-        /^(?=.*[A-Z])(?=.*[!@#$%^&*()-+=|{}[\]:;<>,.?/~]).{8,16}$/,
-        translations.validation.sign_up.password_format,
-      ),
+      .matches(/^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,36}$/, translations.validation.sign_up.password_format),
     checkbox: yup
       .boolean()
       .oneOf([true], '空白のままにすることはできません')

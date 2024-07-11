@@ -14,12 +14,12 @@ export const listDataApointment: (t) => PropsAppointment[] = (t) => {
       title: 'usage.DataApointment.usage1.title',
       children: (
         <ChildrenAppointment>
-          {t(usage.DataApointment.usage1.content)}
+          {t(usage.DataApointment?.usage1.content)}
           <ContentChildren>
             <LinkStyle href="/path" target="blank">
-              {t(usage.DataApointment.usage1.link)}
+              {t(usage.DataApointment?.usage1.link)}
             </LinkStyle>
-            {t(usage.DataApointment.usage1.desc)}
+            {t(usage.DataApointment?.usage1.desc)}
           </ContentChildren>
         </ChildrenAppointment>
       ),
@@ -31,7 +31,7 @@ export const listDataApointment: (t) => PropsAppointment[] = (t) => {
       title: 'usage.DataApointment.usage2.title',
       children: (
         <ChildrenAppointment>
-          <ContentChildren>{t(usage.DataApointment.usage2.content)}</ContentChildren>
+          <ContentChildren>{t(usage.DataApointment?.usage2.content)}</ContentChildren>
         </ChildrenAppointment>
       ),
     },
@@ -42,8 +42,8 @@ export const listDataApointment: (t) => PropsAppointment[] = (t) => {
       title: 'usage.DataApointment.usage3.title',
       children: (
         <ChildrenAppointment>
-          <ContentChildren>{t(usage.DataApointment.usage3.content)}</ContentChildren>
-          <ContentChildren>{t(usage.DataApointment.usage3.content2)}</ContentChildren>
+          <ContentChildren>{t(usage.DataApointment?.usage3.content)}</ContentChildren>
+          <ContentChildren>{t(usage.DataApointment?.usage3.content2)}</ContentChildren>
         </ChildrenAppointment>
       ),
     },
@@ -54,7 +54,7 @@ export const listDataApointment: (t) => PropsAppointment[] = (t) => {
       title: 'usage.DataApointment.usage4.title',
       children: (
         <ChildrenAppointment>
-          <ContentChildren>{t(usage.DataApointment.usage4.content)}</ContentChildren>
+          <ContentChildren>{t(usage.DataApointment?.usage4.content)}</ContentChildren>
         </ChildrenAppointment>
       ),
     },
@@ -65,8 +65,8 @@ export const listDataApointment: (t) => PropsAppointment[] = (t) => {
       title: 'usage.DataApointment.usage5.title',
       children: (
         <ChildrenAppointment>
-          <ContentChildren>{t(usage.DataApointment.usage5.content)}</ContentChildren>
-          <ContentChildren>{t(usage.DataApointment.usage5.content2)}</ContentChildren>
+          <ContentChildren>{t(usage.DataApointment?.usage5.content)}</ContentChildren>
+          <ContentChildren>{t(usage.DataApointment?.usage5.content2)}</ContentChildren>
         </ChildrenAppointment>
       ),
     },
@@ -77,7 +77,7 @@ export const listDataApointment: (t) => PropsAppointment[] = (t) => {
       title: 'usage.DataApointment.usage6.title',
       children: (
         <ChildrenAppointment>
-          <ContentChildren>{t(usage.DataApointment.usage6.content)}</ContentChildren>
+          <ContentChildren>{t(usage.DataApointment?.usage6.content)}</ContentChildren>
         </ChildrenAppointment>
       ),
     },
@@ -88,8 +88,8 @@ export const listDataApointment: (t) => PropsAppointment[] = (t) => {
       title: 'usage.DataApointment.usage7.title',
       children: (
         <ChildrenAppointment>
-          <ContentChildren>{t(usage.DataApointment.usage7.content)}</ContentChildren>
-          <ContentChildren>{t(usage.DataApointment.usage7.content2)}</ContentChildren>
+          <ContentChildren>{t(usage.DataApointment?.usage7.content)}</ContentChildren>
+          <ContentChildren>{t(usage.DataApointment?.usage7.content2)}</ContentChildren>
         </ChildrenAppointment>
       ),
     },
