@@ -78,7 +78,7 @@ export const App: React.FC = () => {
       if (responseData?.meta.error) {
         resultError = t(errors[responseData.meta.error]);
       } else if (responseData?.meta.errors) {
-        resultError = Object.values(responseData.meta.errors).map((d: any) => <p>{t(errors[d])}</p>);
+        resultError = Object.values(responseData.meta.errors).map((d: any) => <p key={d}>{t(errors[d])}</p>);
       }
 
       setNotif({

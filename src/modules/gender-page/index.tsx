@@ -123,7 +123,7 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
                 {medicalSubjectData.length &&
                   medicalSubjectData.map((data) => (
                     <MedicalSubject
-                      id={data.id}
+                      key={data.id}
                       picture={data.image}
                       title={data.name}
                       content="成人男性の多くが抱える悩み"
@@ -254,7 +254,7 @@ export const GenderPage: React.FC<PropsGenderPage> = (props) => {
             <ContentFlowBox>
               <FlowTop>
                 {listDataFlowGender.length &&
-                  listDataFlowGender.map((data) => <FlowItem {...data} title={t(data.title)} />)}
+                  listDataFlowGender.map((data) => <FlowItem key={data.id} {...data} title={t(data.title)} />)}
               </FlowTop>
 
               <TitleVideo>{t(genderPage.ArticleBlock.titleVideo)}</TitleVideo>

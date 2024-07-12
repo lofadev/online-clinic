@@ -51,7 +51,8 @@ export const Usage: React.FC = () => {
               {t(usage.appointmentTop.text2)}
             </AppointmentTop>
             <AppointmentMain>
-              {listDataApointment.length && listDataApointment(t).map((data) => <Appointment {...data} />)}
+              {listDataApointment.length &&
+                listDataApointment(t).map((data) => <Appointment key={data.id} {...data} />)}
             </AppointmentMain>
           </ContentAppointmentBox>
         </ArticleBlock>
@@ -75,7 +76,7 @@ export const Usage: React.FC = () => {
               {t(usage.appointmentTop.text4)}
             </AppointmentTop>
             <AppointmentMain>
-              {listDataFlowDay.length && listDataFlowDay(t).map((data) => <Appointment {...data} />)}
+              {listDataFlowDay.length && listDataFlowDay(t).map((data) => <Appointment key={data.id} {...data} />)}
             </AppointmentMain>
           </ContentAppointmentBox>
         </ArticleBlock>
@@ -103,7 +104,7 @@ export const Usage: React.FC = () => {
               {t(usage.appointmentTop.text8)}
             </AppointmentTop>
             <AppointmentMain>
-              {listDataOrder.length && listDataOrder(t).map((data) => <Appointment {...data} />)}
+              {listDataOrder.length && listDataOrder(t).map((data) => <Appointment key={data.id} {...data} />)}
             </AppointmentMain>
           </ContentAppointmentBox>
         </ArticleBlock>
