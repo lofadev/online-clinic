@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import { ModalProps } from 'antd';
 import { Button } from 'components';
 import ButtonPrimaryWhite from 'components/button/button-white/ButtonPrimaryWhite';
