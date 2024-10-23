@@ -101,7 +101,7 @@ export const TopPage: React.FC = () => {
         backgroundWrapper="lightBlue"
       >
         <SiekteWrapper>
-          {dataServices.length &&
+          {dataServices.length > 0 &&
             dataServices.map((item) => (
               <IconSiekte
                 id={item.id}

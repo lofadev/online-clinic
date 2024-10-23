@@ -4,7 +4,7 @@ import { Button } from 'components';
 export const PreHeaderStyle = styled.div``;
 
 export const ContainerPage = styled.div`
-  width: 70vw;
+  width: 1050px;
   margin-inline: auto;
   display: flex;
   justify-content: space-between;
