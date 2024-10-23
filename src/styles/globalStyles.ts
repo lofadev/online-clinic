@@ -89,7 +89,8 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1;
     font-size: 14px;
     position: relative;
-    color: ${({ theme }) => theme.textPrimary};;
+    color: ${({ theme }) => theme.textPrimary};
+    min-width: 1440px;
   }
 
   .ant-select-item-option-selected {
